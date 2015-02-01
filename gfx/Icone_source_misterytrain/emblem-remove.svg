@@ -1,0 +1,27 @@
+<svg width="32" height="32" viewBox="0 0 32 32">
+		<g id="remove">
+			<path fill="none" d="M32,32H0V0h32V32z"/>
+			<linearGradient id="remove1" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#669900"/>
+				<stop  offset="1" style="stop-color:#336600"/>
+			</linearGradient>
+			<path fill="url(#remove1)" d="M26,22c2.21,0,4-1.79,4.01-4L30,14c0.01-2.21-1.79-4-3.99-4H6c-2.21,0-4,1.79-3.99,4L2,18
+				c0.01,2.21,1.79,4,4.01,4H26z"/>
+			<linearGradient id="remove2" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#99CC33"/>
+				<stop  offset="1" style="stop-color:#669900"/>
+			</linearGradient>
+			<path fill="url(#remove2)" d="M26,20c1.1,0,2-0.9,2.01-2L28,14c0.01-1.1-0.9-2-1.99-2H6c-1.1,0-2,0.9-1.99,2L4,18
+				c0.01,1.1,0.9,2,2.01,2H26z"/>
+			
+				<linearGradient id="remove3" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#ffffff;stop-opacity:0.0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path opacity="0.75" fill="url(#remove3)" d="M6,13c-0.55,0-1,0.45-0.99,1L5,16h22v-2
+				c0.01-0.55-0.45-1-0.99-1H6z"/>
+	</g>
+</svg>

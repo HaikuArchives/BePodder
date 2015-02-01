@@ -1,0 +1,49 @@
+subject: BePodder testing
+
+body:
+
+Hi,
+The BePodder Team is looking for beta testers for its new application: BePodder.
+You can find information about this incoming application for Zeta here: 
+http://www.iltuosistema.it/news_sing.php?id=282
+
+If you are not interested in this kind of activity please DON'T reply to this email. Discard it and sorry for boring you.
+
+The software is developed and compiled under Zeta 1.1 (build 13538)
+We can't garantee that it will works on different (newer or older) O.S. versions.
+(Please notify us if you are going to test our application with a different OS version)
+ 
+What we expect from you collaboration:
+- Your ideas and suggestion for new features and for getting better the one already implemented.
+- Your help in adding support for your language.
+- Your help for finding the best podcast and videocast in your language.
+- Your reports for bug or strange behaviours of the application. 
+
+Before we can send you the first beta you must have a look at the following EULA (end user license agreement). 
+Please read it carefully (it takes 20 seconds) and replay to this email by confirming that you read the license and you agree with it.
+
+
+Beta Test / End User License Agreement (EULA)
+
+    PLEASE READ CAREFULLY: This EULA is a legal Agreement between BePodder Team (BPT) and you (either an individual or a single entity). This Agreement covers all software, data, documentation, written materials, files and information ("Software") which it accompanies. This Agreement takes precedence over any other agreement embedded within the software.
+
+    Confidentiality: The enclosed Software is Confidential Information. You will not disclose Software or any comments regarding Software to any third party without the prior written approval of BPT. You will maintain the confidentiality of Softwae with at least the same degree of care that you use to protect your own confidential and proprietary information, but not less than a reasonable degree of care under the circumstances. You will not be liable for the disclosure of any Confidential Information which is: (a) in the public domain other than by a breach of this Agreement on your part; or (b) rightfully received from a third party without any obligation of confidentiality; or (c) rightfully known to you without any limitation on use or disclosure prior to its receipt from BPT; or (d) independently developed by your employees; or (e) generally made available to third parties by BPT without restriction on disclosure.
+
+    License: BPT grants you the right to copy the software onto a single computer for your internal use. You will not use, copy, modify, sell or transfer any part of the Software except as provided in this Agreement.
+
+    Restrictions: Except as specifically permitted in writing, you may not: (a) Copy the Software except as provided in this Agreement or elsewhere by BPT. (b) Sublicense or permit simultaneous use of the Software by more than one user. (c) Reverse engineer, decompile, or disassemble the Software. (d) rent, lease, or lend the Software. You may NOT transfer the Software under any circumstances.
+
+    Ownership And Copyright Of Software: Title to the Software and all copies thereof remain with BPT or its suppliers. You agree to prevent any unauthorized copying of the Software. Except as expressly provided herein, BPT does not grant any express or implied right to you under BPT patents, copyrights, trademarks, or trade secret information.
+
+    Term Of This Agreement: If not terminated sooner by BPT, this license to use Software expires one year after the date of delivery of Software from BPT to you, after which you shall either return all Software to BPT or shall certify that the Software has been destroyed, with no copies of any kind remaining. BPT may terminate this license at any time without any liability.
+
+    No Obligation Created: Provision of any Software under this Agreement is experimental and shall not create any obligation for BPT to continue to develop, productize, support, repair, offer for sale or in any other way continue to provide or develop Software either to you or to any other party.
+
+    THE SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND INCLUDING WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE. IN NO EVENT SHALL BPT OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF INFORMATION) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF BPT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+    SOFTWARE IS BELIEVED TO CONTAIN DEFECTS AND ONE PURPOSE OF THIS BETA TEST LICENSE IS TO IDENTIFY DEFECTS. YOU ARE ADVISED TO SAFEGUARD IMPORTANT DATA, TO USE CAUTION AND TO NOT RELY IN ANY WAY ON THE CORRECT FUNCTIONING OR PERFORMANCE OF SOFTWARE.
+
+-------------
+
+Best Regards,
+BePodder Team.

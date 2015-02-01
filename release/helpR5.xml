@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<help version="0.1">
+
+		<page  id='1' textfontsize='14' titlefontsize='15' leftmargin='20'>
+			<paragraph type='image' >help1.png</paragraph>
+			<paragraph type='text' >Welcome to the BePodder Getting Started Guide.</paragraph> 
+		    	<block type='horizontal'>
+			<paragraph type='image' hlimit='65' >dot.png</paragraph>
+			<paragraph type='text' >If you are already familiar with podcasts and RSS/Atom feeds you can immediately go to BePodder by closing this window.</paragraph> 
+			</block>
+			<block type='horizontal'>
+			<paragraph type='text'>If not, this is a short introduction providing you everything you'll need to know on how to get started with BePodder. Use the buttons below to navigate through this tutorial.</paragraph>
+			</block>
+		</page>
+
+
+		<page id='2' textfontsize='14' titlefontsize='15' leftmargin='10'>
+		 	<paragraph type='title'>Introduction</paragraph> 
+                     <paragraph type='text'>Podcasting is a method for publishing audio and video broadcasts via the Internet; links to free audio and video files are enclosed in RSS and Atom feeds.</paragraph> 
+			<paragraph type='image'>diagram1.png</paragraph>
+			<paragraph type='text'>Therefore Podcasting is simply a type of online media delivery; users can subscribe to a podcast using a feed (such as RSS 'Really Simple Syndication' or Atom).</paragraph> 
+			<block type='horizontal'>
+			<paragraph type='image'  hlimit='60'>dot2.png</paragraph>
+			<paragraph type='text'>An aggregator (or podcatcher) like BePodder, is a piece of software that allows you to subscribe  to a RSS feed and periodically check for and download new content; with BePodder you can check for new Podcast items (Episodes) of your subscribed Channels. Any item can contain an enclosure, just like an Email can contain an attachment.</paragraph> 
+			</block>
+		</page>
+
+		<page id='3' textfontsize='14' titlefontsize='15' leftmargin='10'>
+		 	<paragraph type='title'>The User Interface</paragraph> 
+                     <paragraph type='text'>BePodder has an easy to use yet powerful Graphical User Interface. The main window is split into tree panels:</paragraph> 
+			<block type='horizontal'>
+			<paragraph type='image' hlimit='370'>gui1.png</paragraph>
+			</block>
+                   	<paragraph type='text'>1) The Subscription list (the panel with the number 1 in the screenshot) with the list of the podcasts that you have subscribed to. When you click on a Channel you can see in the panel 2 the list of the channel's items.</paragraph> 
+                	<paragraph type='text'>2) The Episodes list with all the items available.</paragraph> 
+                     <paragraph type='text'>3) The Info panel show: episode info, channel info or Downloads info; you can select an info panel by clicking one of the below three buttons.</paragraph> 
+                     <paragraph type='image' >info_button.png</paragraph>
+		</page>
+
+		<page id='4' textfontsize='14' titlefontsize='15' leftmargin='10'>
+			<paragraph type='title'>Menu Bar</paragraph> 
+   	              <paragraph type='text'>At the very top of the BePodder main window is the menubar with seven menus available: File, Settings, Subscriptions, Episodes, Lists, View and Help. Some menu commands are followed by a right pointing arrow that indicates a submenu of related commands. As you explore each menu, be sure to take a look at the submenus as well. Click on a menus to show its commands:</paragraph> 
+			<paragraph type='text'>File: contains commands to close the application and to show information about BePodder</paragraph> 
+                	<paragraph type='text'>Settings: contains command to open the Preferences window that allows you to customize various BePodder settings.</paragraph> 
+                     <paragraph type='text'>Subscriptions: contains commands that perform actions on the selected channel of your subscriptions list.</paragraph> 
+			<paragraph type='text'>Episodes: contains commands that perform actions on the selected item (episode) of the channel's episode list.</paragraph> 
+			<paragraph type='text'>Lists: contains commands to open BePodder's OPML directories.</paragraph> 
+			<paragraph type='text'>View: contains commands and controls for the BePodder window.</paragraph> 
+			<paragraph type='text'>Help: contains commands  to open BePodder's 'Getting Started Guide' and the 'Keyboard Shortcuts List'.</paragraph> 
+		</page>
+
+
+		<page id='5' textfontsize='14' titlefontsize='15' leftmargin='10'>
+		 	<paragraph type='title'>Toolbar Buttons</paragraph> 
+                    <block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>add-channel-file.png</paragraph>
+                	<paragraph type='text'>Add Button: opens the Add Window to add a feed url (e.g. http://www.newpodcast.com/rss.xml) usually given on the podcast homepage; looks for text or graphic link that says something like 'XML', 'RSS' or 'Podcast Feed' on it.</paragraph> 
+			</block>
+  			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>delete-channel-file.png</paragraph>
+                	<paragraph type='text'>Channel Remove Button: opens a window in which you can select how remove the channel: just archive the select channel (keeping all the files and eclosure downloaded so far) or delete the whole channel from your computer.</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>refresh-channel-file.png</paragraph>
+                	<paragraph type='text'>Check Button: checks the selected channel and updates the list of the available items for that podcast adding the new  items.</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>www-channel-file.png</paragraph>
+                	<paragraph type='text'>Web Button: shows the channel homepage in the browser. To select your favorite browser open BePodder's Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select your favorite browser.</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>emblem-play.png</paragraph>
+                	<paragraph type='text'>Play Button: with this button you can view or listen the file enclosure of the selected item(episode). To select your favorite player open BePodder's  Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select you favorite player.</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>emblem-download.png</paragraph>
+                	<paragraph type='text'>Download Button: downloads the file enclosure of the selected item (episode); you can see the download info by clicking on the third button over the info panel.</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>emblem-stop.png</paragraph>
+                	<paragraph type='text'>Stop Button: stops to download the file enclosure of the selected item (episode); to resume the download double-click the item (episode) or select the item and click the Download Button</paragraph> 
+			</block>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='70'>emblem-delete.png</paragraph>
+                	<paragraph type='text'>Item Remove Button: deletes the selected item (you will loose the enclosure file).</paragraph> 
+			</block>
+
+		</page>
+
+		<page id='6' textfontsize='14' titlefontsize='15' leftmargin='10'>
+		 	<paragraph type='title'>First time with BePodder</paragraph> 
+                     <paragraph type='text'>Getting started with BePodder is easy.</paragraph>
+			<block type='horizontal'> 
+			<paragraph type='image' hlimit='180'>gui2.png</paragraph>
+			<paragraph type='text'>On the left of the main window you can see the 'Subscription List' with all your feed subscriptions. We have added some subscriptions for you, and you can always add your own in two ways:</paragraph> 
+			</block>	
+                	<paragraph type='text'>1) click the Add Button, then insert the feed url (example: http://www.newpodcast.com/rss.xml) and click add.</paragraph> 
+                     <paragraph type='text'>2) in the menubar select 'Directory' and then 'Podcast list' or another list, choose a podcast and click 'Subscribe'.</paragraph> 
+                     <paragraph type='text'>If you select a Podcast in the subscriptions list and use the check button, BePodder adds the new items to the 'Episodes list' (below on the right); you can check all your podcasts by right-clicking and selecting 'Check All Channels' in the context menu.</paragraph> 
+			<paragraph type='image' >gui3.png</paragraph>
+			<paragraph type='text'>Look at the screenshot above, there are 3 new items indicated by a black dot in the first column of the 'Episodes list'.</paragraph> 
+			<paragraph type='text'>In the second column there are icons that indicate the state of the item:</paragraph> 
+			<paragraph type='text'>- the Episode 4 has an icon that indicates an error</paragraph> 
+			<paragraph type='text'>- the Episode 3 has an icon that indicates that the item's enclosure download request is enquequed</paragraph> 
+			<paragraph type='text'>- the Episode 2 has an icon that indicates that BePodder is downloading the item's enclosure file</paragraph> 
+			<paragraph type='text'>- the Episode 1 have an icon that indicates that BePodder have just downloaded the item's enclosure file</paragraph> 
+		</page>
+
+		<page id='7' textfontsize='14' titlefontsize='15' leftmargin='10'>
+			<paragraph type='title'>Download Podcast's enclosure files</paragraph>  
+                    	<paragraph type='text'>Select an item in the 'Episodes list' and then double-click on it (or click the Download Button) to start downloading the enclosed file; you can always stop the download by clicking on the Stop Button.</paragraph> 
+			<block type='horizontal'> 
+			<paragraph type='image'>gui4.png</paragraph>
+			</block>	
+                  	<paragraph type='text'>When you click on the Subscribed Podcasts in the 'Subscriptions List' the software shows you, in the 'List of episodes', all the items available in that Subscription. Select an item and then click play (Play Button) to view or listen to the file.</paragraph> 
+			<block type='horizontal'> 
+			<paragraph type='image'>gui5.png</paragraph>
+			</block>	
+			<paragraph type='text'>You can access the Enclosures Folder by clicking on the folder icon in the Info Pannel or by right-clicking your mouse on an item and select 'Open Enclosures Folder' in the context menu.</paragraph>
+		</page>
+
+		<page id='8' textfontsize='14' titlefontsize='15' leftmargin='10'>
+			<paragraph type='title'>Settings Overview</paragraph>  
+                    	<paragraph type='text'>Preferences can be accessed by clicking in the menu-bar Settings>Preferences. You can select a category from the left list of the preferences dialog: FileType, Channels, Download and Proxy.</paragraph> 
+			<block type='horizontal'> 
+			<paragraph type='image'>gui6.png</paragraph>
+			</block>	
+                  	<paragraph type='text'>- FileType: to specify the default browser and player.</paragraph> 
+			<paragraph type='text'>- Channels: to specify preferences that control the operation to check channels new items; you can choose to Check all channels on startup or check the channel every desired minutes.</paragraph>
+			<paragraph type='text'>- Download: to specify the max number of item's files to download at the same time,</paragraph>
+			<paragraph type='text'>- Proxy: to set up a proxy server to work with BePodder; a proxy server acts as a security barrier between your internal network and the Internet, keeping others on the Internet from accessing information on your internal network.</paragraph>
+		</page>
+
+		<page id='9' textfontsize='14' titlefontsize='15' leftmargin='10'>
+			<paragraph type='title'>Directory lists</paragraph>  
+                    	<paragraph type='text'>BePodder has built-in podcast, videoblog, imagefeeds and newsfeeds OPML directories with thousands of feeds grouped by category.</paragraph> 
+			<paragraph type='text'>OPML (Outline Processor Markup Language) is an XML-based format that allows exchange of outline-structured information between applications.</paragraph> 
+			<paragraph type='image'>gui7.png</paragraph>
+			<paragraph type='text'>OPML directory can be accessed by clicking in the menu-bar 'Lists' and thenselecting a list. To browse the opml directory for a feed, expand the list by clicking the arrow of the category that you are interested in (see image); using this method, you can expand the opml directory until you find the desired feed. Once you have selected it, you can add it to the subscription list by clicking the button 'Subscribe', you can also refresh the list by clicking the button 'Refresh'.</paragraph>
+		</page>
+
+	       <page id='shortcuts' textfontsize='14' titlefontsize='15' leftmargin='10'>
+			<paragraph type='title'>Keyboard Shortcuts</paragraph>  
+                    	<paragraph type='text'>This page describes the keyboard shortcuts that can be used in BePodder. The shortcuts are grouped here by function.</paragraph> 
+				<block type='horizontal'> 
+				<paragraph type='image'>key_alt.png</paragraph>
+				<paragraph type='text'>/</paragraph>		
+				<paragraph type='image'>key_ctrl.png</paragraph>
+				<paragraph type='text'>means that you can use either alt or control (es. Alt+Q  or Ctrl+Q Quit the application), which way you have set it in the Deskbar menu preferences under Keyboard (the default shortcut key is Alt).</paragraph>
+				</block>
+					<block type='horizontal' topmargin='30'> 
+					<paragraph type='text'>General shortcuts</paragraph> 
+					</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_q.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Quit the application</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_p.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Preferences window</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_l.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Podcast directory list</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_m.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Videoblog directory list</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_i.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Imagefeeds directory list</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_n.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Newsfeeds directory list</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_b.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the BitTorrentfeeds directory list</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_f.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Fullscreen</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_t.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows/Hides the toolbar</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_g.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the Getting Started Help</paragraph>
+						</block>	
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_k.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows this keyboard shortcuts page</paragraph>
+						</block>
+					<block type='horizontal' topmargin='30'> 
+					<paragraph type='text'>Channels shortcuts</paragraph> 
+					</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_shift.png</paragraph>
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_a.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Add a podcast to the subscriptions list</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_shift.png</paragraph>
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_r.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Delete the selected podcast from the subscriptions list</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_shift.png</paragraph>
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_c.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Check the selected podcast for new episodes (items)</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_shift.png</paragraph>
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_n.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Check all podcasts for new episodes (items)</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_shift.png</paragraph>
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_h.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the podcast homepage</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_o.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Open enclosures folder</paragraph>
+						</block>
+					<block type='horizontal' topmargin='30'> 
+					<paragraph type='text'>Episodes shortcuts</paragraph> 
+					</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_e.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Play enclosure</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_d.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>(Re)start download the selected episodes (items)</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_s.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Stop the episode (item) download</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_r.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Delete the selected episode (item)</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_h.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Shows the podcast episode (item) page</paragraph>
+						</block>
+						<block type='horizontal'> 
+						<paragraph type='image'>key_alt.png</paragraph>
+						<paragraph type='text'>/</paragraph>		
+						<paragraph type='image'>key_ctrl.png</paragraph>
+						<paragraph type='text'>+</paragraph>
+						<paragraph type='image'>key_o.png</paragraph>
+						<paragraph type='image'>arrow.png</paragraph>
+						<paragraph type='text'>Open enclosures folder</paragraph>
+						</block>
+
+
+			
+		</page>
+
+		<page  id='buy' textfontsize='14' titlefontsize='18' leftmargin='20'>
+			<paragraph type='title'>Register your copy</paragraph> 
+   	              	<paragraph type='text'>The trial program is fully-functional but is will run only 30 days from the first time you open the application.</paragraph> 
+			<paragraph type='text'>Please pay the shareware fee, it's only 15 euro (Kagi add tax in some countries), BePodder licence can be purchased online from Kagi.</paragraph> 
+			<paragraph type='title' align='center' action='openUrl(http://www.funkyideasoft.com/buy_bp.html)'>Buy at www.funkyideasoft.com</paragraph> 
+ 			<paragraph type='text'>After purchasing, an email will be sent to you with a keyfile and instruction on how to install it. It's just a matter of unzipping a file and moving it to a certain directory.</paragraph> 
+			<paragraph type='text'>There is no problem updating BePodder when a new version becomes available. The keyfile will unlock all downloadable packages unless otherwise notified.</paragraph> 
+		</page>
+
+
+
+		<page  id='index' textfontsize='14' titlefontsize='18' leftmargin='30'>
+			<paragraph type='title' align='center'>Index</paragraph> 
+			<block type='horizontal' topmargin='20'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(1)'>Starting point</paragraph> 
+
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(2)'>Introduction</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(3)'>The User Interface</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(4)'>Menu Bar</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(5)'>Toolbar Buttons</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(6)'>First time with BePodder</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(7)'>Download Podcast's enclosure files</paragraph> 
+			</block>
+			<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(8)'>Settings Overview</paragraph> 
+			</block>
+		<block type='horizontal'>
+				<paragraph type='image' hlimit='50' >dot_index.png</paragraph>
+				<paragraph type='text' action='goto(buy)'>Register your copy</paragraph> 
+			</block>
+
+
+		</page>
+
+
+
+</help>

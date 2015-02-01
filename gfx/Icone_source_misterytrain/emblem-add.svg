@@ -1,0 +1,30 @@
+<svg width="32" height="32" viewBox="0 0 32 32">
+		<g id="add">
+			<path fill="none" d="M32,32H0V0h32V32z"/>
+			<linearGradient id="XMLID1" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#669900"/>
+				<stop  offset="1" style="stop-color:#336600"/>
+			</linearGradient>
+			<path fill="url(#XMLID1)" d="M14,2c-2.21,0-4,1.8-3.99,4c0,0-0.01,2.22,0,4c-1.79,0-4.01,0-4,0c-2.22,0-4.01,1.79-4,4L2,18
+				c0.01,2.21,1.79,4,4.01,4c0,0,2.21,0,4,0c0,1.78-0.01,4,0,4c0,2.21,1.78,4,4,4H18c2.21,0,4-1.79,4.01-4c0,0-0.01-2.22,0-4
+				c1.77,0,3.99,0,4,0c2.2,0,3.99-1.79,4-4L30,14c0.01-2.21-1.79-4-3.99-4c0,0-2.23,0-4,0c0-1.78-0.01-4,0-4c0-2.21-1.8-4-4-4H14z"
+				/>
+			<linearGradient id="XMLID2" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#99CC33"/>
+				<stop  offset="1" style="stop-color:#669900"/>
+			</linearGradient>
+			<path fill="url(#XMLID2)" d="M26,12h-6V6c0.01-1.1-0.9-2-1.99-2H14c-1.1,0-2,0.9-1.99,2L12,12H6c-1.1,0-2,0.9-1.99,2L4,18
+				c0.01,1.1,0.9,2,2.01,2H12v6c0.01,1.1,0.9,2,2.01,2H18c1.1,0,2-0.9,2.01-2L20,20h6c1.1,0,2-0.9,2.01-2L28,14
+				c0.01-1.1-0.9-2-1.99-2H26z"/>
+			
+				<linearGradient id="XMLID3" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#ffffff;stop-opacity:0.0;"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path opacity="0.75" fill="url(#XMLID3)" d="M27,16v-2c0.01-0.55-0.45-1-0.99-1H19V6
+				c0.01-0.55-0.45-1-0.99-1H14c-0.55,0-1,0.45-0.99,1L13,13H6c-0.55,0-1,0.45-0.99,1L5,16H27z"/>
+	</g>
+</svg>

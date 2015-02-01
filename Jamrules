@@ -1,0 +1,55 @@
+BUILD_DIR			= [ FDirName $(TOP) build ] ;
+GENERATED_DIR		= [ FDirName $(TOP) generated ] ;
+DISTRO_DIR			= [ FDirName $(TOP) generated distro ] ;
+
+include [ FDirName $(BUILD_DIR) HelperRules ] ;
+include [ FDirName $(BUILD_DIR) ConfigRules ] ;
+include [ FDirName $(BUILD_DIR) OverriddenJamRules ] ;
+include [ FDirName $(BUILD_DIR) MainBuildRules ] ;
+include [ FDirName $(BUILD_DIR) BuildSettings ] ;
+
+
+# Include UserBuildConfig.
+{
+	local userBuildConfig = [ GLOB $(BUILD_DIR) : UserBuildConfig ] ;
+	if $(userBuildConfig)
+	{
+		LOCATE on UserBuildConfig = $(BUILD_DIR) ;
+		include UserBuildConfig ;
+	}
+}
+
+# default to strip generated apps if not specified otherwise:
+STRIP_APPS ?= 1 ;
+
+# Cache files for header scanning and jamfile caching.
+HCACHEFILE = header_cache ;
+JCACHEFILE = jamfile_cache ;
+LOCATE on $(HCACHEFILE) $(JCACHEFILE) = $(GENERATED_DIR) ;
+
+
+rule MakeDistro
+{
+	# MakeDistro <target> 
+
+	local target = $1 ;
+
+	NotFile $(target) ;
+	Always $(target) ;
+}
+
+actions MakeDistro
+{
+	#jam
+	cp $(DISTRO_DIR)/BePodder $(TOP)/release	
+	xres -o $(TOP)/release/BePodder $(TOP)/resources/Icons.rsrc $(TOP)/resources/BePodder.rsrc
+
+	if [ -f /boot/beos/bin/IconTool ] ; then 
+		echo "Adding SVG Icon"
+		IconTool $(TOP)/release/BePodder Build STD_ICON 1 -1 SVG $(TOP)/resources/AppIcon.svg
+	fi
+	
+	mimeset -f $(TOP)/release/BePodder
+
+}
+

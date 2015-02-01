@@ -1,0 +1,1192 @@
+
+
+# Locale file for BePodder.
+
+# Modified: 4/18/2006
+
+# Author:	 Begasus      
+
+# E-mail:   	 Begasus@skynet.be
+
+
+
+
+
+# Attention: don't remove empty space or \n
+
+
+
+
+
+### SHAREWARE POPUPS -----------------------------------
+
+
+
+"Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n" 		"Shareware toepassing!\n\nSteun ons aub!\n\nKoop een licentie!\nMeer info op onze website\n"
+
+
+
+"This BePodder copy has expired!\nPlease buy a keyfile and support us.\n" 		"Deze versie van BePodder is verlopen!\nGelieve een keyfile te kopen en ons te ondersteunen.\n"
+
+
+
+"Web Site"		"Website"
+
+"Can't connect!"					"Geen verbinding!"
+
+"Http port failed!"				"Http poort mislukt!"
+
+"Can't resolve host!"				"Kan host niet vinden!"
+
+"Not found!"					"Niet gevonden!"
+
+"Bad resume!"					"Slecht herstart!"
+
+"Aborted by Callback!"				"Afgebroken door callback!"
+
+"Can't resume! (range error)"		"Kan niet herstarten! (range fout)"
+
+"Access Denied!"				"Toegang verboden!"
+
+"User or Password Incorrect!"		"Gebruiker of paswoord foutief!"
+
+"Other error (cUrl code: "			"Andere fout (cUrl code: "
+
+"cUrl init error!"					"cUrl init fout!"
+
+"Can't open file!"				"Kan bestand niet openen!"
+
+"Other error (status code: "			"Andere fout (status code: "
+
+"Downloading"					"Downloaden"
+
+
+
+### MENUBAR -----------------------------------
+
+
+
+"File"					"Bestand"
+
+"About..."				"Over..."
+
+"Close!"    				"Sluiten!"
+
+"Quit"				"Quit"
+
+
+
+"Settings"				"Instellingen"
+
+"Preferences..."			"Voorkeuren..."
+
+
+
+"Subscriptions"			"Abonnementen"
+
+
+
+"Episodes"				"Afleveringen"
+
+
+
+"Lists"					"Lijsten"
+
+"Podcast List"				"Podcast Lijst"
+
+"Podcast directory list"			"Podcast maplijst"
+
+"Videoblog List"				"Videoblog Lijst"
+
+"Videoblog directory list"		"Videoblog maplijst"
+
+"Imagefeeds List"			"Imagefeeds List"
+
+"Imagefeeds directory list"		"Imagefeeds maplijst"
+
+"Newsfeeds List"			"Newsfeeds lijst"
+
+"Newsfeeds directory list"		"Newsfeeds maplijst"
+
+"BitTorrentfeeds List"			"BitTorrentfeeds lijst"	
+
+"BitTorrentfeeds directory list"	"BitTorrentfeeds maplijst"
+
+"Internationalfeeds List"		"Internationalfeeds lijst"	
+
+"Internationalfeeds directory list"	"Internationalfeeds maplijst"
+
+
+
+"View"					"Venster"
+
+"Full Screen"				"Schermvullend"
+
+"Toolbar"					"Werkbalk"
+
+"Subscriptions View"			"Abonnementen venster"
+
+"Small Items"				"Kleine objecten"
+
+"Big Items"				"Grote objecten"
+
+"Move BePodder on workspace:"	"Verplaats BePodder naar bureaublad:"	
+
+
+
+"Help"					"Help"
+
+"Getting Started"  			"Handleiding" 
+
+"Keyboard Shortcuts"			"Toetscombinaties"
+
+"Online Support"				"Online ondersteuning"	
+
+
+
+
+
+
+
+
+
+
+
+### BUTTONS -----------------------------------
+
+
+
+# Buttons add feed window
+
+"Insert the rss feed url!" 		"RSS feed url ingeven!"
+
+"Add"    					"Toevoegen"
+
+"Paste"					"Plakken"
+
+
+
+# Buttons directory list window
+
+"Collapse All"				"Alles inklappen"
+
+"Preview"					"Voorbeeld"
+
+"Subscribe"				"Abonneren"	
+
+
+
+
+
+# Buttons help window
+
+"Next"					"Verder"
+
+"Prev"					"Terug"
+
+"Close"					"Sluiten"		
+
+"Index"					"Index"				
+
+
+
+
+
+# Buttons remove windows
+
+"Cancel"					"Annuleren"
+
+"Delete"					"Verwijder"
+
+"Archive"					"Archive"		
+
+
+
+
+
+
+
+### TOOLTIPS -----------------------------------
+
+
+
+# Tooltips toolbar buttons
+
+
+
+"Add the podcast to the Subscriptions list" 		"Podcast toevoegen aan de abonementen"
+
+"Delete the podcast from the Subscriptions list" 	"Podcast verwijderen van de abonnementen"
+
+"Check the selected podcast for new items"		"Podcast controleren op nieuwe objecten"
+
+"Show the podcast homepage"				"Podcast homepage tonen"
+
+
+
+"Delete the item and the enclosure"					         "Delete the item and the enclosure"
+
+"Stop the item download"								"Stop download van onderwerp"
+
+"Download the selected episode"							"Download de geselecteerde aflevering"
+
+"Play the selected episode"								"Geselecteerde aflevering afspelen"
+
+
+
+"Submit bug and idea"			"Bug's en ide&euml;en aanbrengen"
+
+
+
+
+
+# Tooltips directory window buttons
+
+
+
+"Collapse all categories in the directory list"        		"Alle categoriëen in de maplijst inklappen"
+
+"Add the selected podcast to the Subscription list" 		"Voeg de geselecteerde podcast toe aan de geaboneerde lijst" 
+
+"Checkout a podcast before downloading it"			"Controleer een podcast vooraleer toe te voegen"
+
+
+
+### INFO PANEL -----------------------------------
+
+
+
+"Show channel Image"		"Toon kanaal afbeelding"
+
+"XML Feed Link"			"XML Feed Link"
+
+
+
+"Show Episode info" 		"Toon onderwerpsinfo" 
+
+"Show Subscription info"	"Toon abonnementsinfo"
+
+"Show Downloads info"	"Toon downloadsinfo"
+
+
+
+"Enclosure: "			"Bijlage: "
+
+
+
+"Lookup (Dictionary)"		"Opzoeken (Dictionary)"
+
+"Lookup (Google)"		"Opzoeken (Google)"
+
+"Lookup (Acronym Finder)"	"Lookup (Acronym Finder)"
+
+"Copy"				"Kopi&euml;er"
+
+"Select All"				"Selecteer alles"	
+
+"Copy URL"			"Copy URL"
+
+"Open URL"			"Open URL"
+
+"Subscription"			"Abonement"
+
+
+
+
+
+### PREFERENCES -----------------------------------
+
+
+
+"Preferences"			"Voorkeuren"
+
+
+
+"Proxy"				"Proxy"
+
+"Enable Proxy"			"Proxy inschakelen"
+
+"Address"				"Address"
+
+"Port"				"Poort"
+
+"Username"			"Gebruikersnaam"
+
+"Password"			"Paswoord"
+
+
+
+"Max Downloads"		"Max Downloads"
+
+
+
+"FileType"				"Bestandstype"
+
+"Browser"				"Browser"
+
+"Player"				"Speler"
+
+
+
+"Channels"						"Kanalen"
+
+"Check all channels on startup"		"Controleer alle kanalen bij het starten"
+
+"Check the channel every"			"Controleer alle kanalen elke"
+
+
+
+"never"				"nooit"
+
+"5 minutes"			"5 minuten"
+
+"15 minutes"			"15 minuten"
+
+"30 minutes"			"30 minuten"
+
+"1 hour"				"1 uur"
+
+"2 hour"				"2 uur"
+
+
+
+
+
+
+
+
+
+### COLUMLISTVIEW -----------------------------------
+
+
+
+
+
+"1 new item"		"1 nieuw onderwerp"
+
+"%d new items"		"%d nieuwe onderwerpen"
+
+"new"			"nieuw"
+
+"error"			"fout"
+
+"not down" 		"niet binnen"
+
+"enquequed"		"wachtrij"
+
+"downloading"  		"downloaden"
+
+"downloaded"		"gedownload"
+
+"connecting"		"verbinden"
+
+"not found"		"niet gevonden"
+
+"stopped"			"gestopt"
+
+"can't connect"		"geen verbinding"
+
+"invalid format"		"ongeldig formaat"
+
+
+"Icon"			"Icon"
+
+"Title"  			"Titel"
+
+"Date"			"Datum"
+
+"Size"  			"Grootte"
+
+"Status" 			"Status"
+
+"Download" 		"Download"
+
+
+
+
+
+
+
+### CONTEXT MENU -----------------------------------
+
+
+
+"Add Channel"      		"Kanaal toevoegen"
+
+"Remove Channel"		"Kanaal verwijderen"
+
+"Check Channel"			"Kanaal controleren"	
+
+"Open Homepage"		"Open Homepage"
+
+
+
+"Open Web Page"		"Open Web Page"
+
+"Open Enclosures folder"	"Open bijlage map"
+
+"Check All Channels"		"Controlleer alle kanalen"
+
+
+
+"Show Channel Image"	"Toon kanaal afbeelding"	
+
+
+
+"Play enclosure"			"Bijlage afspelen"
+
+"(Re)start download"		"(her)start download"
+
+"Stop download"			"Stop download"		
+
+"Remove Item"			"Verwijder object"
+
+
+"Find this Item"			"Zoek dit object"
+
+"Remove from this list"	"Verwijder uit de lijst"
+
+
+
+
+
+
+
+
+
+### ALERT -----------------------------------
+
+"You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"      "Je kan enkel tot 10 kanalen toevoegen in deze niet geregistreerde versie.\n Registreer je kopie\n" 
+
+
+"Can't open the selected file with:\n\n"           	"Kan het geselecteerd bestand niet openen met:\n\n"
+
+"\n\nPlease check if the application is installed in the right way.\n"     "\n\nControlleer of de toepassing goed geïnstalleerd is.\n"
+
+"Download it!"	"Download het!"
+
+
+
+"\nRemoving.."						"\nVerwijren.."
+
+"\nAn error occured while removing!"		"\nFout tijdens het verwijderen!"
+
+"Check all the podcasts for new items"		"Controlleer alle podcasts voor nieuwe onderwerpen"
+
+
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+
+
+_key="alert1"
+
+ _value="
+
+Je gaat het geselecteerde onderwerp verwijderen.
+
+
+
+Ben je zeker? 
+
+(alle bijlage in de map worden mee verwijderd)"
+
+
+
+
+
+_key="alert2a"
+
+ _value="
+
+Je verwijderd het kanaal:
+
+
+
+" 
+
+
+
+_key="alert2b"
+
+ _value="
+
+
+
+Wil je dit kanaal liever archieveren
+
+(behoud van alle bijlagen en bestanden
+
+die al gedownload zijn) of wil je het
+
+volledig kanaal verwijderen van je pc?" 
+
+				
+
+_key="alert3"
+
+ _value="
+
+Archief ontleden.."
+
+
+_key="alert_3gp"
+ _value="
+3GP is een multimedia container formaat gedefiniëerd door Third Generation Partnership Project (3GPP) voor het gebruik op 3G mobiele telefoons. Het slaat video streams op als MPEG-4 of H.263, en audio streams als AMR-NB of AAC-LC.
+
+VideoLAN ondersteund audio AMR (3GPP) nog niet"
+
+_key="alert_swf"
+ _value="
+SWF is een gebonden vector grafisch bestandsformaat geproduceerd door Flash software van Adobe (voormalig Macromedia).
+
+Huidige ondersteuning in BeOS/Haiku/ZETA is gelimiteerd tot de losstaande Flash speler versie 4.1015, er is tot op heden geen moderne Flash speler"
+
+
+
+
+### HELP & SHORTCUTS -----------------------------------
+
+
+
+
+
+"Introduction"					"Introductie"
+
+"The User Interface"				"Gebruikersinterface"
+
+"Menu Bar"					"Menubalk"
+
+"Toolbar Buttons"				"Werkbalk"
+
+"First time with BePodder"			"Eerste gebruik van BePodder"
+
+"Download Podcast's enclosure files"	"Download Podcast's bijlagen"
+
+"Settings Overview"				"Instellingen overzicht"
+
+"Directory lists"					"Directory lijsts"
+
+"Loading Help..."					"Help laden..."
+
+"Register your copy"				"Registeer je kopie"
+
+"Starting point"					"Startpunt"
+
+
+
+
+
+
+
+
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+
+
+
+
+_key="help1-0"
+
+ _value="Welkom bij de BePodder startersgids."
+
+
+
+_key="help1-1"
+
+ _value="Als je al bekend bent met podcast en RSS feeds kan je dadelijk naar BePodder gaan door dit venster te sluiten."
+
+
+
+_key="help1-2"
+
+_value="Indien niet, volgt hier een introductie dat je zal verder helpen met alles wat je moet weten om te kunnen starten met BePodder.
+
+Gebruik de knoppen hieronder om door de handleiding te wandelen."
+
+
+
+
+
+_key="help2-0"
+
+ _value="Podcasting is een methode voor het publiceren van audio en video broadcasts 
+
+via het Internet; links naar gratis audio en video bestanden zijn ingebonden in de 
+
+RSS en Atom feeds."
+
+
+
+_key="help2-1"
+
+_value="Daardoor is Podcasting een type van online media verdeling; gebruikers kunnen 
+
+abonneren op een podcast door een feed te gebruiken 
+
+(zoals RSS 'Really Simple Syndication' of Atom)."
+
+
+
+_key="help2-2"
+
+_value="Een aggregator (of podcatcher) zoals BePodder, is een toepassing die je in staat stelt om op een RSS feed te abonneren en periodiek te controleren op en downloaden van nieuwe onderwerpen. Met BePodder kan je controleren op nieuwe Podcast onderwerpen (episodes) van je geabonneerd kanaal. Eender welk onderwerp kan een bijlage bevatten, net zoals
+
+email bijlages dan bevatten." 
+
+
+
+
+
+_key="help3-0"
+
+_value="BePodder heeft een makkelijk doch krachtige gebruikersinterface. Het hoofdvenster is opgesplitst in drie panelen:"
+
+
+
+_key="help3-1"
+
+_value="1) Het abonementen venster (het paneel met nummer 1 in de schermafbeelding) met de lijst van podcasts waar je een abbonement op hebt. Als je klikt op een kanaal dan zie je in paneel 2 de ljist van de voorwerpen van het kanaal."
+
+
+
+_key="help3-2"
+
+_value="2) De lijst met voorwerpen die beschikbaar zijn."
+
+
+
+_key="help3-3"
+
+_value="3) Het info paneel toont: info over het object, kanaal info of download info; je kan een info paneel kiezen door het klikken van de drie knoppen vanonder."
+
+
+
+
+
+
+
+_key="help4-0"
+
+_value="Heel vanboven in het BePodder hoofdvenster vind je de menubalk met zeven beschikbare menu's: Bestand, Instellingen, Abonementen, Afleveringen, Lijst, Venster en Help. Sommige menu's commando's worden gevolgd door pijlen wat betekend dat er een submenu van gerelateerde commando's is. Als je hierdoor bladerd, kijk dan ook zeker eens in de submenu's. Klik op een menu om het commando te zien:"
+
+
+
+_key="help4-1"
+
+_value="Bestsand: bevat commando's zoals het sluiten van de toepassing of toont het info venster van BePodder"
+
+
+
+_key="help4-2"
+
+_value="Instellingen: bevat commando's voor het openen van het instellingen venster dat je toestaat verschillende instellingen van BePodder aan te passen."
+
+
+
+_key="help4-3"
+
+_value="Abonementen: bevat commando's die bepaalde akties uitvoeren op het geselecteerd kanaal in je abonementenlijst."
+
+
+
+_key="help4-4"
+
+_value="Afleveringen: bevat commando's die bepaalde akties uitvoeren op de geselecteerde objecten in de kanaallijst."
+
+
+
+_key="help4-5"
+
+_value="Lijsten: bevat commando's voor het openen van BePodder's OPML mappen."
+
+
+
+_key="help4-6"
+
+_value="Venster: bevat commando's en controle's voor het BePodder venster."
+
+
+
+_key="help4-7"
+
+_value="Help: bevat commando's zoals het openen van BePodder's 'Handleiding' en de 'Toetscombinaties'."
+
+
+
+
+
+
+
+_key="help5-0"
+
+ _value="Knop 'Toevoegen': opent het 'toevoegen' venster om een feed url (bv. 'http://www.newpodcast.com/rss.xml' welke je kan vinden op de podcast homepage) toe te voegen; dit kan via een tekst of grafische link zijn zoals 'XML', 'RSS' of 'Podcast Feed' erop." 
+
+
+
+_key="help5-1"
+
+ _value="Knop 'Verwijder': opent een venster waarin je kan selecteren hoe je het kanaal wil verwijderen: enkel het archief van het kanaal (behouden van downloads) of verwijderen van het hele kanaal van je pc." 
+
+
+
+_key="help5-2"
+
+ _value="Knop 'Controleer': controleerd het geselecteerde kanaal en werkt de lijst van beschikbare objecten bij in lijst." 
+
+
+
+_key="help5-3"
+
+ _value="Knop 'Homepage': toont de homepage van het kanaal in je browser. Om je favoriete browser te selecteren open je BePodder's instellingen, via het menu 'Instellingen' > 'Voorkeuren...' en in het instellingsvenster onder 'Bestandstype' selecteer je je favoriete browser." 
+
+
+
+_key="help5-4"
+
+ _value="Knop 'Afspelen': met deze knop kan je de bijlagen of downloads bekijken of beluisteren. Om je favoriete MediaPlayer te kiezen ga je in het menu naar 'Instellingen' > 'Voorkeuren...' en in het instellingsvenster under 'Bestandstype kies je je favoriete speler." 
+
+
+
+_key="help5-5"
+
+ _value="Knop 'Download': deze zal het geselecteerd object in de lijst downloaden; je kan info opvragen door het klikken op de derde knop boven het info paneel." 
+
+
+
+_key="help5-6"
+
+ _value="Knop 'Stop':stopt de download van het bestand of bijlage van het geselecteerd object(aflevering); om verder te gaan met de download dubbelklik op het object (aflevering) of selecteer het object en klik op de 'Download' knop." 
+
+
+
+_key="help5-7"
+
+ _value="Knop 'Verwijder object': verwijderd het geselecteerd object (hierdoor ook de bijlage)." 
+
+
+
+
+
+
+
+_key="help6-0"
+
+ _value="Beginnen met BePodder is gemakkelijk." 
+
+
+
+_key="help6-1"
+
+ _value="Aan de linkerkant vind je een lijst van je abonnementen. We hebben al enkele abonnementen toegevoegd voor je, en je kan er altijd toevoegen op twee manieren:"
+
+
+
+_key="help6-2"
+
+ _value="1) Handmatig via 'Voeg een podcast toe aan de abonnementen' knop, plak dan de feed url (bv: http://www.newpodcast.com/rss.xml) en klik dan op Toevoegen." 
+
+
+
+_key="help6-3"
+
+ _value="2) in de menu lijst selecteer 'Map' en dan 'Podcast lijst' of 'Videoblog lijst', kies een podcast en klik op 'Abonneren'."
+
+
+
+_key="help6-4"
+
+ _value="Als je een Podcast in de abonnee lijst selecteerd, en dan de 'Controleer' knop klikt zal BePodder de nieuwe onderwerpen in de 'Episode lijst' rechts toevoegen; je kan al je podcast door rechtsklikken controleren door 'Controlleer alle kanalen' in het context menu."
+
+
+
+_key="help6-5"
+
+ _value="Bekijk de schermafbeelding hierboven, 3 nieuwe objecten zijn aangegeven door een zwarte dot in de eerste kollom van de lijst van afleveringen."
+
+
+
+_key="help6-6"
+
+ _value="In de tweede kollom staan de icoontjes die de status van het object aangeven:"
+
+
+
+_key="help6-7"
+
+ _value="- aflevering 4 heeft een icoon wat aangeeft dat er een fout is"
+
+
+
+_key="help6-8"
+
+ _value="- aflevering 3 heeft een icoon wat aangeeft dat het object download is aangevraagd (wachtrij)"
+
+
+
+_key="help6-9"
+
+ _value="- aflevering 2 heeft een icoon wat aangeeft dat BePodder het bestand aan het downloaden is."
+
+
+
+_key="help6-10"
+
+ _value="- aflevering 1 heeft een icoon wat aangeeft dat BePodder het bestand gedownload heeft."
+
+
+
+
+
+
+
+_key="help7-0"
+
+ _value="Selecteer een onderwerp in de 'Episode lijst' en dubbelklik op het onderwerp of klik op de Download knop; je kan de download stoppen door te klikken op stop."
+
+
+
+_key="help7-1"
+
+ _value="Als je klikt op de een van de abonnementen zal de software je alle onderwerpen tonen die beschikbaar zijn voor dat abonnement in de 'Episode lijst'.
+
+Selecteer een onderwerp en klik op afspelen (Afspelen knop) om het bestand te 
+
+beluisteren of bekijken."
+
+
+
+_key="help7-2"
+
+ _value="Je kan de bijlage map bereiken door het klikken op het map icoon in het info veld,
+
+of door rechtsklikken op het bestand en kiezen voor 'Open bijlage map'
+
+in het context menu.
+
+Tot hier de handleiding, met deze info ben je in staat om zelf podcast toe te voegen
+
+die je vind via het net, en te werken met BePodder.
+
+
+
+                                                                Veel plezier!!! ;)"
+
+
+
+
+
+_key="help8-0"
+
+ _value="Voorkeuren kan je berijken via de menubalk Instellingen > Voorkeuren. Je kan een categorie selecteren vanuit de lijst van de voorkeuren: Bestandstype, kanalen, Download en Proxy."
+
+
+
+_key="help8-1"
+
+ _value="- Bestandstype: voor het vastleggen van je standaard browser en speler."
+
+
+
+_key="help8-2"
+
+ _value="- Kanalen: voor het instellen van de controle over de manier waarop kanalen gecontroleerd worden; je kan kiezen om alle kanalen bij het starten van BePodder te kontroleren of om op ingestelde intervallen te gaan controleren."
+
+
+
+_key="help8-3"
+
+ _value="- Download: om het maximum aantal gelijktijdige downloads in te stellen."
+
+
+
+_key="help8-4"
+
+ _value="- Proxy: voor het instellen van een proxy met BePodder; een proxy dient als veiligheidsbrug tussen jouw netwerk en het internet, zodat anderen op het internet niet aan informatie van je eigen netwerk kunnen benaderen."
+
+
+
+
+
+
+
+_key="help9-0"
+ _value=" BePodder heeft een ingebouwde podcast, videoblog, imagefeeds, newsfeeds, bittorrentfeeds en internationalfeeds OPML directories met duizenden feeds gegroepeerd op categorie."
+
+_key="help9-1"
+
+ _value="OPML (Outline Processor Markup Language) is een XML-gebaseerd formaat dat uitwisseling toestaat van outline-gestructureerde informatie tussen twee toepassingen."
+
+
+
+_key="help9-2"
+ _value="OPML directory kan toegankelijk worden door het klikken in de menu-bar 'Lijsten' en dan door selecteren van een lijst.  Om door de mappen van opml te bladeren voor een feed, klap je de lijst uit door het klikken op de pijl van de categorie waarin je interesse hebt (zie afbeelding);  door dit te doen kan je elke opml map uitklappen totdat je gevonden hebt wat je zoekt. Eenmaal je deze geselecteerd hebt kan je deze toevoegen door het klikken van 'Abonneren', je kan ook alle categorien uitklappen door het klikken op 'Alles uitklappen'."
+
+
+
+_key="help_shortcut1"
+
+_value="Deze sectie beschrijft de toetscombinaties die kunnen gebruikt worden in BePodder. De toetscombinaties zijn gegroepeerd per functie. "
+
+
+
+_key="help_shortcut2"
+
+_value="betekend dat je ofwel van Alt of Control gebruik kan maken (bv. Alt+Q of Ctrl+Q sluit de toepassing), zoals deze ingesteld zijn in de instellingen voor toetsenbord (de standaard knop is 'Alt')."
+
+
+
+_key="help_shortcut3"
+
+ _value="Algemene combinaties"
+
+
+
+_key="help_shortcut4"
+
+ _value="Toepassing afsluiten"
+
+
+
+_key="help_shortcut5"
+
+ _value="Toon het instellingen venster"
+
+
+
+_key="help_shortcut6"
+
+ _value="Toon de Podcast maplijst"
+
+
+
+_key="help_shortcut7"
+
+ _value="Toon de Videoblog maplijst"
+
+
+
+_key="help_shortcut8"
+
+ _value="Toon de Imagefeeds maplijst"
+
+
+
+_key="help_shortcut9"
+
+ _value="Toon de Newsfeeds maplijst"
+
+
+
+_key="help_shortcut9b"
+
+ _value="Toon de BitTorrentfeeds maplijst"
+
+
+_key="help_shortcut9c"
+
+ _value="Toon de Internationalfeeds maplijst"
+
+
+_key="help_shortcut10"
+
+ _value="Schermvullend"
+
+
+
+_key="help_shortcut11"
+
+ _value="Toon/verberd de werkbalk"
+
+
+
+_key="help_shortcut12"
+
+ _value="Toon de handleiding"
+
+
+
+_key="help_shortcut13"
+
+ _value="Toon de toetscombinaties"
+
+
+
+_key="help_shortcut14"
+
+ _value="Channels shortcuts"
+
+
+
+_key="help_shortcut15"
+
+ _value="Podcast toevoegen aan de abonementen"
+
+
+
+_key="help_shortcut16"
+
+ _value="Podcast verwijderen van de abonementen"
+
+
+
+_key="help_shortcut17"
+
+ _value="Controleer de geselecteerde podcast op nieuwe onderwerp(en)"
+
+
+
+_key="help_shortcut18"
+
+ _value="Controleer alle podcast op nieuwe onderwerp(en)"
+
+
+
+_key="help_shortcut19"
+
+ _value="Podcast homepage tonen"
+
+
+
+_key="help_shortcut20"
+
+ _value="Open map van bijlage"
+
+
+
+_key="help_shortcut21"
+
+ _value="Episodes shortcuts"
+
+
+
+_key="help_shortcut22"
+
+ _value="Bijlage afspelen"
+
+
+
+_key="help_shortcut23"
+
+ _value="(Her)start download het geselecteerde onderwerp"
+
+
+
+_key="help_shortcut24"
+
+ _value="Stop de bijlage/onderwerp download"
+
+
+
+_key="help_shortcut25"
+
+ _value="Verwijder geselecteerde bijlage(onderwerp)"
+
+
+
+_key="help_shortcut26"
+
+ _value="Toon de podcast bijlage(onderwerp) pagina"
+
+
+
+_key="help_shortcut27"
+
+ _value="Open map van bijlage"
+
+
+
+_key="help_buy1"
+ _value=" BePodder Light is de basis versie (gratis download en geen tijdslimiet), de geregistreerde versie voegt enkele mooie features toe: ongelimiteerd aantal kanalen, smal kanaal venster, proxy support, automatische kanaalcheck, tot 5 gelijktijdige downloads (multithreading)."
+
+_key="help_buy2"
+
+ _value="Gelieve deze shareware te registeren, het is enkel 15 Euro (Kagi voegt tax toe in sommige landen), BePodder licentie kan online gekocht worden van Kagi."
+
+
+
+_key="help_buy3"
+
+ _value="Koop op www.funkyideasoft.com"
+
+
+
+_key="help_buy4"
+
+ _value="Na aankoop krijg je een email met een keyfile (sleutelbestand) en instructies over hoe deze te installeren. Het is enkel een kwestie van deze uit te pakken en te verplaatsen naar een bepaalde map."
+
+
+
+_key="help_buy5"
+
+ _value="Er is geen probleem voor het updaten van BePodder als er een nieuwe versie beschikbaar is. Het sleutelbestand zal alle gedownloade pakketen ontsleutelen tenzij anders werd aangegeven."
+
+
+
+
+
+### USELESS ########
+
+
+
+"Opml Editor"		              	"Opml bewerken"
+
+"name:"			              	"naam:"
+
+"Add a categorie" 			"Categorie toevoegen"
+
+"Add a new Broadcast" 		"Een nieuwe broadcast toevoegen"  
+
+"feed:"			              	"feed:"
+
+"url:"				       		"url:"
+
+"Test podcast"				"Test podcast"
+
+"Del a categorie"				"Verwijder een categorie"
+
+"Add a categorie"			"Een categorie toevoegen"
+
+"Select the podcast categorie:"	"Selecteer de podcast categorie:"
+
+"Check all" 				"Controleer alles"
+
+"Check"					"Controleer"
+
+"Refresh the list"				"Ververs lijst"
+
+"Load"					"Laad"
+
+"Load the list"				"Laad de lijst"
+
+"Save"					"Opslaan"
+
+"Save the list"				"Opslaan van list"
+
+"Revert"					"Terug"
+
+"Apply"					"Toepassen"		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

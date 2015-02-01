@@ -1,0 +1,30 @@
+<svg width="32" height="32" viewBox="0 0 32 32">
+		<g id="download">
+			<path fill="none" d="M32,32H0V0h32V32z"/>
+			
+				<linearGradient id="download1" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#FFCC00"/>
+				<stop  offset="1" style="stop-color:#CC9900"/>
+			</linearGradient>
+			<path fill="url(#download1)" d="M12,2C9.79,2,8,3.8,8.01,6c0,0-0.01,5.44,0,8c-1,0-2.01,0-2,0c-1.96,0-2.65,1.15-2.85,1.65
+				c-0.09,0.2-0.19,0.54-0.19,0.959c0,0.621,0.22,1.4,1.04,2.221l10.58,10.59c0.78,0.78,2.04,0.78,2.82,0L28,18.83
+				c1.38-1.38,1.05-2.68,0.84-3.18C28.641,15.15,27.95,14,26,14c0,0-1,0-1.99,0c0-2.56-0.01-8,0-8c0-2.2-1.8-4-4-4H12z"/>
+			
+				<linearGradient id="download2" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#FFFF00"/>
+				<stop  offset="1" style="stop-color:#FFCC00"/>
+			</linearGradient>
+			<path fill="url(#download2)" d="M16,28l10.59-10.59c0.77-0.77,0.51-1.41-0.58-1.41H22V6c0.01-1.1-0.9-2-1.99-2H12
+				c-1.1,0-2,0.9-1.99,2L10,16H6c-1.1,0-1.36,0.641-0.59,1.41L16,28z"/>
+			
+				<linearGradient id="download3" x1="50%" y1="100%"
+					x2="50%" y2="0%">
+				<stop  offset="0" style="stop-color:#ffffff;stop-opacity:0.0;"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path opacity="0.75" fill="url(#download3)" d="M21,16V6
+				c0.01-0.55-0.45-1-0.99-1H12c-0.55,0-1,0.45-0.99,1L11,16H21z"/>
+	</g>
+</svg>

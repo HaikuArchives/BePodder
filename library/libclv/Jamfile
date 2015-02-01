@@ -1,0 +1,27 @@
+
+SubDir TOP libclv ;
+
+if $(OSPLAT) = X86 {
+	C++FLAGS += -Wno-sign-compare -Wno-overloaded-virtual ;
+} 
+
+
+SAVED_DEFINES = $(DEFINES) ;
+
+DEFINES = $(SAVED_DEFINES) ;
+
+SubDirSysHdrs $(TOP)/libclv/include ;
+SubDirSysHdrs /boot/home/config/include ; 
+SubDirSysHdrs /boot/beos/etc/develop/zeta-r1-gcc2-x86/headers/be/locale ;
+
+LINKFLAGS += -L/boot/home/config/lib ;
+LINKFLAGS += -L$(TOP)/libs ;
+LINKFLAGS += -L/boot/develop/headers/be ; 
+
+#<pe-src>
+StaticLibrary libclv.a : 
+	ColorTools.cpp
+	ColumnListView.cpp
+	ColumnTypes.cpp
+	;
+#	</pe-src>

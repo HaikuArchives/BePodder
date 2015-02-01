@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32">
+		<path fill="none" d="M32,32H0V0h32V32z"/>
+		<g style="fill:none;stroke:#000000;stroke-width:2.0000000;stroke-linecap:round;stroke-linejoin:round">
+			<path d=" M6,26l-4-4l4-4"/>			
+			<path d=" M26,26l4-4l-4-4"/>
+			<path d="M9,23H8v-1 C8.552,22,9,22.447,9,23z"/>
+			<path d="M8,20 c0-1.657,1.343-3,3-3s3,1.343,3,3s-1.343,3-3,3"/>
+			<path d="M11,8 c6.627,0,12,5.371,12,12"/>
+			<path d="M11,12.5 c4.142,0,7.5,3.357,7.5,7.5"/>
+		</g>
+</svg>

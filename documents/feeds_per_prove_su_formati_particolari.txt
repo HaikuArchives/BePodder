@@ -1,0 +1,7 @@
+
+Formato 				feed
+-------------------------------------------------------------
+
+.3gp 					http://spreeblick.com/category/toni-mahoni/feed/rss2
+
+.swf					http://dok.info/rss/podcast.php?feed=videocast

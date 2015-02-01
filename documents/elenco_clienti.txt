@@ -1,0 +1,233 @@
+LISTA CHIAVI INVIATE GRATUITAMENTE (BETATESTER E SPONSOR)
+
+Dane Scott  ( dane@tunetrackersystems.com )
+ Rémi Grumeau ( remi@beosfrance.com )
+Bernd Korz ( btk@yellowtab.com )	
+Jorge G.Mare ( koki@aequus.net )	
+Frank Paul Silye ( frankps@gmail.com )		
+Maurice Kalinowski  ( maurice.kalinowski@yellowtab.com )	
+Daniel Texeira  ( daat@iscomputeron.com )	
+Begasus ( Begasus@skynet.be)			
+Kim ( bem@jcom.home.ne.jp)		
+Alan Westbrook ( alan.westbrook@yellowtab.com )	
+Steven D. Blackford ( kb7sqi@yahoo.com )
+
+#########################################################
+
+LISTA CLIENTI CHE HANNO PAGATO DIRETTAMENTE
+
+Christian Celona ( christian@celona.it )  (pagata a Giuseppe)
+
+
+
+##########################################################
+
+LISTA CLIENTI A CUI E' GIA' STATA INVIATA LA CHIAVE
+---------------------------------------------------
+
+United States		7
+Germany 			4
+Japan 			2
+Brasil				1
+Sweden			1
+Italy 				1
+Portugal			1
+--------------------------------------------
+totale			17
+
+
+17)Registered-To: Paul Artz
+Email: paulartz@mac.com
+Postal: 15 Channel Center St 310, Boston MA 02210, United States
+Total Amount Paid: USD 18.22
+Date: 2006-09-27
+Processed: 2006-09-27
+PaymentMethod: card
+Invoice: I530387774
+TransactionID: CHQ9PQZJG688
+Comment: Though I don't have a Be up at the moment, I wanted to help ASAP. Even at that, I waited too long.
+Note: SSL from 66.171.79.179 via KOOP 5.6.4aen for supplier 6FCQZ.
+
+16)Registered-To: Armin Hald
+Email: a-hald@ti.com
+Postal: Freisinger Str, Langenbach  , Germany
+Total Amount Paid: EUR 17.4
+Date: 2006-09-16
+Processed: 2006-09-16
+PaymentMethod: card
+Invoice: I529452879
+TransactionID: CHQQ1YSTHAW7
+Note: SSL from 212.144.156.73 via KOOP 5.6.4aen for supplier 6FCQZ.
+
+
+15)Registered-To: john skinner
+Email: olivero604@comcast.net
+Postal: 604 olivero rd # 13, modesto CA 95358, United States
+Total Amount Paid: EUR 15
+Date: 2006-06-08
+Processed: 2006-06-08
+PaymentMethod: card
+Invoice: I520840924
+TransactionID: CHCNWD7S3D3K
+Note: SSL from 67.187.147.82 via KOOP 5.6.2en for supplier 6FCQZ.
+
+
+14)Registered-To: Liz Holt
+Email: lizholt@mac.com
+Postal: 7510 W. 57th Ave, Suite B, Arvada Colorado 80002, United States
+Total Amount Paid: USD 18.32
+Date: 2006-06-08
+Processed: 2006-06-08
+PaymentMethod: card
+Invoice: I520782913
+TransactionID: CHC5HK3K1WH5
+Note: SSL from 71.56.221.226 via KOOP 5.6.2en for supplier 6FCQZ.
+
+13)Registered-To: Edward Falis
+Email: falis@verizon.net
+Postal: 26 Topsfield Rd, Ipswich MA 01938, United States
+Total Amount Paid: USD 18.3
+Date: 2006-06-01
+Processed: 2006-06-01
+PaymentMethod: card
+Invoice: I520198475
+TransactionID: CHCTXFZ5T7Q6
+Note: SSL from 70.19.195.67 via KOOP 5.6.2en for supplier 6FCQZ.
+
+12)Registered-To: Kristof Doebner
+Email: kristof.doebner@arcor.de
+Postal: Kristof Doebner / Kattowitzer Str. 27, Muenchen Bavaria D-81929, Germany
+Total Amount Paid: EUR 17.4
+Date: 2006-05-27
+Processed: 2006-05-27
+PaymentMethod: card
+Invoice: I519740154
+TransactionID: CHQYRXYY2TYN
+Note: SSL from 84.56.50.122 via KOOP 5.6.2en for supplier 6FCQZ.
+
+11)Registered-To: Mats Borg
+Email: mats_borg@bredband.net
+Postal: Värmlandsv 8D, Karlskoga Värmland 69132, Sweden
+Total Amount Paid: EUR 18.75
+Date: 2006-05-20
+Processed: 2006-05-20
+PaymentMethod: card
+Invoice: I519142904
+TransactionID: CHCE5FANUXAY
+Note: SSL from 83.226.1.6 via KOOP 5.6.1en for supplier 6FCQZ.
+
+10)Registered-To: Christian Winkler
+Email: bestellungen@cwinkler.net
+Postal: Bothestr. 23, Leipzig  04155, Germany
+Total Amount Paid: EUR 17.4
+Date: 2006-05-17
+Processed: 2006-05-17
+PaymentMethod: card
+Invoice: I518882946
+TransactionID: CHCUQRSJSA22
+Note: SSL from 194.138.39.54 via KOOP 5.6.1en for supplier 6FCQZ.
+
+9)Registered-To: Adam McNutt
+Email: kancept@nylonoxygen.com
+Postal: PO Box 4018, Hailey ID 83333, United States
+Total Amount Paid: USD 17.82
+Date: 2006-04-27
+Processed: 2006-04-27
+PaymentMethod: card
+Invoice: I517196426
+TransactionID: CHCQVMDFQE7T
+Comment: Sweet!
+Note: SSL from 204.134.212.146 via KOOP 5.6.0en for supplier 6FCQZ.
+
+8)Registered-To: Daniel Alexandre ArsÃ©nio Teixeira
+Email: daat.teixeira@gmail.com
+Postal: Av. Sto. AntÃ³nio, 63 - 2 Dto, Tercena Oeiras 2730-164 Barcarena, Portugal
+Total Amount Paid: EUR 18.15
+Date: 2006-04-27
+Processed: 2006-04-27
+PaymentMethod: card
+Invoice: I517178335
+TransactionID: CHCX0W731C28
+Note: SSL from 85.138.152.213 via KOOP 5.6.0en for supplier 6FCQZ.
+
+7)Registered-To: Andrea Bernardi
+Email: bernardi.andrea@gmail.com
+Postal: Via N.Tommaseo, 3, Scaltenigo di Mirano Venezia 30035, Italy
+Total Amount Paid: EUR 18
+Date: 2006-04-27
+Processed: 2006-04-27
+PaymentMethod: card
+Invoice: I517147269
+TransactionID: CHCNNS316S18
+Note: SSL from 87.5.240.235 via KOOP 5.6.0it for supplier 6FCQZ.
+
+6)Registered-To: Bruno Gonçalves de Albuquerque
+Email: bga@bug-br.org.br
+Postal: R. Voluntarios da Patria, 41/603A - Botafogo, Rio de Janeiro RJ 22270-000, Brazil
+Total Amount Paid: EUR 15
+Date: 2006-04-25
+Processed: 2006-04-25
+PaymentMethod: card
+Invoice: I517015790
+TransactionID: CHCJUPFUHNFK
+Comment: Thansk for this great program.
+Note: SSL from 200.165.235.197 via KOOP 5.6.0en for supplier 6FCQZ.
+
+5) Registered-To: Joseph Allen
+Email: josallen@newsguy.com
+Postal: 715 Hidden Creek Lane, North Aurora IL 60542, United States
+Total Amount Paid: USD 17.68
+Date: 2006-04-23
+Processed: 2006-04-23
+PaymentMethod: card
+Invoice: 1081312031
+TransactionID: CHCG0X8ACH8E
+Note: SSL from 67.184.27.203 via KOOP 5.5.2en for supplier 6FCQZ.
+
+
+4) Registered-To: Gregory North
+Email: gregnorth@sbcglobal.net
+Postal: 11355 Richmond Ave #1507, Houston TX 77082, United States
+Total Amount Paid: USD 17.68
+Date: 2006-04-23
+Processed: 2006-04-23
+PaymentMethod: card
+Invoice: I516810978
+TransactionID: CHC8ZE2V8F5S
+Note: SSL from 67.65.166.129 via KOOP 5.5.2en for supplier 6FCQZ.
+
+3) Registered-To: Toshihiro Kodera
+Email: mizki@gem.bekkoame.ne.jp
+Postal: 3701-6 fukami, yamato kanagawa 242-0011, Japan
+Total Amount Paid: EUR 15
+Date: 2006-04-23
+Processed: 2006-04-23
+PaymentMethod: card
+Invoice: I516805500
+TransactionID: CHCKWPRXU4T1
+Note: SSL from 210.79.164.82 via KOOP 5.5.2ja for supplier 6FCQZ.
+
+2) Registered-To: Koichi Kimura
+Email: bem@jcom.home.ne.jp
+Postal: Igusa 1-15-4, Suginami-ku Tokyo 167-0021, Japan
+Total Amount Paid: JPY 2168
+Date: 2006-04-11
+Processed: 2006-04-11
+PaymentMethod: card
+Invoice: I515798726
+TransactionID: CHCX17JHTQ12
+Note: SSL from 203.165.232.114 via KOOP 5.5.1ja for supplier 6FCQZ.
+
+1)   Registered-To: Sebastian Bernstein
+Email: sebe@blue-cable.de
+Postal: Moltkestr. 19, Plauen Sachsen 08523, Germany
+Total Amount Paid: EUR 17.4
+Date: 2006-04-11
+Processed: 2006-04-11
+PaymentMethod: card
+Invoice: I515787525
+TransactionID: CHCSM2XQPRDD
+Note: SSL from 62.117.2.174 via KOOP 5.5.1en for supplier 6FCQZ.
+
+
+

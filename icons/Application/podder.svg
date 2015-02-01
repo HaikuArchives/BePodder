@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 10.0, SVG Export Plug-In . SVG Version: 3.0.0 Build 76)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="32" height="32" viewBox="0 0 32 32" overflow="visible" enable-background="new 0 0 32 32" xml:space="preserve">
+	<g id="Layer_1">
+		<path fill="none" d="M32,32H0V0h32V32z"/>
+		<g opacity="0.33">
+			<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M30,24
+				c0,0.553-0.896,1-2,1s-2-0.447-2-1s0.896-1,2-1S30,23.447,30,24z"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M10,14l16,10"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M22,20l4,4"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M2,22l24,2"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14,28l12-4"/>
+		</g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M4.625,18.063L13.5,22.5
+				l5.892-5.891"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M7.25,14.125L13,17
+				l3.783-3.783"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M9.875,10.188L12.5,11.5
+				l1.674-1.674"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M22,20L12,7"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14,28L12,7"/>
+			<path fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M2,22L12,7"/>
+			<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14,4
+				c0,1.104-0.896,2-2,2s-2-0.896-2-2s0.896-2,2-2S14,2.896,14,4z"/>
+		</g>
+		<g>
+			<path fill="none" stroke="#000099" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.5,22.5l5.892-5.891"
+				/>
+			<path fill="none" stroke="#000099" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13,17l3.783-3.783"/>
+			<path fill="none" stroke="#000099" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12.5,11.5l1.674-1.674"
+				/>
+			<path fill="none" stroke="#0000FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.625,18.063L13.5,22.5
+				"/>
+			<path fill="none" stroke="#0000FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7.25,14.125L13,17"/>
+			<path fill="none" stroke="#0000FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.875,10.188L12.5,11.5
+				"/>
+			<path fill="none" stroke="#000099" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22,20L12,7"/>
+			<path fill="none" stroke="#0000FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14,28L12,7"/>
+			<path fill="none" stroke="#0000FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2,22L12,7"/>
+			<radialGradient id="XMLID_1_" cx="11.333" cy="3.333" r="2.404" fx="11.333" fy="3.333" gradientUnits="userSpaceOnUse">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="0.75" style="stop-color:#0000FF"/>
+				<stop  offset="1" style="stop-color:#0000CC"/>
+				<a:midPointStop  offset="0" style="stop-color:#FFFFFF"/>
+				<a:midPointStop  offset="0.5" style="stop-color:#FFFFFF"/>
+				<a:midPointStop  offset="0.75" style="stop-color:#0000FF"/>
+				<a:midPointStop  offset="0.5" style="stop-color:#0000FF"/>
+				<a:midPointStop  offset="1" style="stop-color:#0000CC"/>
+			</radialGradient>
+			<path fill="url(#XMLID_1_)" d="M14,4c0,1.104-0.896,2-2,2s-2-0.896-2-2s0.896-2,2-2S14,2.896,14,4z"/>
+		</g>
+		<path fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7.757,7.243
+			C6.672,6.157,6,4.657,6,3"/>
+		<path fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18,3
+			c0,1.657-0.672,3.157-1.757,4.243"/>
+		<path fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.929,10.071
+			C3.119,8.262,2,5.762,2,3"/>
+		<path fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22,3
+			c0,2.762-1.119,5.262-2.929,7.071"/>
+	</g>
+</svg>

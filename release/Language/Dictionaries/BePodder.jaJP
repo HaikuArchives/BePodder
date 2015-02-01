@@ -1,0 +1,789 @@
+# Locale file for BePodder.
+# Modified: 05/21/2006
+# Author:  Jorge G.Mare (koki)    & Koichi Kimura (a.k.a. KiM)
+# E-mail: koki@aequus.net         & bem@jcom.home.ne.jp
+
+
+# Attention: don't remove empty space or \n
+
+
+### SHAREWARE POPUPS -----------------------------------
+
+"Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n" 		"これはシェアウェアです!\n\nソフトウェアライセンスを購入して\n私達を支援してください!\n\n詳細情報はウェブサイトを御覧ください。\n"
+
+"This BePodder copy has expired!\nPlease buy a keyfile and support us.\n" 		"この BePodder のコピーは期限切れです!\nkeyfile を購入し、私達を支援してください。\n"
+
+"Web Site"					"ウェブサイト"
+
+"Can't connect!"					"Can't connect!"
+"Http port failed!"				"Http port failed!"
+"Can't resolve host!"				"Can't resolve host!"
+"Not found!"					"Not found!"
+"Bad resume!"					"Bad resume!"
+"Aborted by Callback!"				"Aborted by Callback!"
+"Can't resume! (range error)"		"Can't resume! (range error)"
+"Access Denied!"				"Access Denied!"
+"User or Password Incorrect!"		"User or Password Incorrect!"
+"Other error (cUrl code: "			"Other error (cUrl code: "
+"cUrl init error!"					"cUrl init error!"
+"Can't open file!"				"Can't open file!"
+"Other error (status code: "			"Other error (status code: "
+"Downloading"					"Downloading"
+
+
+### MENUBAR -----------------------------------
+
+"File"						"ファイル"
+"About..."					"BePodder について..."
+"Close!"    					"閉じる!"
+"Quit"						"終了"
+
+"Settings"					"設定"
+"Preferences..."				"BePodder の設定..."
+
+"Subscriptions"				"購読"
+
+"Episodes"					"エピソード"
+
+"Lists"						"リスト"
+"Podcast List"				"ポッドキャスト リスト"
+"Podcast directory list"			"ポッドキャスト ディレクトリ リスト"
+"Videoblog List"				"ビデオブログ リスト"
+"Videoblog directory list"			"ビデオブログ ディレクトリ リスト"
+"Imagefeeds List"				"イメージフィード リスト"
+"Imagefeeds directory list"		"イメージフィード ディレクトリ リスト"
+"Newsfeeds List"				"ニュースフィード リスト"
+"Newsfeeds directory list"			"ニュースフィード ディレクトリ リスト"
+"BitTorrentfeeds List"			"BitTorrentfeeds List"	
+"BitTorrentfeeds directory list"	"BitTorrentfeeds directory list"
+"Internationalfeeds List"		"Internationalfeeds List"	
+"Internationalfeeds directory list"	"Internationalfeeds directory list"
+
+"View"						"表示"
+"Full Screen"					"全画面表示"
+"Toolbar"					"ツールバー"
+"Subscriptions View"			"購読リスト表示"
+"Small Items"				"小"
+"Big Items"					"大"
+"Move BePodder on workspace:"	"ワークスペースを移動:"	
+
+"Help"						"ヘルプ"
+"Getting Started"  				"ご使用の前に..." 
+"Keyboard Shortcuts"			"キーボード ショートカット..."
+"Tutorials"					"チュートリアル"
+"Online Support"				"オンラインサポート"
+
+
+
+### BUTTONS -----------------------------------
+
+# Buttons add feed window
+
+"Insert the rss feed url!" 			"RSS フィード URL を入力"
+"Add"    					"追加"
+"Paste"					"貼り付け"
+
+
+# Buttons directory list window
+
+"Collapse All"				"Collapse All"
+"Preview"					"プレビュー"
+"Subscribe"					"購読"
+
+
+# Buttons help window
+
+"Next"						"次へ"
+"Prev"						"前へ"
+"Close"					"閉じる"
+"Index"					"インデックス"
+
+
+# Buttons remove windows
+
+"Cancel"					"中止"
+"Delete"					"削除"
+"Archive"					"アーカイブ"
+
+
+
+### TOOLTIPS -----------------------------------
+
+# Tooltips toolbar buttons
+
+"Add the podcast to the Subscriptions list" 			"ポッドキャストを購読リストに追加"
+"Delete the podcast from the Subscriptions list" 		"ポッドキャストを購読リストから削除"
+"Check the selected podcast for new items"			"新着項目のチェック"
+"Show the podcast homepage"					"ポッドキャストのホームページを開く"
+
+"Delete the enclosure file associated with the selected item"	"選択項目に関連する enclosure ファイルを削除"
+"Delete the enclosed file associated with the selected item"	"選択項目に関連する enclosure ファイルを削除"
+"Stop the item download"					"ダウンロードを停止"
+"Download the selected episode"				"ファイルをダウンロード"
+"Play the selected episode"					"ファイルを再生"
+
+"Submit bug and idea"						"バグや要望を投稿"
+
+
+# Tooltips directory window buttons
+
+"Collapse all categories in the directory list"        	"Collapse all categories in the directory list"
+"Add the selected podcast to the Subscription list" 	"選択したポッドキャストを購読リストに追加" 
+"Checkout a podcast before downloading it"		"ポッドキャストのダウンロード前に検査を終了する"
+
+
+### INFO PANEL -----------------------------------
+
+"Show channel Image"			"チャンネルの画像を表示"
+"XML Feed Link"				"XML フィードリンク"
+
+"Show Episode info" 			"エピソード情報を表示" 
+"Show Subscription info"			"購読情報を表示"
+"Show Downloads info"			"ダウンロード情報を表示"
+
+"Enclosure: "				"Enclosure: "
+
+"Lookup (Dictionary)"			"Dictionary で検索"
+"Lookup (Google)"				"Google で検索"
+"Lookup (Acronym Finder)"		"Acronym Finder で検索"
+"Copy"					"コピー"
+"Select All"					"すべて選択"	
+"Copy URL"					"URL をコピー"
+"Open URL"					"URL を開く"
+"Subscription"				"購読"
+
+
+### PREFERENCES -----------------------------------
+
+"Preferences"				"BePodder の設定"
+
+"Proxy"					"プロキシ"
+"Enable Proxy"				"プロキシを有効"
+"Address"					"アドレス"
+"Port"						"ポート"
+"Username"					"ユーザ名"
+"Password"					"パスワード"
+
+"Max Downloads"				"ダウンロード最大数"
+
+"FileType"					"ファイルタイプ"
+"Browser"					"ブラウザ"
+"Player"					"プレイヤー"
+
+"Channels"					"チャンネル"
+"Check all channels on startup"		"起動時に全チャンネルをチェック"
+"Check the channel every"		"チャンネルのチェック"
+
+"never"					"しない"
+"5 minutes"					"5 分毎"
+"15 minutes"					"15 分毎"
+"30 minutes"					"30 分毎"
+"1 hour"					"1 時間毎"
+"2 hour"					"2 時間毎"
+
+
+
+
+### COLUMLISTVIEW -----------------------------------
+
+
+"1 new item"					"1 個の新着項目"
+"%d new items"				"%d 個の新着項目"
+"new"						"新着"
+"error"						"エラー"
+"not down" 					"未ダウンロード"
+"enquequed"				"待機中"
+"downloading"  				"ダウンロード中"
+"downloaded"				"ダウンロード済"
+"connecting"				"接続中"
+"not found"					"見付かりません"
+"stopped"					"停止中"
+"can't connect"				"接続できません"
+"invalid format"				"無効なフォーマット"
+
+"Icon"					"Icon"
+"Title"  					"タイトル"
+"Date"						"日付"
+"Size"  					"サイズ"
+"Status" 					"状態"
+"Download" 					"ダウンロード"
+
+
+
+### CONTEXT MENU -----------------------------------
+
+"Add Channel"      				"チャンネルを追加"
+"Remove Channel"				"チャンネルを削除"
+"Check Channel"				"チャンネルをチェック"	
+"Open Homepage"				"ホームページを開く"
+
+"Open Web Page"				"ホームページを開く"
+"Open Enclosures folder"			"Enclosures フォルダを開く"
+"Check All Channels"			"全チャンネルをチェック"
+
+"Show Channel Image"			"チャンネルの画像を表示"	
+
+"Play enclosure"				"Enclosure を再生"
+"(Re)start download"			"ダウンロードを(再)開始"
+"Stop download"				"ダウンロードを停止"	
+"Remove Item"				"項目を削除"
+
+
+
+
+### ALERT -----------------------------------
+
+"You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"      "You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n" 
+
+
+"Can't open the selected file with:\n\n"           	"Can't open the selected file with:\n\n"
+"\n\nPlease check if the application is installed in the right way.\n"     "\n\nPlease check if the application is installed in the right way.\n"
+"Download it!"	"Download it!"
+
+"\nRemoving.."					"\n削除中.."
+"\nAn error occured while removing!"		"\n削除中にエラーが発生しました。"
+"Check all the podcasts for new items"	"全ポッドキャストの新着項目をチェック"
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+_key="alert1"
+ _value="
+選択した項目を削除します。
+
+本当によろしいですか? 
+(Enclosure ファイルも一緒に削除されます)"
+
+
+_key="alert2a"
+ _value="
+次のチャンネルを削除しようとしています:
+
+" 
+
+_key="alert2b"
+ _value="
+
+今までダウンロードしたこのチャンネルの enclosure ファイルをアーカイブに保存しますか?
+それとも完全に削除しますか?" 
+				
+_key="alert3"
+ _value="
+アーカイブを解析中.."
+
+_key="alert_3gp"
+ _value="
+3GP is a multimedia container format defined by the Third Generation Partnership Project (3GPP) for use on 3G mobile phones. It stores video streams as MPEG-4 or H.263, and audio streams as AMR-NB or AAC-LC.
+
+VideoLAN still doesn't support the audio AMR (3GPP)"
+
+_key="alert_swf"
+ _value="
+SWF is a proprietary vector graphics file format produced by the Flash software from Adobe (formerly Macromedia).
+
+Currently Flash support in BeOS/Haiku/Zeta is limited to the old standalone Flash player version 4.1015, there isn't a modern Flash player"
+
+
+
+### HELP & SHORTCUTS -----------------------------------
+
+
+"Introduction"				"紹介"
+"The User Interface"			"ユーザ インタフェース"
+"Menu Bar"					"メニューバー"
+"Toolbar Buttons"				"ツールバー ボタン"
+"First time with BePodder"		"はじめて BePodder をご使用の方へ"
+"Download Podcast's enclosure files"	"ポッドキャスト enclosure ファイルのダウンロード"
+"Settings Overview"			"設定の概要"
+"Directory lists"				"ディレクトリ リスト"
+"Loading Help..."				"ヘルプの読込中..."
+"Register your copy"			"登録について"
+"Starting point"				"はじめに"
+
+
+
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+
+_key="help1-0"
+ _value="BePodder 基本ガイドへようこそ!"
+
+_key="help1-1"
+ _value="あなたが既にポッドキャストおよびRSS/Atomフィード
+について詳しいならば、このウィンドウを閉じて直ち
+にBePodderを使い始めることができます。"
+
+_key="help1-2"
+_value="このガイドはBePodderを開始するにあたり、あなたが必要とする
+知識をすべて提供できるわけではありませんが、本ガイドを使用
+する場合には下のボタンをクリックしてください。"
+
+
+
+_key="help2-0"
+ _value=" ポッドキャスティングとはインターネットを通してオーディオおよび
+ビデオ放送を発信する手段です。BePodderでは、無償のオーディオ
+およびビデオファイルへのRSSまたはAtomフィードへのリンクを同封
+しています。"
+
+_key="help2-1"
+_value="要するに、ポッドキャスティングとは単に一種のオンラインメディア
+の配達手段です。ユーザがフィード (RSS 'Really Simple Syndication'
+やAtomなど)を使用し、ポッドキャストを購読することができます。"
+
+_key="help2-2"
+_value="BePodderはアグリゲータ(または、ポッドキャッチャー)に
+好まれるでしょう。あなたが新しいコンテンツのRSSフィ
+ードを購読して、定期的にチェックし、ダウンロードする
+ための1つのソフトウェアです。あなたはBePodderと共に
+購読したチャンネルに新しいポッドキャストの項目(エピ
+ソード)をチェックすることができます。
+丁度、電子メールが添付ファイルを扱えるように、どんな
+項目の enclosure を同梱することができます。"
+
+
+
+_key="help3-0"
+_value="BePodderは簡単に使用でき、かつパワフルなグラフィカルユーザ
+インタフェースを備えています。
+メインウィンドウは３つのパネルに分割されています。"
+
+_key="help3-1"
+_value="1) 購読リスト(スクリーンショットの１番のパネル)はあなたが購読
+登録したポッドキャストのリストです。 
+パネル２はチャンネルのリストです。
+クリックするとチャンネルを見ることができます。"
+
+_key="help3-2"
+_value="2) エピソードリストは全項目が利用できる状態です。"
+
+_key="help3-3"
+_value="3) 情報パネルの表示:エピソード情報、チャンネル情報、ダウンロード
+情報は３つの内１つをクリックすることにより、情報パネルを選択す
+ることができます。"
+
+
+
+_key="help4-0"
+_value="BePodderのメインウィンドウ最上部にあるメニューバーでは以下の
+７つのメニューを利用することができます:
+[ファイル][設定][購読][エピソード][リスト][表示][ヘルプ]
+一部のメニューコマンドには右側に矢印があり、関連するコマンドが
+サブメニューにあります。各メニューを探る場合には、サブメニュー
+にも必ず目を通してください。メニューをクリックして、コマンドを
+確認してください:"
+
+_key="help4-1"
+_value="[ファイル]:BePodderについての情報の表示およびアプリケーションを
+閉じるコマンドを含んでいます。"
+
+_key="help4-2"
+_value="[設定]:BePodderの様々な設定をカスタマイズする環境設定ウィンドウ
+を開くコマンドを含んでいます。"
+
+_key="help4-3"
+_value="[購読]:購読リストの選択されたチャンネルへの動作を実行するコマン
+ドを含んでいます。"
+
+_key="help4-4"
+_value="[エピソード]:チャンネルのエピソードリストの選択された項目(エピソ
+ード)への動作を実行するコマンドを含んでいます。"
+
+_key="help4-5"
+_value="[リスト]:BePodderのOPMLディレクトリを開くコマンドを含んでいま
+す。"
+
+_key="help4-6"
+_value="[表示]:BePodderのウィンドウ制御のコマンドを含んでいます。"
+
+_key="help4-7"
+_value="[ヘルプ]:'基本ガイド''キーボードショートカットリスト'を開くコマンド
+を含んでいます。"
+
+_key="help5-0"
+ _value="追加ボタン: 追加ウィンドウを開きます。
+追加するフィードのURLを入力します。                         
+(例: http://www.newpodcast.com/rss.xml)
+通常、ポッドキャストのホームページ上で'XML'、'RSS'、
+'Podcast Feed'のテキストもしくはグラフィックのリンク
+を得ることができます。"
+
+_key="help5-1"
+ _value="削除ボタン: チャンネルを除去するためにウィンドウを開
+き、どのようにするかを選択することができます。
+選んだチャンネルをアーカイブするか(今までダウンロー
+ドした全てのファイルと eclosure を保持します)、また
+はコンピュータからチャンネル全体を削除します。" 
+
+_key="help5-2"
+ _value="チェックボタン: 選択されたチャンネルをチェックし、利
+用可能なリストの項目を更新し、ポッドキャストの新着
+項目を追加します。" 
+
+_key="help5-3"
+ _value="ウェブボタン: ブラウザでチャンネルホームページを表示
+します。
+あなたのお気に入りのブラウザを開くにはBePodderの
+環境設定で設定します。
+メニューバーの'設定'→'BePodder の設定'をクリックし、
+環境設定ウィンドウの'ファイルタイプ'でお気に入りの
+ブラウザを選択してください。" 
+
+_key="help5-4"
+ _value="再生ボタン: このボタンで、選択された項目(エピソード)
+のenclosureファイルを視聴することができます。
+あなたのお気に入りのプレーヤーを開くにはBePodder
+の環境設定で設定します。
+メニューバーの'設定'→'BePodder の設定'をクリックし、
+環境設定ウィンドウの'ファイルタイプ'でお気に入りの
+プレーヤーを選択してください。" 
+
+_key="help5-5"
+ _value="ダウンロードボタン: 選択項目(エピソード)のenclosure
+ファイルのダウンロードを行います。情報パネルの上の
+３番目のボタンをクリックすることにより、ダウンロー
+ド情報を見ることができます。" 
+
+_key="help5-6"
+ _value="停止ボタン: 選択項目(エピソード)のenclosureファイル
+ダウンロードを停止します。ダウンロードを再開するた
+めに、項目(エピソード)をダブルクリックするか、項目
+を選択してから、ダウンロードボタンをクリックしてく
+ださい。" 
+
+_key="help5-7"
+ _value="削除ボタン: 選択項目を削除します。
+ (enclosureファイルを解放します)" 
+
+
+
+_key="help6-0"
+ _value="BePodderの導入はとても簡単です。" 
+
+_key="help6-1"
+ _value="次のようにすれば、あなたが購読した
+フィードを参照することができます。
+私達はあなたのために、予めいくつか
+のフィードを購読しており、あなたは
+二通りの方法で追加することができま
+す。"
+
+_key="help6-2"
+ _value="1) 「追加アイコン」ボタンをクリックすると、フィードのURL入力に
+なります。 (入力例: http://www.newpodcast.com/rss.xml)
+「追加」ボタンをクリックして購読します。" 
+
+_key="help6-3"
+ _value="2) メニューバーにある「ディレクトリ」から「ポッドキャスト リスト
+」または 「ビデオブログ リスト」を選択し、ポッドキャストを選んで
+「購読」をクリックします。"
+
+_key="help6-4"
+ _value="購読リストでポッドキャストを選択して、チェックボタン使用してく
+ださい。BePodder は正確に 'エピソードリスト' に新しい項目を追加
+します。右クリックして、コンテキストメニューから'全チャンネルを
+チェック'を選択することにより、すべてのポッドキャストをチェック
+することができます。"
+
+_key="help6-5"
+ _value="上のスクリーンショットを見てください。'エピソードリスト'の第１
+カラムには黒いドットによって示された３つの新着項目があります。"
+
+_key="help6-6"
+ _value="第２カラムには、項目の状態を示すアイコンがあります:"
+
+_key="help6-7"
+ _value="- Episode 4 のアイコンは、エラーを示します。"
+
+_key="help6-8"
+ _value="- Episode 3 のアイコンは、項目のenclosureファイルをダウンロード
+要求中であることを示します。"
+
+_key="help6-9"
+ _value="- Episode 2 のアイコンは、項目のenclosureファイルをダウンロード
+中であることを示します。"
+
+_key="help6-10"
+ _value="- Episode 1 のアイコンは、項目のenclosureファイルをダウンロード
+したこと示します。"
+
+
+
+_key="help7-0"
+ _value=" 'エピソードリスト'で項目を選択して、項目をダブルクリックするか、
+またはダウンロードボタンをクリックしてください。ダウンロードは
+停止ボタンをクリックすることでいつでも停止することができます。"
+
+_key="help7-1"
+ _value="予約購読で利用できるすべての項目を'エピソードリスト'で見るために
+は、ソフトウェアの'購読リスト'で予約購読されたポッドキャストをク
+リックしてください。項目を選択し、再生(再生ボタン)をクリックして
+、ファイルを視聴してください。"
+
+_key="help7-2"
+ _value="情報パネルでフォルダアイコンをクリックするか、またはマウスを右
+クリックすることにより、コンテキストメニューから'Enclosures フォ
+ルダを開く'を選択することで、Enclosuresフォルダにアクセスするこ
+とができます。"
+
+
+
+_key="help8-0"
+ _value="メニューバーの'設定'→'BePodderの設定'をクリックすることで、環境
+設定へアクセスすることができます。環境設定ダイアログの左側のリ
+スト'ファイルタイプ'、'チャンネル'、'ダウンロード'、'プロキシ'からカ
+テゴリを選択してください。"
+
+_key="help8-1"
+ _value="- ファイルタイプ: デフォルトのブラウザとプレーヤーを指定します。 "
+
+_key="help8-2"
+ _value="- チャンネル: チャンネルの新着項目のチェックについての制御の設定
+です。アプリケーションの起動と同時に全チャンネルのチェックを行
+うかチャンネルのチェック間隔を指定します。"
+
+_key="help8-3"
+ _value="- ダウンロード: 同時にダウンロードすることができる、最大ファイル
+数を指定します。"
+
+_key="help8-4"
+ _value="- プロキシ: BePodderで使用するプロキシサーバの設定を行います。
+プロキシサーバはあなたのローカルエリアネットワークとインターネ
+ット間のセキュリティバリアとして機能します。インターネットから
+あなたのローカルエリアネットワークへの不正アクセスを防止します。"
+
+
+
+_key="help9-0"
+ _value="BePodder has built-in podcast, videoblog, imagefeeds, newsfeeds, bittorrentfeeds and internationalfeeds OPML directories with thousands of feeds grouped by category."
+
+_key="help9-1"
+ _value="OPML (Outline Processor Markup Language) はアプリケーション間
+のアウトラインで構造化された情報の交換を許容するXMLベースの形
+式です。"
+
+_key="help9-2"
+ _value="OPML directory can be accessed by clicking in the menu-bar 'Lists' and thenselecting a list. To browse the opml directory for a feed, expand the list by clicking the arrow of the category that you are interested in (see image); using this method, you can expand the opml directory until you find the desired feed. Once you have selected it, you can add it to the subscription list by clicking the button 'Subscribe', you can also collapse all categories in the directory list by clicking the button 'Collapse All'."
+
+
+_key="help_shortcut1"
+_value="このページはBePodderで使用することができるキーボードショート
+カットについて説明します。"
+
+_key="help_shortcut2"
+_value="Alt/Ctrl キーはどちらでも使えます。
+(例:Alt+QまたはCtrl+Qでアプリケーションを終了)
+どちらを使用するかはDeskbar-環境設定(Preferences)
+→キーボード(Keyboard)で設定できます。
+(デフォルトはAlt)"
+
+_key="help_shortcut3"
+ _value="一般的なショートカット"
+
+_key="help_shortcut4"
+ _value="アプリケーションを終了"
+
+_key="help_shortcut5"
+ _value="「BePodder の設定」を開く"
+
+_key="help_shortcut6"
+ _value="ポッドキャスト ディレクトリ リスト
+を開く"
+
+_key="help_shortcut7"
+ _value="ビデオブログ ディレクトリ リスト
+を開く"
+
+_key="help_shortcut8"
+ _value="イメージフィード ディレクトリ リスト
+を開く"
+
+_key="help_shortcut9"
+ _value="ニュースフィード ディレクトリ リスト
+を開く"
+
+
+_key="help_shortcut9b"
+ _value="Shows the BitTorrentfeeds directory list"
+
+_key="help_shortcut9c"
+ _value="Shows the Internationalfeeds directory list"
+
+_key="help_shortcut10"
+ _value="全画面表示"
+
+_key="help_shortcut11"
+ _value="ツールバーの表示/非表示"
+
+_key="help_shortcut12"
+ _value="「ご使用の前に」を表示"
+
+_key="help_shortcut13"
+ _value="「キーボード ショートカット」を表示"
+
+_key="help_shortcut14"
+ _value="チャンネルのショートカット"
+
+_key="help_shortcut15"
+ _value="ポッドキャストを購読リスト 
+に追加"
+
+_key="help_shortcut16"
+ _value="ポッドキャストを購読リスト
+から削除"
+
+_key="help_shortcut17"
+ _value="選択中のポッドキャストの新着項目
+をチェック"
+
+_key="help_shortcut18"
+ _value="全ポッドキャストの新着項目
+をチェック"
+
+_key="help_shortcut19"
+ _value="ポッドキャストのホームページ
+を開く"
+
+_key="help_shortcut20"
+ _value="Enclosures フォルダを開く"
+
+_key="help_shortcut21"
+ _value="エピソードのショートカット"
+
+_key="help_shortcut22"
+ _value="Enclosure を再生"
+
+_key="help_shortcut23"
+ _value="選択したエピソードのダウンロード
+を(再)開始"
+
+_key="help_shortcut24"
+ _value="エピソードのダウンロードを停止"
+
+_key="help_shortcut25"
+ _value="選択したエピソードの削除"
+
+_key="help_shortcut26"
+ _value="ポッドキャストのホームページを開く"
+
+_key="help_shortcut27"
+ _value="Enclosures フォルダを開く"
+
+_key="help_buy1"
+ _value="BePodder Light is the basic version (free download and no time limited), the registered version adds some more nice features: unlimited number of channels, small Channel view, proxy support, automatic channels check, up to 5 enclosure downloads at the same time (multithreading)."
+
+_key="help_buy2"
+ _value="BePodderのライセンスはKagiからオンライン購入することができ
+ます。シェアウェア料をお支払いください。
+１５ユーロになります(いくつかの国はKagiに税を課金します)。"
+
+_key="help_buy3"
+ _value="購入先: www.funkyideasoft.com"
+
+_key="help_buy4"
+ _value="購入後、keyfileとそのインストール方法を記した電子メールがあな
+たに送られます。添付ファイルを解凍して、あるディレクトリに
+ファイルを移動するだけです。"
+
+_key="help_buy5"
+ _value="BePodderの新バージョンが出てもアップデートに支障はありませ
+ん。別な方法で通知された場合を除き、keyfileはダウンロードでき
+るパッケージを全て解除します。"
+
+
+###
+
+"Opml Editor"			  	"OPML エディタ"
+"name:"			     		"名前:"
+"Add a categorie" 				"カテゴリの追加"
+"Add a new Broadcast" 			"新しく放送を追加" 
+"feed:"					"フィード:"
+"url:"				   		"URL:"
+"Test podcast"				"ポッドキャストのテスト"
+"Del a categorie"				"カテゴリの削除"
+"Add a categorie"				"カテゴリの追加"
+"Select the podcast categorie:"		"ポッドキャスト カテゴリの選択:"
+"Check all" 					"すべてチェック"
+"Check"					"チェック"
+"Refresh the list"				"リストの更新"
+"Load"					"読込"
+"Load the list"				"リストを読込"
+"Save"						"保存"
+"Save the list"				"リストを保存"
+"Revert"					"元に戻す"
+"Apply"					"適用"
+
+
+
+
+### LANGUAGE -----------------------------------
+
+"Afrikaans"					"アフリカーンス語"
+"Albanian"					"アルバニア語"
+"Arabic"					"アラビア語"
+"Armenian"					"アルメニア語"
+"Belarusian"					"ベラルーシ語"
+"Bosnian"					"ボスニア語"
+"Breton"					"ブルターニュ語"
+"Bulgarian"					"ブルガリア語"	
+"Catalan"					"カタロニア語"
+"Chechen"					"チェチェン語"
+"Chinese"					"中国語"
+"Czech"					"チェコ語"
+"Danish"					"デンマーク語"
+"Dutch"					"オランダ語"
+"English"					"英語"
+"Esperanto"					"エス語"
+"Estonian"					"エストニア語"
+"Finnish"					"フィンランド語"	
+"French"					"フランス語"
+"Georgian"					"グルジア語"	
+"German"					"ドイツ語"
+"Gaelic (Scots)"				"ゲール語 (スコットランド)"
+"Irish"						"アイルランド語"
+"Greek, Modern ()"				"Greek, Modern ()"
+"Hebrew"					"ヘブライ語"
+"Hungarian"					"ハンガリー語"
+"Icelandic"					"アイスランド語"
+"Indonesian"				"インドネシア語"
+"Italian"					"イタリア語"
+"Japanese"					"日本語"
+"Korean"					"朝鮮語"
+"Lithuanian"					"リトアニア語"
+"Moldavian"					"モラビア語"
+"Mongolian"					"モンゴル語"
+"Norwegian"					"ノルウェー語"
+"Norwegian Nynorsk"			"Norwegian Nynorsk"
+"Norwegian Bokmål"			"Norwegian Bokmål"
+"Polish"					"ポーランド語"
+"Portuguese"				"ポルトガル語"
+"Romanian"					"ルーマニア語"
+"Russian"					"ロシア語"	
+"Serbian"					"セルビア語"
+"Croatian"					"クロアチア語"
+"Sinhalese"					"シンハラ語"
+"Slovak"					"スロバキア語"
+"Slovenian"					"スロべニア語"
+"Spanish"					"スペイン語"
+"Swedish"					"スウェーデン語"
+"Ukrainian"					"ウクライナ語"
+
+"Downloads" 				"ダウンロード"
+"BePodder Keyboard Shortcuts"	"BePodder のキーボードショートカット"
+"General"					"全般"
+"Archive"					"アーカイブ保存"
+"Toolbar Overview"				"ツールバーの概要"
+"Please feedback :)"			"フィードバック送信"
+"Unexpected error in window \"BePodder\".Should an attempt be made to continue running?"	"BePodder のウィンドウで予期せぬエラーが発生しました。再試行してみますか?"
+"Continue"					"続行"
+"Developers:"				"開発者:"
+"Graphic:"					"グラフィック:"
+"Version :"					"バージョン :"
+"Licensed to :"				"登録者 :"
+"License code:"				"登録コード:"
+"Only this person is allowed to use this copy of the software."	"このソウトウェアは個人利用のみに使用することができます。"
+"Getting Started With BePodder"        "BePodder をご使用の前に"
+"What are Podcasts?"			"ポッドキャストとはなにか?"
+"Find this Item"				"この項目を検索"
+"Remove from this list"			"このリストから削除"
+

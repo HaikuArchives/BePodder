@@ -1,0 +1,117 @@
+
+SubDir TOP sources ;
+
+SubDirHdrs $(OBJECTS_DIR) sources ;
+
+if $(OSPLAT) = X86 {
+	C++FLAGS += -Wno-sign-compare -Wno-overloaded-virtual ;
+}
+
+if ZETA in $(DEFINES) {
+	echo "ZETA VERSION (NO MORE SUPPORTED)" ;
+	BP_LIBS = libs/libfunky.a libs/librunview.a libs/libfish.a libs/libclv.a libs/libcurl.a libs/libxml2.a be root translation tracker iconv ssl crypto z ;
+	LINKLIBS = -lsocket -lbind -lzeta ;
+	
+
+} else {
+    echo "Haiku VERSION (compiled for net_server)" ;
+	BP_LIBS = libs/libfunky.a libs/librunview.a libs/libfish.a libs/libclv.a curl xml2 be root translation tracker iconv ssl crypto z ;
+	LINKLIBS = -lnetwork -lstdc++ ;
+}
+
+echo "Extra library" ;
+echo $(LINKLIBS) ;
+
+SAVED_DEFINES = $(DEFINES) ;
+
+DEFINES = $(SAVED_DEFINES) ;
+#DEFINES += ZETA ;
+
+SubDirSysHdrs /boot/home/config/include ;
+SubDirSysHdrs $(TOP)/include/ ;
+SubDirSysHdrs $(TOP)/include/r5-only ; 
+SubDirSysHdrs $(TOP)/include/curl ;
+SubDirSysHdrs $(TOP)/include/runview ;
+SubDirSysHdrs $(TOP)/include/lbxml ;
+SubDirSysHdrs $(TOP)/include/libfunky ;
+SubDirSysHdrs $(TOP)/include/libclv ;
+SubDirSysHdrs $(TOP)/include/libfish ;
+SubDirSysHdrs $(TOP)/sources/ ;
+
+LINKFLAGS += -L/boot/home/config/lib ;
+#LINKFLAGS += -L$(TOP)/libs/ ;
+LINKFLAGS += -L/boot/develop/headers/be ; 
+
+
+#<pe-src>
+Application BePodder : 
+	ActionAsync.cpp
+	ActionAsyncWrapper.cpp
+	ActionDelete.cpp
+	ActionDownload.cpp
+	ActionHTTPContent.cpp
+	AddWindow.cpp
+	AttributeDumper.cpp
+	AttributeExtractor.cpp
+	BitmapWindow.cpp
+	BPAlert.cpp
+	BPEpisode.cpp
+	BPSettingsWindow.cpp
+	ChannelSettingsWindow.cpp
+	Cursors.cpp
+	DirectoryWindow.cpp
+	DownloadListItem.cpp
+	DownloadListView.cpp
+	DownloadManager.cpp
+	ElementNotifier.cpp
+	EntryIterator.cpp
+	EpisodeListItem.cpp
+	EpisodeListView.cpp
+	Extractor.cpp
+	FileStatusColumn.cpp
+	GreenBoxTextRender.cpp
+	GroupItem.cpp
+	HelpWindow.cpp
+	htmlparse.cpp
+	IABPChannel.cpp
+	IABPDownload.cpp
+	IABPGroup.cpp
+	IABPItem.cpp
+	IActionManagerBP.cpp
+	IActionMenuItem.cpp
+	IconMenuItem.cpp
+	IconTextItem.cpp
+	ImageButton.cpp
+	Logger.cpp
+	Main.cpp
+	MainController.cpp
+	MainWindow.cpp
+	MemoryArchive.cpp
+	MyColumnTypes.cpp
+	NodeWalker.cpp
+	Notifier.cpp
+	OPMLParser.cpp
+	PercentageView.cpp
+	PercentageWindow.cpp
+	QueueFileDownload.cpp
+	QueueMultiActions.cpp
+	R5Locale.cpp
+	RssChannel.cpp
+	RssItem.cpp
+	SectionSelector.cpp
+	SettingsWindow.cpp
+	SplitPane.cpp
+	StackedView.cpp
+	StripeView.cpp
+	SubscriptionColumn.cpp
+	SubscriptionListItem.cpp
+	SubscriptionListView.cpp
+	TextControlFloater.cpp
+	TheApp.cpp
+	TitleTextRender.cpp
+	XMLChannelExtractor.cpp
+	XMLItemExtractor.cpp
+	: $(BP_LIBS)
+	;
+#	</pe-src>
+

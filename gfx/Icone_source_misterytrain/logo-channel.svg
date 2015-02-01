@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docbase="C:\Documenti\misterytrain"
+   sodipodi:docname="logo-channel.svg"
+   inkscape:version="0.40+cvs"
+   sodipodi:version="0.32"
+   id="svg2619"
+   viewBox="0 0 32 32"
+   height="32"
+   width="32">
+  <metadata
+     id="metadata2651">
+    <rdf:RDF
+       id="RDF2653">
+      <cc:Work
+         id="Work2655"
+         rdf:about="">
+        <dc:format
+           id="format2657">image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+           id="type2659" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2649" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg2619"
+     inkscape:window-y="154"
+     inkscape:window-x="154"
+     inkscape:cy="16.000000"
+     inkscape:cx="16.000000"
+     inkscape:zoom="11.312500"
+     inkscape:window-height="540"
+     inkscape:window-width="640"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <path
+     id="path2621"
+     d="M32,32H0V0h32V32z"
+     fill="none" />
+  <g
+     style="fill:none;stroke:#000000;stroke-width:2.0000000;stroke-linecap:round;stroke-linejoin:round"
+     id="g1672">
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2624"
+       d="M6,19l-4,4l4,4" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2626"
+       d="M26,19l4,4l-4,4" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2628"
+       d="M9,23l7-14l7,14" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2630"
+       d="M10,21h12l-10-4h8l-6-4 h4" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2632"
+       d="M22,21H10l10-4h-8l6-4 h-4" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2634"
+       d="M17,6 c0,0.552-0.448,1-1,1c-0.552,0-1-0.448-1-1s0.448-1,1-1C16.552,5,17,5.448,17,6z" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2636"
+       d="M13.171,8.829 C12.448,8.104,12,7.104,12,6" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2638"
+       d="M20,6 c0,1.104-0.448,2.104-1.172,2.829" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2640"
+       d="M10.343,11.656 C8.896,10.209,8,8.209,8,6" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2642"
+       d="M24,6 c0,2.209-0.896,4.209-2.344,5.656" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2644"
+       d="M7.514,14.485 C5.343,12.313,4,9.313,4,6" />
+    <path
+       style="stroke-linejoin:round;stroke-linecap:round"
+       id="path2646"
+       d="M28,6 c0,3.313-1.344,6.313-3.515,8.485" />
+  </g>
+</svg>

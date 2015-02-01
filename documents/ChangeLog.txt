@@ -1,0 +1,52 @@
+since 1.2.5
+	- prima implementazione di una metodo visivo per vedere il drag di un canale.
+	- fixed big/small view per i canali e i gruppi
+	- le info di cache e dei gruppi sono salvate come attributi della
+		'archive' directory.. questo rende possibile più usi di BP.
+	- se l'archive directory non esiste, viene creata!
+	- groups :
+		- add
+		- rename [ICONA??]
+		- check channel
+		- remove group
+		- da fixare il riordino.
+	- fast browsing (da testare e finire)
+	- multi selection (da finire)
+	- per channel settings. [DA RIPENSARE]
+	
+
+since 1.2 bebits release:
+
+
+-release 1.2.5 (riassunto dei cambiamenti per gli utenti)
+	
+	- better MimeType recognition (after downloading a file).
+	- Fixed some drawing issues. Less useless re-drawing (less flickering while checking channels).
+	- the 'archive' folder can now be a symlink.
+	- Fixed a bug that prevent to load preferences in the Light version.
+	- Added a paperclip icon for episodes with enclosure.
+	- Added a "Check for updates" feature
+
+
+
+- added "check for update"
+	- engine
+	- setting
+	- menu
+
+- added 'paperclip' icon.
+
+- fixed the light-preference bug
+
+- archive can now be replaced with a link to a folder.
+
+- removed useless printfs (Committed revision 57.)
+
+- speeded up the redrawing function in MainController: now the Subscription view in not always redrawen. (added main_win->RefreshSubscription(SubscriptionListItem* row);) Also the EpisodeList gains a LOT of drawing speed.. with the function ( fView->RefreshEpisode(dx_list,sel);)
+
+
+- introduced ActionSync (later should be moved to a libfunky, and maybe do a libcurlaction.a with action based on curl)
+
+- fileType fix: se non viene scoperto e settato il filetype dal downloader, si chiede a beos di identificarlo.
+
+- fixed CLV color drawing.

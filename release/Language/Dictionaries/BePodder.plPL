@@ -1,0 +1,599 @@
+
+# Locale file for BePodder.
+# Modified: 4/18/2006
+# Author:     BePodderTeam       
+# E-mail:        bepodder.team@gmail.com
+
+
+# Attention: don't remove empty space or \n
+
+
+### SHAREWARE POPUPS -----------------------------------
+
+"Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n"           "Aplikacja shareware!\n\nWspieraj rozwój tego programu!\n\nKup licencję!\nWięcej informacji na naszej stronie\n"
+
+"This BePodder copy has expired!\nPlease buy a keyfile and support us.\n"           "Okres darmowego użytkowania programu dobiegł końca!\nKup klucz licencyjny i wesprzyj rozwój aplikacji.\n"
+
+"Web Site"          "Strona www"
+
+"Can't connect!"                         "Brak połączenia!"
+"Http port failed!"                    "Błąd portu Http!"
+"Can't resolve host!"                    "Host nieznaleziony!"
+"Not found!"                         "Nie znaleziono!"
+"Bad resume!"                         "Niepoprawne wznowienie!"
+"Aborted by Callback!"                    "Przerwane!"
+"Can't resume! (range error)"          "Nie można ponowić! (błąd zasięgu)"
+"Access Denied!"                    "Dostęp zabroniony!"
+"User or Password Incorrect!"          "Hasło użytkownika niepoprawne!"
+"Other error (cUrl code: "               "Inny błąd (cUrl code: "
+"cUrl init error!"                         "cUrl init error!"
+"Can't open file!"                    "Nie można otworzyć pliku!"
+"Other error (status code: "               "Inny błąd (status code: "
+"Downloading"                         "Pobieranie"
+
+
+### MENUBAR -----------------------------------
+
+"File"               "Plik"                              
+"About..."          "O programie..."                    
+"Close!"              "Zamknij!"                   
+"Quit"          "Wyjdź"                    
+
+"Settings"          "Ustawienia"          
+"Preferences..."     "Preferencje..."          
+
+"Subscriptions"     "Subscrypcje"               
+
+"Episodes"          "Epizody"               
+
+"Lists"                         "Listy"          
+"Podcast List"                    "Listy podcastów"
+"Podcast directory list"               "Katalog list podcastów"          
+"Videoblog List"                    "Listy wideoblogów"
+"Videoblog directory list"          "Katalog list wideoblegów"
+"Imagefeeds List"               "Lista obrazków"          
+"Imagefeeds directory list"          "Katalog list obrazków"
+"Newsfeeds List"               "Lista newsów"     
+"Newsfeeds directory list"          "Katalog list newsów"
+"BitTorrentfeeds List"               "Lista BitTorrentów"     
+"BitTorrentfeeds directory list"     "Katalog list BitTorrentów"
+"Internationalfeeds List"          "Lista międzynarodowa"     
+"Internationalfeeds directory list"     "Katalog list międzynarodowych"
+
+"View"                         "Widok"               
+"Full Screen"                    "Pełny ekran"          
+"Toolbar"                         "Toolbar"          
+"Subscriptions View"               "Widok subskrypcji"
+"Small Items"                    "Małe ikonki"     
+"Big Items"                    "Duże ikonki"     
+"Move BePodder on workspace:"     "Przesuń BePoddera do pulpitu:"     
+
+"Help"                         "Pomoc"
+"Getting Started"                 "Dla początkujących" 
+"Keyboard Shortcuts"               "Skróty klawiaturowe"     
+"Tutorials"                         "Poradniki"
+"Online Support"                    "Wsparcie online"          
+
+
+
+
+### BUTTONS -----------------------------------
+
+# Buttons add feed window
+"Insert the rss feed url!"           "Podaj adres url kanału rss!"      
+"Add"                             "Dodaj"                   
+"Paste"                         "Wklej"
+
+# Buttons directory list window
+"Collapse All"                    "Zwiń wszystko"     
+"Preview"                         "Podgląd"          
+"Subscribe"                    "Subskrybuj"     
+
+
+# Buttons help window
+"Next"                         "Następny"     
+"Prev"                         "Poprzedni"          
+"Close"                         "Zamknij"               
+"Index"                         "Indeks"                    
+
+
+# Buttons remove windows
+"Cancel"                         "Zaniechaj"          
+"Delete"                         "Usuń"          
+"Archive"                         "Archiwum"          
+
+
+
+### TOOLTIPS -----------------------------------
+
+# Tooltips toolbar buttons
+
+"Add the podcast to the Subscriptions list"                     "Dodaj podcast listy subskrypcji"      
+"Delete the podcast from the Subscriptions list"                "Usuń podcast z listy subskrypcji"
+"Check the selected podcast for new items"                    "Sprawdź czy są nowe elementy w wybranym podcaście"
+"Show the podcast homepage"                              "Przejdź do strony domowej podcastu"     
+
+"Delete the item and the enclosure"                         "Skasuj wraz z załącznikiem"
+"Stop the item download"                                   "Zatrzymaj pobieranie"               
+"Download the selected episode"                              "Pobierz wybrany epizod"                    
+"Play the selected episode"                                   "Odtwórz zaznaczony epizod"                                   
+
+"Submit bug and idea"                                        "Zgłoś pomysł lub błąd"     
+
+
+# Tooltips directory window buttons
+
+"Collapse all categories in the directory list"                       "Zwiń wszystkie kategorie w katalogu"
+"Add the selected podcast to the Subscription list"                "Dodaj wybrany podcast do listy subskrypcji"      
+"Checkout a podcast before downloading it"                    "Sprawdź podcast przed pobieraniem go"          
+
+
+### INFO PANEL -----------------------------------
+
+"Show channel Image"          "Pokazuj obrazek kanału"
+"XML Feed Link"               "Link kanału XML"
+
+"Show Episode info"           "Pokaż informacje o epizodzie" 
+"Show Subscription info"     "Pokaż informacje o subskrypcji"
+"Show Downloads info"     "Pokaż informacje o elementach pobranych"
+
+"Enclosure: "               "Załącznik: "
+
+"Lookup (Dictionary)"          "Zablokuj (Słownik)"
+"Lookup (Google)"          "Zablokuj (Google)"
+"Lookup (Acronym Finder)"     "Zablokuj (Poszukiwacz Akronimów)"
+"Copy"                    "Kopiuj"
+"Select All"                    "Zaznacz wszystko"     
+"Copy URL"               "Kopiuj URL"
+"Open URL"               "Otwórz URL"
+"Subscription"               "Subscrypcja"
+
+
+### PREFERENCES -----------------------------------
+
+"Preferences"               "Preferencje"
+
+"Proxy"                    "Proxy"
+"Enable Proxy"               "Włącz Proxy"
+"Address"                    "Adres"
+"Port"                    "Port"
+"Username"               "Użytkownik"
+"Password"               "Hasło"
+
+"Max Downloads"          "Max ilość pobieranych"
+
+"FileType"                    "Ty pliku"
+"Browser"                    "Przeglądarka"
+"Player"                    "Odtwarzacz"
+
+"Channels"                         "Kanały"
+"Check all channels on startup"     "Sprawdzaj wszystkie kanały na starcie"
+"Check the channel every"          "Sprawdzaj kanały co"
+
+"never"                    "nigdy"
+"5 minutes"               "5 minut"
+"15 minutes"               "15 minut"
+"30 minutes"               "30 minut"
+"1 hour"                    "1 godzina"
+"2 hour"                    "2 godziny"
+
+
+
+
+### COLUMLISTVIEW -----------------------------------
+
+
+"1 new item"          "1 nowy element"
+"%d new items"          "%d nowych elementów"
+"new"               "nowy"
+"error"               "błąd"
+"not down"           "nieściągalny"
+"enquequed"          "oczekujący"
+"downloading"            "pobieranie"
+"downloaded"          "pobrany"
+"connecting"          "łączenie"
+"not found"          "nie znaleziono"
+"stopped"               "zatrzymany"
+"can't connect"          "brak połączenia"
+"invalid format"          "błędny format"
+
+"Icon"		"Icon"
+"Title"                 "Tytuł"
+"Date"               "Data"
+"Size"                 "Rozmiar"
+"Status"                "Status"
+"Download"           "Pobierz"
+
+
+
+### CONTEXT MENU -----------------------------------
+
+"Add Channel"                "Dodaj kanał"
+"Remove Channel"          "Usuń kanał"
+"Check Channel"               "Sprawdź kanał"     
+"Open Homepage"          "Odwiedź stronę www"
+
+"Open Web Page"          "Otwórz www"
+"Open Enclosures folder"     "Otwórz katalog załączników"
+"Check All Channels"          "Sprawdź wszystkie kanały"
+
+"Show Channel Image"     "Pokazuj obrazek kanału"     
+
+"Play enclosure"               "Odtwórz załącznik"
+"(Re)start download"          "(Re)startuj pobieranie"
+"Stop download"               "Zatrzymaj pobieranie"     
+"Remove Item"               "Usuń element"
+
+"Find this Item"               "Znajdź element"
+"Remove from this list"     "Usuń z listy"
+
+
+
+### ALERT -----------------------------------
+
+"\nRemoving.."                              "\nUsuwanie.."
+"\nAn error occured while removing!"          "\nNastąpił błąd przy usuwaniu!"
+"Check all the podcasts for new items"          "Sprawdź czy są nowe elementy na podcastach"
+
+"You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"      "Możesz dodać jedynie do 10 kanałów używając niezarejestrowanej wersji BePoddera.\n Zarejestruj swoją kopię\n" 
+
+
+"Can't open the selected file with:\n\n"                "Nie można odtworzyć wybranego pliku za pomocą:\n\n"
+"\n\nPlease check if the application is installed in the right way.\n"     "\n\nSprawdź czy aplikacja jest zainstalowana poprawnie.\n"
+"Download it!"     "Pobierz to!"
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+_key="alert1"
+ _value="
+Chcesz usunąć wybrany element.
+
+Jesteś pewien? 
+(zostaną również usunięte załączniki)"
+
+
+_key="alert2a"
+ _value="
+Chcesz usunąć kanał:
+
+" 
+
+_key="alert2b"
+ _value="
+
+Czy chciałbyś zarchiwizować ten
+kanał (zachowując wszystkie pliki i
+załączniki pobrane dotychczas) czy też 
+chcesz USUNĄC cały
+ kanał ze swojego komputera?" 
+                    
+_key="alert3"
+ _value="
+Analiza archiwum.."
+
+_key="alert_3gp"
+ _value="
+3GP to multimedialny kontener stworzony przez Third Generation Partnership Project (3GPP) do użytku w telefonach 3G. Służy on przechowywaniu strumieni wideo, takich jak MPEG-4 albo H.263 i strumieni audio AMR-NB lub AAC-LC.
+
+VideoLAN nie obsługuje AMR audio (3GPP)"
+
+_key="alert_swf"
+ _value="
+SWF to format wektorowych plików graficznych stworzony przez Flash software z Adobe (uprzednio Macromedia).
+
+Aktualnie obsługa flasha w BeOSie/Haiku/Zecie ogranicza się do starej wersji odtwarzacza Flash w wersji 4.1015."
+
+
+
+
+### HELP & SHORTCUTS -----------------------------------
+
+
+"Introduction"                         "Wstęp"
+"The User Interface"                    "Interfejs użytkownika"
+"Menu Bar"                         "Opcje menu"
+"Toolbar Buttons"                    "Przyciski Toolbara"
+"First time with BePodder"               "Pierwsze uruchomienie BePoddera"
+"Download Podcast's enclosure files"     "Pobieranie załączników z podcastami"
+"Settings Overview"                    "Ustawienia"
+"Directory lists"                         "Katalogi list"
+"Loading Help..."                         "Wgrywanie..."
+"Register your copy"                    "Rejestruj swoją kopię"
+"Starting point"                         "Strona główna"
+
+
+
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+
+_key="help1-0"
+ _value="Witaj w przewodniku użytkownika BePoddera."
+
+_key="help1-1"
+ _value="Jeśli rozumiesz już na czym polega podcast oraz RSS/Atom, to możesz natychmiast zamknąć to okno i przejść do BePoddera."
+
+_key="help1-2"
+_value="Jeśli nie, to ten przewodnik wprowadzi Cię w podstawy, które umożliwią Ci bezproblemową obsługę programu. Użyj przycisków znajdujących się poniżej do nawigacji w niniejszym przewodniku."
+
+
+_key="help2-0"
+_value="Podcasting to metoda publikacji przekazów audio i wideo przez Internet; linki do audio i wideo znajdują się w wiadomościach RSS lub Atom."
+
+_key="help2-1"
+_value="Podcasting jest prostą formą dostarczania mediów online: użytkownicy mogą subskrybować podcast używając czytników (takich jak RSS 'Really Simple Syndication' czy Atom)."
+
+_key="help2-2"
+_value="Czytnik kanałów (agregator) jak BePodder to program, który umożliwia subskrypcję kanałów RSS i w określonych odstępach czasu sprawdza dostępność nowych zawartości; przy pomocy BePoddera możesz sprawdzać czy udostepniono na subskrybowanych kanałach nowe epizody . Każdy ściągnięty element, podobnie jak np. e-mail, może zawierać załącznik."  
+
+_key="help3-0"
+_value="BePodder posiada przyjazny interfejs użytkownika (GUI). Główne okno programu jest podzielone na trzy części:"
+
+_key="help3-1"
+_value="1) Lista subskrybowanych kanałów (panel oznaczony numerem 1 na obrazku) zawiara listę suksrybowanych podcastów. Kliknięcie na kanał powoduje wyświetlenie się w panelu 2 listy dostępnych elementów."
+
+_key="help3-2"
+_value="2) Lista epizodów ze wszystkimi dostępnymi elementami."
+
+_key="help3-3"
+_value="3) Panel informacyjny: informacje o epizodzie, informacje o kanałach i pobranych plikach; możesz wybrać pnel informacyjny klikając na jeden z trzech poniższych przycisków."
+
+
+
+_key="help4-0"
+_value="Na szczycie głównego okna BePoddera znajduje się pasek udostępniający siedem menu: Plik, Ustawienia, Subskrypcje, Epizody, Listy, Widok i Pomoc. Obok części menu z prawej strony znajdują się strzałki, które wskazują na istnienie podmenu. Podczas przeglądania menu należy więc także zwrócić uwagę na dostępne podmenu. Kliknij na menu aby zobaczyć dostępne opcje:"
+
+_key="help4-1"
+_value="Plik: zawiera komendy dotyczące zamykania aplikacji i panel informacji o BePodderze"
+
+_key="help4-2"
+_value="Ustawienia: zawiera komendę uruchamiającą okno preferencji przy pomocy którego można ustawić interesujące nas ustawienia programu."
+
+_key="help4-3"
+_value="Subscrypcje: zawiera komendy dotyczące subskrybowanych kanałów na Twoich subskrybowanych listach."
+
+_key="help4-4"
+_value="Epizody: zawiera komendy dotyczące poszczególnych epizodów."
+
+_key="help4-5"
+_value="Listy: zawiera komendy dotyczace katalogów OPML."
+
+_key="help4-6"
+_value="Widok: zawiera komendy i kontrolki okien BePoddera."
+
+_key="help4-7"
+_value="Pomoc: zawiera komendy 'Przewodnik dla początkujących' i 'Skróty klawiaturowe'."
+
+
+
+_key="help5-0"
+ _value="Przycisk dodaj: otwiera okno w którym możesz podać url kanału rss (np. http://www.newpodcast.com/rss.xml) zazwyczaj podawany jest on na stronie podcastu; na stronach www szukaj grafiki lub tekstu dotyczącego 'XML', 'RSS' albo 'Podcastu'." 
+
+_key="help5-1"
+ _value="Przycisk usuwania kanału: otwiera okno w którym możesz wybrać sposób usunięcia kanału: archiwizacja wybranego kanału (zachowując jednocześnie wszystkie ściągnięte pliki i załączniki) albo usunięcie całego kanału z Twojego kompoutera." 
+
+_key="help5-2"
+ _value="Przycisk sprawdź: sprawdza wybrany kanał i aktualizuje listę dostępnych elementów w danym podcaście dodając nowe elementy." 
+
+_key="help5-3"
+ _value="Przycisk strona www: otwiera stronę domową podcastu w przeglądarce. By wybrać swoją preferowaną przeglądarkę przejdź do ustawień programu, klikając na Ustawienia>Preferencje... i w oknie preferencji w zakładce 'Typy plików' wybierz swoją preferowaną przeglądarkę." 
+
+_key="help5-4"
+ _value="Przycisk odtwórz: przy pomocy tego przycisku możesz oglądać albo słuchać pliku załączonego do wybranego elementu (epizodu). By wybrać swój preferowany odtwarzacz przejdź do ustawiń programu, klikając na Ustawienia>Preferencje... i w oknie preferencji w zakładce 'Typy plików' wybierz swój preferowany odtwarzacz.." 
+
+_key="help5-5"
+ _value="Przycisk pobierania: pobiera załącznik wybranego elementu (epizodu); możesz zobaczyć informacje o pobieranym pliku, klikając na trzecim przycisku panelu informacyjnego ." 
+_key="help5-6"
+ _value="Przycisk stop: zatrzymuje pobieranie pliku załączonego do wybranego elementu (epizodu); by ponowić pobieranie kliknij dwukrotnie na elemencie (epizodzie) albo wybierz element i kliknij na przycisk pobierania." 
+
+_key="help5-7"
+ _value="Przycisk usuwania elementu: usuwa wybrany element (usuwa również załączone pliki)." 
+
+
+
+_key="help6-0"
+ _value="Obsługa BePoddera jest prosta." 
+
+_key="help6-1"
+ _value="Z lewej strony głównego okna znajduje się 'Lista subskrypcji' ze wszystkimi subskrybowanymi kanałami. Autorzy programu dodali dla Ciebie kilka subskrypcji. Możesz do dostępnej listy dodać swoje subskrypcje na dwa sposoby:"
+
+_key="help6-2"
+ _value="1) kliknij na przycisk dodawania kanału, później podaj url kanału rss (np.: http://www.newpodcast.com/rss.xml) i kliknij dodaj." 
+
+_key="help6-3"
+ _value="2) w pasku menu kliknij na 'Listy' następnie na 'Listę podcastów' lub inną listę, wybierz podcast i kliknij 'Subskrybuj'."
+
+_key="help6-4"
+ _value="Jeśli wybierzesz podcast na liście subskrypcji i użyjesz przycisku 'sprawdź', BePodder doda nowe elementy do 'Listy epizodów' (poniżej z prawej strony); możesz sprawdzić wszystkie swoje podcasty klikając prawym przyciskiem myszy i wybierając opcję Sprawdź wszystkie kanały' z menu kontekstowego."
+
+_key="help6-5"
+ _value="Na poniższym obrazku można zauważyć w pierwszej kolumnie 'Listy epizodów' 3 nowe elementy, oznaczone czarną kropką."
+
+_key="help6-6"
+ _value="W drugiej kolumnie widzimy ikony wskazujące na stan danego elementu:"
+
+_key="help6-7"
+ _value="- Epizod 4 z ikoną wskazującą na błąd"
+
+_key="help6-8"
+ _value="- Epizod 3 z ikoną wskazującą na oczekiwanie na pobranie żądanego załącznika do elementu"
+
+_key="help6-9"
+ _value="- Epizod 2 z ikoną wskazującą na pobieranie przez BePoddera załącznika do elementu"
+
+_key="help6-10"
+ _value="- Epizod 1 z ikoną wskazującą na zakończenie pobierania załącznika do elementu"
+
+
+_key="help7-0"
+ _value="Wybierz jakiś element z 'Listy epizodów' i kliknij na nim dwukrotnie (albo kliknij na przycisk pobierania), zapoczątkuje to pobieranie załącznika; możesz w każdej chwili zatrzymać pobieranie, klikając na przycisk stop."
+
+_key="help7-1"
+ _value="Jeśli klikniesz na subskrybowanym podcaście na 'Liście subskrypcji' program wyświetli Ci, w 'Liście epizodów', wszystkie elementy dostępne w ramach tej subskrypcji. Wybierz element i kliknij na przycisk odtwarzania by obejrzeć albo wysłuchać pliku."
+
+_key="help7-2"
+ _value="Możesz uzyskać dostęp do folderu z załączonymi plikami klikając na ikonę folderu w panelu informacyjnym albo klikając prawym przyciskiem myszy na elemencie i wybierając 'Otwórz folder załączników' z menu kontekstowego."
+
+
+
+_key="help8-0"
+ _value="Dostęp do menu Preferencji możesz uzyskać klikając na menu Ustawienia>Preferencje. W oknie dialogowym preferencji z lewej strony znajdują się cztery kategorie (zakładki): Typy plików, Kanały, Pobieranie oraz Proxy."
+
+_key="help8-1"
+ _value="- Typy plików: w menu tym możesz wybrać preferowaną przeglądarkę i odtwarzacz. "
+
+_key="help8-2"
+ _value="- Kanały: w menu tym możesz ustawić co jaki czas będzie wykonywana operacja sprawdzania kanałów w celu poszukiwania nowych zawartości; możesz w nim także wybrać opcję sprawdzania wszystkich kanałów przy starcie programu bądź sprawdzanie kanałów w określonych odstępach czasu."
+
+_key="help8-3"
+ _value="- Pobieranie: w menu tym możesz ustawić maksymalną ilość plików pobieranych jednocześnie przez program,"
+
+_key="help8-4"
+ _value="- Proxy: w menu tym możesz ustawić do pracy z BePodderem serwer proxy; serwer proxy może służyć jako bariera ochronna pomiędzy Twoją siecią wewnętrzną i internetem, zapobiegając uzyskiwaniu informacji z Twojego komputera przez innych użytkowników internetu ."
+
+
+_key="help9-0"
+ _value="BePodder posiada wbudowaną bazę podcastów, wideoblogów, katalogów obrazków, newsów, katalogów bittorrentów podcastów międzynarodowych z tysiącami kanałów pogrupowanych na kategorie."
+
+_key="help9-1"
+ _value="OPML (Outline Processor Markup Language) jest formatem opartym o XML, który pozwala wymieniać informacje pomiędzy aplikacjami."
+
+_key="help9-2"
+ _value="Dostęp do kanału OPML można uzyskać klikając na menu 'Katalogi' i wybierając odpowiednią listę. Poszukiwanie katalogu opml w celu odnalezienia pożądanego kanału rss polega na rozwinięciu listy poprzez kliknięcie na strzałce (patrz obrazek); używając tej metody, możesz rozwijać katalogi opml do czasu znalezienie interesującego Cię kanału. Kiedy znajdziesz już odpowiedni kanał, zaznacz go i dodaj do listy subskrypcji, klikając na przycisk 'Subskrybuj', możesz także zwinąć wszystkie kategorie w katalogu list, klikając na przycisk 'Zwiń wszystko'."
+
+_key="help_shortcut1"
+_value="Ta strona opisuje skróty klawiaturowe, które mogą być używane w BePodderze. Skróty zostały pogrupowane według funkcji."
+
+_key="help_shortcut2"
+_value="oznacza, że możesz użyć zarówno klawisza alt jak również control w celu wywołania różnych opcji (np. Alt+Q  lub Ctrl+Q zamykają aplikację), ustawienia tego dokonałeś w menu preferences w ustawieniach klawiatury  (domyślny klawisz skrótów to Alt)."
+
+_key="help_shortcut3"
+ _value="Główne skróty"
+
+_key="help_shortcut4"
+ _value="Wyjdź z programu"
+
+_key="help_shortcut5"
+ _value="Pokazuje okno preferencji"
+
+_key="help_shortcut6"
+ _value="Pokazuje listę podcastów"
+
+_key="help_shortcut7"
+ _value="Pokazuje listę wideoblogów"
+
+_key="help_shortcut8"
+ _value="Pokazuje listę obrazków"
+
+_key="help_shortcut9"
+ _value="Pokazuje listę newsów"
+
+_key="help_shortcut9b"
+ _value="Pokazuje listę BitTorrentów"
+
+_key="help_shortcut9c"
+ _value="Pokazuje listę kanałów międzynarodowych"
+
+_key="help_shortcut10"
+ _value="Pełny ekran"
+
+_key="help_shortcut11"
+ _value="Pokazuje/ukrywa toolbar"
+
+_key="help_shortcut12"
+ _value="Pokazuje poradnik dla początkujących"
+
+_key="help_shortcut13"
+ _value="Pokazuje stronę skrótów klawiaturowych"
+
+_key="help_shortcut14"
+ _value="Skróty do kanałów"
+
+_key="help_shortcut15"
+ _value="Dodaj podcast do listy subscrypcji"
+
+_key="help_shortcut16"
+ _value="Skasuj wybrany podcast z listy subskrypcji"
+
+_key="help_shortcut17"
+ _value="Sprawdź czy na wybranym podcaście są nowe epizody"
+
+_key="help_shortcut18"
+ _value="Sprawdź czy na wszystkich podcastach są nowe epizody"
+
+_key="help_shortcut19"
+ _value="Pokaż stronę domową podcastu"
+
+_key="help_shortcut20"
+ _value="Otwórz folder załączników"
+
+_key="help_shortcut21"
+ _value="Skróty do epizodów"
+
+_key="help_shortcut22"
+ _value="Odtwórz załącznik"
+
+_key="help_shortcut23"
+ _value="(Re)startuj pobieranie wybranych epizodów"
+
+_key="help_shortcut24"
+ _value="Zatrzymaj pobieranie epizodu"
+
+_key="help_shortcut25"
+ _value="Skasuj wybrany epizod"
+
+_key="help_shortcut26"
+ _value="Pokaż stronę epizodu podcastu"
+
+_key="help_shortcut27"
+ _value="Otwórz folder załączników"
+
+_key="help_buy1"
+ _value="BePodder Light jest podstawową wersją aplikacji (darmową i nielimitowaną czasowo), wersja zarejestrowana dodaje kilka interesujących nowych opcji: nielimitowaną liczbę kanałów, widok miniaturek, wsparcie dla proxy, automatyczne sprawdzanie kanałów, możliwość pobierania 5 załączników w tym samym czasie."
+
+_key="help_buy2"
+ _value="Prosimy o nabywanie pełnej wersji programu, która kosztuje jedynie 15 euro (Kagi dodaje podatek dla niektórych państw), licencję BePoddera można zakupić online od Kagi."
+
+_key="help_buy3"
+ _value="Licencję można kupić na www.funkyideasoft.com"
+
+_key="help_buy4"
+ _value="Po dokonaniu zakupu, otrzymasz email z kluczem do aplikacji wraz z instrukcją instalacji. Proces instalacji jest bardzo prosty - wypakowanie archiwum i skopiowanie pliku do określonego katalogu."
+
+_key="help_buy5"
+ _value="Żadnego problemu nie powinno też sprawić ewentualne uaktualnienie programu do nowej wersji. Klucz odblokuje też nowe wersje programu."
+
+
+### USELESS ########
+
+"Opml Editor"                           "Edytor Opml"     
+"name:"                                "nazwa:"
+"Add a category"                "Dodaj kategorię" 
+"Add a new Broadcast"           "Dodaj nową audycję"
+"feed:"                                "feed:"
+"url:"                                    "url:"     
+"Test podcast"                    "Testuj podcast"
+"Del a category"                    "Usuń kategorię"     
+"Add a category"               "Dodaj kategorię"          
+"Select the podcast category:"     "Wybierz kategorię podcastów:"     
+"Check all"                     "Sprawdź wszystkie"      
+"Check"                         "Sprawdź"          
+"Refresh the list"                    "Odśwież listę"          
+"Load"                         "Wczytaj"               
+"Load the list"                    "Wczytaj listę"          
+"Save"                         "Zapisz"               
+"Save the list"                    "Zapisz listę"          
+"Revert"                         "Przywróć"          
+"Apply"                         "Akceptuj"               
+
+
+
+
+
+
+
+
+
+
+
+

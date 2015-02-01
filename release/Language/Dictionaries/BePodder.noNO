@@ -1,0 +1,598 @@
+
+# Locale file for BePodder.
+# Modified: 4/18/2006
+# Author:	  Frank Paul Silye       
+# E-mail:   	  frankps@gmail.com
+
+
+# Attention: don't remove empty space or \n
+
+
+### SHAREWARE POPUPS -----------------------------------
+
+"Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n" 		"Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n"
+
+"This BePodder copy has expired!\nPlease buy a keyfile and support us.\n" 		"This BePodder copy has expired!\nPlease buy a keyfile and support us.\n"
+
+"Web Site"		"Web Site"
+
+"Can't connect!"					"Can't connect!"
+"Http port failed!"				"Http port failed!"
+"Can't resolve host!"				"Can't resolve host!"
+"Not found!"					"Not found!"
+"Bad resume!"					"Bad resume!"
+"Aborted by Callback!"				"Aborted by Callback!"
+"Can't resume! (range error)"		"Can't resume! (range error)"
+"Access Denied!"				"Access Denied!"
+"User or Password Incorrect!"		"User or Password Incorrect!"
+"Other error (cUrl code: "			"Other error (cUrl code: "
+"cUrl init error!"					"cUrl init error!"
+"Can't open file!"				"Can't open file!"
+"Other error (status code: "			"Other error (status code: "
+"Downloading"					"Downloading"
+
+
+### MENUBAR -----------------------------------
+
+"File"					"Fil"
+"About..."				"Om..."
+"Close!"    				"Lukk"
+"Quit"				"Quit"
+
+"Settings"				"Instillinger"
+"Preferences..."			"Innstillinger..."
+
+"Subscriptions"			"Abonneringer"
+
+"Episodes"				"Episoder"
+
+"Lists"				"Lists"
+"Podcast List"			"Podcast liste"
+"Podcast directory list"		"Podcast mappe liste"
+"Videoblog List"			"Videoblog liste"
+"Videoblog directory list"	"Videoblog mappe liste"
+"Imagefeeds List"		"Bildefeeds liste"
+"Imagefeeds directory list"	"Bildefeeds katalog liste"
+"Newsfeeds List"		"Nyhetfeeds liste"
+"Newsfeeds directory list"	"Nyhetfeeds katalog liste"
+"BitTorrentfeeds List"			"BitTorrentfeeds Liste"	
+"BitTorrentfeeds directory list"	"BitTorrentfeeds katalog liste"
+"Internationalfeeds List"		"Internationalfeeds liste"	
+"Internationalfeeds directory list"	"Internationalfeeds katalog liste"
+
+"View"					"Vis"
+"Full Screen"				"Fullskjerm"
+"Toolbar"					"Verktøylinje"
+"Subscriptions View"			"Abonneringsvisning"
+"Small Items"				"Små objekter"
+"Big Items"				"Store objekter"
+"Move BePodder on workspace:"	"Flytt BePodder til skrivebord:"	
+
+"Help"					"Hjelp"
+"Getting Started"  			"Komme i gang" 
+"Keyboard Shortcuts"		 	"Tastatur snarveier"
+"Tutorials"					"Tutorials"
+"Online Support"				"Online Support"		
+
+
+
+
+### BUTTONS -----------------------------------
+
+# Buttons add feed window
+"Insert the rss feed url!" 		"Sett inn RSS kildens url!"
+"Add"    					"Legg til"
+"Paste"					"Lim inn"
+
+# Buttons directory list window
+"Collapse All"				"Collapse All"
+"Preview"					"Forhåndsvis"
+"Subscribe"				"Abonner"	
+
+
+# Buttons help window
+"Next"					"Neste"
+"Prev"					"Forrige"
+"Close"					"Lukk"			
+"Index"					"Index"				
+
+
+# Buttons remove windows
+"Cancel"					"Avbryt"
+"Delete"					"Slett"
+"Archive"					"Arkiv"	
+
+
+
+### TOOLTIPS -----------------------------------
+
+# Tooltips toolbar buttons
+
+"Add the podcast to the Subscriptions list" 		"Legg til podcasten til abonneringslisten"
+"Delete the podcast from the Subscriptions list" 	"Slett podcasten fra abonneringslisten"
+"Check the selected podcast for new items"		"Sjekk valgte podcast for nye publikasjoner"
+"Show the podcast homepage"				"Vis hjemmeside for podcast"
+
+"Delete the item and the enclosure"					"Delete the item and the enclosure"
+"Stop the item download"								"Stopp nedlasting av publikasjon"
+"Download the selected episode"							"Last ned valgte episode"
+"Play the selected episode"								"Spill valgte episode"
+
+"Submit bug and idea"			"Fortell oss om ideer og feil"
+
+
+# Tooltips directory window buttons
+
+"Collapse all categories in the directory list"        		"Collapse all categories in the directory list"
+"Add the selected podcast to the Subscription list" 		"Legg til valgte podcast til abonneringsliste" 
+"Checkout a podcast before downloading it"			"Sjekk ut en podcast før du laster den ned"
+
+### INFO PANEL -----------------------------------
+
+"Show channel Image"			"Vis kanal bilde"
+"XML Feed Link"				"XML feed lenke"
+
+"Show Episode info"	 		"Vis episode info" 
+"Show Subscription info"		"Vis abonnement info"
+"Show Downloads info"		"Vis nedlastinger info"
+
+"Enclosure: "				"Vedlegg: "
+
+"Lookup (Dictionary)"			"Oppslag (Dictionary)"
+"Lookup (Google)"			"Oppslag (Google)"
+"Lookup (Acronym Finder)"		"Oppslag (Acronym Finder)"
+"Copy"					"Kopier"
+"Select All"					"Velg alt"	
+"Copy URL"				"Kopier URL"
+"Open URL"				"Åpne URL"
+"Subscription"				"Abonnement"
+
+
+### PREFERENCES -----------------------------------
+
+"Preferences"				"Innstillinger"
+
+"Proxy"					"Proxy"
+"Enable Proxy"				"Aktiver Proxy"
+"Address"					"Adresse"
+"Port"					"Port"
+"Username"				"Brukernavn"
+"Password"				"Passord"
+
+"Max Downloads"			"Maks ant. nedlastinger"
+
+"FileType"					"Filtype"
+"Browser"					"Nettleser:"
+"Player"					"Avspiller:"
+
+"Channels"					"Kanaler"
+"Check all channels on startup"	"Sjekk alle kanaler ved oppstart"
+"Check the channel every"		"Sjekk kanalen hver"
+
+"never"					"aldri"
+"5 minutes"				"5 minutter"
+"15 minutes"				"15 minutter"
+"30 minutes"				"30 minutter"
+"1 hour"					"1 time"
+"2 hour"					"2 timer"
+
+
+
+
+### COLUMLISTVIEW -----------------------------------
+
+
+"1 new item"				"1 ny publisering  "
+"%d new items"				"nye publiseringer  "
+"new"					"ny"
+"error"					"feil"
+"not down" 				"ikke lastet ned"
+"enquequed"				"lagt i kø"
+"downloading"  				"laster ned"
+"downloaded"				"nedlastet"
+"connecting"				"kobler til"
+"not found"				"ikke funnet"
+"stopped"					"stoppet"
+"can't connect"				"kan ikke koble til"
+"invalid format"				"ugyldig format"
+
+"Icon"					"Icon"
+"Title"		  			"Tittel"
+"Date"					"Dato"
+"Size"  					"Størrelse"
+"Status" 					"Status"
+"Download" 				"Last ned"
+
+
+
+### CONTEXT MENU -----------------------------------
+
+"Add Channel"      			"Legg til kanal"
+"Remove Channel"			"Fjern kanal"
+"Check Channel"				"Sjekk kanal"		
+"Open Homepage"			"Åpne hjemmeside"
+
+"Open Web Page"			"Åpne webside"
+"Open Enclosures folder"		"Åpne vedleggsmappe"
+"Check All Channels"			"Sjekk alle kanaler"
+
+"Show Channel Image"		"Vis kanal bilde"	
+
+"Play enclosure"				"Avspill vedlegg"
+"(Re)start download"			"(Re)start nedlasting"
+"Stop download"				"Stopp nedlasting"		
+"Remove Item"				"Fjern publisering"
+
+"Find this Item"				"Find this Item"
+"Remove from this list"		"Remove from this list"
+
+
+
+### ALERT -----------------------------------
+
+"You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"      "You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n" 
+
+
+"Can't open the selected file with:\n\n"           	"Can't open the selected file with:\n\n"
+"\n\nPlease check if the application is installed in the right way.\n"     "\n\nPlease check if the application is installed in the right way.\n"
+"Download it!"	"Download it!"
+
+
+"\nRemoving.."						"\nFjerner.."
+"\nAn error occured while removing!"		"\nEn feil oppstod ved fjerning!"
+"Check all the podcasts for new items"		"Sjekk alle podcaster for nye publikasjoner"
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+_key="alert1"
+ _value="
+Du er i ferd med å fjerne valgte publisering.
+
+Er du sikker på at du ønsker dette? 
+(du vil miste vedlagt fil om noens)"
+
+
+_key="alert2a"
+ _value="
+Du er i ferd med å fjerne kanalen:
+
+" 
+
+_key="alert2b"
+ _value="
+
+Ønsker du bare å arkivere denne kanalen (beholde alle publikasjoner og vedlegg lastet ned til nå) eller ønsker du å SLETTE hele kanalen fra din datamaskin?" 
+				
+_key="alert3"
+ _value="
+Parser arkiv.."
+
+_key="alert_3gp"
+ _value="
+3GP is a multimedia container format defined by the Third Generation Partnership Project (3GPP) for use on 3G mobile phones. It stores video streams as MPEG-4 or H.263, and audio streams as AMR-NB or AAC-LC.
+
+VideoLAN still doesn't support the audio AMR (3GPP)"
+
+_key="alert_swf"
+ _value="
+SWF is a proprietary vector graphics file format produced by the Flash software from Adobe (formerly Macromedia).
+
+Currently Flash support in BeOS/Haiku/Zeta is limited to the old standalone Flash player version 4.1015, there isn't a modern Flash player"
+
+
+### HELP & SHORTCUTS -----------------------------------
+
+
+"Introduction"					"Introduction"
+"The User Interface"				"The User Interface"
+"Menu Bar"					"Menu Bar"
+"Toolbar Buttons"				"Toolbar Buttons"
+"First time with BePodder"			"Første gang med BePodder"
+"Download Podcast's enclosure files"	"Download Podcast's enclosure files"
+"Settings Overview"				"Settings Overview"
+"Directory lists"					"Directory lists"
+"Loading Help..."					"Loading Help..."
+"Register your copy"				"Register your copy"
+"Starting point"					"Starting point"
+
+
+
+
+# multi line text... please translate only the text after _value=   and don't remove empty space 
+
+
+_key="help1-0"
+ _value="Velkommen til BePodder komme i gang manual"
+
+_key="help1-1"
+ _value="Dersom du allerede er kjent med podcast og RSS kilder kan du gå til BePodder ved å lukke dette vinduet."
+
+_key="help1-2"
+_value="Dersom ikke, er dette en kort introduksjon som vil gi deg alt du trenger å vite om hvordan du kan komme i gang med BePodder, bruk knappene på bunnen for å gå gjennom denne manualen."
+
+
+
+_key="help2-0"
+ _value="Podcasting er en metode for å publisere audio og video kringkastinger over Internet; lenker til gratis audio og video filer er vedlagt i RSS og Atom kilder."
+
+_key="help2-1"
+_value="Podcasting er derfor simpelten en type nettbasert levering av media; brukere kan abonnere på en podcast ved å bruke en kilde (som RSS 'Really Simple Syndication' eller Atom)."
+
+_key="help2-2"
+_value="En aggregator (eller podcatcher) som BePodder, er et program som lar deg abonnere på en RSS kilde og periodisk sjekke etter og laste ned nytt innhold. Med BePodder kan du sjekke etter nye Podcast publikasjoner (episoder) på de kanalene du abonnerer på. En hver publikasjon kan inneholde et vedlegg, akkurat som en e-post kan inneholde et vedlegg."
+
+
+_key="help3-0"
+_value="BePodder has an easy to use yet powerful Graphical User Interface. The main window is split into tree panels:"
+
+_key="help3-1"
+_value="1) The Subscription list (the panel with the number 1 in the screenshot) with the list of the podcasts that you have subscribed to. When you click on a Channel you can see in the panel 2 the list of the channel's items."
+
+_key="help3-2"
+_value="2) The Episodes list with all the items available."
+
+_key="help3-3"
+_value="3) The Info panel show: episode info, channel info or Downloads info; you can select an info panel by clicking one of the below three buttons."
+
+
+
+_key="help4-0"
+_value="At the very top of the BePodder main window is the menubar with seven menus available: File, Settings, Subscriptions, Episodes, Lists, View and Help. Some menu commands are followed by a right pointing arrow that indicates a submenu of related commands. As you explore each menu, be sure to take a look at the submenus as well. Click on a menus to show its commands:"
+
+_key="help4-1"
+_value="File: contains commands to close the application and to show information about BePodder"
+
+_key="help4-2"
+_value="Settings: contains command to open the Preferences window that allows you to customize various BePodder settings."
+
+_key="help4-3"
+_value="Subscriptions: contains commands that perform actions on the selected channel of your subscriptions list."
+
+_key="help4-4"
+_value="Episodes: contains commands that perform actions on the selected item (episode) of the channel's episode list."
+
+_key="help4-5"
+_value="Lists: contains commands to open BePodder's OPML directories."
+
+_key="help4-6"
+_value="View: contains commands and controls for the BePodder window."
+
+_key="help4-7"
+_value="Help: contains commands  to open BePodder's 'Getting Started Guide' and the 'Keyboard Shortcuts List'."
+
+
+
+_key="help5-0"
+ _value="Add Button: opens the Add Window to add a feed url (e.g. http://www.newpodcast.com/rss.xml) usually given on the podcast homepage; looks for text or graphic link that says something like 'XML', 'RSS' or 'Podcast Feed' on it." 
+
+_key="help5-1"
+ _value="Channel Remove Button: opens a window in which you can select how remove the channel: just archive the select channel (keeping all the files and eclosure downloaded so far) or delete the whole channel from your computer." 
+
+_key="help5-2"
+ _value="Check Button: checks the selected channel and updates the list of the available items for that podcast adding the new  items." 
+
+_key="help5-3"
+ _value="Web Button: shows the channel homepage in the browser. To select your favorite browser open BePodder's Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select your favorite browser." 
+
+_key="help5-4"
+ _value="Play Button: with this button you can view or listen the file enclosure of the selected item(episode). To select your favorite player open BePodder's  Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select you favorite player." 
+
+_key="help5-5"
+ _value="Download Button: downloads the file enclosure of the selected item (episode); you can see the download info by clicking on the third button over the info panel." 
+
+_key="help5-6"
+ _value="Stop Button: stops to download the file enclosure of the selected item (episode); to resume the download double-click the item (episode) or select the item and click the Download Button" 
+
+_key="help5-7"
+ _value="Item Remove Button: deletes the selected item (you will loose the enclosure file)." 
+
+
+
+_key="help6-0"
+ _value="Getting started with BePodder is easy." 
+
+_key="help6-1"
+ _value="On the left of the main window you can see the 'Subscription List' with all your feed subscriptions. We have added some subscriptions for you, and you can always add your own in two ways:"
+
+_key="help6-2"
+ _value="1) click the Add Button, then insert the feed url (example: http://www.newpodcast.com/rss.xml) and click add." 
+
+_key="help6-3"
+ _value="2) in the menubar select 'Directory' and then 'Podcast list' or another list, choose a podcast and click 'Subscribe'."
+
+_key="help6-4"
+ _value="If you select a Podcast in the subscriptions list and use the check button, BePodder adds the new items to the 'Episodes list' (below on the right); you can check all your podcasts by right-clicking and selecting 'Check All Channels' in the context menu."
+
+_key="help6-5"
+ _value="Look at the screenshot above, there are 3 new items indicated by a black dot in the first column of the 'Episodes list'."
+
+_key="help6-6"
+ _value="In the second column there are icons that indicate the state of the item:"
+
+_key="help6-7"
+ _value="- the Episode 4 has an icon that indicates an error"
+
+_key="help6-8"
+ _value="- the Episode 3 has an icon that indicates that the item's enclosure download request is enquequed"
+
+_key="help6-9"
+ _value="- the Episode 2 has an icon that indicates that BePodder is downloading the item's enclosure file"
+
+_key="help6-10"
+ _value="- the Episode 1 has an icon that indicates that BePodder have just downloaded the item's enclosure file"
+
+
+
+_key="help7-0"
+ _value="Select an item in the 'Episodes list' and then double-click on it (or click the Download Button) to start downloading the enclosed file; you can always stop the download by clicking on the Stop Button."
+
+_key="help7-1"
+ _value="When you click on the Subscribed Podcasts in the 'Subscriptions List' the software shows you, in the 'List of episodes', all the items available in that Subscription. Select an item and then click play (Play Button) to view or listen to the file."
+
+_key="help7-2"
+ _value="You can access the Enclosures Folder by clicking on the folder icon in the Info Pannel or by right-clicking your mouse on an item and select 'Open Enclosures Folder' in the context menu."
+
+
+
+_key="help8-0"
+ _value="Preferences can be accessed by clicking in the menu-bar Settings>Preferences. You can select a category from the left list of the preferences dialog: FileType, Channels, Download and Proxy."
+
+_key="help8-1"
+ _value="- FileType: to specify the default browser and player. "
+
+_key="help8-2"
+ _value="- Channels: to specify preferences that control the operation to check channels new items; you can choose to Check all channels on startup or check the channel every desired minutes."
+
+_key="help8-3"
+ _value="- Download: to specify the max number of item's files to download at the same time,"
+
+_key="help8-4"
+ _value="- Proxy: to set up a proxy server to work with BePodder; a proxy server acts as a security barrier between your internal network and the Internet, keeping others on the Internet from accessing information on your internal network."
+
+
+
+_key="help9-0"
+ _value="BePodder has built-in podcast, videoblog, imagefeeds, newsfeeds, bittorrentfeeds and internationalfeeds OPML directories with thousands of feeds grouped by category."
+
+_key="help9-1"
+ _value="OPML (Outline Processor Markup Language) is an XML-based format that allows exchange of outline-structured information between applications."
+
+_key="help9-2"
+ _value="OPML directory can be accessed by clicking in the menu-bar 'Lists' and thenselecting a list. To browse the opml directory for a feed, expand the list by clicking the arrow of the category that you are interested in (see image); using this method, you can expand the opml directory until you find the desired feed. Once you have selected it, you can add it to the subscription list by clicking the button 'Subscribe', you can also collapse all categories in the directory list by clicking the button 'Collapse All'."
+
+_key="help_shortcut1"
+_value="Denne siden beskriver tastatur hurtigtilganger som kan brukes i BePodder. Hurtigtilgangene er blitt gruppert etter funksjonalitet."
+
+_key="help_shortcut2"
+_value="means that you can use either alt or control (es. Alt+Q  or Ctrl+Q Quit the application), which way you have set it in the Deskbar menu preferences under Keyboard (the default shortcut key is Alt)."
+
+_key="help_shortcut3"
+ _value="Generelle hurtigtilganger"
+
+_key="help_shortcut4"
+ _value="Avslutt applikasjonen"
+
+_key="help_shortcut5"
+ _value="Viser Innstillinger vinduet"
+
+_key="help_shortcut6"
+ _value="Viser Podcast katalog liste"
+
+_key="help_shortcut7"
+ _value="Viser Videoblog katalog liste"
+
+_key="help_shortcut8"
+ _value="Viser Bildefeeds katalog liste"
+
+_key="help_shortcut9"
+ _value="Viser Nyhetfeeds katalog liste"
+
+_key="help_shortcut9b"
+ _value="Viser BitTorrentfeeds katalog liste"
+
+_key="help_shortcut9c"
+ _value="Viser Internationalfeeds katalog liste"
+
+_key="help_shortcut10"
+ _value="Fullskjerm"
+
+_key="help_shortcut11"
+ _value="Viser/Skjuler verktøylinje"
+
+_key="help_shortcut12"
+ _value="Viser Hjelp til å komme i gang"
+
+_key="help_shortcut13"
+ _value="Viser this tastatur hurtigtilganger side"
+
+_key="help_shortcut14"
+ _value="Kanaler hurtigtilganger"
+
+_key="help_shortcut15"
+ _value="Add a podcast to the subscriptions list"
+
+_key="help_shortcut16"
+ _value="Delete the selected podcast from the subscriptions list"
+
+_key="help_shortcut17"
+ _value="Check the selected podcast for new episodes (items)"
+
+_key="help_shortcut18"
+ _value="Check all podcasts for new episodes (items)"
+
+_key="help_shortcut19"
+ _value="Viser the podcast homepage"
+
+_key="help_shortcut20"
+ _value="Open enclosures folder"
+
+_key="help_shortcut21"
+ _value="Episoder hurtigtilganger"
+
+_key="help_shortcut22"
+ _value="Spill av vedlegg"
+
+_key="help_shortcut23"
+ _value="(Re)start nedlasting av valgte episoder (objekter) "
+
+_key="help_shortcut24"
+ _value="Stopp nedlastingen av episode (objekt)"
+
+_key="help_shortcut25"
+ _value="Slett valgte episode (objekt)"
+
+_key="help_shortcut26"
+ _value="Viser the podcast episode (objekt) side"
+
+_key="help_shortcut27"
+ _value=" Åpner vedleggsmappe"
+
+_key="help_buy1"
+ _value="BePodder Light is the basic version (free download and no time limited), the registered version adds some more nice features: unlimited number of channels, small Channel view, proxy support, automatic channels check, up to 5 enclosure downloads at the same time (multithreading)."
+
+_key="help_buy2"
+ _value="Please pay the shareware fee, it's only 15 euro (Kagi add tax in some countries), BePodder licence can be purchased online from Kagi."
+
+_key="help_buy3"
+ _value="Buy at www.funkyideasoft.com"
+
+_key="help_buy4"
+ _value="After purchasing, an email will be sent to you with a keyfile and instruction on how to install it. It's just a matter of unzipping a file and moving it to a certain directory."
+
+_key="help_buy5"
+ _value="There is no problem updating BePodder when a new version becomes available. The keyfile will unlock all downloadable packages unless otherwise notified."
+
+
+### USELESS ########
+
+"Opml Editor"		              	"Rediger Opml"
+"name:"			              	"navn:"
+"Add a categorie" 			"Legg til kategori"
+"Add a new Broadcast" 		"Legg til ny kringkasting"  
+"feed:"			              	"kilde:"
+"url:"				       		"url:"
+"Test podcast"				"Test podcast"
+"Del a categorie"				"Slett en kategori"
+"Add a categorie"			"Legg til en kategori"
+"Select the podcast categorie:"	"Velg podcast kategorien:"
+"Check all" 				"Velg alle"
+"Check"					"Velg"
+"Refresh the list"				"Oppdater listen"
+"Load"					"Hent"
+"Load the list"				"Hent listen"
+"Save"					"Lagre"
+"Save the list"				"Lagre listen"
+"Revert"					"Revert"
+"Apply"					"Apply"		
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+
+
+Difference between version 1.0 and 1.2  ---------------------------------------
+- Added RDF and Atom support
+- Better multilanguage support
+- Added bittorrentfeeds built-in OPML directories
+- Extended podcat OPML list from 3000 podcast to more than 10000 podcast
+- Zeta (multilanguage) and BeOS R5 (english only)
+- better players integration with a new Auto option
+- online opml directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BePodder Light is the basic version (free download and no time-limited).
+The registered version adds some nice features
+
+- Easy to use yet powerful Graphical User Interface
+- Handles all news/podcast feeds in RSS 0.9, 2.0, Atom, RDF and iTunes
+- Fully integrated with BFS (BeOS/Zeta file system)
+- Integrated podcast, videoblog, imagefeeds, BitTorrentfeeds, newsfeeds and Iternationalfeeds built-in OPML directories with thousands of feeds
+- Advanced channels/lists management with drag and drop support
+- Support for more than 10 languages
+- Easy to integrate with other applications like BitTorrent/ Installer / Unzip / etc.
+- players integration with a new Auto option
+- BePodder is 100% adwares/spywares free
+- Support for multithreading podcast download (available only in registered version)
+- Small Channel view (available only in registered version)
+- Support for Proxy (available only in registered version)
+- No limited number in channel subscription (available only in registered version)
+- Automatic channel control (available only in registered version)
+- Low price 15€ only
+- Zeta (multilanguage) and BeOS R5 (english only)
+- You don't need an iPod or any kind of MP3 player to use and enjoy BePodder
+- The same licence-keyfile can be use on to unlock BeOS R5 and Zeta version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BePodder will be shareware, and in a very altruistic move by the team, they will donate 20% of the sales to Haiku, to support their development. Like BePodder's quality wasn't a good enough reason to buy it, you now have the added incentive of supporting Haiku through your purchase. The next beta stage will begin next week and a final version is expected around spring time. The main features include:
+
+    * Easy to use yet powerful Graphical User Interface
+    * Full integration with BFS
+    * Integrated OPML Podcasts and Videoblog Directories
+    * Built-in support for RSS 0.9, RSS 2.0 and iTunes
+
+
+
+   1.  Easy to use yet powerful Graphical User Interface
+   2. Handles all news/podcast feeds in RSS 0.9, 2.0 and iTunes
+   3. Fully integrated with BFS (BeOS/Zeta file system)
+   4. Integrated podcast, videoblog, imagefeeds and newsfeeds built-in OPML directories with thousands of feeds
+   5. Advanced channels/lists management with drag and drop support
+   6. Support for more than 10 languages
+   7. Easy to integrate with other applications like BitTorrent/ Installer / Unzip / etc.
+   8. Support for multithreading podcast download
+   9. BePodder is 100% adwares/spywares free
+  10. Low price
+  11. You don't need an iPod or any kind of MP3 player to use and enjoy BePodder
+  12. The same licence-keyfile can be use on to unlock BeOS R5 and Zeta version
+
+
+
+

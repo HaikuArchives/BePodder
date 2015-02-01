@@ -1,0 +1,20 @@
+BePodder for BeOS/ZETA
+End-user License Agreement
+
+NO WARRANTY
+
+BEPODDER IS DISTRIBUTED "AS IS" AND WITHOUT ANY WARRANTY AS TO MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR ANY OTHER WARRANTIES EITHER EXPRESSED OR IMPLIED. THE AUTHOR WILL NOT BE LIABLE FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING OR MISUSING THIS SOFTWARE.
+ 
+Any attempts at reverse-engineering or thwarting the license protection scheme of this software is prohibited. Any evidence of tampering will be investigated and may lead to prosecution according to all applicable laws.
+
+
+Distribution of the Demo version
+
+You may copy the Demo version of this software and documentation as you wish, and give exact copies of the original  Demo version to anyone, and distribute the  Demo version of the software and documentation in its unmodified form via electronic means. But you should not charge or request donations for any such copies however made, or from distributing the software and/or documentation with other products without the author's written permission.
+
+Registered Edition 
+
+One registered copy of BePodder may either be used by a single person who uses the software personally on one or more computers.
+
+You should have received a license key which is necessary to enable the registered edition of the software. This code must be kept in the strictest confidence and must not be given or revealed to anyone but the registered owner. Failure to abide by these provisions may result in severe legal penalties and will result in revocation of the license which will cause the program to no longer work.
+

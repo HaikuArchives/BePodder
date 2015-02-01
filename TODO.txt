@@ -1,0 +1,1 @@
+* Convert SVG icon into a HVIF

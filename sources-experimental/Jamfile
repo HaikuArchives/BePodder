@@ -1,7 +1,7 @@
 
-SubDir TOP sources ;
+SubDir TOP sources-experimental ;
 
-SubDirHdrs $(OBJECTS_DIR) sources ;
+SubDirHdrs $(OBJECTS_DIR) sources-experimental ;
 
 if $(OSPLAT) = X86 {
 	C++FLAGS += -Wno-sign-compare -Wno-overloaded-virtual ;
@@ -11,12 +11,12 @@ if ZETA in $(DEFINES) {
 	echo "ZETA VERSION (NO MORE SUPPORTED)" ;
 	BP_LIBS = libs/libfunky.a libs/librunview.a libs/libfish.a libs/libclv.a libs/libcurl.a libs/libxml2.a be root translation tracker iconv ssl crypto z ;
 	LINKLIBS = -lsocket -lbind -lzeta ;
-	
+
 
 } else {
     echo "Haiku VERSION (compiled for net_server)" ;
 	BP_LIBS = libs/libfunky.a libs/librunview.a libs/libfish.a libs/libclv.a curl xml2 be root translation tracker iconv ssl crypto z ;
-	LINKLIBS = -lnetwork -lstdc++ ;
+	LINKLIBS = -lnetwork -lstdc++.r4 ;
 }
 
 echo "Extra library" ;
@@ -29,7 +29,7 @@ DEFINES = $(SAVED_DEFINES) ;
 
 SubDirSysHdrs /boot/home/config/include ;
 SubDirSysHdrs $(TOP)/include/ ;
-SubDirSysHdrs $(TOP)/include/r5-only ; 
+SubDirSysHdrs $(TOP)/include/r5-only ;
 SubDirSysHdrs $(TOP)/include/curl ;
 SubDirSysHdrs $(TOP)/include/runview ;
 SubDirSysHdrs $(TOP)/include/lbxml ;
@@ -40,11 +40,11 @@ SubDirSysHdrs $(TOP)/sources/ ;
 
 LINKFLAGS += -L/boot/home/config/lib ;
 #LINKFLAGS += -L$(TOP)/libs/ ;
-LINKFLAGS += -L/boot/develop/headers/be ; 
+LINKFLAGS += -L/boot/develop/headers/be ;
 
 
 #<pe-src>
-Application BePodder : 
+Application BePodder :
 	ActionAsync.cpp
 	ActionAsyncWrapper.cpp
 	ActionDelete.cpp

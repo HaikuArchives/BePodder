@@ -23,10 +23,10 @@ IconMenuItem::IconMenuItem(BBitmap* icon, const char *label, const char *extra,
 
 	if (fIcon == NULL) {
 		fCreatedIcon = true;
-		fIcon = new BBitmap(BRect(0, 0, 15, 15), B_COLOR_8_BIT, true);
+		fIcon = new BBitmap(BRect(0, 0, 15, 15), B_RGB_32_BIT, true);
 		char *bits = (char *)fIcon->Bits();
 		int32 length = fIcon->BitsLength();
-		for (int32 i = 0; i < length; i++) bits[i] = B_TRANSPARENT_MAGIC_CMAP8; 
+		for (int32 i = 0; i < length; i++) bits[i] = B_TRANSPARENT_MAGIC_RGBA32; 
 	};
 
 	be_plain_font->GetHeight(&fFontHeight);

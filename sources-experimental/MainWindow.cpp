@@ -111,8 +111,8 @@ MainWindow::MainWindow()
 	 	AddIcon("folder",new BBitmap(GetTrackerIcon("application/x-vnd.Be-directory",16)));
 	 	AddIcon("image",new BBitmap(GetTrackerIcon("image/png",16)));
 	#else
-		BBitmap* folder=new BBitmap(BRect(0,0,15,15), 0, B_CMAP8);
-		BBitmap* image=new BBitmap(BRect(0,0,15,15), 0, B_CMAP8);
+		BBitmap* folder=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
+		BBitmap* image=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
 		
 		BMimeType type("application/x-vnd.Be-directory");
 		type.GetIcon(folder,B_MINI_ICON);

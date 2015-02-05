@@ -1,8 +1,0 @@
-SubDir TOP ;
-SubInclude TOP libfunky ;
-SubInclude TOP libclv ;
-SubInclude TOP libfish ;
-SubInclude TOP librunview ;
-MakeDistro distro ;
-
-

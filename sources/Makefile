@@ -120,10 +120,10 @@ RSRCS =
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
 LIBS = be translation tracker xml2 curl $(STDCPPLIBS) \
-	../libs/libfunky.a \
-	../libs/librunview.a \
-	../libs/libfish.a \
-	../libs/libclv.a
+	../library/libfunky/libfunky.a \
+	../library/librunview/librunview.a \
+	../library/libfish/libfish.a \
+	../library/libclv/libclv.a
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
@@ -140,7 +140,6 @@ SYSTEM_INCLUDE_PATHS = ../include \
 	../include/curl \
 	../include/runview \
 	../include/libclv \
-	../include/libxml \
 	../include/libfunky \
 	../include/libfish
 
@@ -180,7 +179,8 @@ SYMBOLS :=
 DEBUGGER :=
 
 #	Specify any additional compiler flags to be used.
-COMPILER_FLAGS = -Wno-sign-compare -Wno-overloaded-virtual
+COMPILER_FLAGS = -Wno-sign-compare -Wno-overloaded-virtual \
+	$(shell xml2-config --cflags)
 
 #	Specify any additional linker flags to be used.
 LINKER_FLAGS =

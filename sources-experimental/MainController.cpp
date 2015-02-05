@@ -18,6 +18,8 @@
 
 #include "curl/curl.h"
 
+#include "errno.h"
+
 #include "Utils.h"
 #include "DownloadManager.h"
 #include "MainWindow.h"

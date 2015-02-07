@@ -1,6 +1,7 @@
 #include "MainController.h"
 
 #include <Entry.h>
+#include <FindDirectory.h>
 #include <Directory.h>
 #include <Path.h>
 #include <NodeInfo.h>
@@ -992,8 +993,11 @@ MainController::ParseArchive()
 	//		be_app->PostMessage('lic2',be_app);
 		
 	
-	BPath path(GetAppRelativePath().String());
-	path.Append("archive");
+	BPath path;
+	find_directory (B_USER_CACHE_DIRECTORY, &path, true);
+	path.Append("BePodder/archive");
+
+	create_directory( path.Path(), 755 );
 			
 	BEntry e(path.Path(),true);
 	

@@ -38,7 +38,7 @@ AddWindow::AddWindow() :
 	BRect	rect(0, 0, 390, 165);
 	
 	BMessage templ;
-	templ.AddString("name", "Add Subscription");
+	templ.AddString("name", "Add subscription");
 	BMessage settings;
 	settings.AddString("name", "rss_url");
 	settings.AddString("description", "Feed URL");

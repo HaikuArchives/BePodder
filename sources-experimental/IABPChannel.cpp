@@ -28,13 +28,13 @@ IABPChannelAddRequest::IABPChannelAddRequest(MainController* controller, MainWin
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("add-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("add-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Add Channel")); 
+	 	  		SetLabel(_T("Add channel")); 
 			 	  
 }
 			 	 
 BString 
 IABPChannelAddRequest::GetDescription(){
- 	  return _T("Add the podcast to the Subscriptions list");
+ 	  return _T("Add the podcast to the subscriptions list");
 }
 			 	  
 
@@ -60,13 +60,13 @@ IABPChannelRemove::IABPChannelRemove(MainController* controller ,MainWindow* vie
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("delete-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("delete-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove Channel")); 
+	 	  		SetLabel(_T("Remove channel")); 
 			 	  
 }
 			 	 
 BString 
 IABPChannelRemove::GetDescription(){
- 	  return _T("Delete the podcast from the Subscriptions list");
+ 	  return _T("Delete the podcast from the subscriptions list");
 }
 			 	  
 
@@ -87,7 +87,7 @@ IABPChannelRemove::Perform(BMessage*){
 				text << row->GetTitle();
 				text << _TT("alert2b");
 							
-				BPAlert* remove = new BPAlert("Remove a Channel", text.String(),_T("Delete"),_T("Archive"),_T("Cancel"),B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+				BPAlert* remove = new BPAlert("Remove a channel", text.String(),_T("Delete"),_T("Archive"),_T("Cancel"),B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
 				int32 result=remove->Go();
 				
 				LOCKWINDOW
@@ -95,7 +95,7 @@ IABPChannelRemove::Perform(BMessage*){
 					fController->ArchiveChannel(row->fRef);
 				else
 				if(result==0){
-					BPAlert* wait = new BPAlert("Remove a Channel", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+					BPAlert* wait = new BPAlert("Remove a channel", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
 					fView->UpdateIfNeeded();
 					wait->Go(NULL);
 					
@@ -104,7 +104,7 @@ IABPChannelRemove::Perform(BMessage*){
 					wait->PostMessage(B_QUIT_REQUESTED);
 					
 					if(result !=B_OK){
-						wait = new BPAlert("Remove a Channel", "\nAn error occured while removing!",_T("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+						wait = new BPAlert("Remove a channel", "\nAn error occured while removing!",_T("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
 						
 						wait->Go();
 					}
@@ -131,7 +131,7 @@ IABPChannelCheck::IABPChannelCheck(MainController* controller,MainWindow* view):
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Check Channel")); 
+	 	  		SetLabel(_T("Check channel")); 
 			 	  
 }
 			 	 
@@ -167,7 +167,7 @@ IABPChannelWWW::IABPChannelWWW(MainController* controller,MainWindow* view):IAct
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Open Homepage")); 
+	 	  		SetLabel(_T("Open homepage")); 
 			 	  
 }
 			 	 
@@ -200,13 +200,13 @@ IABPChannelWWW::Shortcut(uint32 *modifiers) const {
 IABPChannelEnclosureFolder::IABPChannelEnclosureFolder(MainController* controller,MainWindow* view):IActionBP(controller,view){
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("folder"));
  		
-	 	  		SetLabel(_T("Open Enclosures folder")); 
+	 	  		SetLabel(_T("Open enclosures folder")); 
 			 	  
 }
 			 	 
 BString 
 IABPChannelEnclosureFolder::GetDescription(){
- 	  return _T("Open Enclosures folder");
+ 	  return _T("Open enclosures folder");
 }
 			 	  
 
@@ -236,7 +236,7 @@ IABPChannelCheckAll::IABPChannelCheckAll(MainController* controller,MainWindow* 
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Check All Channels")); 
+	 	  		SetLabel(_T("Check all channels")); 
 			 	  
 }
 			 	 
@@ -265,12 +265,12 @@ IABPChannelShowImage::IABPChannelShowImage(MainController* controller,MainWindow
 	SetIcon(IAction::SIZE_16,LoadIcon("image"));
 	//SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
-	SetLabel(_T("Show Channel Image")); 
+	SetLabel(_T("Show channel image")); 
 }
 			 	 
 BString 
 IABPChannelShowImage::GetDescription(){
- 	  return _T("Show Channel Image");
+ 	  return _T("Show channel image");
 }
 			 	  
 

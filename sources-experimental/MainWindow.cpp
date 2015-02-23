@@ -337,9 +337,9 @@ MainWindow::init(MainController* controller){
 	BView*	fakeView=new BView(fSelector->Bounds(),"fakeView",B_FOLLOW_ALL,B_WILL_DRAW);
 	fakeView->AddChild(down_list=new DownloadListView(fakeView->Bounds()));
 	 
-	fSelector->AddSection("info0.png",CreateItemInfoView(), _T("Show Episode info") );
-	fSelector->AddSection("info1.png",CreateChannelInfoView(), _T("Show Subscription info"));
-	fSelector->AddSection("info2.png",fakeView,  _T("Show Downloads info") );
+	fSelector->AddSection("info0.png",CreateItemInfoView(), _T("Show episode info") );
+	fSelector->AddSection("info1.png",CreateChannelInfoView(), _T("Show subscription info"));
+	fSelector->AddSection("info2.png",fakeView,  _T("Show downloads info") );
 	fSelector->Select(0);
 }
 
@@ -452,7 +452,7 @@ MainWindow::CreateMenuBar(){
 	BMenu  *podderfile = new BMenu(_T("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	
-	BMenuItem* importOmpl = new BMenuItem(_T("Import OPML..") , new BMessage(IMPORT_OPML), 0, 0);
+	BMenuItem* importOmpl = new BMenuItem(_T("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0);
 	podderfile->AddItem(importOmpl);
 
 	
@@ -483,17 +483,17 @@ MainWindow::CreateMenuBar(){
 	poddermenubar->AddItem(directoryfile);
 	
 	
-	AddDirectoryItem(directoryfile,_T("Podcast List"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
-	AddDirectoryItem(directoryfile,_T("Videoblog List"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
-	AddDirectoryItem(directoryfile,_T("Imagefeeds List"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
-	AddDirectoryItem(directoryfile,_T("Newsfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
-	AddDirectoryItem(directoryfile,_T("BitTorrentfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
-	AddDirectoryItem(directoryfile,_T("Internationalfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
+	AddDirectoryItem(directoryfile,_T("Podcast list"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
+	AddDirectoryItem(directoryfile,_T("Videoblog list"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
+	AddDirectoryItem(directoryfile,_T("Imagefeeds list"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
+	AddDirectoryItem(directoryfile,_T("Newsfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
+	AddDirectoryItem(directoryfile,_T("BitTorrentfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
+	AddDirectoryItem(directoryfile,_T("Internationalfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
 	
 	BMenu  *podderview = new BMenu(_T("View"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderview);
 	
-	fullscreenitem = new BMenuItem(_T("Full Screen"),new BMessage(SET_FULLSCREEN),'F',0);
+	fullscreenitem = new BMenuItem(_T("Full screen"),new BMessage(SET_FULLSCREEN),'F',0);
 	podderview->AddItem(fullscreenitem);
 	fullscreenitem->SetMarked(false);
 	
@@ -502,17 +502,17 @@ MainWindow::CreateMenuBar(){
 	notoolbar->SetMarked(true);
 	
 	
-	ChannelSize = new BMenu(_T("Subscriptions View"));
+	ChannelSize = new BMenu(_T("Subscriptions view"));
 	podderview->AddItem(ChannelSize);
 	ChannelSize->SetRadioMode(true);
 	
 	BMenuItem* temp;
 	
-	temp= new BMenuItem(_T("Big Items"),new BMessage('bigg'));
+	temp= new BMenuItem(_T("Big items"),new BMessage('bigg'));
 	ChannelSize->AddItem(temp);
 	temp->SetMarked(true);
 	
-	temp=new BMenuItem(_T("Small Items"),new BMessage('smal'));
+	temp=new BMenuItem(_T("Small items"),new BMessage('smal'));
 	ChannelSize->AddItem(temp);
 	temp->SetMarked(false);
 	
@@ -521,7 +521,7 @@ MainWindow::CreateMenuBar(){
 	//--------------------------------------------------------------------------------------------------------------
 	
 	
-	setworkspace= new BMenu(_T("Move BePodder on workspace:"));
+	setworkspace= new BMenu(_T("Move BePodder onto workspace:"));
 	podderview->AddItem(setworkspace);
 	
 	for(int i=0;i<count_workspaces();i++){
@@ -539,12 +539,12 @@ MainWindow::CreateMenuBar(){
 	
 	
 	BMessage *msg=new BMessage(SHOW_HELP);
-	BMenuItem *helpitem1 = new BMenuItem(_T("Getting Started"),msg,'G',0);
+	BMenuItem *helpitem1 = new BMenuItem(_T("Getting started"),msg,'G',0);
 	helpfile->AddItem(helpitem1);
 	
 	msg=new BMessage(SHOW_HELP);
 	msg->AddString("page","shortcuts");
-	BMenuItem *shortcutitem = new BMenuItem(_T("Keyboard Shortcuts"),msg,'K',0);
+	BMenuItem *shortcutitem = new BMenuItem(_T("Keyboard shortcuts"),msg,'K',0);
 	helpfile->AddItem(shortcutitem);
 	
 	BMessage *webmsg=new BMessage(WEB_PAGE);
@@ -561,7 +561,7 @@ MainWindow::CreateMenuBar(){
 	
 	webmsg=new BMessage(WEB_PAGE);
 	webmsg->AddString("url","http://www.funkyideasoft.com/support.html");
-	helpfile->AddItem( new BMenuItem(_T("Online Support"),webmsg,0,0));
+	helpfile->AddItem( new BMenuItem(_T("Online support"),webmsg,0,0));
 	
 	helpfile->AddSeparatorItem();
 	BMenuItem* updates;
@@ -716,7 +716,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case SHOW_HELP:
 		{
 			
-			BPAlert *alert = new BPAlert("BePodder",_T("Loading Help..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",_T("Loading help..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 			HelpWindow *help1 = new HelpWindow();
@@ -1326,22 +1326,22 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 					float 		float_value;
 					if (size >= kTB_SIZE)
 					{
-						suffix = "TB";
+						suffix = "TiB";
 						float_value = (float)size / kTB_SIZE;
 					}
 					else if (size >= kGB_SIZE)
 					{
-						suffix = "GB";
+						suffix = "GiB";
 						float_value = (float)size / kGB_SIZE;
 					}
 					else if (size >= kMB_SIZE)
 					{
-						suffix = "MB";
+						suffix = "MiB";
 						float_value = (float)size / kMB_SIZE;
 					}
 					else
 					{
-						suffix = "KB";
+						suffix = "KiB";
 						float_value = (float)size / kKB_SIZE;
 					}
 					
@@ -1430,13 +1430,13 @@ MainWindow::ShowChannelDescription(MemoryArchive* archive){
 		BString action("action://bepodder(");
 		action << (int)IACTION_CHANNEL_SHOW_IMAGE << ")";
 		fChannelText->Append("\n\n",C_TEXT,C_TEXT,F_TEXT);	
-		fChannelText->AppendURL(_T("Show channel Image"),action.String(),C_TEXT,F_TEXT);	
+		fChannelText->AppendURL(_T("Show channel image"),action.String(),C_TEXT,F_TEXT);	
 		//free(buffer);
 	}
 	
 	fChannelText->Append("\n\n",C_TEXT,C_TEXT,F_TEXT);	
 	fChannelText->AppendURL("feed ",archive->GetDataString(CHANNEL_URL) .String(),C_TEXT,F_EMOTICON); //? Icon ??
-	fChannelText->AppendURL("XML Feed Link",archive->GetDataString(CHANNEL_URL) .String(),F_TEXT);
+	fChannelText->AppendURL("XML feed link",archive->GetDataString(CHANNEL_URL) .String(),F_TEXT);
 	fChannelText->Append("\n",C_TEXT,C_TEXT,F_TEXT);	
 		
 	fChannelText->Append("\n",C_TEXT,C_TEXT,F_TEXT);

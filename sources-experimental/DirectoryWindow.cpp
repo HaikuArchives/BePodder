@@ -31,7 +31,7 @@ extern MainWindow*	main_window;
 #include "Utils.h"
 
 #include "ActionDownload.h"
-#include	"DownloadManager.h"
+#include "DownloadManager.h"
 
 #include "PercentageWindow.h"
 
@@ -78,7 +78,7 @@ DirectoryWindow::DirectoryWindow(const char* opml_name,BString opml_url):
 	bgbox->AddChild(viewd);
 
 	
-	BButton *button1= new BButton(BRect(0,0,100,30),"noname",_T("Collapse All"),new BMessage('refr'), B_FOLLOW_ALL);
+	BButton *button1= new BButton(BRect(0,0,100,30),"noname",_T("Collapse all"),new BMessage('refr'), B_FOLLOW_ALL);
 	viewd->AddChild(button1);
 #ifdef ZETA
 	button1->SetToolTipText(_T("Collapse all categories in the directory list"));
@@ -91,7 +91,7 @@ DirectoryWindow::DirectoryWindow(const char* opml_name,BString opml_url):
 	BButton *button3= new BButton(BRect(260,0,360,30),"noname",_T("Subscribe"),new BMessage('subs'), B_FOLLOW_ALL);
 	viewd->AddChild(button3);
 #ifdef ZETA
-	button3->SetToolTipText(_T("Add the selected podcast to the Subscription list"));
+	button3->SetToolTipText(_T("Add the selected podcast to the subscription list"));
 #endif	
 	alist->SetInvocationMessage(new BMessage('invo'));
 	
@@ -375,7 +375,7 @@ DirectoryWindow::DownloadInfo(BMessage* msg){
 					break;
 					case CURLE_ABORTED_BY_CALLBACK:
 						//item->SetFileStatus(ERROR);
-						SetError("Aborted by Callback!");					
+						SetError("Aborted by callback!");					
 					break;
 					case CURLE_HTTP_RANGE_ERROR:
 						//item->SetFileStatus(ERROR);
@@ -383,11 +383,11 @@ DirectoryWindow::DownloadInfo(BMessage* msg){
 					break;
 					case CURLE_FTP_ACCESS_DENIED:
 						//item->SetFileStatus(ERROR);
-						SetError("Access Denied!");
+						SetError("Access denied!");
 					break;
 					case CURLE_FTP_USER_PASSWORD_INCORRECT:
 						//item->SetFileStatus(ERROR);
-						SetError("User or Password Incorrect!");
+						SetError("User or password incorrect!");
 					break;					
 					
 					default:

@@ -100,7 +100,7 @@ BPSettingsWindow::CreateGeneralBox(BMessage data){
 	
 	BMessage num_download;
 	num_download.AddString("name","starton_workspace");
-	num_download.AddString("description", _T("Max Downloads")); 
+	num_download.AddString("description", _T("Max downloads")); 
 	num_download.AddInt32("type",B_INT32_TYPE);
 	num_download.AddInt32("valid_value",1);
 	num_download.AddInt32("valid_value",2);
@@ -141,7 +141,7 @@ BPSettingsWindow::CreateDownloadBox(BMessage data){
 	
 	BMessage num_download;
 	num_download.AddString("name","max_downloads");
-	num_download.AddString("description", _T("Max Downloads")); 
+	num_download.AddString("description", _T("Max downloads")); 
 	num_download.AddInt32("type",B_INT32_TYPE);
 	num_download.AddInt32("valid_value",1);
 	num_download.AddInt32("valid_value",2);
@@ -171,7 +171,7 @@ BPSettingsWindow::CreateFileTypeBox(BMessage data){
 	setting.AddInt32("type",B_STRING_TYPE);
 	setting.AddString("valid_value","Firefox"); //0
 	setting.AddString("valid_value","NetPositive"); //1
-	setting.AddString("valid_value","System Default"); //2	
+	setting.AddString("valid_value","System default"); //2	
 	setting.AddString("default", "NetPositive");
 	
 	BMessage setting2;
@@ -232,7 +232,7 @@ BPSettingsWindow::CreateProxyBox(BMessage data){
 	
 	BMessage enable_proxy;
 	enable_proxy.AddString("name","enable");
-	enable_proxy.AddString("description", _T("Enable Proxy")); 
+	enable_proxy.AddString("description", _T("Enable proxy")); 
 	enable_proxy.AddInt32("type",B_BOOL_TYPE);
 	enable_proxy.AddString("enable_control","address");
 	enable_proxy.AddString("enable_control","port");

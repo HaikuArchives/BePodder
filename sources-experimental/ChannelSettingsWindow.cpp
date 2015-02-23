@@ -32,9 +32,9 @@ ChannelSettingsWindow::CreateBox(BMessage data) {
 	when.AddString("description", _T("WHEN?")); 
 	when.AddInt32("type",B_STRING_TYPE);
 	when.AddString("valid_value","never"); 			//0
-	when.AddString("valid_value","After a chek"); 			//1
+	when.AddString("valid_value","After a check"); 			//1
 	when.AddString("valid_value","When there are new episodes"); 	//2
-	when.AddString("valid_value","System Default"); //3
+	when.AddString("valid_value","System default"); //3
 	when.AddString("default", "never");
 	
 	main_msg.AddMessage("setting", &when);

@@ -113,7 +113,7 @@ TheApp::ChekUpdate() {
 	return;
 	
 	//uhm check for update?
-	printf("Checking for updates..\n");
+	printf("Checking for updates...\n");
 	ActionHTTPContent*		update=new ActionHTTPContent("http://www.funkyideasoft.com/latest.nfo");	
 	update->SetTargetAndWhat(this,UPDATE_INFO);
 	download_manager->SingleThreadAction(update);
@@ -184,7 +184,7 @@ TheApp::MessageReceived(BMessage* msg){
 			text << VERSION_ID << "\n\n" << "Latest available version : " << rel ;
 			text << "\n\nGo to our web site and download the latest version!\n" ;
 						
-			BPAlert *alert = new BPAlert("BePodder",text.String(),_T("Web Site"),_T("Close"),NULL,B_WIDTH_AS_USUAL, LoadIcon("logo-64.png"));
+			BPAlert *alert = new BPAlert("BePodder",text.String(),_T("Website"),_T("Close"),NULL,B_WIDTH_AS_USUAL, LoadIcon("logo-64.png"));
 			if(alert->Go()==0)
 				fController->OpenURL("http://www.funkyideasoft.com/downloads.html");
 		}
@@ -287,9 +287,9 @@ TheApp::InstallMimeTypes(){
 		channel.Delete();
 	}
 
-	printf("Installing Channel MimeType..\n");
+	printf("Installing channel MimeType..\n");
 	
-	channel.SetShortDescription("BePodder Channel");
+	channel.SetShortDescription("BePodder channel");
 	
 	BMessage achannel;
 	
@@ -334,7 +334,7 @@ TheApp::InstallMimeTypes(){
 	channel.SetAttrInfo(&achannel);
 	
 	if(channel.Install()!=B_OK)
-		printf("Error Installing!\n");	
+		printf("Error installing!\n");	
 	
 	
 	BMimeType	item(MIME_ITEM);
@@ -348,9 +348,9 @@ TheApp::InstallMimeTypes(){
 		item.Delete();
 	}
 
-	printf("Installing Item MimeType..\n");
+	printf("Installing item MimeType..\n");
 	
-	item.SetShortDescription("BePodder Episode");
+	item.SetShortDescription("BePodder episode");
 	
 	
 	BMessage aitem;
@@ -383,7 +383,7 @@ TheApp::InstallMimeTypes(){
 	aitem.AddBool("attr:editable",false);
 	
 	aitem.AddString("attr:name","bp:enclosure_size");
-	aitem.AddString("attr:public_name","Enclosure Size");
+	aitem.AddString("attr:public_name","Enclosure size");
 	aitem.AddInt32("attr:type",B_OFF_T_TYPE);
 	aitem.AddInt32("attr:width",30);
 	aitem.AddInt32("attr:alignment",B_ALIGN_RIGHT);
@@ -410,7 +410,7 @@ TheApp::InstallMimeTypes(){
 	aitem.AddBool("attr:editable",false);
 	
 	aitem.AddString("attr:name","bp:enclosure_path");
-	aitem.AddString("attr:public_name","Enclosure Path");
+	aitem.AddString("attr:public_name","Enclosure path");
 	aitem.AddInt32("attr:type",B_STRING_TYPE);
 	aitem.AddInt32("attr:width",30);
 	aitem.AddInt32("attr:alignment",B_ALIGN_LEFT);
@@ -446,7 +446,7 @@ TheApp::InstallMimeTypes(){
 	aitem.AddBool("attr:editable",false);	
 	
 	aitem.AddString("attr:name","bp:enclosure_type");
-	aitem.AddString("attr:public_name","Enclosure Type");
+	aitem.AddString("attr:public_name","Enclosure type");
 	aitem.AddInt32("attr:type",B_STRING_TYPE);
 	aitem.AddInt32("attr:width",30);
 	aitem.AddInt32("attr:alignment",B_ALIGN_LEFT);
@@ -458,7 +458,7 @@ TheApp::InstallMimeTypes(){
 			
 	item.SetAttrInfo(&aitem);
 	if(item.Install()!=B_OK)
-		printf("Error Installing!\n");	
+		printf("Error installing!\n");	
 		
 	BMimeType	ch(MIME_ARCHIVED_CHANNEL);
 	
@@ -470,14 +470,14 @@ TheApp::InstallMimeTypes(){
 		ch.Delete();
 	}
 
-	printf("Installing Archived Channel MimeType..\n");
+	printf("Installing archived channel MimeType..\n");
 	
-	ch.SetShortDescription("BePodder Archived Channel");
+	ch.SetShortDescription("BePodder archived channel");
 	
 	BMessage ach;
 //	ach.AddString("revision","1.2");			
 			
 	ch.SetAttrInfo(&ach);
 	if(ch.Install()!=B_OK)
-		printf("Error Installing!\n");	
+		printf("Error installing!\n");	
 }

@@ -27,7 +27,7 @@ IABPGroupCheck::IABPGroupCheck(MainController* controller,MainWindow* view):IAct
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Check Channels of Group")); 
+	 	  		SetLabel(_T("Check channels of group")); 
 			 	  
 }
 			 	 
@@ -65,13 +65,13 @@ IABPGroupCheck::Shortcut(uint32 *modifiers) const {
 IABPGroupAdd::IABPGroupAdd(MainController* controller,MainWindow* view):IActionBP(controller,view){
  	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
-  		SetLabel(_T("Add a Group")); 
+  		SetLabel(_T("Add a group")); 
 			 	  
 }
 			 	 
 BString 
 IABPGroupAdd::GetDescription(){
- 	  return _T("Add a new Group");
+ 	  return _T("Add a new group");
 }
 			 	  
 
@@ -94,13 +94,13 @@ IABPGroupAdd::Shortcut(uint32 *modifiers) const {
 IABPGroupRename::IABPGroupRename(MainController* controller,MainWindow* view):IActionBP(controller,view){
  	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png")); //fix this icon..
-  		SetLabel(_T("Rename a Group")); 
+  		SetLabel(_T("Rename a group")); 
 			 	  
 }
 			 	 
 BString 
 IABPGroupRename::GetDescription(){
- 	  return _T("Rename the selected Group");
+ 	  return _T("Rename the selected group");
 }
 			 	  
 
@@ -133,7 +133,7 @@ IABPGroupRemove::IABPGroupRemove(MainController* controller,MainWindow* view):IA
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove a Group")); 
+	 	  		SetLabel(_T("Remove a group")); 
 }
 			 	 
 BString 
@@ -157,11 +157,11 @@ IABPGroupRemove::Perform(BMessage*){
 		text << _TT("alert1_fix..");
 		text << "\n\n" << count << " " << "channels" << "\n";
 			
-		BPAlert* remove = new BPAlert("Remove an Group", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+		BPAlert* remove = new BPAlert("Remove a group", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
 		int32 result=remove->Go(); //sync..
 
 		if(result==0){
-			BPAlert* wait = new BPAlert("Remove a Group", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
+			BPAlert* wait = new BPAlert("Remove a group", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
 			wait->Go(NULL); //async..
 			
 			for(int i=0;i<count;i++){

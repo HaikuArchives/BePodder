@@ -23,7 +23,7 @@ IABPItemRemove::IABPItemRemove(MainController* controller,MainWindow* view):IAct
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove Item")); 
+	 	  		SetLabel(_T("Remove item")); 
 }
 			 	 
 BString 
@@ -56,7 +56,7 @@ IABPItemRemove::Perform(BMessage*){
 	else
 		text << "\n\n" << selection.CountItems() << " " << "episodes\n";
 		
-	BPAlert* remove = new BPAlert("Remove an Item", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+	BPAlert* remove = new BPAlert("Remove an item", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
 	int32 result=remove->Go(); //sync..
 	
 	LOCKWINDOW
@@ -66,7 +66,7 @@ IABPItemRemove::Perform(BMessage*){
 	
 	if(result==0){
 		
-		BPAlert* wait = new BPAlert("Remove a Item", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
+		BPAlert* wait = new BPAlert("Remove a item", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
 		wait->Go(NULL); //async..
 		
 		for(int i=0;i<selection.CountItems();i++){
@@ -227,7 +227,7 @@ IABPItemWWW::IABPItemWWW(MainController* controller,MainWindow* view):IActionBP(
    		SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
   		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
   		
-  		SetLabel(_T("Open Web Page")); 
+  		SetLabel(_T("Open webpage")); 
 			 	  
 }
 			 	 

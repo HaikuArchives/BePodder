@@ -18,7 +18,7 @@
 
 
 HelpWindow::HelpWindow() :
-	BWindow(BRect(300,100,780,475),_T("Getting Started"), B_TITLED_WINDOW,B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_WILL_DRAW){
+	BWindow(BRect(300,100,780,475),_T("Getting started"), B_TITLED_WINDOW,B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_WILL_DRAW){
 	
 	BRect rect(Bounds());
 	rect.bottom *= 0.87;

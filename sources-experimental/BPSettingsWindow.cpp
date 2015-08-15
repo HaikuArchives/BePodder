@@ -25,7 +25,7 @@ BPSettingsWindow::BPSettingsWindow() :
 	
 	podder_settings.FindMessage(SETTINGS_FILETYPE,&data);
 	BBox*	abox = CreateFileTypeBox(data);
-	AddBox(_T("FileType") ,abox);
+	AddBox(_T("Filetype") ,abox);
 	data.MakeEmpty();
 	
 	
@@ -88,7 +88,7 @@ BPSettingsWindow::FixLabel(BView* box){ //this name is fake! :p
 		if(!stw) return;
 		
 		BString text = stw->Text();
-		text << " " << _T("(only in registred version!)");
+		text << " " << _T("(only in registered version!)");
 		
 		stw->SetText(text.String());
 
@@ -172,7 +172,7 @@ BPSettingsWindow::CreateFileTypeBox(BMessage data){
 	setting.AddString("valid_value","Firefox"); //0
 	setting.AddString("valid_value","NetPositive"); //1
 	setting.AddString("valid_value","System default"); //2	
-	setting.AddString("default", "NetPositive");
+	setting.AddString("default", "System default");
 	
 	BMessage setting2;
 	setting2.AddString("name","player");

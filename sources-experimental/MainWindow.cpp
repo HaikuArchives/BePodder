@@ -288,7 +288,7 @@ MainWindow::init(MainController* controller){
 	
 	//BButton *tasto8= new BButton(BRect(725,11,835,41),"Send","Please feedback :)",new BMessage('send'));
 	//view->AddChild(tasto8);
-	//tasto8->SetToolTipText(_T("Submit bug and idea"));
+	//tasto8->SetToolTipText(_T("Submit bug or idea"));
 	
 	
 	//--------------------------------------------------------451

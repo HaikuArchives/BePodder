@@ -1192,7 +1192,7 @@ MainWindow::SetSortingSubscriptions(bool value){
 
 void
 MainWindow::AddDownload(DownloadListItem* down){
-	down_list->AddRow(down,(long int)0);
+	down_list->AddRow(down,(int32)0);
 }
 
 void

@@ -59,10 +59,6 @@ DownloadManager*	download_manager;
 #endif
 
 	
-
-
-	
-	
 //a tendere qui dovrebbe essere
 //instaziato il model
 MainController::MainController(MainWindow* view, MainModel* model){
@@ -1121,7 +1117,7 @@ MainController::CreateChannelItem(BEntry* e,BMessage* cache)
 	
 	
 	//check delle info di cache..
-	time_t when=1;
+	int64 when=1;
 	time_t now=0;
 	if(node.GetModificationTime(&now)!=B_OK) now=0;
 	
@@ -1130,7 +1126,7 @@ MainController::CreateChannelItem(BEntry* e,BMessage* cache)
 	int32 count;
 			
 	if( cache->FindInt32(key.String(),&count)!=B_OK || 
-		cache->FindInt32(row->GetURL().String(),&when)!=B_OK || when!=now) {
+		cache->FindInt64(row->GetURL().String(),&when)!=B_OK || (time_t)when!=now) {
 			printf("Recaching for.. %s\n",row->GetURL().String());
 			count=CountNewItems(row->fRef);
 		}
@@ -1615,7 +1611,7 @@ MainController::StoreStates(){
 		time_t when;
 		if(node.GetModificationTime(&when)==B_OK) {
 			BString key=row->GetURL();
-			cache.AddInt32(key.String(),when);
+			cache.AddInt64(key.String(),(int64)when);
 			key << "_count";
 			cache.AddInt32(key.String(),row->GetNewCount());
 		}

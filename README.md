@@ -1,5 +1,8 @@
 # BePodder
+
 A media aggregator (and more) by 2014 Funky Idea Software, now released under MIT license
+
+![BePodder](bepodder.png "BePodder")
 
 ## History
 Moved to Haiku Archives 2015

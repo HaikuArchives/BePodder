@@ -4,6 +4,7 @@
 #include "MyColumnTypes.h"
 #include <Window.h>
 #include "BPLocale.h"
+#include <ControlLook.h>
 #include <ScrollBar.h>
 #include <Box.h>
 #include "EpisodeListItem.h"
@@ -19,7 +20,7 @@ class StatusView :  public BView {
 				BStringView*		fCounter;
 };
 
-StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_ALL_SIDES,B_WILL_DRAW){
+StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_BOTTOM | B_FOLLOW_LEFT,B_WILL_DRAW){
 	SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR));
 	BRect rect(Bounds());
 	rect.InsetBy(2,2);
@@ -29,15 +30,10 @@ StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_ALL_SIDES,B_WILL_DRAW){
 	fCounter->GetFont(&font);
 	font_height fh;
 	font.GetHeight(&fh);
-	fCounter->ResizeBy(20,fh.descent);
-	fCounter->MoveBy(-20,fh.descent);
-	fCounter->SetViewColor( ui_color(B_PANEL_BACKGROUND_COLOR) );
+	fCounter->ResizeBy(-10,fh.descent/2);
+	fCounter->MoveBy(10,fh.descent/2);
+	fCounter->SetViewColor( B_TRANSPARENT_COLOR );
 	AddChild(fCounter);
-	
-	rect=Bounds();
-	rect.left = fCounter->Bounds().right + 1;
-	//AddChild(new ImageButton(rect,"name",NULL));
-
 }
 
 void
@@ -48,7 +44,7 @@ StatusView::SetCount(int32 count){
 }
 
 EpisodeListView::EpisodeListView(BRect r):
-BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FANCY_BORDER,true)
+BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAIN_BORDER,true)
 {
 	BColumn *icon = new BMyBitmapColumn(_T("Icon"),16,16,16);
 	BColumn *title = new BStringColumn(_T("Title"),140,10,500,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
@@ -66,20 +62,7 @@ BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FANC
 	SetSelectionMode(B_MULTIPLE_SELECTION_LIST);
 	SetSortingEnabled(true);
 	SetSortColumn(date,false,false);
-	
-	AddStatusView(fStatusView=new StatusView(BRect(0,0,100,B_H_SCROLL_BAR_HEIGHT-1)));
-	
-	SetColor(B_COLOR_BACKGROUND,White);
-	
-	SetColor(B_COLOR_SELECTION,	ui_color(B_MENU_SELECTION_BACKGROUND_COLOR));
-
-	//FIX make sense?	
-	#ifdef ZETA
-	 SetColor(B_COLOR_SELECTION_TEXT,ui_color(B_MENU_SELECTED_ITEM_TEXT_COLOR));
-	#else
-	 SetColor(B_COLOR_SELECTION_TEXT,White);
-	#endif 
-	
+	AddStatusView(fStatusView=new StatusView(BRect(0, 0, 100,B_H_SCROLL_BAR_HEIGHT-1)));
 }
 
 void				

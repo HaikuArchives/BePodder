@@ -119,11 +119,10 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS = be translation tracker xml2 curl $(STDCPPLIBS) \
+LIBS = be columnlistview translation tracker xml2 curl $(STDCPPLIBS) \
 	../library/libfunky/libfunky.a \
 	../library/librunview/librunview.a \
-	../library/libfish/libfish.a \
-	../library/libclv/libclv.a
+	../library/libfish/libfish.a
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
@@ -139,9 +138,9 @@ SYSTEM_INCLUDE_PATHS = ../include \
 	../include/r5-only \
 	../include/curl \
 	../include/runview \
-	../include/libclv \
 	../include/libfunky \
-	../include/libfish
+	../include/libfish \
+	$(shell findpaths -e B_FIND_PATH_HEADERS_DIRECTORY private/interface)
 
 #	Additional paths paths to look for local headers. These use the form
 #	#include "header". Directories that contain the files in SRCS are

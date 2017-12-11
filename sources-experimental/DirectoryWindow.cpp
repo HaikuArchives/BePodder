@@ -80,19 +80,14 @@ DirectoryWindow::DirectoryWindow(const char* opml_name,BString opml_url):
 	
 	BButton *button1= new BButton(BRect(0,0,100,30),"noname",_T("Collapse all"),new BMessage('refr'), B_FOLLOW_ALL);
 	viewd->AddChild(button1);
-#ifdef ZETA
-	button1->SetToolTipText(_T("Collapse all categories in the directory list"));
-#endif	
+	button1->SetToolTip(_T("Collapse all categories in the directory list"));
 	/*BButton *button2= new BButton(BRect(130,0,230,30),"noname",_T("Preview"),new BMessage('prev'), B_FOLLOW_ALL);
 	 viewd->AddChild(button2);
-#ifdef ZETA
-	 button2->SetToolTipText(_T("Checkout a podcast before downloading it"));
-#endif	*/
+	 button2->SetToolTip(_T("Checkout a podcast before downloading it"));
+	*/
 	BButton *button3= new BButton(BRect(260,0,360,30),"noname",_T("Subscribe"),new BMessage('subs'), B_FOLLOW_ALL);
 	viewd->AddChild(button3);
-#ifdef ZETA
-	button3->SetToolTipText(_T("Add the selected podcast to the subscription list"));
-#endif	
+	button3->SetToolTip(_T("Add the selected podcast to the Subscription list"));
 	alist->SetInvocationMessage(new BMessage('invo'));
 	
 	PostMessage('refr');

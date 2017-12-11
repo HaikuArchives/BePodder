@@ -109,7 +109,7 @@ class MainWindow: public BWindow
 				void	SaveSetting(BMessage* data);
 				void	LoadSetting(BMessage* data);
 	private:				
-				float		CreateMenuBar();
+				float	CreateMenuBar();
 				BView*	CreateItemInfoView();			
 				BView*	CreateChannelInfoView();
 				

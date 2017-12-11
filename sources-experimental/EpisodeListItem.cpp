@@ -17,7 +17,7 @@
 #include "ColumnTypes.h"
 
 
-EpisodeListItem::EpisodeListItem():BRow(16.0),isNew(false)
+EpisodeListItem::EpisodeListItem():BRow(),isNew(false)
 {
 	int index = 0;
 	time_t time = 0;
@@ -111,8 +111,10 @@ EpisodeListItem::KeyModified(int32 key, void* data,ssize_t size)
 			 
 			  fieldStaus->SetFileStatus(status);
 			  //test
+			/* FIX in BRow
 			if(fList)
-				fList->UpdateRow(this);
+				UpdateRow(this);*/
+				Invalidate();
 		}
 		break;
 		case ITEM_ENCLOSURE_FILE_PERCENTAGE:

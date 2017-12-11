@@ -18,7 +18,7 @@ SubscriptionListView::SubscriptionListView(BRect r):
 BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAME_EVENTS|B_NAVIGABLE,B_FANCY_BORDER,true)
 {
 
-	podcast=new SubscriptionColumn(_T("Subscriptions"),200,36,300,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
+	podcast=new SubscriptionColumn(_T("Subscriptions"),300,36,600,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
 	AddColumn(podcast,0);
 	SetColumnFlags(B_ALLOW_COLUMN_RESIZE );
 	SetSelectionMode(B_SINGLE_SELECTION_LIST);
@@ -44,10 +44,11 @@ BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAM
 
 void
 SubscriptionListView::FrameResized(float w,float h){
-	BColumnListView::FrameResized(w,h);	
+	BColumnListView::FrameResized(w,h);
 	podcast->SetWidth(w-35);
-	GetTitleView()->Invalidate();
+	// GetTitleView()->Invalidate(); // TODO this method doesn't exist anymore
 	Refresh();
+
 }
 
 void				

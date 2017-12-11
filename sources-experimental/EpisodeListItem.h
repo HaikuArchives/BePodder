@@ -7,8 +7,7 @@
 #ifndef _EpisodeListItem_H
 #define _EpisodeListItem_H
 
-#include "ColumnListView.h"
-#include "ColumnTypes.h"
+#include <ColumnListView.h>
 
 #include "ElementListener.h"
 

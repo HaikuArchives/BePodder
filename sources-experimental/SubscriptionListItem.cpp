@@ -43,7 +43,8 @@ SubscriptionListItem::SubscriptionListItem(entry_ref ref):BRow(ALTEZZA_BIG)
 
 void				
 SubscriptionListItem::SetSize(SubscriptionSize size){
-	
+	/*
+	//TODO new BColumnView doesn't have the SetHeight method
 	switch(size){
 		case BIG:
 			SetHeight(ALTEZZA_BIG);
@@ -52,7 +53,7 @@ SubscriptionListItem::SetSize(SubscriptionSize size){
 			SetHeight(ALTEZZA_SMALL);
 		break;
 	};
-	field->SetSize(size);
+	field->SetSize(size); */
 //	printf("SubscriptionListItem SET TITLE %s\n",field->String());
 }
 
@@ -308,7 +309,7 @@ SubscriptionListItem::rescale_bitmap( BBitmap * original, int32 width, int32 hei
 	else 
 		return intermediate_bitmap;
 }
-
+/* TODO deprecated
 void
 SubscriptionListItem::DrawBackground(BRect _rect,
 								BView* parent,
@@ -321,4 +322,4 @@ SubscriptionListItem::DrawBackground(BRect _rect,
 		parent->FillRoundRect(BRect(_rect.left  + 6, _rect.top + 6,_rect.left + 9,_rect.top + 9),1,1);
 	}
 }
-
+*/

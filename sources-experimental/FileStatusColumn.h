@@ -1,8 +1,8 @@
 #ifndef  _FileStatusColumn_H
 #define _FileStatusColumn_H
 
-#include "ColumnListView.h"
-#include "ColumnTypes.h"
+#include <ColumnListView.h>
+#include <ColumnTypes.h>
 #include <String.h>
 #include <Font.h>
 #include <Bitmap.h>

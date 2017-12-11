@@ -52,7 +52,7 @@ class SubscriptionListItem : public BRow, public ElementListener
 				//don't like this:
 				RssChannel	fChannel;
 
-				void				DrawBackground(BRect _rect,BView* _target_view,bool _is_selected,bool _is_focus );
+				//void				DrawBackground(BRect _rect,BView* _target_view,bool _is_selected,bool _is_focus );
 				
 				bool				IsNew(){ return isNew; }
 				void				SetIsNew(bool set){ isNew = set; }

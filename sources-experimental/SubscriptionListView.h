@@ -1,7 +1,7 @@
 #ifndef _SubscriptionListView_H_
 #define _SubscriptionListView_H_
 
-#include "ColumnListView.h"
+#include <ColumnListView.h>
 #include "SubscriptionColumn.h"
 
 #define 	CHANNEL_SELECTED			'invo'

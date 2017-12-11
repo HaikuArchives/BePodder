@@ -61,8 +61,6 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/IABPGroup.cpp \
 	../sources-experimental/IABPItem.cpp \
 	../sources-experimental/IActionManagerBP.cpp \
-	../sources-experimental/IActionMenuItem.cpp \
-	../sources-experimental/IconMenuItem.cpp \
 	../sources-experimental/IconTextItem.cpp \
 	../sources-experimental/ImageButton.cpp \
 	../sources-experimental/Logger.cpp \

@@ -25,8 +25,6 @@
 #include "SplitPane.h"
 #include "Utils.h"
 
-#include "IActionMenuItem.h"
-
 #include "MemoryArchive.h"
 #include "htmlparse.h"
 #include "ImageButton.h"
@@ -176,23 +174,23 @@ MainWindow::init(MainController* controller){
 		channelView->AddChild(tasto1);
 		rect.OffsetBy(66,0);
 		
-		fChannelMenu->AddItem(new IActionMenuItem(action_manager.GetAction(ChannelBar[i])));
-		channels->AddItem(new IActionMenuItem(action_manager.GetAction(ChannelBar[i])));
+		fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
+		channels->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
 	}	
 	
 	//extras :)
 	fChannelMenu->AddSeparatorItem();
-	fChannelMenu->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_ENCLOSURE_FOLDER)));
-	fChannelMenu->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_CHECK_ALL)));	
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK_ALL));
 	fChannelMenu->AddSeparatorItem();
-	fChannelMenu->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_SHOW_IMAGE)));
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	fChannelMenu->SetTargetForItems(be_app);
 	
 	channels->AddSeparatorItem();
-	channels->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_ENCLOSURE_FOLDER)));
-	channels->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_CHECK_ALL)));	
+	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
+	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK_ALL));
 	channels->AddSeparatorItem();
-	channels->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_SHOW_IMAGE)));
+	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	channels->SetTargetForItems(be_app);
 	
 	rect = BRect(0,0,47,31);
@@ -222,18 +220,18 @@ MainWindow::init(MainController* controller){
 		rect.OffsetBy(66,0);
 		
 		
-		fItemMenu->AddItem(new IActionMenuItem(action_manager.GetAction(ItemBar[i])));
-		items->AddItem(new IActionMenuItem(action_manager.GetAction(ItemBar[i])));
+		fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(ItemBar[i]));
+		items->AddItem(action_manager.CreateMenuItemFromAction(ItemBar[i]));
 	}	
 	
 	//extras :)
 	fItemMenu->AddSeparatorItem();
-	fItemMenu->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_ITEM_WWW)));
-	fItemMenu->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_ENCLOSURE_FOLDER)));
+	fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
+	fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 	
 	items->AddSeparatorItem();
-	items->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_ITEM_WWW)));
-	items->AddItem(new IActionMenuItem(action_manager.GetAction(IACTION_CHANNEL_ENCLOSURE_FOLDER)));
+	items->AddItem(action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
+	items->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 		
 	fItemMenu->SetTargetForItems(be_app);
 	items->SetTargetForItems(be_app);
@@ -254,8 +252,8 @@ MainWindow::init(MainController* controller){
 					
 	//automatic for the people
 	for(i=0;i<COUNT4;i++){
-		fGroupMenu->AddItem(new IActionMenuItem(action_manager.GetAction(groupBar[i])));
-		groups->AddItem(new IActionMenuItem(action_manager.GetAction(groupBar[i])));
+		fGroupMenu->AddItem(action_manager.CreateMenuItemFromAction(groupBar[i]));
+		groups->AddItem(action_manager.CreateMenuItemFromAction(groupBar[i]));
 	}	
 	
 	groups->SetTargetForItems(be_app);
@@ -280,7 +278,7 @@ MainWindow::init(MainController* controller){
 					
 	//automatic for the people
 	for(i=0;i<COUNT3;i++){
-		fDownloadMenu->AddItem(new IActionMenuItem(action_manager.GetAction(downBar[i])));
+		fDownloadMenu->AddItem(action_manager.CreateMenuItemFromAction(downBar[i]));
 	}	
 	
 	fDownloadMenu->SetTargetForItems(be_app);

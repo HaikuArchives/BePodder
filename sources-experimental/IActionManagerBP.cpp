@@ -66,5 +66,26 @@ IActionManagerBP::GetAction(pb_actions pos){
 IActionBP*	
 IActionManagerBP::GetAction(int pos){
 		return (IActionBP*)IActionManager::GetAction(pos);
-}				
+}
+
+
+BMenuItem*
+IActionManagerBP::CreateMenuItemFromAction(int pos){
+			IActionBP* action = (IActionBP*)IActionManager::GetAction(pos);
+			BMenuItem* menuItem = new BMenuItem(action->GetLabel().String(), action->CopyMessage());
+			uint32 mod;
+			const char charz = action->Shortcut(&mod);
+			menuItem-> SetShortcut(charz,mod);
+			return menuItem;
+}
+
 				
+BMenuItem*
+IActionManagerBP::CreateMenuItemFromAction(pb_actions pos){
+			IActionBP* action = (IActionBP*)IActionManager::GetAction(pos);
+			BMenuItem* menuItem = new BMenuItem(action->GetLabel().String(), action->CopyMessage());
+			uint32 mod;
+			const char charz = action->Shortcut(&mod);
+			menuItem-> SetShortcut(charz,mod);
+			return menuItem;
+}

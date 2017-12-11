@@ -99,10 +99,7 @@ SectionSelector::AddSection(const char* iconName,BView* view,const char* tooltip
 	
 		
 		sec->tab = new SmartSelector(rect,LoadIcon(iconName),this,count);
-		#ifdef ZETA
-		 sec->tab->SetToolTipText(tooltip);
-		#endif
-		
+		sec->tab->SetToolTip(tooltip);
 		AddChild(sec->tab);
 		
 		

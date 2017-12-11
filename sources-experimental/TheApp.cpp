@@ -20,10 +20,9 @@
 
 #include "Setting.h"
 #include "BPSettingsWindow.h"
-//#include "LicenceInfo.h"
 #include "MainModel.h"
 #include "HelpViewer.h"
-#include	"AttributeMap.h"
+#include "AttributeMap.h"
 #include "InterfaceDefs.h"
 
 
@@ -36,7 +35,6 @@ extern DownloadManager*	download_manager;
 
 
 #define	UPDATE_INFO		'updt' 
-#define	CHECK_UPDATE		'ckup'
 
 MainWindow*				main_window;
 IActionManagerBP		action_manager;
@@ -82,42 +80,9 @@ TheApp::ReadyToRun(){
 	
 	this->PostMessage(ARCHIVE_PARSE);
 
-
-
-// we disabledupdates?
-
-	BMessage msg;
-	bool val = true;
-	if( podder_settings.FindMessage(SETTINGS_UPDATES,&msg) == B_OK) {
-		if(msg.FindBool("check_updates",&val) != B_OK) val= true;
-	}
-	
-	if(val)
-		ChekUpdate();
-		
-
-
-
 	return;
 }
 
-void		
-TheApp::ChekUpdate() {
-	
-	/************
-	
-		CHECKING UPDATE IS DISABLED.
-	
-	********/
-	
-	return;
-	
-	//uhm check for update?
-	printf("Checking for updates...\n");
-	ActionHTTPContent*		update=new ActionHTTPContent("http://www.funkyideasoft.com/latest.nfo");	
-	update->SetTargetAndWhat(this,UPDATE_INFO);
-	download_manager->SingleThreadAction(update);
-}
 
 void
 TheApp::AboutRequested(){
@@ -170,10 +135,6 @@ TheApp::MessageReceived(BMessage* msg){
 	//B_ARGV_RECEIVED 
 	
 	switch(msg->what){
-
-	case CHECK_UPDATE:
-		ChekUpdate();
-	break;
 	case UPDATE_INFO:
 	{
 		BString rel;
@@ -211,17 +172,7 @@ TheApp::MessageReceived(BMessage* msg){
 	case APPLY_SETTINGS:
 		ApplySettings();
 	break;
-	case 'lic2':
-	{
-		
-		BPAlert* about = new BPAlert("Sorry", _T("Shareware application!\n\nPlease support us!\n\nBuy a software licence!\nMore info on our website\n"),_T("Web Site"),_T("Close"),NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
-		if(about->Go()==0){
-				fController->OpenURL("http://www.funkyideasoft.com/bepodder.html");
-		}
-				
-	}
-	break;
-		case HELPVIEWER_OPEN_URL:
+	case HELPVIEWER_OPEN_URL:
 	{
 			BString url;
 			if(msg->FindString("url",&url)==B_OK){

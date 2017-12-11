@@ -19,10 +19,7 @@ ImageButton::ImageButton( BRect rect, const char * name, BMessage * msg,BBitmap 
 	fDrawBackground = true;
 	fInset = BPoint(4,2);
 	SetViewColor(B_TRANSPARENT_COLOR);
-	#ifdef ZETA
-		if(label) SetToolTipText(label);
-		SetDoubleBuffering(true);
-	#endif
+	if(label) SetToolTip(label);
 }
 
 
@@ -39,10 +36,7 @@ ImageButton::ImageButton( BRect rect, const char*  name, IAction* action)
 	fInset = BPoint(4,2);
 	
 	SetTarget(IActionManager::TargetForAction(0));
-	#ifdef ZETA
-	 SetToolTipText(action->GetDescription().String());
-	 SetDoubleBuffering(true);
-	#endif	
+	SetToolTip(action->GetDescription().String());
 	SetViewColor(B_TRANSPARENT_COLOR);
 
 }

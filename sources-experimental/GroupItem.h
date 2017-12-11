@@ -1,8 +1,8 @@
 #ifndef _GroupItem_H_
 #define _GroupItem_H_
 
-#include "ColumnListView.h"
-#include "ColumnTypes.h"
+#include <ColumnListView.h>
+#include <ColumnTypes.h>
 
 
 class GroupItem : public BRow {

@@ -15,8 +15,6 @@ public:
 		void		ReadyToRun();
 		bool		QuitRequested();
 
-		void		ChekUpdate();
-
 private:
 	
 		void	InstallMimeTypes();

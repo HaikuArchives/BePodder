@@ -1,7 +1,7 @@
 #ifndef _DownloadListView_H_
 #define _DownloadListView_H_
 
-#include "ColumnListView.h"
+#include <ColumnListView.h>
 #include "FileStatusColumn.h"
 #include <StringView.h>
 

@@ -318,4 +318,3 @@ SubscriptionColumn::MouseMoved(BColumnListView *parent, BRow *row, BField *field
 		}
 	}
 }
-					               

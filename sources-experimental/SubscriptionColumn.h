@@ -1,7 +1,7 @@
 #ifndef	SubscriptionColumn_H
 #define SubscriptionColumn_H
 
-#include "ColumnTypes.h"
+#include <ColumnTypes.h>
 #include "FileStatus.h"
 
 enum SubscriptionSize {
@@ -105,8 +105,7 @@ class SubscriptionColumn : public BStringColumn {
 		
 		
 			void		MouseMoved(BColumnListView *parent, BRow *row, BField *field,
-					               BRect field_rect, BPoint point, uint32 buttons, int32 code);		
-	
+					               BRect field_rect, BPoint point, uint32 buttons, int32 code);
 	private:
 		uint32					fTruncate;
 		BRow*					lastDest;

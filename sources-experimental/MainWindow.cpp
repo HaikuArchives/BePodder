@@ -284,13 +284,7 @@ MainWindow::init(MainController* controller){
 	}	
 	
 	fDownloadMenu->SetTargetForItems(be_app);
-	
-	
-	//BButton *tasto8= new BButton(BRect(725,11,835,41),"Send","Please feedback :)",new BMessage('send'));
-	//view->AddChild(tasto8);
-	//tasto8->SetToolTipText(_T("Submit bug or idea"));
-	
-	
+
 	//--------------------------------------------------------451
 	
 	//fStack = new StackedView(BRect(451,52,840,300),"name",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE);
@@ -478,18 +472,18 @@ MainWindow::CreateMenuBar(){
 	
 	items = new BMenu(_T("Episodes"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(items);	
-	
+	/*  TODO create a List of rss feeds
 	BMenu  *directoryfile = new BMenu(_T("Lists"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(directoryfile);
-	
-	
-	AddDirectoryItem(directoryfile,_T("Podcast list"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
-	AddDirectoryItem(directoryfile,_T("Videoblog list"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
-	AddDirectoryItem(directoryfile,_T("Imagefeeds list"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
-	AddDirectoryItem(directoryfile,_T("Newsfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
-	AddDirectoryItem(directoryfile,_T("BitTorrentfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
-	AddDirectoryItem(directoryfile,_T("Internationalfeeds list"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
-	
+
+	AddDirectoryItem(directoryfile,_T("Podcast List"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
+	AddDirectoryItem(directoryfile,_T("Videoblog List"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
+	AddDirectoryItem(directoryfile,_T("Imagefeeds List"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
+	AddDirectoryItem(directoryfile,_T("Newsfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
+	AddDirectoryItem(directoryfile,_T("BitTorrentfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
+	AddDirectoryItem(directoryfile,_T("Internationalfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
+	*/
+
 	BMenu  *podderview = new BMenu(_T("View"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderview);
 	
@@ -500,9 +494,9 @@ MainWindow::CreateMenuBar(){
 	notoolbar= new BMenuItem(_T("Toolbar"),new BMessage(SHOW_TOOLBAR),'T',0);
 	podderview->AddItem(notoolbar);
 	notoolbar->SetMarked(true);
-	
-	
-	ChannelSize = new BMenu(_T("Subscriptions view"));
+
+	/* TODO implement small size BRow doesn't support SetHeight
+	ChannelSize = new BMenu(_T("Subscriptions View"));
 	podderview->AddItem(ChannelSize);
 	ChannelSize->SetRadioMode(true);
 	
@@ -516,8 +510,8 @@ MainWindow::CreateMenuBar(){
 	ChannelSize->AddItem(temp);
 	temp->SetMarked(false);
 	
-	ChannelSize->SetEnabled(true); //linfo.Valid());	
-		
+	ChannelSize->SetEnabled(true);	
+	*/
 	//--------------------------------------------------------------------------------------------------------------
 	
 	
@@ -555,19 +549,7 @@ MainWindow::CreateMenuBar(){
 	
 	webmsg->AddString("url",where.String());
 	helpfile->AddItem( new BMenuItem(_T("Tutorials"),webmsg,0,0));
-	
-	
-	helpfile->AddSeparatorItem();
-	
-	webmsg=new BMessage(WEB_PAGE);
-	webmsg->AddString("url","http://www.funkyideasoft.com/support.html");
-	helpfile->AddItem( new BMenuItem(_T("Online support"),webmsg,0,0));
-	
-	helpfile->AddSeparatorItem();
-	BMenuItem* updates;
-	helpfile->AddItem(updates=new BMenuItem(_T("Check for updates"),new BMessage('ckup'),0,0));
-	updates->SetTarget(be_app);
-	
+
 	AddChild(poddermenubar);
 	poddermenubar->ResizeToPreferred();
 	
@@ -663,15 +645,17 @@ MainWindow::LoadSetting(BMessage* data){
 		if(data->FindMessage("dxbar_position_state",&split_state) == B_OK){
 			dxsplit->SetState(&split_state);
 		}
-		
+		/* TODO FIX Row Size
 		int32 size;
 		//default Subscription Items size:
 		if(data->FindInt32("channel_size",&size) == B_OK){
 			sx_list->SetItemSize((SubscriptionSize)size);
 			ChannelSize->ItemAt(size)->SetMarked(true);
 		}    	
-		
-		ChannelSize->SetEnabled(true);//linfo.Valid());	
+
+		ChannelSize->SetEnabled(true); */
+		sx_list->SetItemSize(BIG);
+
 }
 
 
@@ -816,9 +800,9 @@ void MainWindow::MessageReceived(BMessage* msg)
 				
 				BPoint point;
 				uint32 state;
-				elv->GetScrollView()->GetMouse(&point,&state);
+				elv->ScrollView()->GetMouse(&point,&state);
 				
-				BPoint p2 = elv->GetScrollView()->ConvertToScreen(point);
+				BPoint p2 = elv->ScrollView()->ConvertToScreen(point);
 				p2.x -= 5.0;
 				p2.y -= 5.0;
 			
@@ -840,9 +824,9 @@ void MainWindow::MessageReceived(BMessage* msg)
 				
 				BPoint point;
 				uint32 state;
-				down_list->GetScrollView()->GetMouse(&point,&state);
+				down_list->ScrollView()->GetMouse(&point,&state);
 				
-				BPoint p2 = down_list->GetScrollView()->ConvertToScreen(point);
+				BPoint p2 = down_list->ScrollView()->ConvertToScreen(point);
 				p2.x -= 5.0;
 				p2.y -= 5.0;
 			
@@ -1094,9 +1078,9 @@ MainWindow::SelectedSubscription(SubscriptionListItem* row, int32 bottons){
 				
 				BPoint point;
 				uint32 state;
-				sx_list->GetScrollView()->GetMouse(&point,&state);
+				sx_list->ScrollView()->GetMouse(&point,&state);
 				
-				BPoint p2 = sx_list->GetScrollView()->ConvertToScreen(point);
+				BPoint p2 = sx_list->ScrollView()->ConvertToScreen(point);
 				p2.x -= 5.0;
 				p2.y -= 5.0;
 			
@@ -1120,9 +1104,9 @@ MainWindow::SelectGroup(GroupItem* grp, int32 bottons){
 				
 				BPoint point;
 				uint32 state;
-				sx_list->GetScrollView()->GetMouse(&point,&state);
+				sx_list->ScrollView()->GetMouse(&point,&state);
 				
-				BPoint p2 = sx_list->GetScrollView()->ConvertToScreen(point);
+				BPoint p2 = sx_list->ScrollView()->ConvertToScreen(point);
 				p2.x -= 5.0;
 				p2.y -= 5.0;
 			
@@ -1158,7 +1142,7 @@ bool
 MainWindow::GetScreenGroupRect(GroupItem *row, BRect *outRect) {
 	BRect rect;
 	if(!sx_list->GetRowRect((const BRow *)row, &rect) ) return false;
-	*outRect= sx_list->GetScrollView()->ConvertToScreen(rect);
+	*outRect= sx_list->ScrollView()->ConvertToScreen(rect);
 	return true;
 	
 }
@@ -1479,15 +1463,11 @@ MainWindow::SetToolbarVisible(bool visible){
 				view->ScrollTo(point);
 				split->ResizeBy(point.x,point.y);
 				dxsplit->SetBarPosition(dxsplit->GetBarPosition()+=point);
-			
 				if(!itemsView->IsHidden())
 					itemsView->Hide();
 				if(!channelView->IsHidden())
 					channelView->Hide();
-			
 			}	else {
-
-				
 				notoolbar->SetMarked(true);
 				view->ScrollTo(BPoint(0,0));
 				split->ResizeBy(point.x,-point.y);

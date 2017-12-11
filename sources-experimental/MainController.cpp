@@ -985,15 +985,12 @@ MainController::InfoDownloadChannel(BMessage* msg){
 void
 MainController::ParseArchive()
 {
-	//if(!linfo.Valid())
-	//		be_app->PostMessage('lic2',be_app);
-		
-	
 	BPath path;
 	find_directory (B_USER_CACHE_DIRECTORY, &path, true);
 	path.Append("BePodder/archive");
 
 	create_directory( path.Path(), 755 );
+
 			
 	BEntry e(path.Path(),true);
 	
@@ -1378,11 +1375,12 @@ MainController::LoadColumnsState(BMessage* msg){
 	if(msg->FindMessage("state",&superstate)==B_OK)
 				elv->LoadState(&superstate);
 	
-	
+	// TODO FIX ME
+	/*
 	elv->GetTitleView()->ScrollTo(BPoint(bounds.Width(),0));
 	elv->GetTitleView()->ScrollTo(BPoint(0,0));
-	elv->GetScrollView()->ScrollTo(BPoint(0,0));
-	
+	*/
+	elv->ScrollView()->ScrollTo(BPoint(0,0));
 	elv->SetEditMode(false);	
 		
 }

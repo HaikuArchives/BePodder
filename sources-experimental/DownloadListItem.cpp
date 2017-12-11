@@ -19,7 +19,7 @@
 #include "EpisodeListItem.h"
 #include "SubscriptionListItem.h"
 
-DownloadListItem::DownloadListItem(SubscriptionListItem* ch):BRow(16.0)
+DownloadListItem::DownloadListItem(SubscriptionListItem* ch):BRow()
 {
 	int index = 0;
 	time_t time = 0;
@@ -116,8 +116,9 @@ DownloadListItem::KeyModified(int32 key, void* data,ssize_t size)
 		  }
 			 
 		  fieldStaus->SetFileStatus(status);
-		  if(fList)
-		  		fList->UpdateRow(this);
+//		  if(fList) // TODO FIX THE CLASS BRow in BColumnListView
+//		  		fList->UpdateRow(this);
+		  Invalidate();
 		}
 		break;
 		case ITEM_ENCLOSURE_FILE_PERCENTAGE:

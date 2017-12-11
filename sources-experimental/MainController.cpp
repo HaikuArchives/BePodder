@@ -1040,10 +1040,6 @@ MainController::ParseArchive()
 	BEntry		entry;
 	while(dir.GetNextEntry(&entry) == B_OK) 
 		if(entry.InitCheck()==B_OK && entry.IsDirectory()){
-			
-			/*if(!linfo.Valid() && fModel->fChInfo.CountItems() > 10)
-				break;
-			else*/
 				CreateChannelItem(&entry,&cache);
 		}
 	
@@ -1736,8 +1732,7 @@ MainController::SwitchChannel(entry_ref* href) {
 	
 	SubscriptionListItem* 	row = NULL;
 	
-	if(href){	
-		
+	if(href){
 		row = fModel->fChInfo.ValueFor(*href);
 		if( BDirectory(&row->fRef) == fModel->fSelectedChannel) return;
 	}

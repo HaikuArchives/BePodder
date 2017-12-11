@@ -1,9 +1,8 @@
 #include "GroupItem.h"
 #include "SubscriptionColumn.h"
 
-#define ALTEZZA_SMALL 		16 
 
-GroupItem::GroupItem(const char* label, GroupItem* parentGroup):BRow(ALTEZZA_SMALL) {
+GroupItem::GroupItem(const char* label, GroupItem* parentGroup):BRow() {
 	SetField( new PositionableField(label), 0 );
 	f_Parent = parentGroup;
 }

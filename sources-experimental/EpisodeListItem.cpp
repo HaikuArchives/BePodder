@@ -36,6 +36,7 @@ EpisodeListItem::EpisodeListItem():BRow(),isNew(false)
 void 
 EpisodeListItem::KeyModified(int32 key, void* data,ssize_t size)
 {
+	printf("key %d %d\n", key , ITEM_ENCLOSURE_LENGTH);
 	switch(key)
 	{
 

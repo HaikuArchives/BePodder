@@ -103,7 +103,7 @@ AttributeExtractor::Parse(BNode *node,bool deep){
 			 NotifyNotifier(ITEM_ENCLOSURE_FILE_STATUS,(void*)buf,r); 
 		}
 		else if(attr.ICompare(ATTR_ENCLOSURE_SIZE)==0){
-			 size_t r = node->ReadAttr(buf,0,0,buf,B_ATTR_NAME_LENGTH);
+			 size_t r = node->ReadAttr(buf,0,0,buf,sizeof(off_t));
 			 NotifyNotifier(ITEM_ENCLOSURE_LENGTH,(void*)buf,r); 
 		}
 		//this doesn't need to be extracted:

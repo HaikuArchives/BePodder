@@ -89,6 +89,7 @@ EpisodeListView::SelectionChanged(){
 void				
 EpisodeListView::AddRow(BRow* row, BRow *parent){
 	BColumnListView::AddRow(row,parent);
+	ExpandOrCollapse(row, true);
 	UpdateCount();
 }
 void
@@ -99,6 +100,7 @@ EpisodeListView::RemoveRow(BRow* row){
 void				
 EpisodeListView::AddRow(BRow* row, int32 index, BRow *parent){
 	BColumnListView::AddRow(row,index,parent);
+	ExpandOrCollapse(row, true);
 	UpdateCount();
 }
 

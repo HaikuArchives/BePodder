@@ -7,6 +7,7 @@
 #ifndef  _IActionManagerBP_H_
 #define _IActionManagerBP_H_
 
+#include <MenuItem.h>
 #include "IActionBP.h"
 
 #include "IActionManager.h"
@@ -59,7 +60,8 @@ class IActionManagerBP : public IActionManager {
 				IActionBP*	GetAction(pb_actions pos);
 				
 				IActionBP*	GetAction(int pos);
-				
+				BMenuItem*	CreateMenuItemFromAction(pb_actions pos);
+				BMenuItem*	CreateMenuItemFromAction(int pos);
 	private:
 			void SetAction(pb_actions pos,IActionBP* action);			
 		

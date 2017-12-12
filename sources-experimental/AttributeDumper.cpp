@@ -106,7 +106,7 @@ AttributeDumper::KeyModified(int32 key, void* data, ssize_t numBytes){
 		case ITEM_ENCLOSURE_LENGTH:
 		{
 			off_t size = *((off_t*)data);
-			if(fNode) fNode->WriteAttr(ATTR_ENCLOSURE_SIZE,B_TIME_TYPE,0,&size,sizeof(size));
+			if(fNode) fNode->WriteAttr(ATTR_ENCLOSURE_SIZE,B_OFF_T_TYPE,0,&size,sizeof(size));
 		}
 		break;
 		

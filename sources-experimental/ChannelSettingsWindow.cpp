@@ -1,5 +1,4 @@
 #include "ChannelSettingsWindow.h" 
-#include "SettingsTextView.h"
 
 #include <ListView.h> 
 #include <Message.h>
@@ -23,7 +22,7 @@ ChannelSettingsWindow::ChannelSettingsWindow(BMessage* s,BHandler* h) :
 
 				
 
-BBox*	
+PBox*
 ChannelSettingsWindow::CreateBox(BMessage data) {
 	BMessage main_msg;
 	
@@ -78,6 +77,6 @@ ChannelSettingsWindow::CreateBox(BMessage data) {
 	
 	main_msg.AddString("name",_T("Remove"));
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_CHANNEL);
-	return (BBox*)proxy;
+	return proxy;
 }
 

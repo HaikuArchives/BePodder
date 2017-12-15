@@ -1,6 +1,5 @@
 #include "SettingsWindow.h" 
-#include "SettingsTextView.h"
-
+#include <LayoutBuilder.h>
 #include <ListView.h> 
 #include <Message.h>
 #include "BPLocale.h"
@@ -14,119 +13,71 @@
 
 
 SettingsWindow::SettingsWindow(BMessage* setting,BHandler* handler,int32 applyMsg) :
-	BWindow(BRect(250,100,750,350),_T("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS)
+	BWindow(BRect(250,100,750,350),_T("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,
+	B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	fApplyWhatMsg = applyMsg;
 	fSetting = setting;
 	fHandler = handler;
-	fSelected = NULL;
-  	
-  	rgb_color bgcolor = ui_color(B_PANEL_BACKGROUND_COLOR);
-  
-	BBox	*bgbox=new BBox(Bounds(),"back",B_FOLLOW_ALL,B_WILL_DRAW,B_PLAIN_BORDER);
-	AddChild(bgbox);
 	
-	BRect rect, arect, brect ;
-	
-	rect = Bounds();
-	rect.InsetBy(5, 5);
-	rect.bottom -= 50;
-	
-	bgView=new BView(BRect(rect),NULL, B_FOLLOW_ALL, B_WILL_DRAW);
-	bgView->SetViewColor(bgcolor); //255,0,0);
-	bgbox->AddChild(bgView);	
-	
-	arect = rect;
-	arect.right = arect.left + 100;
-	arect.bottom = rect.bottom - 10;
-	slist=new BListView(arect,"preferences_list",B_SINGLE_SELECTION_LIST,B_FOLLOW_ALL,B_WILL_DRAW);
+	fSettingsTypeListView = new BListView("preferences_list",
+		B_SINGLE_SELECTION_LIST);
+	fSettingsTypeListView->SetSelectionMessage(new BMessage('list'));
 
-	slist->SetSelectionMessage(new BMessage('list'));
-	BScrollView *scroll=new BScrollView("scrolling", slist, B_FOLLOW_ALL, 0, false, false);
-	bgView->AddChild(scroll);
-	slist->Select(0);
-	slist->MakeFocus(true);
-	
-	brect=Bounds();
-	brect.InsetBy(5, 5);
-	brect.top = rect.bottom + 10;
-	
-	BView *bottomView=new BView(brect,NULL, B_FOLLOW_BOTTOM, B_WILL_DRAW);
-	bottomView->SetViewColor(bgcolor);
-	bgbox->AddChild(bottomView);
-	
-	// eliminare bottone close ----------------
-	
-	BFont	font(be_plain_font);
-	arect = bottomView->Bounds();
-	arect.InsetBy(10, 10);
-	arect.top = arect.bottom - 20;
-	arect.left = arect.right - font.StringWidth(_T("Cancel")) - 30;
-	BButton *apply = new BButton(arect, "", _T("Save"), new BMessage('apla'));
-	bottomView->AddChild(apply);
-	
-	
-	
-	arect.right = arect.left - 20;
-	arect.top = arect.bottom - 20;
-	arect.left = arect.right - font.StringWidth(_T("Save")) - 30;
+	BScrollView* scrollView = new BScrollView("scrollview",
+		fSettingsTypeListView, B_FRAME_EVENTS | B_WILL_DRAW, false, true);
 
-	BButton *close = new BButton(arect, "", _T("Cancel"), new BMessage(B_QUIT_REQUESTED));
-	bottomView->AddChild(close);
-	
-	
-	dxrect = bgView->Bounds();
-	
-	trect = dxrect;
-	trect.InsetBy(0,5);
-	trect.left += 5;
-	trect.right -= 123;
-	trect.top += 1;
-	trect.bottom -= 135;
-	
-	dxrect.top += 2;
-	dxrect.bottom -= 2;
-	dxrect.left += 115;
-	dxrect.right -= 2;
-	
+	BButton *buttonCancel = new BButton("Cancel", _T("Cancel"),
+		new BMessage(B_QUIT_REQUESTED));
 
-	
-	
-	MoveTo(BAlert::AlertPosition(Bounds().Width(),Bounds().Height()));
+	BButton *buttonSave = new BButton("Save", _T("Save"),
+		new BMessage('apla'));
+
+	BBox *fLabelBox = new BBox("SettingsContainerBox2");
+	fSettingsContainerBox = new BView("SettingsContainerBox",0);
+	fSettingsContainerBox->SetLayout(new BCardLayout());
+	fLabelBox->AddChild(fSettingsContainerBox);
+
+	BLayoutBuilder::Group<>(this)
+		.AddGroup(B_HORIZONTAL, B_USE_DEFAULT_SPACING)
+			.Add(scrollView)
+			.AddGroup(B_VERTICAL, B_USE_DEFAULT_SPACING)
+				//.Add(fSettingsContainerBox)
+				.Add(fLabelBox)
+				.AddGroup(B_HORIZONTAL, B_USE_DEFAULT_SPACING)
+					.AddGlue()
+					.Add(buttonCancel)
+					.Add(buttonSave)
+				.End()
+			.End()
+		.SetInsets(B_USE_WINDOW_SPACING)
+		.End();
+
 }
-
-
 
 
 
 void	
 SettingsWindow::Select(int i){
-	
-		if(fSelected)
-				fSelected->Hide();
-				
-						
-		BBox* newb=fBoxList.ItemAt(i);
-		
-		if(newb){
-			newb->Show();
-			fSelected=newb;
-		}
-		else
-			fSelected = NULL;		
+	if(fSettingsTypeListView->CurrentSelection()!=i)
+			fSettingsTypeListView->Select(i);
+	((BCardLayout*) fSettingsContainerBox->GetLayout())->SetVisibleItem(i);
+	//fLabelBox->SetLabel(dynamic_cast<BStringItem*>(fSettingsTypeListView->ItemAt(i))->Text());
 
-		if(slist->CurrentSelection()!=i)
-			slist->Select(i);
 }
  					
 void	
-SettingsWindow::AddBox(const char* name, BBox* box){
-	box->ResizeTo(dxrect.Width(),dxrect.Height());
-	box->MoveTo(dxrect.left,dxrect.top);
-	slist->AddItem(new BStringItem(name));
-	bgView->AddChild(box);
-	box->Hide();
-	fBoxList.AddItem(box);
+SettingsWindow::AddBox(const char* name, PBox* box){
+	box->GroupLayout()->SetInsets(B_USE_WINDOW_SPACING,
+			B_USE_WINDOW_SPACING,B_USE_WINDOW_SPACING,B_USE_WINDOW_SPACING);
+	fSettingsTypeListView->AddItem(new BStringItem(name));
+	// constraint the listview width so that the longest item fits
+	float width = 0;
+	fSettingsTypeListView->GetPreferredSize(&width, NULL);
+	width += B_V_SCROLL_BAR_WIDTH;
+	fSettingsTypeListView->SetExplicitMinSize(BSize(width, 0));
+	fSettingsTypeListView->SetExplicitMaxSize(BSize(width, B_SIZE_UNLIMITED));
+	((BCardLayout*) fSettingsContainerBox->GetLayout())->AddView(box);
 }
 
 
@@ -138,14 +89,14 @@ SettingsWindow::QuitRequested(){
 
 void
 SettingsWindow::SaveSettings(){
-		for(int i=0;i<fBoxList.CountItems();i++){
-			PBox* pb = dynamic_cast<PBox*>(fBoxList.ItemAt(i));
+
+	for(int i=0;i<((BCardLayout*) fSettingsContainerBox->GetLayout())->CountItems();i++){
+			PBox* pb = dynamic_cast<PBox*>(((BCardLayout*) fSettingsContainerBox->GetLayout())->ItemAt(i)->View());
 			
 			if(pb)
 			{
 				BMessage data;
 				pb->GetData(&data);
-				//data.PrintToStream();
 				GetSetting()->RemoveData(pb->GetSettingsName());
 				GetSetting()->AddMessage(pb->GetSettingsName(),&data);	
 			}	

@@ -103,8 +103,10 @@ MainController::LoadSettings(const char* type,BMessage* data){
 		//one second: 1 000 000;
 		bigtime_t minute = 1000000 * 60;
 		
-		if(check_timer!=NULL)
+		if(check_timer!=NULL) {
 			delete check_timer;
+			check_timer = NULL;
+		}
 			
 		switch(data->FindInt32("check_time_index"))
 		{
@@ -130,7 +132,10 @@ MainController::LoadSettings(const char* type,BMessage* data){
 		
 		check_onstart = data->FindBool("check_startup");
 		
-		printf("Check every %lld microseconds..\n",check_time);	
+		if(check_time>0)
+			printf("Check every %lld microseconds..\n",check_time);
+		else
+			printf("Automatic check disabled\n");
 		
 		if(check_time>0)
 				check_timer= new BMessageRunner(fView,new BMessage(CHECK_ALL),check_time);
@@ -1241,49 +1246,54 @@ void
 MainController::OpenURL(BString link){
 
 		BString app("text/html");
+		bool lunched = false;
 	
-		if ( browser_id == 0 ) //Firefox.
+		if ( browser_id == 0 ) //WebPositive.
 		{
-			app.SetTo("application/Firefox");
+			app.SetTo("application/WebPositive");
 			entry_ref ff;
-			if(be_roster->FindApp("application/Firefox",&ff) == B_OK) {
-			
+			if(be_roster->FindApp("application/x-vnd.Haiku-WebPositive",&ff) == B_OK) {
 				BString path(BPath(&ff).Path());
 				path.RemoveLast("-bin");
 				path << " " << link << " &";
 				system(path.String());
+				lunched = true;
 			}
-			else
-			if(be_roster->FindApp("application/x-vnd.Mozilla-Firefox",&ff) == B_OK) {
-			
-				BString path(BPath(&ff).Path());
-				path.RemoveLast("-bin");
-				path << " " << link << " &";
-				system(path.String());
-			}
-			else // Net+
-			 {
-				app.SetTo("application/x-vnd.Be-NPOS");
-				const char *args[] = { link.String(), 0 };
-   				be_roster->Launch (app.String(), 1, const_cast<char **>(args));
-		 	}	
-			
-			
+
 		}
-		 else 
-		 if ( browser_id == 2 ) // Default
-		 {
+		else
+		if ( browser_id == 1 ) // QupZilla
+		{
+			app.SetTo("application/QupZilla");
+			entry_ref ff;
+			if(be_roster->FindApp("application/x-vnd.qt5-qupzilla",&ff) == B_OK) {
+				BString path(BPath(&ff).Path());
+				path.RemoveLast("-bin");
+				path << " " << link << " &";
+				system(path.String());
+				lunched = true;
+			}
+   		}
+   		else
+   		if ( browser_id == 2 ) // NetSurf
+		{
+			app.SetTo("application/NetSurf");
+			entry_ref ff;
+			if(be_roster->FindApp("application/x-vnd.NetSurf",&ff) == B_OK) {
+			
+				BString path(BPath(&ff).Path());
+				path.RemoveLast("-bin");
+				path << " " << link << " &";
+				system(path.String());
+				lunched = true;
+			}
+ 		}
+		if (browser_id == 3 || lunched == false) // Default
+		{
 			app.SetTo("text/html");
 			const char *args[] = { link.String(), 0 };
    			be_roster->Launch (app.String(), 1, const_cast<char **>(args));
    		}
-		 
-		 else // Net+
-		 {
-			app.SetTo("application/x-vnd.Be-NPOS");
-			const char *args[] = { link.String(), 0 };
-   			be_roster->Launch (app.String(), 1, const_cast<char **>(args));
-		 }
 }
 
 void

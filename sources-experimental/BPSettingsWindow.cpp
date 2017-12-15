@@ -1,8 +1,8 @@
 #include "BPSettingsWindow.h" 
-#include "SettingsTextView.h"
 
 #include <ListView.h> 
 #include <Message.h>
+#include <MimeType.h>
 #include "BPLocale.h"
 #include <StorageKit.h>
 #include <ScrollBar.h>
@@ -13,9 +13,6 @@
 #include "Setting.h"
 extern Setting podder_settings;
 
-//#include "LicenceInfo.h"
-//extern LicenceInfo		linfo;
-
 
 BPSettingsWindow::BPSettingsWindow() :
 	SettingsWindow(&podder_settings,be_app,APPLY_SETTINGS)
@@ -24,76 +21,32 @@ BPSettingsWindow::BPSettingsWindow() :
 	BMessage data;
 	
 	podder_settings.FindMessage(SETTINGS_FILETYPE,&data);
-	BBox*	abox = CreateFileTypeBox(data);
+	PBox*	abox = CreateFileTypeBox(data);
 	AddBox(_T("Filetype") ,abox);
 	data.MakeEmpty();
 	
 	
 	podder_settings.FindMessage(SETTINGS_CHANNELS,&data);
-	//if(!linfo.Valid()) data.MakeEmpty();
 	abox = CreateChannelsBox(data);
 	AddBox(_T("Channels"), abox);
-	//if(!linfo.Valid())  { FillOfValue(abox); FixLabel(abox); }
 	data.MakeEmpty();
 	
 	//downloads
 	podder_settings.FindMessage(SETTINGS_DOWNLOAD,&data);
-	//if(!linfo.Valid()) data.MakeEmpty();
 	abox = CreateDownloadBox(data);
 	AddBox(_T("Download"),abox);
-	//if(!linfo.Valid())  { FillOfValue(abox); FixLabel(abox); }
 	data.MakeEmpty();
 	
 	// Proxy
 	podder_settings.FindMessage(SETTINGS_PROXY,&data);
-	//if(!linfo.Valid()) data.MakeEmpty();
 	abox = CreateProxyBox(data);
 	AddBox(_T("Proxy"), abox);
-	//if(!linfo.Valid())  { FillOfValue(abox); FixLabel(abox); }
 	data.MakeEmpty();
-	
-	// Updates
-	podder_settings.FindMessage(SETTINGS_UPDATES,&data);
-	abox = CreateUpdateBox(data);
-	AddBox(_T("Updates"), abox);
-	data.MakeEmpty();
-	
-	
-	//slist->Select(0);
 	Select(0);
-
 }
 
-
-void	
-BPSettingsWindow::FillOfValue(BView* box){ //this name is fake! ;)
-	int32 count = box->CountChildren();
-	for(int i=0;i<count;i++)
-		FillOfValue(box->ChildAt(i));
-	
-	if(dynamic_cast<BControl*>(box))
-		(dynamic_cast<BControl*>(box))->SetEnabled(false);
 		
-	if(dynamic_cast<BMenuField*>(box))
-		(dynamic_cast<BMenuField*>(box))->SetEnabled(false);
-}
-
-void	
-BPSettingsWindow::FixLabel(BView* box){ //this name is fake! :p
-		BView* child = box->FindView("pbox_title");
-		
-		if(!child)
-				return;
-		SettingsTextView*	stw=dynamic_cast<SettingsTextView*>(child);
-		if(!stw) return;
-		
-		BString text = stw->Text();
-		text << " " << _T("(only in registered version!)");
-		
-		stw->SetText(text.String());
-
-}					
-BBox*
+PBox*
 BPSettingsWindow::CreateGeneralBox(BMessage data){
 	/*
 	BMessage main_msg;
@@ -118,23 +71,7 @@ BPSettingsWindow::CreateGeneralBox(BMessage data){
 	return NULL;
 }
 
-BBox*	
-BPSettingsWindow::CreateUpdateBox(BMessage data) {
-	BMessage main_msg;
-	BMessage setting;
-	setting.AddString("name","check_updates");
-	setting.AddString("description", _T("Check for updates at startup")); 
-	setting.AddInt32("type",B_BOOL_TYPE);
-	setting.AddBool("default", true);
-	
-	main_msg.AddMessage("setting", &setting);
-	main_msg.AddString("name",_T("Updates"));
-	
-	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_UPDATES);
-	return (BBox*)proxy;
-}
-
-BBox*
+PBox*
 BPSettingsWindow::CreateDownloadBox(BMessage data){
 	
 	BMessage main_msg;
@@ -155,23 +92,24 @@ BPSettingsWindow::CreateDownloadBox(BMessage data){
 	
 	
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_DOWNLOAD);
-	return (BBox*)proxy;
+	return proxy;
 }
 
 
-BBox*	
+PBox*
 BPSettingsWindow::CreateFileTypeBox(BMessage data){
-	
-	// ATTENZIONE NON CAMBIARE QUESTI SETTATGGI
-	// SE NON SI MODIFICANO LE RISPETTIVE CLASSI DI LOAD_SETTIINGS
+
+	// Attention don't change this settings unless
+	// the classes of LOAD_SETTINGS are accordingly change
 	
 	BMessage setting;
 	setting.AddString("name","browser");
 	setting.AddString("description", _T("Browser")); 
 	setting.AddInt32("type",B_STRING_TYPE);
-	setting.AddString("valid_value","Firefox"); //0
-	setting.AddString("valid_value","NetPositive"); //1
-	setting.AddString("valid_value","System default"); //2	
+	setting.AddString("valid_value","WebPositive"); //0
+	setting.AddString("valid_value","QupZilla"); //1
+	setting.AddString("valid_value","NetSurf"); //2
+	setting.AddString("valid_value","System default"); //3
 	setting.AddString("default", "System default");
 	
 	BMessage setting2;
@@ -192,10 +130,10 @@ BPSettingsWindow::CreateFileTypeBox(BMessage data){
 	
 		
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_FILETYPE);
-	return (BBox*)proxy;
+	return proxy;
 }
 
-BBox*	
+PBox*
 BPSettingsWindow::CreateChannelsBox(BMessage data){
 	
 	BMessage setting;
@@ -222,10 +160,10 @@ BPSettingsWindow::CreateChannelsBox(BMessage data){
 	
 		
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_CHANNELS);
-	return (BBox*)proxy;
+	return proxy;
 }
  					
-BBox*	
+PBox*
 BPSettingsWindow::CreateProxyBox(BMessage data){
 
 	BMessage main_msg;
@@ -270,6 +208,6 @@ BPSettingsWindow::CreateProxyBox(BMessage data){
 	
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_PROXY);
 	
-	return (BBox*)proxy;
+	return proxy;
 }
 

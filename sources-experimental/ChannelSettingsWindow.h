@@ -20,20 +20,8 @@
 
 class ChannelSettingsWindow: public SettingsWindow
 {
-
-
-
-
  public:
-					 			ChannelSettingsWindow(BMessage*,BHandler*);
-			
-			
-			
-		
-					
+					 		ChannelSettingsWindow(BMessage*,BHandler*);
  private:
- 
- 					
- 					
- 					BBox*	CreateBox(BMessage);
+					PBox*	CreateBox(BMessage);
  };

@@ -12,6 +12,8 @@
 #include <ListView.h>
 #include <ObjectList.h>
 
+#include "PBox.h"
+
 #define	APPLY_SETTINGS	'apse'
 
 
@@ -30,24 +32,16 @@ class SettingsWindow: public BWindow
 			BMessage*	GetSetting(){ return fSetting; }		
 			
  protected:
- 
- 					
  					void	Select(int i);	
- 					void	AddBox(const char*,BBox*);
- 					
+					void	AddBox(const char*, PBox*);
  private:					
- 					
- 					void		SaveSettings();	
- 				
- 					BListView *slist;
- 					BView *bgView;
- 					BView	*dxview;
- 					
- 					BObjectList<BBox>		fBoxList;
- 					BBox*	fSelected;
- 					BRect dxrect,trect;
- 
- 					BMessage*	fSetting;
- 					BHandler*		fHandler;
- 					int32			fApplyWhatMsg;
- };	
+					void		SaveSettings();
+
+					BListView*	fSettingsTypeListView;
+					BView* 		fSettingsContainerBox;
+					BBox* 		fLabelBox;
+
+					BMessage*	fSetting;
+					BHandler*	fHandler;
+					int32		fApplyWhatMsg;
+};

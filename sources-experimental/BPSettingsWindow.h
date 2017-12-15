@@ -14,6 +14,8 @@
 #include <ObjectList.h>
 
 #include "SettingsWindow.h"
+#include "PBox.h"
+
 
 #define SETTINGS_MAINWINDOW 	"main_window_setting"
 #define SETTINGS_FILETYPE		"filetype_setting"
@@ -21,38 +23,19 @@
 #define SETTINGS_DOWNLOAD		"download_setting"
 #define SETTINGS_CHANNELS		"channels_setting"
 #define SETTINGS_GENERAL		"general_setting"
-#define SETTINGS_UPDATES		"updates_setting"
 
 #define SETTINGS_GROUPS		"groups_setting"
 
 
 class BPSettingsWindow: public SettingsWindow
 {
-
-
-
-
  public:
-					 			BPSettingsWindow();
-			
-			
-			
-		
-					
+							BPSettingsWindow();
  private:
- 
  					
- 					
- 					BBox*	CreateGeneralBox(BMessage);
- 					BBox*	CreateFileTypeBox(BMessage);
- 					BBox*	CreateChannelsBox(BMessage);
- 					BBox*	CreateProxyBox(BMessage);
- 					BBox*	CreateDownloadBox(BMessage);
- 					
- 					BBox*	CreateUpdateBox(BMessage);
- 					
- 					
- 					
- 					void	FillOfValue(BView*); //this name is fake! ;)
- 					void	FixLabel(BView*); //this name is fake! :p
- };
+					PBox*	CreateGeneralBox(BMessage);
+					PBox*	CreateFileTypeBox(BMessage);
+					PBox*	CreateChannelsBox(BMessage);
+					PBox*	CreateProxyBox(BMessage);
+					PBox*	CreateDownloadBox(BMessage);
+};

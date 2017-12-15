@@ -5,6 +5,7 @@
 #include <Button.h>
 #include <CheckBox.h>
 #include <Entry.h>
+#include <GroupView.h>
 #include <ListView.h>
 #include <Menu.h>
 #include <MenuItem.h>
@@ -24,13 +25,14 @@
 class BBox;
 class BButton;
 
-class PBox : public BBox {
+class PBox : public BGroupView  {
+	/*
 	enum {
 		LISTCHANGED,
 		SAVE,
 		REVERT
 	};
-
+*/
 	public:
 		
 								PBox(BRect rect,BMessage fTemplate, BMessage fData,const char* settings_name);
@@ -40,20 +42,12 @@ class PBox : public BBox {
 
 				void			GetData(BMessage* data);
 				
-				const char*	GetSettingsName(){ return fSName.String();}
+				const char*		GetSettingsName() const {return fSName.String();};
 	private:
-		
-		float						BuildGUI(BMessage viewTemplate, BMessage settings,BView *view);
-	
-		BView					*fView;
-
-		BView*					fPrefView;		
-
+		void					BuildGUI(BMessage viewTemplate, BMessage settings,BView *view);
 		BMessage				fTemplate;
 		BMessage				fData;
-		float						fFontHeight;
 		BString					fSName;
-		
 };
 
 #endif

@@ -44,7 +44,8 @@ ActionHTTPContent::Perform(BMessage* errors){
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST , FALSE); //https
 	
 	curl_easy_setopt(curl, CURLOPT_FAILONERROR , 1);
-	
+	curl_easy_setopt(curl, CURLOPT_NOSIGNAL , 1);
+
 	download_manager->FinishCurl(curl);
 	
 	

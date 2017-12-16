@@ -34,12 +34,10 @@
 #include "IconTextRender.h" 
 #include "TitleTextRender.h"
 #include "GreenBoxTextRender.h"
-//#include "BitmapTextRender.h"
 
 #include "curl/curl.h"
 #include <parsedate.h>
 
-//#include "runview/RunView.h" 
 #include "ItemRunView.h"
 #include "runview/Theme.h"
 
@@ -56,10 +54,7 @@
 
 #include "IABPGroup.h"
 #include "OPMLParser.h"
-
-#ifdef ZETA
-#include <sys_apps/Tracker/Icons.h>
-#endif
+#include "OPMLWriter.h"
 
 //messages:
 	#define		DOWNLOAD_ITEM				'invD'
@@ -80,7 +75,8 @@
 	
 	#define		IMPORT_OPML		'imop'
 	#define		EXPORT_OPML		'exop'
-	#define 	PARSE_OPML	'paop'
+	#define 	PARSE_OPML		'paop'
+	#define     WRITE_OPML		'wopm'
 
 // file size:
 	const int64 	kKB_SIZE				= 1024;
@@ -104,24 +100,18 @@ extern IActionManagerBP		action_manager;
 
 MainWindow::MainWindow()
 : BWindow(BRect(100,100,970,607), "BePodder", B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS){
-	
-	#ifdef ZETA
-	 	AddIcon("folder",new BBitmap(GetTrackerIcon("application/x-vnd.Be-directory",16)));
-	 	AddIcon("image",new BBitmap(GetTrackerIcon("image/png",16)));
-	#else
-		BBitmap* folder=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
-		BBitmap* image=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
-		
-		BMimeType type("application/x-vnd.Be-directory");
-		type.GetIcon(folder,B_MINI_ICON);
-		
-		BMimeType type2("image");
-		type2.GetIcon(image,B_MINI_ICON);
-		
-		AddIcon("folder",folder);
-		AddIcon("image",image);
-		
-	#endif
+
+	BBitmap* folder=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
+	BBitmap* image=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
+
+	BMimeType type("application/x-vnd.Be-directory");
+	type.GetIcon(folder,B_MINI_ICON);
+
+	BMimeType type2("image");
+	type2.GetIcon(image,B_MINI_ICON);
+
+	AddIcon("folder",folder);
+	AddIcon("image",image);
 }
 
 void
@@ -132,9 +122,6 @@ MainWindow::init(MainController* controller){
 
 
     rgb_color bgcolor = ui_color(B_PANEL_BACKGROUND_COLOR);
-#ifdef ZETA	
-	SetWindowColor(bgcolor);
-#endif	
 	
 	BRect rect(Bounds());
 	rect.top = CreateMenuBar() + 1;
@@ -143,16 +130,12 @@ MainWindow::init(MainController* controller){
 //	view->SetViewColor(bgcolor);
 	AddChild(view);
 
-
-	
 	const BFont *font = be_plain_font;
 	rect = BRect(0,0,47,31);
 	
 	fChannelMenu = new BPopUpMenu("ChannelMenu");
 	fChannelMenu->SetFont(font);
-	
-	
-	
+
 	const	 int COUNT = 4;
 	const int	ChannelBar[COUNT] = 
 					{
@@ -166,7 +149,6 @@ MainWindow::init(MainController* controller){
 	channelView->SetViewColor(bgcolor);
 	view->AddChild(channelView);
 			
-					
 	//automatic for the people
 	int i;
 	for(i=0;i<COUNT;i++){
@@ -177,7 +159,7 @@ MainWindow::init(MainController* controller){
 		fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
 		channels->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
 	}	
-	
+
 	//extras :)
 	fChannelMenu->AddSeparatorItem();
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
@@ -370,12 +352,6 @@ MainWindow::CreateItemInfoView(){
 	BRect scrollRect(0,0,100,100 );
 
 	fItemText = new ItemRunView(scrollRect, "text", fTheme,B_FOLLOW_ALL_SIDES, B_WILL_DRAW | B_NAVIGABLE);
-
-#ifdef ZETA
-	fItemText->SetViewUIColor(B_UI_DOCUMENT_BACKGROUND_COLOR);
-	fItemText->SetLowUIColor(B_UI_DOCUMENT_BACKGROUND_COLOR);
-	fItemText->SetHighUIColor(B_UI_DOCUMENT_TEXT_COLOR);
-#endif
 	
 	BScrollView *fTextScroll = new BScrollView("scroller", fItemText,B_FOLLOW_ALL_SIDES, 0,false, true, B_PLAIN_BORDER);
 	
@@ -420,11 +396,6 @@ MainWindow::CreateChannelInfoView(){
 	BRect scrollRect(0,0,100,100 );
 	
 	fChannelText = new RunView(scrollRect, "channel ", fTheme,B_FOLLOW_ALL_SIDES, B_WILL_DRAW | B_NAVIGABLE);
-#ifdef ZETA
-	fChannelText->SetViewUIColor(B_UI_DOCUMENT_BACKGROUND_COLOR);
-	fChannelText->SetLowUIColor(B_UI_DOCUMENT_BACKGROUND_COLOR);
-	fChannelText->SetHighUIColor(B_UI_DOCUMENT_TEXT_COLOR);
-#endif	
 	BScrollView *fTextScroll = new BScrollView("scroller2", fChannelText,B_FOLLOW_ALL_SIDES, 0,false, true, B_PLAIN_BORDER);
 		
 	fChannelText->AddAction("bepodder",new RVActionBP());
@@ -444,10 +415,8 @@ MainWindow::CreateMenuBar(){
 	BMenu  *podderfile = new BMenu(_T("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	
-	BMenuItem* importOmpl = new BMenuItem(_T("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0);
-	podderfile->AddItem(importOmpl);
-
-	
+	podderfile->AddItem(new BMenuItem(_T("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0));
+	podderfile->AddItem(new BMenuItem(_T("Export OPML...") , new BMessage(EXPORT_OPML), 0, 0));
 	BMenuItem *podderaboutitem = new BMenuItem(_T("About..."),new BMessage(B_ABOUT_REQUESTED),0,0);
 	podderaboutitem->SetTarget(be_app);
 	podderfile->AddItem(podderaboutitem);
@@ -751,7 +720,6 @@ void MainWindow::MessageReceived(BMessage* msg)
 			}
 			//close the alert
 			alert->PostMessage(B_QUIT_REQUESTED);
-			
 		}
 		break;
 		
@@ -875,8 +843,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 			filePanel->SetTarget(BMessenger(this));
 			filePanel->Show();
 			//try to parse
-			
-			//foreach add to the window
+			break;
 		}
 		case PARSE_OPML:
 		{
@@ -890,16 +857,39 @@ void MainWindow::MessageReceived(BMessage* msg)
 				if(!tree) return; //should never happen!
 						
 				RecursiveParseOpml(tree);
-
-				
-//			BPAlert *alert = new BPAlert("BePodder",,_T("Error"),_T("Close"),NULL,B_WIDTH_AS_USUAL, LoadIcon("logo-64.png"));
-//			if(alert->Go()==0)
-//				fController->OpenURL("http://www.funkyideasoft.com/downloads.html");
 			}			
 			msg->PrintToStream();
 		}
 		break;
-			
+
+		case EXPORT_OPML:
+		{
+			// select the OPML file,
+			BFilePanel *filePanel	= new	BFilePanel(B_SAVE_PANEL);
+			filePanel->SetMessage(new BMessage(WRITE_OPML));
+			filePanel->SetTarget(BMessenger(this));
+			filePanel->SetSaveText("Podcast.opml");
+			filePanel->Show();
+			break;
+		}
+		case WRITE_OPML:
+		{
+			entry_ref ref;
+			BString fileName;
+			if(msg->FindRef("directory",&ref) == B_OK && msg->FindString("name",&fileName) == B_OK)
+			{
+				BDirectory directory(&ref);
+				BPath exportFilePath(&directory, fileName.String());
+				OPMLWriter writer("Feed BePodder");
+
+				for (int i = 0; i < sx_list->CountRows(); i++)
+				{
+					writer.AddChannel(dynamic_cast<SubscriptionListItem*>(sx_list->RowAt(i)));
+				}
+				writer.WriteToFile(exportFilePath.Path());
+			}
+		}
+		break;
 		default:
 			BWindow :: MessageReceived(msg);
 		break;
@@ -1476,7 +1466,5 @@ MainWindow::SetToolbarVisible(bool visible){
 				if(channelView->IsHidden())
 					channelView->Show();
 			}
-			
-		
 }
 

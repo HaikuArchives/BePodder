@@ -72,6 +72,7 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/NodeWalker.cpp \
 	../sources-experimental/Notifier.cpp \
 	../sources-experimental/OPMLParser.cpp \
+	../sources-experimental/OPMLWriter.cpp \
 	../sources-experimental/PercentageView.cpp \
 	../sources-experimental/PercentageWindow.cpp \
 	../sources-experimental/QueueFileDownload.cpp \

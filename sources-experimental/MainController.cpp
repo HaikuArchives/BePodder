@@ -415,31 +415,17 @@ MainController::PlayItem(entry_ref ref){
 void
 MainController::ShowChannelImage(entry_ref ref){
 
-	//TODO: add image extractor from FileAttribute. (?)
-	
-	 //new style
-	BNode dir(&ref);
-	if(dir.InitCheck()!=B_OK ) return;
-	 
-	 char*	buffer;
-	 int32	size;
-	 status_t err = ReadAttributeData(&dir,ATTR_IMAGE,&buffer,&size);
-	 
-	 if(err !=B_OK ) return;
-	 
-	 BMessage iconMsg;
+	// Use Full resolution image saved as a file
+	BDirectory dir(&ref); //channel
+	if(dir.InitCheck()!=B_OK) return;
+	BPath path(&dir,"image");
 
-	 if (iconMsg.Unflatten(buffer) != B_OK) {
-	 	free(buffer);
-	 	return ;
-	 };
-	 BBitmap* icon = new BBitmap(&iconMsg);
-	 if(!icon) {
-	 	free(buffer);
-	 	return;
-	 }
-	 
-	 (new BitmapWindow(icon))->Show();
+	entry_ref image_ref;
+	get_ref_for_path(path.Path(),&image_ref);
+
+	BBitmap	*icon = BTranslationUtils::GetBitmap(&image_ref);
+	if(!icon) return;
+	(new BitmapWindow(icon))->Show();
 }
 
 
@@ -1565,16 +1551,34 @@ MainController::InfoExtraDownload(BMessage* msg){
 						
 						BBitmap	*logo = BTranslationUtils::GetBitmap(&ref);
 						if(!logo) return;
-						
-						
+
+						// Scale To Icon size
+						// TODO: if the size of the subscription icon can change this must
+						// be rescaled from the full image
+						// Icon Size is 46 set in SubscriptionListItem
+						BBitmap *scalingBitmap = new BBitmap(BRect(0,0,45,45), B_RGBA32, true);
+						if (scalingBitmap != NULL) {
+								BView *scalingView = new BView(logo->Bounds(),
+									"ScalingView", B_FOLLOW_NONE, B_WILL_DRAW);
+								scalingBitmap->AddChild(scalingView);
+								scalingBitmap->Lock();
+								//scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds(), B_FILTER_BITMAP_BILINEAR);
+								scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds());
+								scalingBitmap->Unlock();
+								scalingBitmap->RemoveChild(scalingView);
+								delete scalingView;
+						} else {
+							delete logo;
+							return;
+						}
 						// what to do with this image?
 						AttributeDumper dump(&row->fRef);
 						row->fChannel.AddElementListener(&dump);
-						row->fChannel.SetKey(CHANNEL_IMAGE_DATA,(void*)logo,sizeof(BBitmap*));
+						row->fChannel.SetKey(CHANNEL_IMAGE_DATA,(void*)scalingBitmap,sizeof(BBitmap*));
 						row->fChannel.RemoveElementListener(&dump);
+
+						delete scalingBitmap;
 						delete logo;
-						
-							
 					}
 					
 					fView->RefreshSubscription(row);

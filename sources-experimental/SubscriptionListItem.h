@@ -76,21 +76,9 @@ class SubscriptionListItem : public BRow, public ElementListener
 												
 		private:
 		
-					BBitmap*	rescale_bitmap( BBitmap * src, int32 width, int32 height );
  		 			SubscriptionField*	field;
  		 			BString	fUrl; //?
  		 			BString	fWeb;
- 		 			
- 		 			inline uint32 mix_2_pixels_fixed(uint32 p1,uint32 p2,uint32 c)
-					{
-							uint32 inv_c = 32768 - c;
-	
-							return 	((((((p1 >> 24) &0xFF) * c + ((p2 >> 24)&0xFF) * inv_c)>>15)<<24) & 0xFF000000) |
-									((((((p1 >> 16)&0xFF) * c + ((p2 >> 16)&0xFF) * inv_c)>>15)<<16) & 0x00FF0000) |
-									((((((p1 >> 8)&0xFF) * c + ((p2 >> 8)&0xFF) * inv_c)>>15)<<8) & 0x0000FF00) |
-									(((((p1&0xFF) * c + (p2&0xFF) * inv_c)>>15)) & 0x000000FF);				
-					}
- 					
  					bool	isNew;
  						
  						

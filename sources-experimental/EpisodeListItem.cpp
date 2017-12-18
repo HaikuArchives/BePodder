@@ -135,8 +135,10 @@ EpisodeListItem::KeyModified(int32 key, void* data,ssize_t size)
 	
 }
 
+
 EpisodeListItem::~EpisodeListItem(){
 }
+
 
 void
 EpisodeListItem::DrawBackground(	BRect _rect, BView* parent, bool _is_selected, bool _is_focus ) {

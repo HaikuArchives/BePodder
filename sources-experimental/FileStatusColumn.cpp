@@ -115,7 +115,7 @@ FileStatusField::SetFilePercentage(int per,float speed)
 				char		str[256];
 				if (size < kKB_SIZE)
 				{
-					sprintf(str, "%Ld b/s", size);
+					sprintf(str, "%.0f b/s", size);
 				}
 				else
 				{

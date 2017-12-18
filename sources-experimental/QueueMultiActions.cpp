@@ -14,7 +14,7 @@ QueueMultiActions::QueueMultiActions(const char* name,int count){
 	
 	for(int j=0;j<MAX_MULTI;j++){
 		 fCurrentAction[j] = NULL;
-		 fID[j]=NULL;
+		 fID[j]=0;
 	}
 	
 	fName.SetTo(name);
@@ -165,7 +165,8 @@ QueueMultiActions::IsLocked(){
 					
 void
 QueueMultiActions::KIllThread(int id){
-	fID[id]=NULL;
+	//TODO: WHAT?
+	fID[id]=0;
 }					
 
 int32	

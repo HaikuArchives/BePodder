@@ -630,7 +630,6 @@ MainWindow::LoadSetting(BMessage* data){
 
 void MainWindow::MessageReceived(BMessage* msg)
 {
-	msg->PrintToStream();
 	
 	switch(msg->what)
 	{

@@ -77,23 +77,5 @@ class BPositiveGraphColumn : public BIntegerColumn
 };
 
 
-class BMyBitmapColumn : public BTitledColumn
-{
-	public:
-							BMyBitmapColumn	(const char* title,
-												 float width,
-												 float minWidth,
-												 float maxWidth,
-												 alignment align = B_ALIGN_LEFT);
-		 		 void		DrawField		(BField* field,
-												 BRect rect,
-												 BView* parent);
-												 
-				int			CompareFields(BField* field1,
-												 BField* field2);
-		
-};
-
-
 #endif
 

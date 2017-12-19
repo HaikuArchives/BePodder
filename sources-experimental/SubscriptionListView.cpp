@@ -146,7 +146,7 @@ SubscriptionListView::DroppedGroup(BMessage* msg, BPoint point)
 	GroupItem*	gitem=dynamic_cast<GroupItem*>(row);
 	if(gitem) 
 	{
-		printf("Dropped, we should move the dropped into the group '%s'\n", "fix", gitem->GroupName().String() );
+		printf("Dropped, we should move the dropped into the group '%s'\n", gitem->GroupName().String() );
 		RemoveRow(frow);
 		AddRow(frow,row);
 		DeselectAll();

@@ -6,7 +6,6 @@ OPMLWriter::OPMLWriter(const BString title):
 	body(NULL)
 {
 	doc = xmlNewDoc(BAD_CAST "1.0");
-	xmlNodePtr root_node = xmlNewNode(NULL, BAD_CAST "root");
 	xmlNodePtr opml = xmlNewNode(NULL, BAD_CAST "opml");
 	xmlNewProp(opml, BAD_CAST "version", BAD_CAST "1.0");
 	xmlDocSetRootElement(doc, opml);

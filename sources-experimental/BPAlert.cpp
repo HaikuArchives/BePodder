@@ -451,7 +451,7 @@ BPAlert::InitObject(const char* text, const char* button0, const char* button1,
 	//	button0 = "";
 	//}
 	
-	int kTextIconOffset = 0;
+	float kTextIconOffset = 0;
 	
 	//here xeD mod
 	if(masterView->Bitmap())

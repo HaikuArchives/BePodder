@@ -103,6 +103,9 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 			case B_ALIGN_RIGHT:
 				x = rect.right - kTEXT_MARGIN - r.Width();
 				break;
+			case B_ALIGN_HORIZONTAL_UNSET:
+			case B_ALIGN_USE_FULL_WIDTH:
+				break;
 		}
 		parent->SetDrawingMode(B_OP_ALPHA);
 		parent->DrawBitmap(bitmap, BPoint(x, y));

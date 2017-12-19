@@ -90,8 +90,6 @@ SectionSelector::AddSection(const char* iconName,BView* view,const char* tooltip
 				
 		float prevPos = count * (W+TAB_SPACE);
 		
-		float width = W;
-		
 		BRect rect = BRect(prevPos,
 					 	   TOP_START, 
 					 	   prevPos + W - 1,

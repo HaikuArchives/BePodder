@@ -22,7 +22,7 @@ PercentageWindow::PercentageWindow(const char* title,const char* text,BBitmap* i
 	kTextIconOffset = 0;
 	
 	if(masterView->Bitmap())
-		kTextIconOffset = masterView->Bitmap()->Bounds().right + kTextIconOffsetSpace;
+		kTextIconOffset = (int)masterView->Bitmap()->Bounds().right + kTextIconOffsetSpace;
 
 
 	//ok, un String

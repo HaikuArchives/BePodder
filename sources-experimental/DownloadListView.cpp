@@ -13,7 +13,7 @@
 DownloadListView::DownloadListView(BRect r):
 BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FANCY_BORDER,true)
 {
-	BColumn *icon = new BMyBitmapColumn(_T("Icon"),16,16,16);
+	BColumn *icon = new BBitmapColumn(_T("Icon"),16,16,16,B_ALIGN_CENTER);
 	BColumn *channel = new BStringColumn(_T("Subscription"),140,10,500,5,B_ALIGN_LEFT);
 	BColumn *title = new BStringColumn(_T("Title"),140,10,500,5,B_ALIGN_LEFT);
 	BColumn *date  = new BPositiveDateColumn(_T("Date"),70,10,150,B_ALIGN_LEFT);

@@ -47,7 +47,6 @@ AddWindow::AddWindow() :
 
 	//controlliamo se c'e' qualcosa nella clipboard?
 	const char *clip_text = NULL;
-	bool	addButton = false;
 	ssize_t textLen;
 	BString url;
 	BMessage *clip = (BMessage *)NULL;

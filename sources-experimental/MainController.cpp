@@ -634,7 +634,6 @@ MainController::RealRemoveDownload(DownloadListItem* dli){
 	dli->Unlink();
 	fModel->removeDownload(dli->fRef);	
 	fView->RemoveDownload(dli);
-	delete dli;
 }
 
 

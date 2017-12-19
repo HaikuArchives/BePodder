@@ -33,14 +33,9 @@
 
 extern DownloadManager*	download_manager;
 
-
-#define	UPDATE_INFO		'updt' 
-
 MainWindow*				main_window;
 IActionManagerBP		action_manager;
 Setting 				podder_settings("BePodder.conf");
-//LicenceInfo				linfo("BePodder.key");
-
 
 TheApp::TheApp(const char * signature) :
 	BApplication(signature)
@@ -62,8 +57,6 @@ TheApp::TheApp(const char * signature) :
 void
 TheApp::ReadyToRun(){
 
-//	linfo.LoadFromFile();
-	
 	ApplySettings();
 	ApplyWindowSettings();
 	
@@ -76,8 +69,8 @@ TheApp::ReadyToRun(){
 //			fController->LoadGroupSetting(&grp);
 //			main_window->Unlock();
 //		}
-	
-	
+
+
 	this->PostMessage(ARCHIVE_PARSE);
 
 	return;
@@ -135,22 +128,6 @@ TheApp::MessageReceived(BMessage* msg){
 	//B_ARGV_RECEIVED 
 	
 	switch(msg->what){
-	case UPDATE_INFO:
-	{
-		BString rel;
-		if(msg->FindString("content",&rel)==B_OK && rel != "" && rel.Compare(VERSION_ID) != 0)
-		{
-			//FIX da tradurre!
-			BString text("A new release of this application is available!\n\n Your version : ");
-			text << VERSION_ID << "\n\n" << "Latest available version : " << rel ;
-			text << "\n\nGo to our web site and download the latest version!\n" ;
-						
-			BPAlert *alert = new BPAlert("BePodder",text.String(),_T("Website"),_T("Close"),NULL,B_WIDTH_AS_USUAL, LoadIcon("logo-64.png"));
-			if(alert->Go()==0)
-				fController->OpenURL("http://www.funkyideasoft.com/downloads.html");
-		}
-	}
-	break;
 	case PERFORM_ACTION:
 		action_manager.Perform(msg);
 	break;

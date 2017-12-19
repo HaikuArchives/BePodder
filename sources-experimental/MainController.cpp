@@ -41,22 +41,14 @@
 
 DownloadManager*	download_manager;
 
-//#include "LicenceInfo.h"
-//extern LicenceInfo		linfo;
-
 //messages:
 #define		DOWNLOAD_ITEM				'invD'
 #define		DOWNLOAD_CHANNEL			'addu'
 
-#define	VLC_SIGNATURE				"application/x-vnd.videolan-vlc"
-#define	SOUNDPLAY_SIGNATURE			"application/x-vnd.marcone-soundplay"
+#define		VLC_SIGNATURE			"application/x-vnd.videolan-vlc"
+#define		SOUNDPLAY_SIGNATURE		"application/x-vnd.marcone-soundplay"
+#define		MEDIAPLAYER_SIGNATURE	"application/x-vnd.Haiku-MediaPlayer"
 
-#ifdef ZETA
-	#define		MEDIAPLAYER_SIGNATURE	"application/x-vnd.YT-MediaPlayer"
-#else
-	#define		MEDIAPLAYER_SIGNATURE	"application/x-vnd.Haiku-MediaPlayer"
-	// THIS SHOULD BE FIXED! "application/x-vnd.Be.MediaPlayer"
-#endif
 
 	
 //a tendere qui dovrebbe essere
@@ -73,9 +65,7 @@ MainController::MainController(MainWindow* view, MainModel* model){
 
 void	
 MainController::LoadSettings(const char* type,BMessage* data){
-	
 
-	
 	BString stype(type);
 	if(stype.Compare(SETTINGS_PROXY) == 0 ){
 		download_manager->LoadProxySetting(data);
@@ -88,7 +78,7 @@ MainController::LoadSettings(const char* type,BMessage* data){
 	else
 	if(stype.Compare(SETTINGS_FILETYPE) == 0){
 			
-		browser_id = 2; //System Default.
+		browser_id = 3; //System Default.
 		player_id  = 3; //Auto.
 		int32 ret;
 		if(data->FindInt32("browser_index",&ret) == B_OK)
@@ -96,7 +86,6 @@ MainController::LoadSettings(const char* type,BMessage* data){
 			
 		if(data->FindInt32("player_index",&ret) == B_OK)
 			player_id = ret;
-		
 	}
 	else
 	if(stype.Compare(SETTINGS_CHANNELS) == 0 ){
@@ -139,11 +128,7 @@ MainController::LoadSettings(const char* type,BMessage* data){
 		
 		if(check_time>0)
 				check_timer= new BMessageRunner(fView,new BMessage(CHECK_ALL),check_time);
-				
-		
 	}
-	
-	
 }
 
 /*
@@ -163,7 +148,7 @@ MainController::DownloadSelectedItem(){
 }
 */
 status_t
-MainController::DownloadItem(entry_ref ref,EpisodeListItem* epi) {
+MainController::DownloadItem(entry_ref ref, EpisodeListItem* epi) {
 			
 			//start a item download.
 			//------------------------------------------------------------------
@@ -1193,6 +1178,8 @@ MainController::OpenFile(const char* filename,BString filetype){
 void
 MainController::AlertBadPlayer(int32 p_id){
 	
+	// Use this with HaikuDepot?
+	/*
 	BString text(_T("Can't open the selected file with:\n\n"));
 	BString url;
 	
@@ -1223,7 +1210,7 @@ MainController::AlertBadPlayer(int32 p_id){
 		OpenURL(url);
 	
 		
-	
+	*/
 }
 
 

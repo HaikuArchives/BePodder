@@ -15,20 +15,21 @@ struct coppia {
 
 
 const coppia autotypes[]= { 
-	{".3gp",VLC,_T("alert_3gp")},
-	{".3g2",VLC,_T("alert_3gp")},
+	{".3gp",MEDIAPLAYER,NULL},
+	{".3g2",MEDIAPLAYER,NULL},
 	{".avi",MEDIAPLAYER,NULL},
-	{".flv",VLC,NULL},
-	{".m3u",SOUNDPLAY,NULL},
-	{".m4a",VLC,NULL},
-	{".m4b",VLC,NULL},
-	{".m4p",VLC,NULL},
-	{".m4v",VLC,NULL},
-	{".mov",VLC,NULL},
-	{".mp4",VLC,NULL},
+	{".flv",MEDIAPLAYER,NULL},
+	{".m3u",MEDIAPLAYER,NULL},
+	{".m4a",MEDIAPLAYER,NULL},
+	{".m4b",MEDIAPLAYER,NULL},
+	{".m4p",MEDIAPLAYER,NULL},
+	{".m4v",MEDIAPLAYER,NULL},
+	{".mov",MEDIAPLAYER,NULL},
+	{".mp4",MEDIAPLAYER,NULL},
 	{".swf",NONE,_T("alert_swf")},
-	{".wma",VLC,NULL},
-	{".wmv",VLC,NULL}
+	{".wma",MEDIAPLAYER,NULL},
+	{".wmv",MEDIAPLAYER,NULL},
+	{".mp3",MEDIAPLAYER,NULL}
 };
 
 int32

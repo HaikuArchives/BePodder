@@ -91,9 +91,6 @@
 
 // Singletons:
 
-//#include "LicenceInfo.h"
-//extern LicenceInfo		linfo;
-
 extern IActionManagerBP		action_manager;
 
 

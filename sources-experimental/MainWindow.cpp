@@ -12,7 +12,6 @@
 #include <View.h>
 #include <Box.h>
 #include <ScrollBar.h>
-#include <FilePanel.h>
 #include "BPLocale.h"
 #include <StorageKit.h>
 
@@ -99,7 +98,10 @@ extern IActionManagerBP		action_manager;
 
 
 MainWindow::MainWindow()
-: BWindow(BRect(100,100,970,607), "BePodder", B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS){
+: BWindow(BRect(100,100,970,607), "BePodder", B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS),
+	importFilePanel(NULL),
+	exportFilePanel(NULL)
+{
 
 	BBitmap* folder=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
 	BBitmap* image=new BBitmap(BRect(0,0,15,15), 0, B_RGBA32);
@@ -628,7 +630,6 @@ MainWindow::LoadSetting(BMessage* data){
 
 void MainWindow::MessageReceived(BMessage* msg)
 {
-
 	
 	switch(msg->what)
 	{
@@ -838,11 +839,12 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case IMPORT_OPML:
 		{
 			// select the OPML file,
-			BFilePanel *filePanel	= new	BFilePanel(B_OPEN_PANEL);
-			filePanel->SetMessage(new BMessage(PARSE_OPML));
-			filePanel->SetTarget(BMessenger(this));
-			filePanel->Show();
-			//try to parse
+			if (importFilePanel == NULL) {
+				importFilePanel = new BFilePanel(B_OPEN_PANEL);
+				importFilePanel->SetMessage(new BMessage(PARSE_OPML));
+				importFilePanel->SetTarget(BMessenger(this));
+			}
+			importFilePanel->Show();
 			break;
 		}
 		case PARSE_OPML:
@@ -865,11 +867,13 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case EXPORT_OPML:
 		{
 			// select the OPML file,
-			BFilePanel *filePanel	= new	BFilePanel(B_SAVE_PANEL);
-			filePanel->SetMessage(new BMessage(WRITE_OPML));
-			filePanel->SetTarget(BMessenger(this));
-			filePanel->SetSaveText("Podcast.opml");
-			filePanel->Show();
+			if (exportFilePanel == NULL) {
+				exportFilePanel	= new	BFilePanel(B_SAVE_PANEL);
+				exportFilePanel->SetMessage(new BMessage(WRITE_OPML));
+				exportFilePanel->SetTarget(BMessenger(this));
+				exportFilePanel->SetSaveText("Podcast.opml");
+			}
+			exportFilePanel->Show();
 			break;
 		}
 		case WRITE_OPML:

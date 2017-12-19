@@ -1,13 +1,13 @@
 #ifndef 	MainWindow_H
 #define MainWindow_H
- 
+
+#include <FilePanel.h>
 #include <Window.h>
 #include <MessageRunner.h>
 #include <PictureButton.h>
 #include <Entry.h>
 #include <TextView.h> 
 #include <PopUpMenu.h>
-//#include <StackedViewManager.h>
 #include "StackedView.h"
 #include <Box.h>
 
@@ -160,8 +160,11 @@ class MainWindow: public BWindow
     			BPopUpMenu*					fDownloadMenu;
     			BPopUpMenu*					fGroupMenu;
     			
-    			SectionSelector*					fSelector; 
-    	
+				SectionSelector*					fSelector;
+
+				BFilePanel 					*importFilePanel;
+				BFilePanel 					*exportFilePanel;
+
 	 	   		BRect podderrect;
 	    
 };

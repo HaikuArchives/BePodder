@@ -376,7 +376,7 @@ MainController::PlayItem(entry_ref ref){
 	if(bpe.InitCheck()!=B_OK) return B_ERROR;
 	
 	BString enclosure_path(bpe.EnclosureLocalPath());
-	
+
 	if(enclosure_path == "" ) 
 				WWWItem(ref);
 	
@@ -387,15 +387,41 @@ MainController::PlayItem(entry_ref ref){
 	 BDirectory dir; 
 	 path.Append("enclosures");
 
-	 if(dir.SetTo(path.Path()) == B_ENTRY_NOT_FOUND) return B_ERROR;
-	 
+	 if(dir.SetTo(path.Path()) == B_ENTRY_NOT_FOUND)
+		return StreamItem(ref);
+
 	 path.Append(enclosure_path.String());
-	  		
-	  BString filetype(bpe.EnclosureType());			 
-	  OpenFile(path.Path(),filetype);
-	  
+
+	 BEntry fileToPlay(path.Path());
+	 if (fileToPlay.Exists()) {
+		 BString filetype(bpe.EnclosureType());
+		 OpenFile(path.Path(),filetype);
+	 }
+	 else
+		return StreamItem(ref);
   	return B_OK;
 }
+
+
+status_t
+MainController::StreamItem(entry_ref ref){
+       BPEpisode bpe(&ref);
+
+       BString link = bpe.EnclosureLink();
+       if(link == "")
+               return B_BAD_VALUE;
+
+       entry_ref mp;
+       status_t result = be_roster->FindApp("application/x-vnd.Haiku-MediaPlayer",&mp);
+       if (result == B_OK) {
+               BString path(BPath(&mp).Path());
+               path.RemoveLast("-bin");
+               path << " " << link << " &";
+               system(path.String());
+       }
+       return result;
+}
+
 
 void
 MainController::ShowChannelImage(entry_ref ref){

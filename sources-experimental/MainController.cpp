@@ -376,7 +376,7 @@ MainController::PlayItem(entry_ref ref){
 	if(bpe.InitCheck()!=B_OK) return B_ERROR;
 	
 	BString enclosure_path(bpe.EnclosureLocalPath());
-	
+
 	if(enclosure_path == "" ) 
 				WWWItem(ref);
 	
@@ -388,7 +388,7 @@ MainController::PlayItem(entry_ref ref){
 	 path.Append("enclosures");
 
 	 if(dir.SetTo(path.Path()) == B_ENTRY_NOT_FOUND)
-		return B_ERROR;
+		return StreamItem(ref);
 
 	 path.Append(enclosure_path.String());
 

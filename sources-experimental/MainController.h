@@ -32,7 +32,9 @@ class MainController {
 			
 				bool			DeleteEpisode(entry_ref); //true if the episode was NEW
 				
-				status_t		PlayItem(entry_ref); 
+				status_t		PlayItem(entry_ref);
+
+				status_t		StreamItem(entry_ref);
 				
 				status_t		DownloadItem(entry_ref,EpisodeListItem* e=NULL);
 

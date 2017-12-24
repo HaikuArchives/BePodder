@@ -1568,7 +1568,15 @@ MainController::InfoExtraDownload(BMessage* msg){
 						// TODO: if the size of the subscription icon can change this must
 						// be rescaled from the full image
 						// Icon Size is 46 set in SubscriptionListItem
-						BBitmap *scalingBitmap = new BBitmap(BRect(0,0,45,45), B_RGBA32, true);
+						float ratio = logo->Bounds().Width() / logo->Bounds().Height();
+						float ratioX = 1;
+						float ratioY = 1;
+						if (ratio > 1)
+							ratioY /= ratio;
+						else
+							ratioX *= ratio;
+
+						BBitmap *scalingBitmap = new BBitmap(BRect(0,0, 46 * ratioX, 46 * ratioY), B_RGBA32, true);
 						if (scalingBitmap != NULL) {
 								BView *scalingView = new BView(logo->Bounds(),
 									"ScalingView", B_FOLLOW_NONE, B_WILL_DRAW);

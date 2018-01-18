@@ -32,7 +32,8 @@ OPMLParser::Parse(BString filename){
 	 };
 	 
 	 //LOG("OPMLParser", liDebug ,"OPML title: %s",XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children));
-	 BString opml_name((const char*)XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children));
+	 const char* title = (const char*)XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children);
+	 BString opml_name(title != NULL ? title : "");
 	 
 	 
 	 

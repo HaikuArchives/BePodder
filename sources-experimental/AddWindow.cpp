@@ -45,7 +45,7 @@ AddWindow::AddWindow() :
 
 	.End();
 
-	//controlliamo se c'e' qualcosa nella clipboard?
+	// Check if the clipboard contains a valid url
 	const char *clip_text = NULL;
 	ssize_t textLen;
 	BString url;
@@ -63,6 +63,8 @@ AddWindow::AddWindow() :
 			{
 				BTextView *textView = (BTextView*)FindView("rss_url");
 				if (textView){
+					url.RemoveAll("\n");
+					url.RemoveAll("\t");
 					textView->SetText(url.String());
 					textView->SelectAll();
 				}
@@ -72,12 +74,14 @@ AddWindow::AddWindow() :
 	}
 
 	MoveTo(BPAlert::AlertPosition(Bounds().Width(),Bounds().Height()));
-	
-	
+
 	BTextView *textView = (BTextView*)FindView("rss_url");
 	if (textView){
 		textView->MakeFocus(true);
+		textView->DisallowChar('\n');
+		textView->DisallowChar('\t');
 	}
+
 }
 
 

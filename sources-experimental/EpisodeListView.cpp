@@ -48,7 +48,7 @@ BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAI
 {
 	BColumn *icon = new BBitmapColumn(_T("Icon"),16,16,16,B_ALIGN_CENTER);
 	BColumn *title = new BStringColumn(_T("Title"),140,10,500,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
-	BColumn *date  = new BPositiveDateColumn(_T("Date"),70,10,150,B_ALIGN_LEFT);
+	BColumn *date  = new BPositiveDateColumn(_T("Date"),70,10,250,B_ALIGN_LEFT);
 	BColumn *size  = new BPositiveSizeColumn(_T("Size"),80,10,150,B_ALIGN_LEFT);
 	
 	int index = 0;

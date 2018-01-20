@@ -5,7 +5,7 @@
 */
 
 //actions for items
-
+#include <Catalog.h>
 #include "IABPDownload.h"
 #include "MainWindow.h"
 #include "MainController.h"
@@ -15,18 +15,21 @@
 #define		UNLOCKWINDOW				fView->Unlock();}
 
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "IABPDownload"
+
 IABPDownloadRemove::IABPDownloadRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
 			 	   		
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-remove.png"));
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove from this list")); 
+	 	  		SetLabel(B_TRANSLATE("Remove from this list")); 
 }
 			 	 
 BString 
 IABPDownloadRemove::GetDescription(){
- 	  return _T("");
+ 	  return B_TRANSLATE("");
 }
 			 	  
 
@@ -55,12 +58,12 @@ IABPDownloadStop::IABPDownloadStop(MainController* controller, MainWindow* view)
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-stop.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-stop-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Stop download")); 
+	 	  		SetLabel(B_TRANSLATE("Stop download")); 
 }
 			 	 
 BString 
 IABPDownloadStop::GetDescription(){
- 	  return _T("Stop the item download");
+ 	  return B_TRANSLATE("Stop the item download");
 }
 			 	  
 
@@ -94,12 +97,12 @@ IABPDownloadDownload::IABPDownloadDownload(MainController* controller,MainWindow
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-download.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-download-down.png"));
 	 	  		
-	 	  		SetLabel(_T("(Re)start download")); 
+	 	  		SetLabel(B_TRANSLATE("(Re)start download")); 
 }
 			 	 
 BString 
 IABPDownloadDownload::GetDescription(){
- 	  return _T("Download the selected episode");
+ 	  return B_TRANSLATE("Download the selected episode");
 }
 			 	  
 
@@ -132,12 +135,12 @@ IABPDownloadPlay::IABPDownloadPlay(MainController* controller,MainWindow* view):
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-play.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-play-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Play enclosure")); 
+	 	  		SetLabel(B_TRANSLATE("Play enclosure")); 
 }
 			 	 
 BString 
 IABPDownloadPlay::GetDescription(){
- 	  return _T("Play the selected episode");
+ 	  return B_TRANSLATE("Play the selected episode");
 }
 			 	  
 
@@ -171,13 +174,13 @@ IABPDownloadFindItem::IABPDownloadFindItem(MainController* controller,MainWindow
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Find this Item")); 
+	 	  		SetLabel(B_TRANSLATE("Find this Item")); 
 			 	  
 }
 			 	 
 BString 
 IABPDownloadFindItem::GetDescription(){
- 	  return _T("");
+ 	  return B_TRANSLATE("");
 }
 			 	  
 

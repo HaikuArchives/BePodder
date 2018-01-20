@@ -8,7 +8,6 @@
 #include "ItemProperty.h"
 
 #include <stdlib.h>
-#include "BPLocale.h"
 
 #include "Utils.h"
 #include "curl/curl.h"
@@ -105,7 +104,7 @@ EpisodeListItem::KeyModified(int32 key, void* data,ssize_t size)
 			 	case CONNECTING:	break;//just use the last one!
 			 	default:
 			 		iconfield->SetBitmap(LoadIcon("error-micro.png"));
-			 		//sdata.SetTo(_T("error"));
+			 		//sdata.SetTo(B_TRANSLATE("error"));
 			 	break; 
 		  }
 			 

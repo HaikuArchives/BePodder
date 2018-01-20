@@ -5,7 +5,7 @@
 */ 
 
 //actions for items
-
+#include <Catalog.h>
 #include "IABPItem.h"
 #include "MainWindow.h"
 #include "MainController.h"
@@ -15,7 +15,8 @@
 #define		UNLOCKWINDOW				fView->Unlock();}
 
 //-------------------------------------------------------------------------------------------------------------------
-
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "IABPItem"
 
 IABPItemRemove::IABPItemRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
 			 	   		
@@ -23,12 +24,12 @@ IABPItemRemove::IABPItemRemove(MainController* controller,MainWindow* view):IAct
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove item")); 
+	 	  		SetLabel(B_TRANSLATE("Remove item")); 
 }
 			 	 
 BString 
 IABPItemRemove::GetDescription(){
- 	  return _T("Delete the item and the enclosure");
+ 	  return B_TRANSLATE("Delete the item and the enclosure");
 }
 			 	  
 
@@ -50,13 +51,13 @@ IABPItemRemove::Perform(BMessage*){
 
 
 	BString text;
-	text << _TT("alert1");
+	text << B_TRANSLATE("\nYou are going to remove the selected item.\n\nAre you sure?\n(you will lost the enclosure file if any)");
 	if(selection.CountItems() == 1) 
 		text << "\n\n" << firstTitle << "\n";
 	else
 		text << "\n\n" << selection.CountItems() << " " << "episodes\n";
 		
-	BPAlert* remove = new BPAlert("Remove an item", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+	BPAlert* remove = new BPAlert("Remove an item", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
 	int32 result=remove->Go(); //sync..
 	
 	LOCKWINDOW
@@ -108,12 +109,12 @@ IABPItemStop::IABPItemStop(MainController* controller,MainWindow* view):IActionB
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-stop.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-stop-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Stop download")); 
+	 	  		SetLabel(B_TRANSLATE("Stop download")); 
 }
 			 	 
 BString 
 IABPItemStop::GetDescription(){
- 	  return _T("Stop the item download");
+ 	  return B_TRANSLATE("Stop the item download");
 }
 			 	  
 
@@ -148,12 +149,12 @@ IABPItemDownload::IABPItemDownload(MainController* controller,MainWindow* view):
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-download.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-download-down.png"));
 	 	  		
-	 	  		SetLabel(_T("(Re)start download")); 
+	 	  		SetLabel(B_TRANSLATE("(Re)start download")); 
 }
 			 	 
 BString 
 IABPItemDownload::GetDescription(){
- 	  return _T("Download the selected episode");
+ 	  return B_TRANSLATE("Download the selected episode");
 }
 			 	  
 
@@ -188,12 +189,12 @@ IABPItemPlay::IABPItemPlay(MainController* controller,MainWindow* view):IActionB
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-play.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-play-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Play enclosure")); 
+	 	  		SetLabel(B_TRANSLATE("Play enclosure")); 
 }
 			 	 
 BString 
 IABPItemPlay::GetDescription(){
- 	  return _T("Play the selected episode");
+ 	  return B_TRANSLATE("Play the selected episode");
 }
 			 	  
 
@@ -227,13 +228,13 @@ IABPItemWWW::IABPItemWWW(MainController* controller,MainWindow* view):IActionBP(
    		SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
   		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
   		
-  		SetLabel(_T("Open webpage")); 
+  		SetLabel(B_TRANSLATE("Open webpage")); 
 			 	  
 }
 			 	 
 BString 
 IABPItemWWW::GetDescription(){
- 	  return _T("Show the news homepage");
+ 	  return B_TRANSLATE("Show the news homepage");
 }
 			 	  
 

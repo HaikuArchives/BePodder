@@ -5,7 +5,7 @@
 */
  
 //actions for groups
-
+#include <Catalog.h>
 #include "IABPGroup.h"
 #include "MainWindow.h"
 #include "MainController.h"
@@ -17,7 +17,8 @@
 #define		UNLOCKWINDOWERROR	{ fView->Unlock(); return B_ERROR; }
 #define		UNLOCKWINDOW				fView->Unlock();}
 
-
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "IABPGroup"
 
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -27,13 +28,13 @@ IABPGroupCheck::IABPGroupCheck(MainController* controller,MainWindow* view):IAct
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Check channels of group")); 
+	 	  		SetLabel(B_TRANSLATE("Check channels of group")); 
 			 	  
 }
 			 	 
 BString 
 IABPGroupCheck::GetDescription(){
- 	  return _T("Check the podcasts of the selected group for new items");
+ 	  return B_TRANSLATE("Check the podcasts of the selected group for new items");
 }
 			 	  
 
@@ -65,13 +66,13 @@ IABPGroupCheck::Shortcut(uint32 *modifiers) const {
 IABPGroupAdd::IABPGroupAdd(MainController* controller,MainWindow* view):IActionBP(controller,view){
  	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
-  		SetLabel(_T("Add a group")); 
+  		SetLabel(B_TRANSLATE("Add a group")); 
 			 	  
 }
 			 	 
 BString 
 IABPGroupAdd::GetDescription(){
- 	  return _T("Add a new group");
+ 	  return B_TRANSLATE("Add a new group");
 }
 			 	  
 
@@ -94,13 +95,13 @@ IABPGroupAdd::Shortcut(uint32 *modifiers) const {
 IABPGroupRename::IABPGroupRename(MainController* controller,MainWindow* view):IActionBP(controller,view){
  	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png")); //fix this icon..
-  		SetLabel(_T("Rename a group")); 
+  		SetLabel(B_TRANSLATE("Rename a group")); 
 			 	  
 }
 			 	 
 BString 
 IABPGroupRename::GetDescription(){
- 	  return _T("Rename the selected group");
+ 	  return B_TRANSLATE("Rename the selected group");
 }
 			 	  
 
@@ -133,12 +134,12 @@ IABPGroupRemove::IABPGroupRemove(MainController* controller,MainWindow* view):IA
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
 	 	  		
-	 	  		SetLabel(_T("Remove a group")); 
+	 	  		SetLabel(B_TRANSLATE("Remove a group")); 
 }
 			 	 
 BString 
 IABPGroupRemove::GetDescription(){
- 	  return _T("Remove a group and delete all the channels");
+ 	  return B_TRANSLATE("Remove a group and delete all the channels");
 }
 			 	  
 
@@ -154,10 +155,10 @@ IABPGroupRemove::Perform(BMessage*){
 	
 	if(count>0) {
 		BString text;
-		text << _TT("alert1_fix..");
+		text << B_TRANSLATE("alert1_fix.."); // TODO conversion not present
 		text << "\n\n" << count << " " << "channels" << "\n";
 			
-		BPAlert* remove = new BPAlert("Remove a group", text.String(),_T("Delete"),_T("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+		BPAlert* remove = new BPAlert("Remove a group", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
 		int32 result=remove->Go(); //sync..
 
 		if(result==0){

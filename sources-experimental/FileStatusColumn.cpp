@@ -1,6 +1,5 @@
-
 #include "FileStatusColumn.h"
-#include "BPLocale.h"
+#include <Catalog.h>
 
 #include "Utils.h"
 #include "stdio.h"
@@ -17,7 +16,10 @@ const int64 	kTB_SIZE				= kGB_SIZE * kKB_SIZE;
 		static BBitmap*			fBar1 = NULL; 
 		static BBitmap*			fBar2 = NULL;
 		static BBitmap*			fBack = NULL;
-		
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "FileStatusColumn"
+
 //=====================================================================
 
 FileStatusField::FileStatusField(FileStatus status)
@@ -48,37 +50,37 @@ void	FileStatusField::SetFileStatus(FileStatus status)
 					fOriginalStatus.SetTo(" ");		
 				break;
 				case NEW:
-			 		fOriginalStatus.SetTo(_T("new"));			 			
+			 		fOriginalStatus.SetTo(B_TRANSLATE("new"));			 			
 			 	break;
 			 	case NOT_DOWNLOADED:
-			 	  	fOriginalStatus.SetTo(_TT("not down"));
+			 	  	fOriginalStatus.SetTo(B_TRANSLATE("not downloaded"));
 			 	break;
 		     	case DOWNLOADED:
-			 	 	fOriginalStatus.SetTo(_T("downloaded"));
+			 	 	fOriginalStatus.SetTo(B_TRANSLATE("downloaded"));
 			 	break;
 		     	case ERROR:
-			 	 	fOriginalStatus.SetTo(_T("error"));
+			 	 	fOriginalStatus.SetTo(B_TRANSLATE("error"));
 			 	break;
 		     	case STOPPED:
-		     	 	 	fOriginalStatus.SetTo(_T("stopped"));
+		     	 	 	fOriginalStatus.SetTo(B_TRANSLATE("stopped"));
 			 	break;
 		     	case NOT_FOUND:
-			 	 	fOriginalStatus.SetTo(_T("not found"));
+			 	 	fOriginalStatus.SetTo(B_TRANSLATE("not found"));
 			 	break;
 			 	case CANT_CONNECT:
-			 	 	fOriginalStatus.SetTo(_T("can't connect"));
+			 	 	fOriginalStatus.SetTo(B_TRANSLATE("can't connect"));
 			 	break;
 		     	case DOWNLOADING:
-			 	 	fOriginalStatus.SetTo(_T("downloading"));
+			 	 	fOriginalStatus.SetTo(B_TRANSLATE("downloading"));
 			 	break;
 			 	case ENQUEQUED:
-			 		fOriginalStatus.SetTo(_T("enquequed"));
+			 		fOriginalStatus.SetTo(B_TRANSLATE("enquequed"));
 			 	break;
 			 	case CONNECTING:
-			 		fOriginalStatus.SetTo(_T("connecting"));
+			 		fOriginalStatus.SetTo(B_TRANSLATE("connecting"));
 			 	break;
 			 	default:
-			 		fOriginalStatus.SetTo(_T("error"));
+			 		fOriginalStatus.SetTo(B_TRANSLATE("error"));
 			 	break; 
 		 }
 		 	fString=fOriginalStatus;

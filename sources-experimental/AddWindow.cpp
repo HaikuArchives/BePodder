@@ -3,13 +3,12 @@
 #include "Application.h"
 #include <LayoutBuilder.h>
 #include <Message.h>
-#include "BPLocale.h"
+#include <Catalog.h>
+#include <Clipboard.h>
+#include <Box.h>
 #include <Button.h>
 #include <StringView.h>
-#include <Box.h>
-#include <StringView.h>
 #include <View.h>
-#include <Clipboard.h>
 #include <ScrollView.h>
 #include "MainWindow.h"
 #include "BPAlert.h"
@@ -17,6 +16,8 @@
 
 extern MainWindow*	main_window;
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "AddWindow"
  
 AddWindow::AddWindow() :
 	BWindow(BRect(250,70,640,270),"AddWindow", B_MODAL_WINDOW, B_NOT_RESIZABLE
@@ -24,10 +25,10 @@ AddWindow::AddWindow() :
 {
 
 	BMessage templ;
-	templ.AddString("name", "Add subscription");
+	templ.AddString("name", B_TRANSLATE("Add subscription"));
 	BMessage settings;
 	settings.AddString("name", "rss_url");
-	settings.AddString("description", "Feed URL");
+	settings.AddString("description", B_TRANSLATE("Feed URL"));
 	settings.AddInt32("type", B_STRING_TYPE);
 	settings.AddBool("multi_line", true);
 	templ.AddMessage("setting", &settings);
@@ -40,9 +41,8 @@ AddWindow::AddWindow() :
 			.Add(text)
 		.AddGroup(B_HORIZONTAL, B_USE_ITEM_SPACING)
 				.AddGlue()
-				.Add(new BButton("",_T("Cancel"),new BMessage('can')))
-				.Add(new BButton("",_T("Add"),new BMessage('sav')))
-
+				.Add(new BButton("", B_TRANSLATE("Cancel"),new BMessage('can')))
+				.Add(new BButton("", B_TRANSLATE("Add"),new BMessage('sav')))
 	.End();
 
 	// Check if the clipboard contains a valid url

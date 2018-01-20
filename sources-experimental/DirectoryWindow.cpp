@@ -1,9 +1,9 @@
 
 #include "DirectoryWindow.h"
 #include "Utils.h"
+#include <Catalog.h>
 #include <Entry.h>
 #include <Message.h>
-#include "BPLocale.h"
 #include <StorageKit.h>
 
 #include "DirectoryItem.h"
@@ -22,9 +22,6 @@ extern BMessage Directory_list; //?
 #include "MainWindow.h"
 extern MainWindow*	main_window;
 
-
-#include "BPLocale.h"
-
 //generic map
 
 #include <String.h>
@@ -40,6 +37,10 @@ extern DownloadManager download_manager;
 static KeyMap<BString,OPMLTree*>	fDirectoryTrees;
 
 #define back_color 101,154,206,255
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "DirectoryWindow"
+
 
 DirectoryWindow::DirectoryWindow(const char* opml_name,BString opml_url):
 	BWindow(BRect(350,100,750,700),opml_name, B_TITLED_WINDOW,B_ASYNCHRONOUS_CONTROLS)
@@ -78,16 +79,16 @@ DirectoryWindow::DirectoryWindow(const char* opml_name,BString opml_url):
 	bgbox->AddChild(viewd);
 
 	
-	BButton *button1= new BButton(BRect(0,0,100,30),"noname",_T("Collapse all"),new BMessage('refr'), B_FOLLOW_ALL);
+	BButton *button1= new BButton(BRect(0,0,100,30),"noname",B_TRANSLATE("Collapse all"),new BMessage('refr'), B_FOLLOW_ALL);
 	viewd->AddChild(button1);
-	button1->SetToolTip(_T("Collapse all categories in the directory list"));
-	/*BButton *button2= new BButton(BRect(130,0,230,30),"noname",_T("Preview"),new BMessage('prev'), B_FOLLOW_ALL);
+	button1->SetToolTip(B_TRANSLATE("Collapse all categories in the directory list"));
+	/*BButton *button2= new BButton(BRect(130,0,230,30),"noname",B_TRANSLATE("Preview"),new BMessage('prev'), B_FOLLOW_ALL);
 	 viewd->AddChild(button2);
-	 button2->SetToolTip(_T("Checkout a podcast before downloading it"));
+	 button2->SetToolTip(B_TRANSLATE("Checkout a podcast before downloading it"));
 	*/
-	BButton *button3= new BButton(BRect(260,0,360,30),"noname",_T("Subscribe"),new BMessage('subs'), B_FOLLOW_ALL);
+	BButton *button3= new BButton(BRect(260,0,360,30),"noname",B_TRANSLATE("Subscribe"),new BMessage('subs'), B_FOLLOW_ALL);
 	viewd->AddChild(button3);
-	button3->SetToolTip(_T("Add the selected podcast to the Subscription list"));
+	button3->SetToolTip(B_TRANSLATE("Add the selected podcast to the Subscription list"));
 	alist->SetInvocationMessage(new BMessage('invo'));
 	
 	PostMessage('refr');
@@ -97,7 +98,7 @@ void
 DirectoryWindow::StartDownload(BString url){
 	
 	//show the alert
-	fAlert= new PercentageWindow("BePodder",_T("Downloading"), LoadIcon("enqueued-32.png"));
+	fAlert= new PercentageWindow("BePodder",B_TRANSLATE("Downloading"), LoadIcon("enqueued-32.png"));
 	fAlert->Go(this,B_QUIT_REQUESTED);
 	entry_ref dest;
 	get_ref_for_path(tmpnam(NULL),&dest);
@@ -338,16 +339,16 @@ DirectoryWindow::DownloadInfo(BMessage* msg){
 				
 				switch(error){
 					case CURLE_COULDNT_CONNECT:
-						SetError(_T("Can't connect!"));
+						SetError(B_TRANSLATE("Can't connect!"));
 					break;	
 					case CURLE_HTTP_PORT_FAILED:
-						SetError(_T("Http port failed!"));
+						SetError(B_TRANSLATE("Http port failed!"));
 					break;
 					case CURLE_COULDNT_RESOLVE_HOST:							
-						SetError(_T("Can't resolve host!"));
+						SetError(B_TRANSLATE("Can't resolve host!"));
 					break;
 					case CURLE_HTTP_NOT_FOUND:
-						SetError(_T("Not found!"));
+						SetError(B_TRANSLATE("Not found!"));
 					break;
 					
 					case CURLE_WRITE_ERROR:

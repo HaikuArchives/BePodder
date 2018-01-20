@@ -5,12 +5,15 @@
 #include "ColumnTypes.h"
 //#include <sys_apps/Tracker/Icons.h>
 #include <Application.h>
-#include "BPLocale.h"
+#include <Catalog.h>
 #include "Utils.h"
 #include <Entry.h>
 #include "malloc.h"
 
 #include <stdio.h>
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "SubscriptionListItem"
 
 #define ALTEZZA_BIG 			48
 #define ALTEZZA_SMALL 		16 

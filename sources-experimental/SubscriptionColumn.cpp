@@ -1,13 +1,14 @@
 #include "SubscriptionColumn.h"
-#include "BPLocale.h"
+#include <Catalog.h>
 #include <PopUpMenu.h>
 #include <MenuItem.h>
+#include <MessageFormat.h>
 #include <Window.h>
 #include "Colors.h"
 
-#ifdef ZETA
-	#include <locale/Formatter.h>
-#endif
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "SubscriptionColumn"
+
 
 #define kTEXT_MARGIN	8
 
@@ -140,22 +141,17 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	DrawString("", parent, rect);
 	//debug: 	parent->StrokeRect(rect);
 	
+	
+	// we should show the message "no new items"?
 	if(field->GetNewCount()>0)
 	{
-			
-		BString tot;
-	 	
-		if(field->GetNewCount()==1) 
-			tot << _T("1 new item");
-		else {
-		#ifdef ZETA
-			tot << _TPS("%d new items").Replace("%d",BFormatter("%d", field->GetNewCount()));
-		#else
-			tot << field->GetNewCount() << " new items"; 
-		#endif
-		}
-		tot << "  ";	
-		parent->DrawString(tot.String());
+		BString itemsNumber;
+		static BMessageFormat formatItems(B_TRANSLATE("{0, plural,"
+		"=0{no new items}"
+		"=1{1 new item}"
+		"other{# new items}}" ));
+		formatItems.Format(itemsNumber, field->GetNewCount());
+		parent->DrawString(itemsNumber.String());
 	}
 	
 	DrawStatus(field->GetFileStatus(),parent,field->GetFilePercentage());	
@@ -171,16 +167,16 @@ SubscriptionColumn::DrawStatus(FileStatus status,BView* parent,int32 perc){
 	switch(status){
 		
 		case ERROR:
-			parent->DrawString(_T("error"));
+			parent->DrawString(B_TRANSLATE("error"));
 		break;
 		case NOT_DOWNLOADED:
-			parent->DrawString(_T("not down"));
+			parent->DrawString(B_TRANSLATE("not down"));
 		break;
 		case ENQUEQUED:
-			parent->DrawString(_T("enquequed"));
+			parent->DrawString(B_TRANSLATE("enquequed"));
 		break;
 		case DOWNLOADING:
-			parent->DrawString(_T("downloading"));
+			parent->DrawString(B_TRANSLATE("downloading"));
 			if(perc>=0 && perc<=100){
 			 BString sp(" ");
 			 sp << perc << "%";
@@ -192,16 +188,16 @@ SubscriptionColumn::DrawStatus(FileStatus status,BView* parent,int32 perc){
 		case STOPPED:
 		break;
 		case CONNECTING:
-		 	parent->DrawString(_T("connecting"));
+		 	parent->DrawString(B_TRANSLATE("connecting"));
 		break;
 		case NOT_FOUND:
-			parent->DrawString(_T("not found"));
+			parent->DrawString(B_TRANSLATE("not found"));
 		break;
 		case CANT_CONNECT:
-			parent->DrawString(_T("can't connect"));
+			parent->DrawString(B_TRANSLATE("can't connect"));
 		break;
 		case BAD_FORMAT:
-			parent->DrawString(_T("invalid format"));
+			parent->DrawString(B_TRANSLATE("invalid format"));
 		break;
 		default:
 		break;

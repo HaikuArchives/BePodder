@@ -1,8 +1,8 @@
-#include "SettingsWindow.h" 
+#include "SettingsWindow.h"
+#include <Catalog.h>
 #include <LayoutBuilder.h>
 #include <ListView.h> 
 #include <Message.h>
-#include "BPLocale.h"
 #include <StorageKit.h>
 #include <ScrollBar.h>
 #include <ScrollView.h>
@@ -10,10 +10,11 @@
 #include "PBox.h"
 #include <Alert.h>
 
-
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "SettingsWindow"
 
 SettingsWindow::SettingsWindow(BMessage* setting,BHandler* handler,int32 applyMsg) :
-	BWindow(BRect(250,100,750,350),_T("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,
+	BWindow(BRect(250,100,750,350),B_TRANSLATE("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,
 	B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	fApplyWhatMsg = applyMsg;
@@ -27,10 +28,10 @@ SettingsWindow::SettingsWindow(BMessage* setting,BHandler* handler,int32 applyMs
 	BScrollView* scrollView = new BScrollView("scrollview",
 		fSettingsTypeListView, B_FRAME_EVENTS | B_WILL_DRAW, false, true);
 
-	BButton *buttonCancel = new BButton("Cancel", _T("Cancel"),
+	BButton *buttonCancel = new BButton("Cancel", B_TRANSLATE("Cancel"),
 		new BMessage(B_QUIT_REQUESTED));
 
-	BButton *buttonSave = new BButton("Save", _T("Save"),
+	BButton *buttonSave = new BButton("Save", B_TRANSLATE("Save"),
 		new BMessage('apla'));
 
 	BBox *fLabelBox = new BBox("SettingsContainerBox2");

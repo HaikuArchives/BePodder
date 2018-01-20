@@ -9,7 +9,6 @@
 
 #include "IActionBP.h"
 #include "Utils.h"
-#include "BPLocale.h"
 
 #define GROUP_NAME_CHANGE	'grnc'
 

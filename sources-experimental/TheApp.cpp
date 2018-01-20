@@ -8,10 +8,10 @@
 #include "Logger.h"
 
 #include <Application.h>
-#include <Roster.h>
+#include <Catalog.h>
 #include <Entry.h>
 #include <Message.h>
-#include "BPLocale.h"
+#include <Roster.h>
 
 
 #include "BPAlert.h"
@@ -30,6 +30,10 @@
 #include "ActionHTTPContent.h"
 #include <MimeType.h>
 #include "DownloadManager.h"
+
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "TheApp"
 
 extern DownloadManager*	download_manager;
 
@@ -84,7 +88,7 @@ TheApp::AboutRequested(){
 	text <<"\n\nDevelopers:\n\tAndrea Anzani [xeD]\n\tGiuseppe Gargaro [Beck]\n\nGraphic:\n\tzuMi\n\n\n";
 	text << "Version : " << VERSION_NAME << " " << VERSION_ID << "\n";
 		
-	BPAlert* about = new BPAlert("about", text.String() ,_T("Close!"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
+	BPAlert* about = new BPAlert("about", text.String() ,B_TRANSLATE("Close!"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
 	about->Go();
 }
 
@@ -134,7 +138,7 @@ TheApp::MessageReceived(BMessage* msg){
 	case ARCHIVE_PARSE:
 	{
 			//show the alert
-			BPAlert *alert = new BPAlert("BePodder",_TT("alert3"),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 

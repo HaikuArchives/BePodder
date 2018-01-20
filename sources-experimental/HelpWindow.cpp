@@ -7,18 +7,17 @@
 
 #include <Box.h>
 #include <Button.h>
-#include "BPLocale.h"
+#include <Catalog.h>
 #include <Application.h>
 
 #include "libfish/HelpViewer.h"
 #include "Utils.h"
 
-
-
-
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "HelpWindow"
 
 HelpWindow::HelpWindow() :
-	BWindow(BRect(300,100,780,475),_T("Getting started"), B_TITLED_WINDOW,B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_WILL_DRAW){
+	BWindow(BRect(300,100,780,475),B_TRANSLATE("Getting started"), B_TITLED_WINDOW,B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_WILL_DRAW){
 	
 	BRect rect(Bounds());
 	rect.bottom *= 0.87;
@@ -37,22 +36,22 @@ HelpWindow::HelpWindow() :
 	arect = box->Bounds();
 	arect.InsetBy(33, 20);
 	arect.top = arect.bottom - 17;
-	arect.left = arect.right - font.StringWidth(_T("Next")) - 35;   //anche qui va il _T() altrimenti considera sempre la dimensione di Next e non della stringa tradotta
-	next = new BButton(arect, "", _T("Next"), new BMessage('next'));
+	arect.left = arect.right - font.StringWidth(B_TRANSLATE("Next")) - 35;   //anche qui va il _T() altrimenti considera sempre la dimensione di Next e non della stringa tradotta
+	next = new BButton(arect, "", B_TRANSLATE("Next"), new BMessage('next'));
 	next->SetFont(&font);
 	box->AddChild(next);
 	
 	arect.right = arect.left - 17;
-	arect.left = arect.right - font.StringWidth(_T("Prev")) - 35;
-	back= new BButton(arect, "", _T("Prev"), new BMessage('prev'));
+	arect.left = arect.right - font.StringWidth(B_TRANSLATE("Prev")) - 35;
+	back= new BButton(arect, "", B_TRANSLATE("Prev"), new BMessage('prev'));
 	back->SetFont(&font);
 	box->AddChild(back);
 	
 	arect = box->Bounds();
 	arect.InsetBy(33, 20);
 	arect.top = arect.bottom - 17;
-	arect.right = arect.left  + font.StringWidth(_T("Index")) + 35;
-	BButton *index= new BButton(arect, "", _T("Index"), new BMessage('inde'));
+	arect.right = arect.left  + font.StringWidth(B_TRANSLATE("Index")) + 35;
+	BButton *index= new BButton(arect, "", B_TRANSLATE("Index"), new BMessage('inde'));
 	box->AddChild(index);
 	
 	

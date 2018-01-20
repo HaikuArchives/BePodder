@@ -15,7 +15,7 @@ NAME = BePodder
 TYPE = APP
 
 # 	If you plan to use localization, specify the application's MIME signature.
-APP_MIME_SIG =
+APP_MIME_SIG = "application/x-vnd.xeD.BePodder"
 
 #	The following lines tell Pe and Eddie where the SRCS, RDEFS, and RSRCS are
 #	so that Pe and Eddie can fill them in for you.
@@ -77,7 +77,6 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/PercentageWindow.cpp \
 	../sources-experimental/QueueFileDownload.cpp \
 	../sources-experimental/QueueMultiActions.cpp \
-	../sources-experimental/R5Locale.cpp \
 	../sources-experimental/RssChannel.cpp \
 	../sources-experimental/RssItem.cpp \
 	../sources-experimental/SectionSelector.cpp \
@@ -118,7 +117,7 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS = be columnlistview translation tracker xml2 curl $(STDCPPLIBS) \
+LIBS = be columnlistview localestub translation tracker xml2 curl $(STDCPPLIBS) \
 	../library/libfunky/libfunky.a \
 	../library/librunview/librunview.a \
 	../library/libfish/libfish.a
@@ -134,7 +133,6 @@ LIBPATHS =
 #	"#include <header>". Directories that contain the files in SRCS are
 #	NOT auto-included here.
 SYSTEM_INCLUDE_PATHS = ../include \
-	../include/r5-only \
 	../include/curl \
 	../include/runview \
 	../include/libfunky \
@@ -155,7 +153,7 @@ OPTIMIZE :=
 # 	will recreate only the "locales/en.catkeys" file. Use it as a template
 # 	for creating catkeys for other languages. All localization files must be
 # 	placed in the "locales" subdirectory.
-LOCALES =
+LOCALES = en
 
 #	Specify all the preprocessor symbols to be defined. The symbols will not
 #	have their values set automatically; you must supply the value (if any) to

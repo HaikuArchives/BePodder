@@ -4,7 +4,7 @@
 #include "AddWindow.h"
 #include "DirectoryWindow.h"
 #include "HelpWindow.h"
-
+#include <Catalog.h>
 #include <MenuBar.h>
 #include <MenuItem.h>
 #include <Alert.h>
@@ -12,7 +12,6 @@
 #include <View.h>
 #include <Box.h>
 #include <ScrollBar.h>
-#include "BPLocale.h"
 #include <StorageKit.h>
 
 #include "ColumnListView.h"
@@ -93,9 +92,12 @@
 
 extern IActionManagerBP		action_manager;
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "MainWindow"
+
 
 MainWindow::MainWindow()
-: BWindow(BRect(100,100,970,607), "BePodder", B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS),
+: BWindow(BRect(100,100,970,607), B_TRANSLATE_SYSTEM_NAME("BePodder"), B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS),
 	importFilePanel(NULL),
 	exportFilePanel(NULL)
 {
@@ -310,9 +312,9 @@ MainWindow::init(MainController* controller){
 	BView*	fakeView=new BView(fSelector->Bounds(),"fakeView",B_FOLLOW_ALL,B_WILL_DRAW);
 	fakeView->AddChild(down_list=new DownloadListView(fakeView->Bounds()));
 	 
-	fSelector->AddSection("info0.png",CreateItemInfoView(), _T("Show episode info") );
-	fSelector->AddSection("info1.png",CreateChannelInfoView(), _T("Show subscription info"));
-	fSelector->AddSection("info2.png",fakeView,  _T("Show downloads info") );
+	fSelector->AddSection("info0.png",CreateItemInfoView(), B_TRANSLATE("Show episode info") );
+	fSelector->AddSection("info1.png",CreateChannelInfoView(), B_TRANSLATE("Show subscription info"));
+	fSelector->AddSection("info2.png",fakeView,  B_TRANSLATE("Show downloads info") );
 	fSelector->Select(0);
 }
 
@@ -411,68 +413,68 @@ MainWindow::CreateMenuBar(){
 	BMenuBar *poddermenubar = new BMenuBar(BRect(0,0,1,1),"Poddermenubar"); //,B_FOLLOW_RIGHT | B_FOLLOW_TOP,B_ITEMS_IN_ROW,true);
 
 	
-	BMenu  *podderfile = new BMenu(_T("File"),B_ITEMS_IN_COLUMN);
+	BMenu  *podderfile = new BMenu(B_TRANSLATE("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	
-	podderfile->AddItem(new BMenuItem(_T("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0));
-	podderfile->AddItem(new BMenuItem(_T("Export OPML...") , new BMessage(EXPORT_OPML), 0, 0));
-	BMenuItem *podderaboutitem = new BMenuItem(_T("About..."),new BMessage(B_ABOUT_REQUESTED),0,0);
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0));
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML...") , new BMessage(EXPORT_OPML), 0, 0));
+	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About..."),new BMessage(B_ABOUT_REQUESTED),0,0);
 	podderaboutitem->SetTarget(be_app);
 	podderfile->AddItem(podderaboutitem);
 	
-	BMenuItem *quititem = new BMenuItem(_T("Quit"),new BMessage(B_QUIT_REQUESTED),'Q',0);
+	BMenuItem *quititem = new BMenuItem(B_TRANSLATE("Quit"),new BMessage(B_QUIT_REQUESTED),'Q',0);
 	quititem->SetTarget(be_app);
 	podderfile->AddItem(quititem);
 	
-	BMenu  *settingsfile = new BMenu(_T("Settings"),B_ITEMS_IN_COLUMN);
+	BMenu  *settingsfile = new BMenu(B_TRANSLATE("Settings"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(settingsfile);
 	
-	BMenuItem *podderpreferencesitem = new BMenuItem(_T("Preferences..."),new BMessage(SHOW_SETTINGS),'P',0);
+	BMenuItem *podderpreferencesitem = new BMenuItem(B_TRANSLATE("Preferences..."),new BMessage(SHOW_SETTINGS),'P',0);
 	settingsfile->AddItem(podderpreferencesitem);
 	
-	groups = new BMenu(_T("Groups"),B_ITEMS_IN_COLUMN);
+	groups = new BMenu(B_TRANSLATE("Groups"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(groups);
 	
-	channels = new BMenu(_T("Subscriptions"),B_ITEMS_IN_COLUMN);
+	channels = new BMenu(B_TRANSLATE("Subscriptions"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(channels);
 	
-	items = new BMenu(_T("Episodes"),B_ITEMS_IN_COLUMN);
+	items = new BMenu(B_TRANSLATE("Episodes"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(items);	
 	/*  TODO create a List of rss feeds
-	BMenu  *directoryfile = new BMenu(_T("Lists"),B_ITEMS_IN_COLUMN);
+	BMenu  *directoryfile = new BMenu(B_TRANSLATE("Lists"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(directoryfile);
 
-	AddDirectoryItem(directoryfile,_T("Podcast List"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
-	AddDirectoryItem(directoryfile,_T("Videoblog List"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
-	AddDirectoryItem(directoryfile,_T("Imagefeeds List"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
-	AddDirectoryItem(directoryfile,_T("Newsfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
-	AddDirectoryItem(directoryfile,_T("BitTorrentfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
-	AddDirectoryItem(directoryfile,_T("Internationalfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("Podcast List"),"http://www.funkyideasoft.com/directories/bepodder_podcasts.opml.tar.gz",'L');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("Videoblog List"),"http://www.funkyideasoft.com/directories/bepodder_videoblog.opml.tar.gz",'M');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("Imagefeeds List"),"http://www.funkyideasoft.com/directories/bepodder_imagefeeds.opml.tar.gz",'I');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("Newsfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_newsfeeds.opml.tar.gz",'N');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("BitTorrentfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_bittorrentfeeds.opml.tar.gz",'B');
+	AddDirectoryItem(directoryfile,B_TRANSLATE("Internationalfeeds List"),"http://www.funkyideasoft.com/directories/bepodder_internationalfeeds.opml.tar.gz",'J');
 	*/
 
-	BMenu  *podderview = new BMenu(_T("View"),B_ITEMS_IN_COLUMN);
+	BMenu  *podderview = new BMenu(B_TRANSLATE("View"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderview);
 	
-	fullscreenitem = new BMenuItem(_T("Full screen"),new BMessage(SET_FULLSCREEN),'F',0);
+	fullscreenitem = new BMenuItem(B_TRANSLATE("Full screen"),new BMessage(SET_FULLSCREEN),'F',0);
 	podderview->AddItem(fullscreenitem);
 	fullscreenitem->SetMarked(false);
 	
-	notoolbar= new BMenuItem(_T("Toolbar"),new BMessage(SHOW_TOOLBAR),'T',0);
+	notoolbar= new BMenuItem(B_TRANSLATE("Toolbar"),new BMessage(SHOW_TOOLBAR),'T',0);
 	podderview->AddItem(notoolbar);
 	notoolbar->SetMarked(true);
 
 	/* TODO implement small size BRow doesn't support SetHeight
-	ChannelSize = new BMenu(_T("Subscriptions View"));
+	ChannelSize = new BMenu(B_TRANSLATE("Subscriptions View"));
 	podderview->AddItem(ChannelSize);
 	ChannelSize->SetRadioMode(true);
 	
 	BMenuItem* temp;
 	
-	temp= new BMenuItem(_T("Big items"),new BMessage('bigg'));
+	temp= new BMenuItem(B_TRANSLATE("Big items"),new BMessage('bigg'));
 	ChannelSize->AddItem(temp);
 	temp->SetMarked(true);
 	
-	temp=new BMenuItem(_T("Small items"),new BMessage('smal'));
+	temp=new BMenuItem(B_TRANSLATE("Small items"),new BMessage('smal'));
 	ChannelSize->AddItem(temp);
 	temp->SetMarked(false);
 	
@@ -481,7 +483,7 @@ MainWindow::CreateMenuBar(){
 	//--------------------------------------------------------------------------------------------------------------
 	
 	
-	setworkspace= new BMenu(_T("Move BePodder onto workspace:"));
+	setworkspace= new BMenu(B_TRANSLATE("Move BePodder onto workspace:"));
 	podderview->AddItem(setworkspace);
 	
 	for(int i=0;i<count_workspaces();i++){
@@ -494,17 +496,17 @@ MainWindow::CreateMenuBar(){
 	}
 	
 				
-	BMenu  *helpfile = new BMenu(_T("Help"),B_ITEMS_IN_COLUMN);
+	BMenu  *helpfile = new BMenu(B_TRANSLATE("Help"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(helpfile);
 	
 	
 	BMessage *msg=new BMessage(SHOW_HELP);
-	BMenuItem *helpitem1 = new BMenuItem(_T("Getting started"),msg,'G',0);
+	BMenuItem *helpitem1 = new BMenuItem(B_TRANSLATE("Getting started"),msg,'G',0);
 	helpfile->AddItem(helpitem1);
 	
 	msg=new BMessage(SHOW_HELP);
 	msg->AddString("page","shortcuts");
-	BMenuItem *shortcutitem = new BMenuItem(_T("Keyboard shortcuts"),msg,'K',0);
+	BMenuItem *shortcutitem = new BMenuItem(B_TRANSLATE("Keyboard shortcuts"),msg,'K',0);
 	helpfile->AddItem(shortcutitem);
 	
 	BMessage *webmsg=new BMessage(WEB_PAGE);
@@ -514,7 +516,7 @@ MainWindow::CreateMenuBar(){
 	where.Prepend("file://");
 	
 	webmsg->AddString("url",where.String());
-	helpfile->AddItem( new BMenuItem(_T("Tutorials"),webmsg,0,0));
+	helpfile->AddItem( new BMenuItem(B_TRANSLATE("Tutorials"),webmsg,0,0));
 
 	AddChild(poddermenubar);
 	poddermenubar->ResizeToPreferred();
@@ -665,7 +667,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case SHOW_HELP:
 		{
 			
-			BPAlert *alert = new BPAlert("BePodder",_T("Loading help..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("Loading help..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 			HelpWindow *help1 = new HelpWindow();
@@ -704,7 +706,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case ARCHIVE_PARSE:
 		{
 			//show the alert
-			BPAlert *alert = new BPAlert("BePodder",_TT("alert3"),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 
@@ -1270,7 +1272,7 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 		action << (int)IACTION_CHANNEL_ENCLOSURE_FOLDER << ")";
 		
 		fItemText->AppendURL("folder ",action.String(),C_ACTION,F_EMOTICON);
-		fItemText->AppendURL(_T("Enclosure: "),action.String(),C_ACTION,F_TEXT);
+		fItemText->AppendURL(B_TRANSLATE("Enclosure: "),action.String(),C_ACTION,F_TEXT);
 				
 		BString local(archive->GetDataString(ITEM_ENCLOSURE_LOCALPATH));
 		//path.Append(local.String());
@@ -1403,7 +1405,7 @@ MainWindow::ShowChannelDescription(MemoryArchive* archive){
 		BString action("action://bepodder(");
 		action << (int)IACTION_CHANNEL_SHOW_IMAGE << ")";
 		fChannelText->Append("\n\n",C_TEXT,C_TEXT,F_TEXT);	
-		fChannelText->AppendURL(_T("Show channel image"),action.String(),C_TEXT,F_TEXT);	
+		fChannelText->AppendURL(B_TRANSLATE("Show channel image"),action.String(),C_TEXT,F_TEXT);	
 		//free(buffer);
 	}
 	

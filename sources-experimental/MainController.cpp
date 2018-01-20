@@ -1,5 +1,5 @@
 #include "MainController.h"
-
+#include <Catalog.h>
 #include <Entry.h>
 #include <FindDirectory.h>
 #include <Directory.h>
@@ -32,7 +32,6 @@
 #include "BPSettingsWindow.h"
 #include "BitmapWindow.h" 
 
-#include "BPLocale.h"
 #include "EntryIterator.h"
 
 #include "AutoFiletypeMap.h"
@@ -49,7 +48,8 @@ DownloadManager*	download_manager;
 #define		SOUNDPLAY_SIGNATURE		"application/x-vnd.marcone-soundplay"
 #define		MEDIAPLAYER_SIGNATURE	"application/x-vnd.Haiku-MediaPlayer"
 
-
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "MainController"
 	
 //a tendere qui dovrebbe essere
 //instaziato il model
@@ -694,8 +694,8 @@ MainController::DownloadChannel(BMessage* msg){
 	/*if(!linfo.Valid() && count > 10)
 	{
 		
-		BString text(_T("You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"));	
-		BPAlert* about = new BPAlert("Sorry", text.String() ,_T("Web Site"),_T("Close"),NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
+		BString text(B_TRANSLATE("You can only add up to 10 channels in this unregistred BePodder version.\n Please register your copy\n"));	
+		BPAlert* about = new BPAlert("Sorry", text.String() ,B_TRANSLATE("Web Site"),_T("Close"),NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
 		int ret=about->Go();
 		if(ret==0){
 			OpenURL("http://www.funkyideasoft.com/bepodder.html");
@@ -1166,7 +1166,7 @@ MainController::OpenFile(const char* filename,BString filetype){
 				b = FindBestApplication(&ref,alert);
 				
 				if(alert != "") {
-					BPAlert *pop= new BPAlert("BePodder", alert.String() ,_T("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
+					BPAlert *pop= new BPAlert("BePodder", alert.String() ,B_TRANSLATE("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
 					pop->Go();
 				}
 			}
@@ -1206,7 +1206,7 @@ MainController::AlertBadPlayer(int32 p_id){
 	
 	// Use this with HaikuDepot?
 	/*
-	BString text(_T("Can't open the selected file with:\n\n"));
+	BString text(B_TRANSLATE("Can't open the selected file with:\n\n"));
 	BString url;
 	
 	if ( p_id == MEDIAPLAYER)
@@ -1227,10 +1227,10 @@ MainController::AlertBadPlayer(int32 p_id){
 		url.SetTo("http://www.bebits.com/app/156");
 	}
 		
-	text << _T("\n\nPlease check if the application is installed in the right way.\n");
+	text << B_TRANSLATE("\n\nPlease check if the application is installed in the right way.\n");
 	
 
-	BPAlert *pop= new BPAlert("BePodder", text.String() ,_T("Download it!"),_T("Close"),NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
+	BPAlert *pop= new BPAlert("BePodder", text.String() ,B_TRANSLATE("Download it!"),_T("Close"),NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
 	int32 ret=pop->Go();
 	if(ret==0)
 		OpenURL(url);
@@ -1691,7 +1691,7 @@ MainController::AddNewGroup(const char* label){
 		text.SetTo(label);
 					
 		if(label==NULL)
-			text << _T("Group") << " " << fModel->fGroups.CountItems()+(extra++);
+			text << B_TRANSLATE("Group") << " " << fModel->fGroups.CountItems()+(extra++);
 		else
 			if(extra>0)
 				text << " " << extra;

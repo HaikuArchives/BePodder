@@ -1,17 +1,23 @@
 #ifndef		_AutoFiletypeMap_H_
 #define		_AutoFiletypeMap_H_
 
+#include <Catalog.h>
+
 #define	MEDIAPLAYER	0
 #define	SOUNDPLAY	1
 #define	VLC 		2
 #define	NONE		3
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "AutoFileTypeMap"
 
 struct coppia {
 	const char*  extension;
 	const int	 application;
 	const char*	 alert;
 };
+
+
 
 
 const coppia autotypes[]= { 
@@ -26,7 +32,7 @@ const coppia autotypes[]= {
 	{".m4v",MEDIAPLAYER,NULL},
 	{".mov",MEDIAPLAYER,NULL},
 	{".mp4",MEDIAPLAYER,NULL},
-	{".swf",NONE,_T("alert_swf")},
+	{".swf",NONE,B_TRANSLATE("alert_swf")},
 	{".wma",MEDIAPLAYER,NULL},
 	{".wmv",MEDIAPLAYER,NULL},
 	{".mp3",MEDIAPLAYER,NULL}

@@ -1,7 +1,6 @@
 #include "SubscriptionListView.h"
 #include "SubscriptionListItem.h"
-
-#include "BPLocale.h"
+#include <Catalog.h>
 #include <Window.h>
 #include "Utils.h"
 #include "GroupItem.h"
@@ -11,6 +10,10 @@
 
 #include <stdio.h>
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "SubscriptionListView"
+
+
 #define DROP_CHANNEL	'drch'
 #define DROP_GROUP		'drgr'
 
@@ -18,7 +21,7 @@ SubscriptionListView::SubscriptionListView(BRect r):
 BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAME_EVENTS|B_NAVIGABLE,B_FANCY_BORDER,true)
 {
 
-	podcast=new SubscriptionColumn(_T("Subscriptions"),300,36,600,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
+	podcast=new SubscriptionColumn(B_TRANSLATE("Subscriptions"),300,36,600,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
 	AddColumn(podcast,0);
 	SetColumnFlags(B_ALLOW_COLUMN_RESIZE );
 	SetSelectionMode(B_SINGLE_SELECTION_LIST);

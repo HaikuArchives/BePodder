@@ -11,8 +11,6 @@
 #include "Utils.h"
 #include "AddWindow.h"
 
-#include "BPLocale.h"
-
 //request for the AddWindow
 
 //-------------------------------------------------------------------------------------------------------------------

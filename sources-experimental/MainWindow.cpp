@@ -145,7 +145,7 @@ MainWindow::init(MainController* controller){
 						IACTION_CHANNEL_CHECK,
 						IACTION_CHANNEL_WWW
 					};
-					
+
 	channelView=new BView(BRect(CHANNELS_BAR_X,BAR_Y,CHANNELS_BAR_X+47+66*(COUNT-1),BAR_Y+31),"",B_FOLLOW_NONE,B_WILL_DRAW);
 	channelView->SetViewColor(bgcolor);
 	view->AddChild(channelView);
@@ -156,24 +156,29 @@ MainWindow::init(MainController* controller){
 		ImageButton *tasto1= new ImageButton(rect,"",action_manager.GetAction(ChannelBar[i]));
 		channelView->AddChild(tasto1);
 		rect.OffsetBy(66,0);
-		
-		fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
-		channels->AddItem(action_manager.CreateMenuItemFromAction(ChannelBar[i]));
 	}	
 
 	//extras :)
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ADD_REQUEST));
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_REMOVE));
 	fChannelMenu->AddSeparatorItem();
-	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK));
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK_ALL));
 	fChannelMenu->AddSeparatorItem();
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_WWW));
+	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	fChannelMenu->SetTargetForItems(be_app);
 	
+	channels->AddItem(fChannelItems[CHANNEL_ADD_REQUEST] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ADD_REQUEST));
+	channels->AddItem(fChannelItems[CHANNEL_REMOVE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_REMOVE));
 	channels->AddSeparatorItem();
-	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
-	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK_ALL));
+	channels->AddItem(fChannelItems[CHANNEL_CHECK] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK));
+	channels->AddItem(fChannelItems[CHANNEL_CHECK_ALL] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_CHECK_ALL));
 	channels->AddSeparatorItem();
-	channels->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
+	channels->AddItem(fChannelItems[CHANNEL_WWW] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_WWW));
+	channels->AddItem(fChannelItems[CHANNEL_ENCLOSURE_FOLDER] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
+	channels->AddItem(fChannelItems[CHANNEL_SHOW_IMAGE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	channels->SetTargetForItems(be_app);
 	
 	rect = BRect(0,0,47,31);
@@ -201,10 +206,8 @@ MainWindow::init(MainController* controller){
 		ImageButton *tasto1= new ImageButton(rect,"",action_manager.GetAction(ItemBar[i]));
 		itemsView->AddChild(tasto1);
 		rect.OffsetBy(66,0);
-		
-		
 		fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(ItemBar[i]));
-		items->AddItem(action_manager.CreateMenuItemFromAction(ItemBar[i]));
+		items->AddItem(fEpisodeItems[i] = action_manager.CreateMenuItemFromAction(ItemBar[i]));
 	}	
 	
 	//extras :)
@@ -213,8 +216,8 @@ MainWindow::init(MainController* controller){
 	fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 	
 	items->AddSeparatorItem();
-	items->AddItem(action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
-	items->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
+	items->AddItem(fEpisodeItems[i++] = action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
+	items->AddItem(fEpisodeItems[i++] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 		
 	fItemMenu->SetTargetForItems(be_app);
 	items->SetTargetForItems(be_app);
@@ -226,19 +229,18 @@ MainWindow::init(MainController* controller){
 	const	 int COUNT4 = 4;
 	const int groupBar[COUNT4] = 
 					{
-						IACTION_GROUP_CHECK,
 						IACTION_GROUP_ADD,
-						IACTION_GROUP_RENAME,
 						IACTION_GROUP_REMOVE,
+						IACTION_GROUP_RENAME,
+						IACTION_GROUP_CHECK,
 					};
-					
-					
+
 	//automatic for the people
 	for(i=0;i<COUNT4;i++){
 		fGroupMenu->AddItem(action_manager.CreateMenuItemFromAction(groupBar[i]));
-		groups->AddItem(action_manager.CreateMenuItemFromAction(groupBar[i]));
+		groups->AddItem(fGroupItems[i] = action_manager.CreateMenuItemFromAction(groupBar[i]));
 	}	
-	
+
 	groups->SetTargetForItems(be_app);
 	fGroupMenu->SetTargetForItems(be_app);
 	
@@ -1469,5 +1471,26 @@ MainWindow::SetToolbarVisible(bool visible){
 				if(channelView->IsHidden())
 					channelView->Show();
 			}
+}
+
+void
+MainWindow::MenusBeginning()
+{
+	GroupItem*	group = GetSelectedGroup();
+	fGroupItems[GROUP_REMOVE]->SetEnabled(group != NULL);
+	fGroupItems[GROUP_RENAME]->SetEnabled(group != NULL);
+	fGroupItems[GROUP_CHECK]->SetEnabled(group != NULL);
+
+	SubscriptionListItem* subscription = GetSelectedSubscription();
+	fChannelItems[CHANNEL_REMOVE]->SetEnabled(subscription != NULL);
+	fChannelItems[CHANNEL_CHECK]->SetEnabled(subscription != NULL);
+	fChannelItems[CHANNEL_WWW]->SetEnabled(subscription != NULL);
+	fChannelItems[CHANNEL_ENCLOSURE_FOLDER]->SetEnabled(subscription != NULL);
+	fChannelItems[CHANNEL_SHOW_IMAGE]->SetEnabled(subscription != NULL);
+
+	EpisodeListItem* episode = GetSelectedEpisode();
+	// Disable all
+	for (int i = 0; i < EPISODE_ITEM_ACTION_SIZE; i++)
+		fEpisodeItems[i]->SetEnabled(episode != NULL);
 }
 

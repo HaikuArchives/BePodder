@@ -64,10 +64,8 @@ IABPGroupCheck::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPGroupAdd::IABPGroupAdd(MainController* controller,MainWindow* view):IActionBP(controller,view){
- 	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
-  		SetLabel(B_TRANSLATE("Add a group")); 
-			 	  
+		SetLabel(B_TRANSLATE("Add group"));
 }
 			 	 
 BString 
@@ -95,8 +93,7 @@ IABPGroupAdd::Shortcut(uint32 *modifiers) const {
 IABPGroupRename::IABPGroupRename(MainController* controller,MainWindow* view):IActionBP(controller,view){
  	   		
    		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png")); //fix this icon..
-  		SetLabel(B_TRANSLATE("Rename a group")); 
-			 	  
+		SetLabel(B_TRANSLATE("Rename group"));
 }
 			 	 
 BString 
@@ -133,8 +130,7 @@ IABPGroupRemove::IABPGroupRemove(MainController* controller,MainWindow* view):IA
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("delete-micro.png"));
 	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
 	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Remove a group")); 
+				SetLabel(B_TRANSLATE("Remove group"));
 }
 			 	 
 BString 

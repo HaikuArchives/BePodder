@@ -33,17 +33,47 @@ class SectionSelector;
 class GroupItem;
 class OPMLTree;
 
+
 class MainWindow: public BWindow
 {
 
+	enum channelsItemAction {
+		CHANNEL_ADD_REQUEST = 0,
+		CHANNEL_REMOVE,
+		CHANNEL_CHECK,
+		CHANNEL_CHECK_ALL,
+		CHANNEL_WWW,
+		CHANNEL_ENCLOSURE_FOLDER,
+		CHANNEL_SHOW_IMAGE,
+		CHANNEL_ITEM_ACTION_SIZE
+	};
+
+	enum episodesItemAction {
+		EPISODE_PLAY = 0,
+		EPISODE_DOWNLOAD,
+		EPISODE_STOP,
+		EPISODE_REMOVE,
+		EPISODE_WWW,
+		EPISODE_CHANNEL_ENCLOSURE_FOLDER,
+		EPISODE_ITEM_ACTION_SIZE
+	};
+
+	enum groupsItemAction {
+		GROUP_ADD = 0,
+		GROUP_REMOVE,
+		GROUP_RENAME,
+		GROUP_CHECK,
+		GROUP_ITEM_ACTION_SIZE
+	};
 
 
  	public:
 					 		MainWindow();
 				void 		init(MainController* controller);
 					 		
-		 		 void		MessageReceived(BMessage* message);
-				 bool 	QuitRequested();
+				void		MessageReceived(BMessage* message);
+				bool 		QuitRequested();
+		virtual void 		MenusBeginning();
 	
 				
 				void			AddGroup(GroupItem*,bool expanded);
@@ -136,7 +166,11 @@ class MainWindow: public BWindow
 				BMenu*					channels;
 				BMenu*					items;
 				BMenu*					groups;
-				
+
+				BMenuItem*				fGroupItems[GROUP_ITEM_ACTION_SIZE];
+				BMenuItem*				fChannelItems[CHANNEL_ITEM_ACTION_SIZE];
+				BMenuItem*				fEpisodeItems[EPISODE_ITEM_ACTION_SIZE];
+
 				BView* channelView;	//toolbar
 				BView* itemsView;		//toolbar
 

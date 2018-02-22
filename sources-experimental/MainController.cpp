@@ -60,6 +60,8 @@ MainController::MainController(MainWindow* view, MainModel* model){
 	check_time = 0;
 	check_timer = NULL;
 	check_onstart = false;
+	browser_id = 3; //System Default.
+	player_id  = 3; //Auto.
 	//extraParams.SetTo("");
 }
 

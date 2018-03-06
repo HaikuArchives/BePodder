@@ -374,17 +374,6 @@
 			
 		</page>
 
-		<page  id='buy' textfontsize='14' titlefontsize='18' leftmargin='20'>
-			<paragraph type='title'>Register your copy</paragraph> 
-   	              	<paragraph type='text'>The trial program is fully-functional but is will run only 30 days from the first time you open the application.</paragraph> 
-			<paragraph type='text'>Please pay the shareware fee, it's only 15 euro (Kagi add tax in some countries), BePodder licence can be purchased online from Kagi.</paragraph> 
-			<paragraph type='title' align='center' action='openUrl(http://www.funkyideasoft.com/buy_bp.html)'>Buy at www.funkyideasoft.com</paragraph> 
- 			<paragraph type='text'>After purchasing, an email will be sent to you with a keyfile and instruction on how to install it. It's just a matter of unzipping a file and moving it to a certain directory.</paragraph> 
-			<paragraph type='text'>There is no problem updating BePodder when a new version becomes available. The keyfile will unlock all downloadable packages unless otherwise notified.</paragraph> 
-		</page>
-
-
-
 		<page  id='index' textfontsize='14' titlefontsize='18' leftmargin='30'>
 			<paragraph type='title' align='center'>Index</paragraph> 
 			<block type='horizontal' topmargin='20'>

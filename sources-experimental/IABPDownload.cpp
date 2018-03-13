@@ -29,7 +29,7 @@ IABPDownloadRemove::IABPDownloadRemove(MainController* controller,MainWindow* vi
 			 	 
 BString 
 IABPDownloadRemove::GetDescription(){
- 	  return B_TRANSLATE("");
+	return ("");
 }
 			 	  
 
@@ -169,18 +169,18 @@ IABPDownloadPlay::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPDownloadFindItem::IABPDownloadFindItem(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-jump.png"));
-	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
-	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Find this Item")); 
+			
+	SetIcon(IAction::SIZE_16,LoadIcon("emblem-jump.png"));
+	//SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
+	//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
+	
+	SetLabel(B_TRANSLATE("Find this item"));
 			 	  
 }
 			 	 
 BString 
 IABPDownloadFindItem::GetDescription(){
- 	  return B_TRANSLATE("");
+	return ("");
 }
 			 	  
 

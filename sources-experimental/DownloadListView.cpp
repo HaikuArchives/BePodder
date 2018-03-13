@@ -14,7 +14,7 @@
 
 
 #undef B_TRANSLATION_CONTEXT
-#define B_TRANSLATION_CONTEXT "DownloadListView"
+#define B_TRANSLATION_CONTEXT "DL-Episode-ListView"
 
 DownloadListView::DownloadListView(BRect r):
 BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FANCY_BORDER,true)

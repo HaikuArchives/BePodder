@@ -51,7 +51,8 @@ IABPItemRemove::Perform(BMessage*){
 
 
 	BString text;
-	text << B_TRANSLATE("\nYou are going to remove the selected item.\n\nAre you sure?\n(you will lost the enclosure file if any)");
+	text << B_TRANSLATE("\nYou are going to remove the selected item.\n\n"
+		"Are you sure?\n(You will lose any enclosed file if there are any.)");
 	if(selection.CountItems() == 1) 
 		text << "\n\n" << firstTitle << "\n";
 	else

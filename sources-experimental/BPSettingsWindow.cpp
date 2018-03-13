@@ -55,7 +55,7 @@ BPSettingsWindow::CreateGeneralBox(BMessage data){
 	
 	BMessage num_download;
 	num_download.AddString("name","starton_workspace");
-	num_download.AddString("description", B_TRANSLATE("Max downloads")); 
+	num_download.AddString("description", B_TRANSLATE("Max. downloads:"));
 	num_download.AddInt32("type",B_INT32_TYPE);
 	num_download.AddInt32("valid_value",1);
 	num_download.AddInt32("valid_value",2);
@@ -80,7 +80,7 @@ BPSettingsWindow::CreateDownloadBox(BMessage data){
 	
 	BMessage num_download;
 	num_download.AddString("name","max_downloads");
-	num_download.AddString("description", B_TRANSLATE("Max downloads")); 
+	num_download.AddString("description", B_TRANSLATE("Max. downloads:"));
 	num_download.AddInt32("type",B_INT32_TYPE);
 	num_download.AddInt32("valid_value",1);
 	num_download.AddInt32("valid_value",2);
@@ -128,7 +128,7 @@ BPSettingsWindow::CreateFileTypeBox(BMessage data){
 	main_msg.AddMessage("setting", &setting);
 	main_msg.AddMessage("setting", &setting2);
 	
-	main_msg.AddString("name",B_TRANSLATE("FileType"));
+	main_msg.AddString("name",B_TRANSLATE("Filetype"));
 	
 		
 	PBox *proxy=new PBox(BRect(0,0,0,0),main_msg,data,SETTINGS_FILETYPE);
@@ -145,7 +145,8 @@ BPSettingsWindow::CreateChannelsBox(BMessage data){
 	
 	BMessage setting2;
 	setting2.AddString("name","check_time");
-	setting2.AddString("description", B_TRANSLATE("Check the channel every")); 
+	setting2.AddString("description", B_TRANSLATE_COMMENT("Check the channel every:",
+		"After 'every:' follows a popup menu to choose a time intervall")); 
 	setting2.AddInt32("type",B_STRING_TYPE);
 	setting2.AddString("valid_value",B_TRANSLATE("never"));
 	setting2.AddString("valid_value",B_TRANSLATE("5 minutes"));

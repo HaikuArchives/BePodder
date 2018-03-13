@@ -418,9 +418,9 @@ MainWindow::CreateMenuBar(){
 	BMenu  *podderfile = new BMenu(B_TRANSLATE("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	
-	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML...") , new BMessage(IMPORT_OPML), 0, 0));
-	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML...") , new BMessage(EXPORT_OPML), 0, 0));
-	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About..."),new BMessage(B_ABOUT_REQUESTED),0,0);
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML" B_UTF8_ELLIPSIS) , new BMessage(IMPORT_OPML), 0, 0));
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML" B_UTF8_ELLIPSIS) , new BMessage(EXPORT_OPML), 0, 0));
+	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About BePodder"),new BMessage(B_ABOUT_REQUESTED),0,0);
 	podderaboutitem->SetTarget(be_app);
 	podderfile->AddItem(podderaboutitem);
 	
@@ -431,7 +431,7 @@ MainWindow::CreateMenuBar(){
 	BMenu  *settingsfile = new BMenu(B_TRANSLATE("Settings"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(settingsfile);
 	
-	BMenuItem *podderpreferencesitem = new BMenuItem(B_TRANSLATE("Preferences..."),new BMessage(SHOW_SETTINGS),'P',0);
+	BMenuItem *podderpreferencesitem = new BMenuItem(B_TRANSLATE("Preferences" B_UTF8_ELLIPSIS),new BMessage(SHOW_SETTINGS),'P',0);
 	settingsfile->AddItem(podderpreferencesitem);
 	
 	groups = new BMenu(B_TRANSLATE("Groups"),B_ITEMS_IN_COLUMN);
@@ -485,7 +485,8 @@ MainWindow::CreateMenuBar(){
 	//--------------------------------------------------------------------------------------------------------------
 	
 	
-	setworkspace= new BMenu(B_TRANSLATE("Move BePodder onto workspace:"));
+	setworkspace= new BMenu(B_TRANSLATE_COMMENT("Move BePodder to workspace",
+		"After 'workspace' follows a submenu to choose the workspace"));
 	podderview->AddItem(setworkspace);
 	
 	for(int i=0;i<count_workspaces();i++){
@@ -669,7 +670,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case SHOW_HELP:
 		{
 			
-			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("Loading help..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("Loading help" B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 			HelpWindow *help1 = new HelpWindow();
@@ -708,7 +709,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 		case ARCHIVE_PARSE:
 		{
 			//show the alert
-			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive" B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 

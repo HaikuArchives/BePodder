@@ -138,7 +138,7 @@ TheApp::MessageReceived(BMessage* msg){
 	case ARCHIVE_PARSE:
 	{
 			//show the alert
-			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
+			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("\nParsing archive" B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
 			alert->Go(NULL);
 			
 

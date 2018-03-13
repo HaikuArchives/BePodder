@@ -1168,7 +1168,9 @@ MainController::OpenFile(const char* filename,BString filetype){
 				b = FindBestApplication(&ref,alert);
 				
 				if(alert != "") {
-					BPAlert *pop= new BPAlert("BePodder", alert.String() ,B_TRANSLATE("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
+					BPAlert *pop= new BPAlert("BePodder", alert.String(),
+						B_TRANSLATE("OK"), NULL, NULL, B_WIDTH_AS_USUAL,
+						LoadIcon("logo-64.png"));
 					pop->Go();
 				}
 			}

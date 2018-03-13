@@ -100,7 +100,9 @@ IABPChannelRemove::Perform(BMessage*){
 					fController->ArchiveChannel(row->fRef);
 				else
 				if(result==0){
-					BPAlert* wait = new BPAlert("Remove a channel", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+					BPAlert* wait = new BPAlert(B_TRANSLATE("Remove a channel"),
+						B_TRANSLATE("\nRemoving" B_UTF8_ELLIPSIS),NULL,NULL,NULL,
+						B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
 					fView->UpdateIfNeeded();
 					wait->Go(NULL);
 					
@@ -109,8 +111,11 @@ IABPChannelRemove::Perform(BMessage*){
 					wait->PostMessage(B_QUIT_REQUESTED);
 					
 					if(result !=B_OK){
-						wait = new BPAlert("Remove a channel", "\nAn error occured while removing!",B_TRANSLATE("Ok"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
-						
+						wait = new BPAlert(B_TRANSLATE("Remove a channel"),
+						B_TRANSLATE("\nAn error occured while removing!"),
+						B_TRANSLATE("OK"),NULL,NULL,B_WIDTH_AS_USUAL,
+						LoadIcon("delete-channel-file.png"));
+
 						wait->Go();
 					}
 					

@@ -22,7 +22,7 @@ class StatusView :  public BView {
 };
 
 #undef B_TRANSLATION_CONTEXT
-#define B_TRANSLATION_CONTEXT "EpisodeListView"
+#define B_TRANSLATION_CONTEXT "DL-Episode-ListView"
 
 
 StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_BOTTOM | B_FOLLOW_LEFT,B_WILL_DRAW){

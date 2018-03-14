@@ -276,14 +276,14 @@ MainWindow::init(MainController* controller){
 	
 		
 	sx_list=new SubscriptionListView(BRect(0,0,210,377));
-	
+	BView *multyView = new BView("MultyView", B_WILL_DRAW);
 
 	fSelector=new SectionSelector(BRect(0,0,100,100),new BMessage(SECTION_SELECTED));
 	fSelector->SetTarget(this);
 	
 	BRect k = Bounds();
 		
-	dxsplit =new SplitPane(BRect(451,52,860,477),theStack,fSelector,B_FOLLOW_ALL);
+	dxsplit =new SplitPane(BRect(451,52,860,477),theStack,multyView,B_FOLLOW_ALL);
 	dxsplit->SetViewInsetBy(BPoint(0,0));
 	dxsplit->SetAlignment(B_HORIZONTAL);
 	dxsplit->SetViewColor(bgcolor);
@@ -299,15 +299,26 @@ MainWindow::init(MainController* controller){
 	split->SetMinSizeTwo(BPoint(200,0));
 	
 	view->AddChild(split);
-	
-	BView*	fakeView=new BView(fSelector->Bounds(),"fakeView",B_FOLLOW_ALL,B_WILL_DRAW);
+
+	BTabView* tabView = new BTabView("tabview", B_WIDTH_FROM_LABEL);
+
+	BLayoutBuilder::Group<>(multyView, B_VERTICAL, 0)
+			.Add(tabView);
+
+	BView*	fakeView=new BView(fSelector->Bounds(),B_TRANSLATE("Downloads"),B_FOLLOW_ALL,B_WILL_DRAW);
 	fakeView->AddChild(down_list=new DownloadListView(fakeView->Bounds()));
-	 
+	/*
 	fSelector->AddSection("info0.png",CreateItemInfoView(), B_TRANSLATE("Show episode info") );
 	fSelector->AddSection("info1.png",CreateChannelInfoView(), B_TRANSLATE("Show subscription info"));
 	fSelector->AddSection("info2.png",fakeView,  B_TRANSLATE("Show downloads info") );
-	fSelector->Select(0);
-
+	fSelector->Select(0); */
+	BView *xview;
+	tabView->AddTab(xview = CreateItemInfoView());
+	xview->SetExplicitMinSize(BSize(0,0));
+	tabView->AddTab(xview = CreateChannelInfoView());
+	xview->SetExplicitMinSize(BSize(0,0));
+	tabView->AddTab(fakeView);
+	fakeView->SetExplicitMinSize(BSize(0,0));
 	UpdateToolBar();
 }
 
@@ -348,7 +359,7 @@ MainWindow::CreateItemInfoView(){
 
 	fItemText = new ItemRunView(scrollRect, "text", fTheme,B_FOLLOW_ALL_SIDES, B_WILL_DRAW | B_NAVIGABLE);
 	
-	BScrollView *fTextScroll = new BScrollView("scroller", fItemText,B_FOLLOW_ALL_SIDES, 0,false, true, B_PLAIN_BORDER);
+	BScrollView *fTextScroll = new BScrollView(B_TRANSLATE("Episode info"), fItemText, 0,false, true, B_PLAIN_BORDER);
 	
 	
 	fItemText->AddAction("bepodder",new RVActionBP());
@@ -391,7 +402,7 @@ MainWindow::CreateChannelInfoView(){
 	BRect scrollRect(0,0,100,100 );
 	
 	fChannelText = new RunView(scrollRect, "channel ", fTheme,B_FOLLOW_ALL_SIDES, B_WILL_DRAW | B_NAVIGABLE);
-	BScrollView *fTextScroll = new BScrollView("scroller2", fChannelText,B_FOLLOW_ALL_SIDES, 0,false, true, B_PLAIN_BORDER);
+	BScrollView *fTextScroll = new BScrollView(B_TRANSLATE("Subscription info"), fChannelText, 0,false, true, B_PLAIN_BORDER);
 		
 	fChannelText->AddAction("bepodder",new RVActionBP());
 	fChannelText->SetDefaultOpenURLAction(new RVActionBPOpenURL(fController));
@@ -1185,15 +1196,8 @@ MainWindow::QuitRequested() {
 
 void	
 MainWindow::ShowDescription(MemoryArchive* archive){
-	switch(fSelector->Selected()){
-		case 0:
 			ShowItemDescription(archive);
-			break;
-		case 1:
 			ShowChannelDescription(archive);
-		break;
-			default:break;
-      };
 }
 
 				

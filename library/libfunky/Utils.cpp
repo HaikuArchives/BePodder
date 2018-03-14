@@ -1,7 +1,9 @@
 #include "Utils.h"
 #include <Roster.h>
 #include <Application.h>
+#include <IconUtils.h>
 #include <Path.h>
+#include <Resources.h>
 #include <View.h>
 
 #include <Screen.h>
@@ -69,6 +71,29 @@ AddIcon(const char* name,BBitmap* icon){
 	ImageCache::AddImage(name,icon);	
 }
 
+
+BBitmap* ResourceVectorToBitmap(const char *resName, float iconSize)
+{
+	BResources res;
+	size_t size;
+	app_info appInfo;
+
+	be_app->GetAppInfo(&appInfo);
+	BFile appFile(&appInfo.ref, B_READ_ONLY);
+	res.SetTo(&appFile);
+	BBitmap *aBmp = NULL;
+	const uint8* iconData = (const uint8*) res.LoadResource('VICN', resName, &size);
+
+	if (size > 0 ) {
+		aBmp = new BBitmap (BRect(0,0, iconSize, iconSize), 0, B_RGBA32);
+		status_t result = BIconUtils::GetVectorIcon(iconData, size, aBmp);
+		if (result != B_OK) {
+			delete aBmp;
+			aBmp = NULL;
+		}
+	}
+	return aBmp;
+}
 
 bool		
 CheckMIME(BString mime,BNode* node){

@@ -6,7 +6,8 @@
 #include <MessageRunner.h>
 #include <PictureButton.h>
 #include <Entry.h>
-#include <TextView.h> 
+#include <TextView.h>
+#include <ToolBar.h>
 #include <PopUpMenu.h>
 #include "StackedView.h"
 #include <Box.h>
@@ -138,6 +139,7 @@ class MainWindow: public BWindow
 				
 				void	SaveSetting(BMessage* data);
 				void	LoadSetting(BMessage* data);
+
 	private:				
 				float	CreateMenuBar();
 				BView*	CreateItemInfoView();			
@@ -155,7 +157,7 @@ class MainWindow: public BWindow
 					
 				void	RecursiveParseOpml(OPMLTree* branch);
 				
-				
+				void	UpdateToolBar();
 				MainController*	fController;
 									
 				BMenuItem*			notoolbar;
@@ -199,7 +201,8 @@ class MainWindow: public BWindow
 				BFilePanel 					*importFilePanel;
 				BFilePanel 					*exportFilePanel;
 
-	 	   		BRect podderrect;
+				BRect 						podderrect;
+				BToolBar* 					fToolBar;
 	    
 };
 

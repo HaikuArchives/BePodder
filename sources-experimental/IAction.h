@@ -16,6 +16,7 @@ class IAction : public Action
 			
 			enum IconType {
 			    	 SIZE_16 = 0,
+					 SIZE_24,
 					 SIZE_48,
 					 SIZE_48_PRESSED,
 					 //.... add other there!

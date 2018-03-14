@@ -11,6 +11,7 @@
 #include <Button.h>
 #include <View.h>
 #include <Box.h>
+#include <LayoutBuilder.h>
 #include <ScrollBar.h>
 #include <StorageKit.h>
 
@@ -97,7 +98,7 @@ extern IActionManagerBP		action_manager;
 
 
 MainWindow::MainWindow()
-: BWindow(BRect(100,100,970,607), B_TRANSLATE_SYSTEM_NAME("BePodder"), B_DOCUMENT_WINDOW, B_ASYNCHRONOUS_CONTROLS),
+: BWindow(BRect(100,100,970,607), B_TRANSLATE_SYSTEM_NAME("BePodder"), B_TITLED_WINDOW, B_ASYNCHRONOUS_CONTROLS),
 	importFilePanel(NULL),
 	exportFilePanel(NULL)
 {
@@ -118,22 +119,24 @@ MainWindow::MainWindow()
 void
 MainWindow::init(MainController* controller){	
 
-	
 	SetController(controller);
 
-
     rgb_color bgcolor = ui_color(B_PANEL_BACKGROUND_COLOR);
-	
+
+	const float toolBarHeight = 42.0;
+
 	BRect rect(Bounds());
 	rect.top = CreateMenuBar() + 1;
-	
-	view=new BBox(rect,NULL, B_FOLLOW_ALL, B_WILL_DRAW,B_NO_BORDER);
-//	view->SetViewColor(bgcolor);
-	AddChild(view);
 
+	view=new BBox(rect,NULL, B_FOLLOW_ALL, B_WILL_DRAW,B_NO_BORDER);
+	BRect toolBarRect(0, 0, rect.Width(), toolBarHeight);
+	toolBarRect.PrintToStream();
+	fToolBar= new BToolBar(toolBarRect);
+
+	AddChild(view);
+	view->AddChild(fToolBar);
 	const BFont *font = be_plain_font;
-	rect = BRect(0,0,47,31);
-	
+
 	fChannelMenu = new BPopUpMenu("ChannelMenu");
 	fChannelMenu->SetFont(font);
 
@@ -146,18 +149,15 @@ MainWindow::init(MainController* controller){
 						IACTION_CHANNEL_WWW
 					};
 
-	channelView=new BView(BRect(CHANNELS_BAR_X,BAR_Y,CHANNELS_BAR_X+47+66*(COUNT-1),BAR_Y+31),"",B_FOLLOW_NONE,B_WILL_DRAW);
-	channelView->SetViewColor(bgcolor);
-	view->AddChild(channelView);
-			
+	fToolBar->GetLayout()->AddItem(BSpaceLayoutItem::CreateHorizontalStrut(3.0));
 	//automatic for the people
 	int i;
 	for(i=0;i<COUNT;i++){
-		ImageButton *tasto1= new ImageButton(rect,"",action_manager.GetAction(ChannelBar[i]));
-		channelView->AddChild(tasto1);
-		rect.OffsetBy(66,0);
-	}	
-
+		IAction* action = action_manager.GetAction(ChannelBar[i]);
+		fToolBar->AddAction(action->CopyMessage(),IActionManager::TargetForAction(0),
+		action->GetIcon(IActionBP::SIZE_24), action->GetDescription().String(),"",false);
+	}
+	fToolBar->AddGlue();
 	//extras :)
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ADD_REQUEST));
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_REMOVE));
@@ -169,7 +169,7 @@ MainWindow::init(MainController* controller){
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	fChannelMenu->SetTargetForItems(be_app);
-	
+
 	channels->AddItem(fChannelItems[CHANNEL_ADD_REQUEST] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ADD_REQUEST));
 	channels->AddItem(fChannelItems[CHANNEL_REMOVE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_REMOVE));
 	channels->AddSeparatorItem();
@@ -180,13 +180,10 @@ MainWindow::init(MainController* controller){
 	channels->AddItem(fChannelItems[CHANNEL_ENCLOSURE_FOLDER] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
 	channels->AddItem(fChannelItems[CHANNEL_SHOW_IMAGE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	channels->SetTargetForItems(be_app);
-	
-	rect = BRect(0,0,47,31);
-	rect.OffsetBy(338,0);
-	
+
 	fItemMenu = new BPopUpMenu("ItemMenu");
 	fItemMenu->SetFont(font);
-	
+
 	const	 int COUNT2 = 4;
 	const int ItemBar[COUNT2] = 
 					{
@@ -195,30 +192,26 @@ MainWindow::init(MainController* controller){
 						IACTION_ITEM_STOP,
 						IACTION_ITEM_REMOVE,	
 					};
-					
-	itemsView=new BView(BRect(ITEMS_BAR_X,BAR_Y,ITEMS_BAR_X+382+66*(COUNT2-1),BAR_Y+31),"",B_FOLLOW_LEFT_RIGHT,B_WILL_DRAW);  
-	itemsView->SetViewColor(bgcolor);
-	//itemsView->SetDoubleBuffering(true);
-	view->AddChild(itemsView);				
-					
+
 	//automatic for the people
 	for(i=0;i<COUNT2;i++){
-		ImageButton *tasto1= new ImageButton(rect,"",action_manager.GetAction(ItemBar[i]));
-		itemsView->AddChild(tasto1);
-		rect.OffsetBy(66,0);
 		fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(ItemBar[i]));
 		items->AddItem(fEpisodeItems[i] = action_manager.CreateMenuItemFromAction(ItemBar[i]));
+
+		IAction* action = action_manager.GetAction(ItemBar[i]);
+		fToolBar->AddAction(action->CopyMessage(),IActionManager::TargetForAction(0),
+		action->GetIcon(IActionBP::SIZE_24), action->GetDescription().String(),"",false);
 	}	
-	
+	fToolBar->AddGlue();
 	//extras :)
 	fItemMenu->AddSeparatorItem();
 	fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
 	fItemMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
-	
+
 	items->AddSeparatorItem();
 	items->AddItem(fEpisodeItems[i++] = action_manager.CreateMenuItemFromAction(IACTION_ITEM_WWW));
 	items->AddItem(fEpisodeItems[i++] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
-		
+
 	fItemMenu->SetTargetForItems(be_app);
 	items->SetTargetForItems(be_app);
 	
@@ -285,10 +278,6 @@ MainWindow::init(MainController* controller){
 	sx_list=new SubscriptionListView(BRect(0,0,210,377));
 	
 
-	
-	
-	
-	
 	fSelector=new SectionSelector(BRect(0,0,100,100),new BMessage(SECTION_SELECTED));
 	fSelector->SetTarget(this);
 	
@@ -318,7 +307,10 @@ MainWindow::init(MainController* controller){
 	fSelector->AddSection("info1.png",CreateChannelInfoView(), B_TRANSLATE("Show subscription info"));
 	fSelector->AddSection("info2.png",fakeView,  B_TRANSLATE("Show downloads info") );
 	fSelector->Select(0);
+
+	UpdateToolBar();
 }
+
 
 BView*
 MainWindow::CreateItemInfoView(){
@@ -352,7 +344,7 @@ MainWindow::CreateItemInfoView(){
 	 	 
 	fTheme->WriteUnlock();
 	
-	BRect scrollRect(0,0,100,100 );
+	BRect scrollRect(0,0,100,100);
 
 	fItemText = new ItemRunView(scrollRect, "text", fTheme,B_FOLLOW_ALL_SIDES, B_WILL_DRAW | B_NAVIGABLE);
 	
@@ -443,6 +435,7 @@ MainWindow::CreateMenuBar(){
 	items = new BMenu(B_TRANSLATE("Episodes"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(items);	
 	/*  TODO create a List of rss feeds
+
 	BMenu  *directoryfile = new BMenu(B_TRANSLATE("Lists"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(directoryfile);
 
@@ -747,6 +740,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 			GroupItem*	group=dynamic_cast<GroupItem*>(sx_list->CurrentSelection());
 			if(group)
 					SelectGroup(group,msg->FindInt32("buttons"));
+			UpdateToolBar();
 		}	
 		break;
 		
@@ -783,6 +777,7 @@ void MainWindow::MessageReceived(BMessage* msg)
 				fItemMenu->Go(p2, true, true, true);
 			
 			}
+			UpdateToolBar();
 		}
 		break;
 		
@@ -1190,19 +1185,15 @@ MainWindow::QuitRequested() {
 
 void	
 MainWindow::ShowDescription(MemoryArchive* archive){
-	
-	
 	switch(fSelector->Selected()){
 		case 0:
 			ShowItemDescription(archive);
-		break;
+			break;
 		case 1:
 			ShowChannelDescription(archive);
 		break;
-		
-		default:break;
-	};
-		
+			default:break;
+      };
 }
 
 				
@@ -1447,7 +1438,7 @@ MainWindow::SetFullscreen(bool fullscreen){
 			BRect frect(Bounds());	
 			dxsplit->SetBarPosition(BPoint(frect.Width()/2.0f-170, frect.Height()/2));
 }
-
+/*
 void	
 MainWindow::SetToolbarVisible(bool visible){
 	
@@ -1473,7 +1464,28 @@ MainWindow::SetToolbarVisible(bool visible){
 					channelView->Show();
 			}
 }
+*/
 
+void
+MainWindow::SetToolbarVisible(bool visible){
+
+			BPoint point(0,42);
+			if(!visible) {
+				notoolbar->SetMarked(false);
+				view->ScrollTo(point);
+				split->ResizeBy(point.x,point.y);
+				dxsplit->SetBarPosition(dxsplit->GetBarPosition()+=point);
+				if(!fToolBar->IsHidden())
+					fToolBar->Hide();
+			}	else {
+				notoolbar->SetMarked(true);
+				view->ScrollTo(BPoint(0,0));
+				split->ResizeBy(point.x,-point.y);
+				dxsplit->SetBarPosition(dxsplit->GetBarPosition()-=point);
+				if(fToolBar->IsHidden())
+					fToolBar->Show();
+			}
+}
 void
 MainWindow::MenusBeginning()
 {
@@ -1493,5 +1505,40 @@ MainWindow::MenusBeginning()
 	// Disable all
 	for (int i = 0; i < EPISODE_ITEM_ACTION_SIZE; i++)
 		fEpisodeItems[i]->SetEnabled(episode != NULL);
+}
+
+void
+MainWindow::UpdateToolBar()
+{
+	bool channelSelected = GetSelectedSubscription() != NULL;
+	bool itemSelected = GetSelectedEpisode() != NULL;
+
+	for (int32 i = 0; BView* view = fToolBar->ChildAt(i); i++) {
+		BButton* button = dynamic_cast<BButton*>(view);
+		if (button == NULL)
+			continue;
+		BMessage* message = button->Message();
+		if (message == NULL)
+			continue;
+		int16 position;
+		if (message->what == PERFORM_ACTION && message->FindInt16("action_position", &position) == B_OK) {
+			switch (position) {
+				case IACTION_CHANNEL_ADD_REQUEST:
+					button->SetEnabled(true);
+					break;
+				case IACTION_CHANNEL_REMOVE:
+				case IACTION_CHANNEL_CHECK:
+				case IACTION_CHANNEL_WWW:
+					button->SetEnabled(channelSelected);
+					break;
+				case IACTION_ITEM_PLAY:
+				case IACTION_ITEM_DOWNLOAD:
+				case IACTION_ITEM_STOP:
+				case IACTION_ITEM_REMOVE:
+					button->SetEnabled(itemSelected);
+					break;
+			}
+		}
+	}
 }
 

@@ -30,6 +30,8 @@ IABPChannelAddRequest::IABPChannelAddRequest(MainController* controller, MainWin
 			 	   		
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("add-channel-file.png"));
+
+				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("add-channel-file", 24));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("add-channel-file-down.png"));
 	 	  		
 	 	  		SetLabel(B_TRANSLATE("Add channel")); 
@@ -62,8 +64,8 @@ IABPChannelRemove::IABPChannelRemove(MainController* controller ,MainWindow* vie
 			 	   		
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("delete-micro.png"));
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("delete-channel-file.png"));
+				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("delete-channel-file", 24));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("delete-channel-file-down.png"));
-	 	  		
 	 	  		SetLabel(B_TRANSLATE("Remove channel")); 
 			 	  
 }
@@ -85,6 +87,7 @@ IABPChannelRemove::Perform(BMessage*){
 				
 				//TODO: studiare la disposizione dei pulsanti!
 				//TODO FIX THIS LOCALE
+				BBitmap *bitmap=new BBitmap( ((SubscriptionField*)row->GetField(0))->GetBitmap() );
 				
 				BString text;
 		
@@ -92,7 +95,7 @@ IABPChannelRemove::Perform(BMessage*){
 				text << row->GetTitle();
 				text << B_TRANSLATE("\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?");
 							
-				BPAlert* remove = new BPAlert("Remove a channel", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Archive"),B_TRANSLATE("Cancel"),B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+				BPAlert* remove = new BPAlert("Remove a channel", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Archive"),B_TRANSLATE("Cancel"),B_WIDTH_AS_USUAL,bitmap);
 				int32 result=remove->Go();
 				
 				LOCKWINDOW
@@ -102,7 +105,7 @@ IABPChannelRemove::Perform(BMessage*){
 				if(result==0){
 					BPAlert* wait = new BPAlert(B_TRANSLATE("Remove a channel"),
 						B_TRANSLATE("\nRemoving" B_UTF8_ELLIPSIS),NULL,NULL,NULL,
-						B_WIDTH_AS_USUAL,LoadIcon("delete-channel-file.png"));
+						B_WIDTH_AS_USUAL,bitmap);
 					fView->UpdateIfNeeded();
 					wait->Go(NULL);
 					
@@ -114,15 +117,12 @@ IABPChannelRemove::Perform(BMessage*){
 						wait = new BPAlert(B_TRANSLATE("Remove a channel"),
 						B_TRANSLATE("\nAn error occured while removing!"),
 						B_TRANSLATE("OK"),NULL,NULL,B_WIDTH_AS_USUAL,
-						LoadIcon("delete-channel-file.png"));
-
+						bitmap);
 						wait->Go();
 					}
-					
-					
 				}
 				UNLOCKWINDOW
-
+				delete bitmap;
 	return B_OK;
 } 
 
@@ -138,6 +138,9 @@ IABPChannelRemove::Shortcut(uint32 *modifiers) const {
 IABPChannelCheck::IABPChannelCheck(MainController* controller,MainWindow* view):IActionBP(controller,view){
 			 	   		
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("refresh-micro.png"));
+
+				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("refresh-channel-file", 24));
+
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
 	 	  		
@@ -174,6 +177,9 @@ IABPChannelCheck::Shortcut(uint32 *modifiers) const {
 IABPChannelWWW::IABPChannelWWW(MainController* controller,MainWindow* view):IActionBP(controller,view){
 			 	   		
 	 	   		SetIcon(IAction::SIZE_16,LoadIcon("www-micro.png"));
+
+				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("www-channel-file", 24));
+
 	 	   		SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
 	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
 	 	  		

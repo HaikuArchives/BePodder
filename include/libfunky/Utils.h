@@ -13,7 +13,7 @@ bool		CheckMIME(BString mime,BNode* node);
 
 BBitmap*		LoadIcon(const char* name);
 void			AddIcon(const char* name,BBitmap*);
-
+BBitmap* 		ResourceVectorToBitmap(const char *resName, float iconSize);
 
 
 status_t	 ReadAttributeData(BNode* node,const char *name, char **buffer, int32 *size);

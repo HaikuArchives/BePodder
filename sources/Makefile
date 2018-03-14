@@ -137,7 +137,8 @@ SYSTEM_INCLUDE_PATHS = ../include \
 	../include/runview \
 	../include/libfunky \
 	../include/libfish \
-	$(shell findpaths -e B_FIND_PATH_HEADERS_DIRECTORY private/interface)
+	$(shell findpaths -e B_FIND_PATH_HEADERS_DIRECTORY private/interface) \
+	$(shell findpaths -e B_FIND_PATH_HEADERS_DIRECTORY private/shared)
 
 #	Additional paths paths to look for local headers. These use the form
 #	#include "header". Directories that contain the files in SRCS are

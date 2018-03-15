@@ -413,23 +413,19 @@ MainWindow::CreateMenuBar(){
 	
 	BMenu  *podderfile = new BMenu(B_TRANSLATE("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
-	
-	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML" B_UTF8_ELLIPSIS) , new BMessage(IMPORT_OPML), 0, 0));
-	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML" B_UTF8_ELLIPSIS) , new BMessage(EXPORT_OPML), 0, 0));
 	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About BePodder"),new BMessage(B_ABOUT_REQUESTED),0,0);
 	podderaboutitem->SetTarget(be_app);
 	podderfile->AddItem(podderaboutitem);
-	
+	podderfile->AddSeparatorItem();
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML" B_UTF8_ELLIPSIS) , new BMessage(IMPORT_OPML), 0, 0));
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML" B_UTF8_ELLIPSIS) , new BMessage(EXPORT_OPML), 0, 0));
+	podderfile->AddSeparatorItem();
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Preferences" B_UTF8_ELLIPSIS),new BMessage(SHOW_SETTINGS),',',0));
+	podderfile->AddSeparatorItem();
 	BMenuItem *quititem = new BMenuItem(B_TRANSLATE("Quit"),new BMessage(B_QUIT_REQUESTED),'Q',0);
 	quititem->SetTarget(be_app);
 	podderfile->AddItem(quititem);
-	
-	BMenu  *settingsfile = new BMenu(B_TRANSLATE("Settings"),B_ITEMS_IN_COLUMN);
-	poddermenubar->AddItem(settingsfile);
-	
-	BMenuItem *podderpreferencesitem = new BMenuItem(B_TRANSLATE("Preferences" B_UTF8_ELLIPSIS),new BMessage(SHOW_SETTINGS),'P',0);
-	settingsfile->AddItem(podderpreferencesitem);
-	
+
 	groups = new BMenu(B_TRANSLATE("Groups"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(groups);
 	
@@ -454,7 +450,7 @@ MainWindow::CreateMenuBar(){
 	BMenu  *podderview = new BMenu(B_TRANSLATE("View"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderview);
 	
-	fullscreenitem = new BMenuItem(B_TRANSLATE("Full screen"),new BMessage(SET_FULLSCREEN),'F',0);
+	fullscreenitem = new BMenuItem(B_TRANSLATE("Full screen"),new BMessage(SET_FULLSCREEN), B_ENTER, 0);
 	podderview->AddItem(fullscreenitem);
 	fullscreenitem->SetMarked(false);
 	

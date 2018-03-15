@@ -99,38 +99,13 @@ MemoryArchive::KeyModified(int32 key, void* data, ssize_t numBytes){
 
 void		
 MemoryArchive::FillListener(Notifier* fListener){
-#ifdef ZETA
   //now update all my info! (is always true?)
-  void *cookie = NULL;
-  char *name; 
-  uint32 type=0; 
-  int32 count = 0;
-  
-  while (fData.GetNextName(&cookie, (const char**)&name,NULL,NULL) == B_OK) {
 
-  	void*	data = NULL;
-  	ssize_t	numBytes;
-  	if(fData.FindData(name,B_ANY_TYPE,0,(const void**)&data,&numBytes)==B_OK)
-  	{
-  		//FIX MANCA SSIZE_T!  (unmangling the name..)
-  		BString uname(name);
-  		uname.RemoveAll("key_");
-  		int32 key = atol(uname.String());
-  			
-  		fListener->SetKey((ItemProperty)key,data,numBytes);
-  		//if(data && numBytes>0)free(data);
-  	}
-  }
-#else
-  //now update all my info! (is always true?)
- //void *cookie = NULL;
   char *name; 
   uint32 type=0; 
   int32 count = fData.CountNames(B_ANY_TYPE);
-  
-  for(int i=0;i<count;i++)
-  //while (fData.GetNextName(&cookie, (const char**)&name,NULL,NULL) == B_OK)
-   {
+
+  for(int i=0;i<count;i++) {
 	fData.GetInfo(B_ANY_TYPE,i,(char**)&name,&type);
   	void*	data = NULL;
   	ssize_t	numBytes;
@@ -145,7 +120,6 @@ MemoryArchive::FillListener(Notifier* fListener){
   		//if(data && numBytes>0)free(data);
   	}
   }
-#endif
 }
 
 void

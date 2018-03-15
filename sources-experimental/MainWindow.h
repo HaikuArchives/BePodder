@@ -30,7 +30,6 @@ class RunView;
 class MemoryArchive;
 class MainController;
 class DownloadListItem;
-class SectionSelector;
 class GroupItem;
 class OPMLTree;
 
@@ -195,8 +194,6 @@ class MainWindow: public BWindow
     			BPopUpMenu*					fItemMenu;
     			BPopUpMenu*					fDownloadMenu;
     			BPopUpMenu*					fGroupMenu;
-    			
-				SectionSelector*					fSelector;
 
 				BFilePanel 					*importFilePanel;
 				BFilePanel 					*exportFilePanel;

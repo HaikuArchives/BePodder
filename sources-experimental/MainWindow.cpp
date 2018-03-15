@@ -9,6 +9,8 @@
 #include <MenuItem.h>
 #include <Alert.h>
 #include <Button.h>
+#include <DateFormat.h>
+#include <DateTimeFormat.h>
 #include <View.h>
 #include <Box.h>
 #include <LayoutBuilder.h>
@@ -41,9 +43,7 @@
 #include "runview/Theme.h"
 
 #include "RVActionBP.h"
-#include "RVActionBPOpenURL.h" 
-
-#include "SectionSelector.h"
+#include "RVActionBPOpenURL.h"
 
 #include "DownloadListView.h"
 #include "DownloadListItem.h"
@@ -278,11 +278,8 @@ MainWindow::init(MainController* controller){
 	sx_list=new SubscriptionListView(BRect(0,0,210,377));
 	BView *multyView = new BView("MultyView", B_WILL_DRAW);
 
-	fSelector=new SectionSelector(BRect(0,0,100,100),new BMessage(SECTION_SELECTED));
-	fSelector->SetTarget(this);
-	
 	BRect k = Bounds();
-		
+
 	dxsplit =new SplitPane(BRect(451,52,860,477),theStack,multyView,B_FOLLOW_ALL);
 	dxsplit->SetViewInsetBy(BPoint(0,0));
 	dxsplit->SetAlignment(B_HORIZONTAL);
@@ -305,13 +302,9 @@ MainWindow::init(MainController* controller){
 	BLayoutBuilder::Group<>(multyView, B_VERTICAL, 0)
 			.Add(tabView);
 
-	BView*	fakeView=new BView(fSelector->Bounds(),B_TRANSLATE("Downloads"),B_FOLLOW_ALL,B_WILL_DRAW);
+	BView*	fakeView=new BView(multyView->Bounds(),B_TRANSLATE("Downloads"),B_FOLLOW_ALL,B_WILL_DRAW);
 	fakeView->AddChild(down_list=new DownloadListView(fakeView->Bounds()));
-	/*
-	fSelector->AddSection("info0.png",CreateItemInfoView(), B_TRANSLATE("Show episode info") );
-	fSelector->AddSection("info1.png",CreateChannelInfoView(), B_TRANSLATE("Show subscription info"));
-	fSelector->AddSection("info2.png",fakeView,  B_TRANSLATE("Show downloads info") );
-	fSelector->Select(0); */
+
 	BView *xview;
 	tabView->AddTab(xview = CreateItemInfoView());
 	xview->SetExplicitMinSize(BSize(0,0));
@@ -1220,17 +1213,28 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 	}
 	time_t	*curtime = 0;
 	if(archive->GetData(ITEM_PUBDATE,(const void**)&curtime) >0){
+// TODO should be converted in local time?
+// if so, time in ColumnView and in the info could be different
+// Should be converted in the metadata?
 
-		char	dateString[256];
+/*		char	dateString[256];
 		tm		time_data;
 		time_t datetime=*curtime;
 		localtime_r(&datetime, &time_data);
-		
+
 		//"%A, %B %d %Y, %I:%M:%S %p"		
 		strftime(dateString, 256, "%a, %B %d %Y, %I:%M:%S %p", &time_data);
-		
+
 		fItemText->Append("   - ",C_TEXT,C_ACTION,F_TIMESTAMP);
 		fItemText->Append(dateString,C_TEXT,C_ACTION,F_TIMESTAMP);
+*/
+		BDateTimeFormat formatter;
+		BString dateString;
+		if (formatter.Format(dateString, *curtime, B_FULL_DATE_FORMAT,
+				B_LONG_TIME_FORMAT) == B_OK) {
+			fItemText->Append("   - ",C_TEXT,C_ACTION,F_TIMESTAMP);
+			fItemText->Append(dateString.String(),C_TEXT,C_ACTION,F_TIMESTAMP);
+		}
 	} 
 	else
 		fItemText->Append(" ",C_TEXT,C_ACTION,F_TIMESTAMP);
@@ -1442,33 +1446,6 @@ MainWindow::SetFullscreen(bool fullscreen){
 			BRect frect(Bounds());	
 			dxsplit->SetBarPosition(BPoint(frect.Width()/2.0f-170, frect.Height()/2));
 }
-/*
-void	
-MainWindow::SetToolbarVisible(bool visible){
-	
-			BPoint point(0,42);
-			if(!visible) {
-				notoolbar->SetMarked(false);
-				view->ScrollTo(point);
-				split->ResizeBy(point.x,point.y);
-				dxsplit->SetBarPosition(dxsplit->GetBarPosition()+=point);
-				if(!itemsView->IsHidden())
-					itemsView->Hide();
-				if(!channelView->IsHidden())
-					channelView->Hide();
-			}	else {
-				notoolbar->SetMarked(true);
-				view->ScrollTo(BPoint(0,0));
-				split->ResizeBy(point.x,-point.y);
-				dxsplit->SetBarPosition(dxsplit->GetBarPosition()-=point);
-
-				if(itemsView->IsHidden())
-					itemsView->Show();
-				if(channelView->IsHidden())
-					channelView->Show();
-			}
-}
-*/
 
 void
 MainWindow::SetToolbarVisible(bool visible){
@@ -1490,6 +1467,7 @@ MainWindow::SetToolbarVisible(bool visible){
 					fToolBar->Show();
 			}
 }
+
 void
 MainWindow::MenusBeginning()
 {

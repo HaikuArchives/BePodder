@@ -79,7 +79,6 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/QueueMultiActions.cpp \
 	../sources-experimental/RssChannel.cpp \
 	../sources-experimental/RssItem.cpp \
-	../sources-experimental/SectionSelector.cpp \
 	../sources-experimental/SettingsWindow.cpp \
 	../sources-experimental/SplitPane.cpp \
 	../sources-experimental/StackedView.cpp \

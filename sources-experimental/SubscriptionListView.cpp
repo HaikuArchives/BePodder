@@ -160,8 +160,6 @@ SubscriptionListView::DroppedGroup(BMessage* msg, BPoint point)
 bool
 SubscriptionListView::InitiateDrag(BPoint p, bool )
 {
-
-	
 	BMessage *msg = Window()->CurrentMessage();
 	if(msg->FindInt32("buttons") == B_SECONDARY_MOUSE_BUTTON) return false;
 		
@@ -180,11 +178,8 @@ SubscriptionListView::InitiateDrag(BPoint p, bool )
 		else
 			re.AddInt32("parent",-1);
 	
-		#ifdef ZETA
-			BBitmap *bit=new BBitmap(*( ((SubscriptionField*)item->GetField(0))->GetBitmap() ));
-		#else
-			BBitmap *bit=new BBitmap( ((SubscriptionField*)item->GetField(0))->GetBitmap() );
-		#endif
+		BBitmap *bit=new BBitmap( ((SubscriptionField*)item->GetField(0))->GetBitmap() );
+
 		DragMessage(&re,bit,B_OP_ALPHA,BPoint(bit->Bounds().Width()/2,bit->Bounds().Height()/2),this);		
 		
 		return true;

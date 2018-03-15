@@ -59,14 +59,10 @@ HelpWindow::HelpWindow() :
 	rgb_color white = {255,255,255,255};
 	hv->SetForeColor(black) ;
 	hv->SetBackColor(white);
-		
 	
 	BString where(GetAppRelativePath());
-	#ifdef ZETA
-		where << "/help.xml";
-	#else
-		where << "/helpR5.xml";
-	#endif
+	where << "/helpR5.xml";
+
 	hv->LoadFile(where.String());
 	hv->SetGotoHandler(this);
 	hv->SetOpenUrlHandler(be_app);

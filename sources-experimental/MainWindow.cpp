@@ -883,9 +883,26 @@ void MainWindow::MessageReceived(BMessage* msg)
 				BPath exportFilePath(&directory, fileName.String());
 				OPMLWriter writer("Feed BePodder");
 
+/*
 				for (int i = 0; i < sx_list->CountRows(); i++)
 				{
 					writer.AddChannel(dynamic_cast<SubscriptionListItem*>(sx_list->RowAt(i)));
+				}
+				writer.WriteToFile(exportFilePath.Path());
+*/
+				for(int i = 0; i < sx_list->CountRows(); i++) {
+					int numChildren = sx_list->CountRows(sx_list->RowAt(i));
+					if (numChildren > 0) {
+						//GroupItem* group  = dynamic_cast<GroupItem*>(sx_list->RowAt(i));
+						//printf("Group %s\n", group->GroupName().String());
+						for (int j = 0; j < numChildren; j++) {
+							SubscriptionListItem* subscription = dynamic_cast<SubscriptionListItem*>(sx_list->RowAt(j, sx_list->RowAt(i)));
+							//printf("Subscription %s\n", subscription->GetTitle().String());
+							writer.AddChannel(subscription);
+						}
+					}
+					else
+						writer.AddChannel(dynamic_cast<SubscriptionListItem*>(sx_list->RowAt(i)));
 				}
 				writer.WriteToFile(exportFilePath.Path());
 			}

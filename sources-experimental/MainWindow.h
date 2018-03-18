@@ -161,7 +161,7 @@ class MainWindow: public BWindow
 									
 				BMenuItem*			notoolbar;
 				BMenuItem*			fullscreenitem;
-				BMenu*					setworkspace;
+
 				BMenu* ChannelSize;
 				
 				BMenu*					channels;

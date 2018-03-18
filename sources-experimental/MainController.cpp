@@ -182,8 +182,6 @@ MainController::DownloadItem(entry_ref ref, EpisodeListItem* epi) {
 						
 			if(enclosure_path == "" || enclosure_link == "") return B_ERROR;
 			
-			
-						
 			bool resume = false;
 			 
 			if( 	status == NOT_DOWNLOADED || 
@@ -211,12 +209,11 @@ MainController::DownloadItem(entry_ref ref, EpisodeListItem* epi) {
 			 ActionDownload *ac=new ActionDownload(enclosure_link,enclosure_ref,resume, enclosure_type);	
 			 
 			 ac->SetRef("episode_ref",&ref);
-			 
-				
-			
-			 
-			 if( item ==NULL) {
-			 	item = new DownloadListItem(NULL);
+
+			 if (item == NULL) {
+				SubscriptionListItem* row = fModel->findSubscriptionFromEpisode(ref);
+
+				item = new DownloadListItem(row);
 				AttributeExtractor an;
 				//HERE: we have to move data from ref to item->fRss.
 				an.SetNotifier(&item->fRss);
@@ -547,7 +544,7 @@ status_t
 MainController::FindItem(entry_ref ref){
 	
 	//FIX DA CONTROLLARE
-	
+	/*
 	BPath path(&ref);
 	path.GetParent(&path);
 	entry_ref parent;
@@ -565,6 +562,9 @@ MainController::FindItem(entry_ref ref){
 			row=NULL;
 	}
 	
+	*/
+	SubscriptionListItem* row = fModel->findSubscriptionFromEpisode(ref);
+
 	if(!row) return B_ERROR;
 	
 	EpisodeListView* dx_list= fView->GetEpisodeListView();
@@ -576,9 +576,25 @@ MainController::FindItem(entry_ref ref){
 	//  altrimenti bisogna notificare a fView di selezionare il canale E di preparare quel ref per essere
 	//  il selezionato.
 				
+
+	fView->SelectSubscription(row);
 	//dx_list->DeselectAll();
 	//dx_list->AddToSelection(sel);
-	fView->SelectSubscription(row);
+	//SetSelectedItem(&ref, &row->fRef);
+
+	// works only if the view is already on the subscription see comment above
+	/*
+	for (int i = 0; i < dx_list->CountRows(); i++) {
+		EpisodeListItem* episode =	(EpisodeListItem*) dx_list->RowAt(i);
+		if (episode->fRef == ref) {
+			dx_list->DeselectAll();
+			dx_list->AddToSelection(episode);
+			dx_list->ScrollTo(episode);
+			//SetSelectedItem(&episode->fRef, &row->fRef);
+			break;
+		}
+	}
+	*/
 	return B_OK;
 }
 
@@ -991,7 +1007,6 @@ MainController::ParseArchive()
 	BPath path;
 	find_directory (B_USER_CACHE_DIRECTORY, &path, true);
 	path.Append("BePodder/archive");
-
 	create_directory( path.Path(), 755 );
 
 			
@@ -1917,7 +1932,6 @@ MainController::AddEpisode(BEntry entry) {
 			}
 			else
 			{
-					
 					// check for percentage.
 					off_t total=ep->GetEnclosureSize();
 					if(fake.GetFileStatus() == STOPPED && total>0){

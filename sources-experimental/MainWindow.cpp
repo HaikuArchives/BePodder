@@ -61,7 +61,6 @@
 
 
 	#define 	ITEM_SELECTED					'selD'
-	#define 	CHANGE_WORKSPACE			'wsch'
 	#define		SET_FULLSCREEN				'full'
 	#define 	SHOW_SETTINGS				'setp'
 	#define		SHOW_TOOLBAR					'notb'
@@ -82,12 +81,6 @@
 	const int64 	kMB_SIZE				= 1048576;
 	const int64 	kGB_SIZE				= 1073741824;
 	const int64 	kTB_SIZE				= kGB_SIZE * kKB_SIZE;
-
-//misc UI:
-	#define		CHANNELS_BAR_X	7 
-	#define		ITEMS_BAR_X			280
-	#define		BAR_Y					12
-
 
 // Singletons:
 
@@ -130,7 +123,7 @@ MainWindow::init(MainController* controller){
 
 	view=new BBox(rect,NULL, B_FOLLOW_ALL, B_WILL_DRAW,B_NO_BORDER);
 	BRect toolBarRect(0, 0, rect.Width(), toolBarHeight);
-	toolBarRect.PrintToStream();
+
 	fToolBar= new BToolBar(toolBarRect);
 
 	AddChild(view);
@@ -475,23 +468,8 @@ MainWindow::CreateMenuBar(){
 	
 	ChannelSize->SetEnabled(true);	
 	*/
-	//--------------------------------------------------------------------------------------------------------------
-	
-	
-	setworkspace= new BMenu(B_TRANSLATE_COMMENT("Move BePodder to workspace",
-		"After 'workspace' follows a submenu to choose the workspace"));
-	podderview->AddItem(setworkspace);
-	
-	for(int i=0;i<count_workspaces();i++){
-		BMenuItem* workspace1;
-		BString text; 
-		text << i + 1;
-		setworkspace->AddItem(workspace1 = new BMenuItem(text.String(), new BMessage(CHANGE_WORKSPACE), 0));
-		if(i ==	current_workspace()  )
-			workspace1->SetMarked(true);
-	}
-	
-				
+	//--------------------------------------------------------------------------------------------------------------	
+
 	BMenu  *helpfile = new BMenu(B_TRANSLATE("Help"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(helpfile);
 	
@@ -679,20 +657,6 @@ void MainWindow::MessageReceived(BMessage* msg)
 		
 		case SET_FULLSCREEN:
 			SetFullscreen(!fullscreenitem->IsMarked());
-		break;
-		
-		case CHANGE_WORKSPACE:
-		{
-			 msg->PrintToStream();
-			uint32 index=(uint32)msg->FindInt32("index");
-					
-    		uint32 space = 0x1UL; 
-    		space <<= index;
-		   
-			SetWorkspaces(space);
-			if( setworkspace->FindMarked() ) setworkspace->FindMarked()->SetMarked(false);
-			if(setworkspace->ItemAt(index)) setworkspace->ItemAt(index)->SetMarked(true);
-		} 
 		break;
 				
 		case CHECK_ALL:

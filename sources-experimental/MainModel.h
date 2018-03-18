@@ -3,6 +3,7 @@
 
 #include <Entry.h>
 #include <Directory.h>
+#include <Path.h>
 
 #include "SubscriptionListItem.h"
 #include "DownloadListItem.h"
@@ -49,7 +50,7 @@ class MainModel {
 	    				return obj;
 	    			
 	    			return NULL;
-	    		}	
+				}
 	    		
 	    		void	removeDownload(entry_ref ref)
 	    		{
@@ -58,6 +59,18 @@ class MainModel {
 	    			if(found) 
 	    				fDownloadList.RemoveItemFor(ref);
 	    		}
+
+				// EXPERIMENTAL
+				SubscriptionListItem *findSubscriptionFromEpisode(entry_ref ref)
+				{
+					BPath path(&ref);
+					path.GetParent(&path);
+					entry_ref parent;
+					get_ref_for_path(path.Path(),&parent);
+					return fChInfo.ValueFor(parent);
+				}
+
+
 };
 
 #endif

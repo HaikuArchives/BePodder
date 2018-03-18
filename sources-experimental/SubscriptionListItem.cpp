@@ -120,18 +120,3 @@ SubscriptionListItem::~SubscriptionListItem(){
 	//nothing to do here?
 }
 
-
-/* TODO deprecated
-void
-SubscriptionListItem::DrawBackground(BRect _rect,
-								BView* parent,
-								bool _is_selected,
-								bool _is_focus ){
-									
-	BRow::DrawBackground(_rect,parent,_is_selected,_is_focus);			
-	if(isNew) {
-		parent->SetHighColor(0,0,0);
-		parent->FillRoundRect(BRect(_rect.left  + 6, _rect.top + 6,_rect.left + 9,_rect.top + 9),1,1);
-	}
-}
-*/

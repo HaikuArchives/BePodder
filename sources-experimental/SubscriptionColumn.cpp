@@ -115,7 +115,7 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	
 	rect.left += 45.0; //55.0;
 	
-	float			width = rect.Width() - (2 * kTEXT_MARGIN);
+	float width = rect.Width() - (2 * kTEXT_MARGIN);
 	
 	if (width != field->Width())
 	{
@@ -136,7 +136,7 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	//debug: 	parent->StrokeRect(rect);
 	rect.top = rect.bottom;
 	rect.bottom = rect.top + hei; //19;   //19
-	parent->SetHighColor(0,0,0);      //(125,125,125)
+	//parent->SetHighColor(0,0,0);      //(125,125,125)
 	
 	DrawString("", parent, rect);
 	//debug: 	parent->StrokeRect(rect);

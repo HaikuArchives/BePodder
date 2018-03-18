@@ -25,14 +25,7 @@ BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAM
 	AddColumn(podcast,0);
 	SetColumnFlags(B_ALLOW_COLUMN_RESIZE );
 	SetSelectionMode(B_SINGLE_SELECTION_LIST);
-	const rgb_color x = {238,185,0,255};    //244,203,63     244,190,23
-	SetColor(B_COLOR_SELECTION,x);//!
-	
-     SetColor(B_COLOR_BACKGROUND,White);
-               
-     SetColor(B_COLOR_ROW_DIVIDER,BeBackgroundGrey);
-               
-               
+
 	CurrentSelection(0);
 	
 	BMessage* selected=new BMessage(CHANNEL_SELECTED);

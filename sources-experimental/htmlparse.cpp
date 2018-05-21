@@ -139,11 +139,11 @@ int parse_html( char * msg , int size )
 								/* properties of UTF-8 chars >= a given value */
 								static struct { unsigned minval; int len; char byte0; }
 								utf8prop[] = {
-									{ 1<<26, 6, 0xfc },
-									{ 1<<21, 5, 0xf8 },
-									{ 1<<16, 4, 0xf0 },
-									{ 1<<11, 3, 0xe0 },
-									{ 1<<7,  2, 0xc0 },
+									{ 1<<26, 6, (char)0xfc },
+									{ 1<<21, 5, (char)0xf8 },
+									{ 1<<16, 4, (char)0xf0 },
+									{ 1<<11, 3, (char)0xe0 },
+									{ 1<<7,  2, (char)0xc0 },
 									{ 0,     1, }
 								};
 					

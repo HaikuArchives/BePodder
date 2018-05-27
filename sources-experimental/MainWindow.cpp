@@ -123,6 +123,7 @@ MainWindow::init(MainController* controller){
 
 	view=new BBox(rect,NULL, B_FOLLOW_ALL, B_WILL_DRAW,B_NO_BORDER);
 	BRect toolBarRect(0, 0, rect.Width(), toolBarHeight);
+	toolBarRect.OffsetBy(0,4);
 
 	fToolBar= new BToolBar(toolBarRect);
 

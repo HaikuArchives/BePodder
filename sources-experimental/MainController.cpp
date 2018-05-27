@@ -1599,7 +1599,7 @@ MainController::InfoExtraDownload(BMessage* msg){
 						BBitmap *scalingBitmap = new BBitmap(BRect(0,0, thumbnailSize * ratioX, thumbnailSize * ratioY), B_RGBA32, true);
 						if (scalingBitmap != NULL) {
 							if (logo->Bounds().Width() < thumbnailSize && logo->Bounds().Height() < thumbnailSize){
-								BView *scalingView = new BView(logo->Bounds(),
+								BView *scalingView = new BView(scalingBitmap->Bounds(),
 									"ScalingView", B_FOLLOW_NONE, B_WILL_DRAW);
 								scalingBitmap->AddChild(scalingView);
 								scalingBitmap->Lock();

@@ -81,6 +81,7 @@ class MainController {
 				void	LoadSettings(const char* type,BMessage* data);
 					
 		private:
+					void	SmoothScale(BBitmap* origin, BBitmap* destination);
 
 					void	SaveGroupSetting(BMessage*);
 					void	LoadGroupSetting(BMessage*);

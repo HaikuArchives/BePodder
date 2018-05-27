@@ -1587,6 +1587,7 @@ MainController::InfoExtraDownload(BMessage* msg){
 						// TODO: if the size of the subscription icon can change this must
 						// be rescaled from the full image
 						// Icon Size is 46 set in SubscriptionListItem
+						const float thumbnailSize = 46;
 						float ratio = logo->Bounds().Width() / logo->Bounds().Height();
 						float ratioX = 1;
 						float ratioY = 1;
@@ -1595,17 +1596,21 @@ MainController::InfoExtraDownload(BMessage* msg){
 						else
 							ratioX *= ratio;
 
-						BBitmap *scalingBitmap = new BBitmap(BRect(0,0, 46 * ratioX, 46 * ratioY), B_RGBA32, true);
+						BBitmap *scalingBitmap = new BBitmap(BRect(0,0, thumbnailSize * ratioX, thumbnailSize * ratioY), B_RGBA32, true);
 						if (scalingBitmap != NULL) {
+							if (logo->Bounds().Width() < thumbnailSize && logo->Bounds().Height() < thumbnailSize){
 								BView *scalingView = new BView(logo->Bounds(),
 									"ScalingView", B_FOLLOW_NONE, B_WILL_DRAW);
 								scalingBitmap->AddChild(scalingView);
 								scalingBitmap->Lock();
-								//scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds(), B_FILTER_BITMAP_BILINEAR);
-								scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds());
+								scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds(), B_FILTER_BITMAP_BILINEAR);
+								//scalingView->DrawBitmap(logo, logo->Bounds(), scalingBitmap->Bounds());
 								scalingBitmap->Unlock();
 								scalingBitmap->RemoveChild(scalingView);
 								delete scalingView;
+							} else {
+								SmoothScale(logo, scalingBitmap);
+							}
 						} else {
 							delete logo;
 							return;
@@ -1626,6 +1631,42 @@ MainController::InfoExtraDownload(BMessage* msg){
 			}
 }
 
+
+void
+MainController::SmoothScale(BBitmap* origin, BBitmap* destination)
+{
+	int x, y, z, cRed, cGreen, cBlue;
+	int ox=0; int oy=0; int ow=0; int oh=0;
+	if(origin == NULL) return;
+	int OwidthSize = (int)(origin->BytesPerRow()/4);
+	ow = (int)origin->Bounds().right+1;
+	oh = (int)origin->Bounds().bottom+1;
+	int w = (int)destination->Bounds().right+1;
+	int h = (int)destination->Bounds().bottom+1;
+
+	if((ow < w) || (oh < h))
+		return; //works only on shrinking.
+
+	int widthSize = (int)(destination->BytesPerRow()/4);
+
+	for(y=0; y < h; y++)
+		for(x=0; x < w; x++)
+		{
+			z=0; cRed=0; cGreen=0; cBlue=0;
+			for(oy = (y*oh)/h; oy < ((y+1)*oh)/h; oy++)
+				for(ox = (x*ow)/w; ox < ((x+1)*ow)/w; ox++)
+				{
+					cRed += ((rgb_color *)origin->Bits())[oy*OwidthSize + ox].red;
+					cGreen += ((rgb_color *)origin->Bits())[oy*OwidthSize + ox].green;
+					cBlue += ((rgb_color *)origin->Bits())[oy*OwidthSize + ox].blue;
+					z++;
+				}
+			((rgb_color *)destination->Bits())[y*widthSize + x].red = cRed/z;
+			((rgb_color *)destination->Bits())[y*widthSize + x].green = cGreen/z;
+			((rgb_color *)destination->Bits())[y*widthSize + x].blue = cBlue/z;
+			((rgb_color *)destination->Bits())[y*widthSize + x].alpha = 255;
+		}
+}
 
 void 
 MainController::StoreStates(){

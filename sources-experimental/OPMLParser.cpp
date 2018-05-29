@@ -18,8 +18,10 @@ OPMLParser::Parse(BString filename){
 	 xmlXPathObjectPtr itemNode = xmlXPathEvalExpression((const xmlChar *)"/opml/head/title", pathCtxt);
 	 if(itemNode != NULL && itemNode->nodesetval != NULL && itemNode->nodesetval->nodeNr ==1){
 		//LOG("OPMLParser", liDebug ,"OPML title: %s",XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children));
-		const char* title = (const char*)XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children);
-		opml_name = title;
+		xmlNodePtr node = itemNode->nodesetval->nodeTab[0]->children;
+		if (node != NULL) {
+			opml_name = (const char*)XML_GET_CONTENT(node);
+		}
 	 };
 
 	 if (pathCtxt != NULL) {

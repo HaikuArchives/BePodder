@@ -14,29 +14,14 @@ OPMLParser::Parse(BString filename){
 	xmlDocPtr doc = xmlCtxtReadFile(ctxt, filename.String(), NULL, XML_PARSE_RECOVER);
 	xmlXPathContextPtr pathCtxt = xmlXPathNewContext(doc);
 	
-	//testing code!
+	 BString opml_name("");
 	 xmlXPathObjectPtr itemNode = xmlXPathEvalExpression((const xmlChar *)"/opml/head/title", pathCtxt);
-	 if (itemNode == NULL) {
-	 	xmlFreeParserCtxt(ctxt);
-		xmlXPathFreeContext(pathCtxt);
-		xmlXPathFreeObject(itemNode);
-		return NULL;
+	 if(itemNode != NULL && itemNode->nodesetval != NULL && itemNode->nodesetval->nodeNr ==1){
+		//LOG("OPMLParser", liDebug ,"OPML title: %s",XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children));
+		const char* title = (const char*)XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children);
+		opml_name = title;
 	 };
-	 //only one channel per rss file!
-	 if(itemNode->nodesetval == NULL || itemNode->nodesetval->nodeNr !=1){
-	 	xmlFreeParserCtxt(ctxt);
-		xmlXPathFreeContext(pathCtxt);
-		xmlXPathFreeObject(itemNode);
-		//LOG("OPMLParser", liDebug ,"No title in opml file..");
-		return NULL;
-	 };
-	 
-	 //LOG("OPMLParser", liDebug ,"OPML title: %s",XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children));
-	 const char* title = (const char*)XML_GET_CONTENT(itemNode->nodesetval->nodeTab[0]->children);
-	 BString opml_name(title != NULL ? title : "");
-	 
-	 
-	 
+
 	 if (pathCtxt != NULL) {
 		xmlXPathObjectPtr itemNode = xmlXPathEvalExpression((const xmlChar *)"/opml/body/outline", pathCtxt);
 		if (itemNode == NULL) {

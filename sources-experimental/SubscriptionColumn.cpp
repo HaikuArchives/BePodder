@@ -2,7 +2,7 @@
 #include <Catalog.h>
 #include <PopUpMenu.h>
 #include <MenuItem.h>
-#include <MessageFormat.h>
+#include <StringFormat.h>
 #include <Window.h>
 #include "Colors.h"
 
@@ -26,9 +26,9 @@ SubscriptionColumn::SubscriptionColumn(const char* title, float width, float min
 void SubscriptionColumn::DrawField(BField* _field, BRect rect, BView* parent){
 
 	SubscriptionField*	field = dynamic_cast<SubscriptionField*>(_field);
-	
+
 	if(field){
-	
+
 		switch(field->Size()){
 			case BIG:
 				DrawBigField(field,rect,parent);
@@ -38,51 +38,51 @@ void SubscriptionColumn::DrawField(BField* _field, BRect rect, BView* parent){
 			break;
 		}
 	}
-	else 
+	else
 		BStringColumn::DrawField(_field,rect,parent);
 
 }
 
-void 
+void
 SubscriptionColumn::DrawSmallField(SubscriptionField* field, BRect rect, BView* parent)
 {
 	parent->PushState();
 	rect.left += kTEXT_MARGIN;
-	
-	float			width = rect.Width() - (2 * kTEXT_MARGIN);
-	
-	BString		out_string(field->String());
-	
 
-	
-	
+	float			width = rect.Width() - (2 * kTEXT_MARGIN);
+
+	BString		out_string(field->String());
+
+
+
+
 	if(	field->GetNewCount() >0)
 		out_string << " (" <<	field->GetNewCount() << ")";
 	else
 		out_string << " "; //really don't like maybe we should find a better solution? to avoid the (1) bug
-		
+
 	if (width != field->Width()  || out_string.Compare(field->String()) !=0 )
 	{
 		parent->TruncateString(&out_string, fTruncate, width + 2);
 		field->SetClippedString(out_string.String());
 		field->SetWidth(width);
 	}
-	
+
 	SetFileStatusColor(field->GetFileStatus(),parent);
 
 	DrawString(field->ClippedString(), parent, rect);
 	parent->PopState();
 }
 
-void 
+void
 SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* parent)
 {
 	//SubscriptionField*	field = static_cast<SubscriptionField*>(_field);
-	
+
 	const BBitmap *bitmap = field->GetBitmap();
-	
+
 	parent->PushState();
-	
+
 	if (bitmap != NULL)
 	{
 		float	x = 0.0;
@@ -112,60 +112,60 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 		parent->DrawBitmap(bitmap, BPoint(x, y));
 		parent->SetDrawingMode(B_OP_OVER);
 	}
-	
+
 	rect.left += 45.0; //55.0;
-	
+
 	float width = rect.Width() - (2 * kTEXT_MARGIN);
-	
+
 	if (width != field->Width())
 	{
 		BString		out_string(field->String());
-		
+
 		parent->TruncateString(&out_string, fTruncate, width + 2);
 		field->SetClippedString(out_string.String());
 		field->SetWidth(width);
 	}
-	
+
 	float hei=rect.Height() /2.0;
 	hei -= 3;
 	rect.top +=3;
-	
+
 	rect.bottom = rect.top + hei; //+ 30;  //19
 	DrawString(field->ClippedString(), parent, rect);
-	
+
 	//debug: 	parent->StrokeRect(rect);
 	rect.top = rect.bottom;
 	rect.bottom = rect.top + hei; //19;   //19
 	//parent->SetHighColor(0,0,0);      //(125,125,125)
-	
+
 	DrawString("", parent, rect);
 	//debug: 	parent->StrokeRect(rect);
-	
-	
+
+
 	// we should show the message "no new items"?
 	if(field->GetNewCount()>0)
 	{
 		BString itemsNumber;
-		static BMessageFormat formatItems(B_TRANSLATE("{0, plural,"
+		static BStringFormat formatItems(B_TRANSLATE("{0, plural,"
 		"=0{no new items}"
 		"=1{1 new item}"
 		"other{# new items}}" ));
 		formatItems.Format(itemsNumber, field->GetNewCount());
 		parent->DrawString(itemsNumber.String());
 	}
-	
-	DrawStatus(field->GetFileStatus(),parent,field->GetFilePercentage());	
-	
+
+	DrawStatus(field->GetFileStatus(),parent,field->GetFilePercentage());
+
 	parent->PopState();
 }
 
-void		
+void
 SubscriptionColumn::DrawStatus(FileStatus status,BView* parent,int32 perc){
-	
+
 	SetFileStatusColor(status,parent);
-	
+
 	switch(status){
-		
+
 		case ERROR:
 			parent->DrawString(B_TRANSLATE("error"));
 		break;
@@ -202,22 +202,22 @@ SubscriptionColumn::DrawStatus(FileStatus status,BView* parent,int32 perc){
 		default:
 		break;
 	}
-	
-	
-	
+
+
+
 }
 
-void		
+void
 SubscriptionColumn::SetFileStatusColor(FileStatus status,BView* parent){
 	switch(status){
-		
+
 		case ERROR:
 			parent->SetHighColor(230,0,0);
 		//	parent->SetLowColor(125,0,0);
-			
+
 		break;
 		case NOT_DOWNLOADED:
-		
+
 		break;
 		case ENQUEQUED:
 			parent->SetHighColor(20,20,220);
@@ -225,33 +225,33 @@ SubscriptionColumn::SetFileStatusColor(FileStatus status,BView* parent){
 		case DOWNLOADING:
 			parent->SetHighColor(0,99,12);   //(0,255,0)
 			//parent->SetLowColor(0,49,12);     //(0.125.0)
-			
+
 		break;
 		case DOWNLOADED:
-			
+
 		break;
 		case STOPPED:
-		
+
 		break;
 		case CONNECTING:
-		 	parent->SetHighColor(83,118,75); //57,93,0);   
+		 	parent->SetHighColor(83,118,75); //57,93,0);
 			//parent->SetLowColor(57,93,0);     //(0.125.0)
-		
+
 		break;
 		case NOT_FOUND:
 			parent->SetHighColor(230,0,0);
 		//	parent->SetLowColor(125,0,0);
-			
+
 		break;
 		case CANT_CONNECT:
 			parent->SetHighColor(230,0,0);
 		//	parent->SetLowColor(125,0,0);
-		
+
 		break;
 		case BAD_FORMAT:
 			parent->SetHighColor(230,0,0);
 		//	parent->SetLowColor(125,0,0);
-			
+
 		break;
 		default:
 		break;
@@ -275,7 +275,7 @@ bool SubscriptionColumn::AcceptsField(const BField *field) const {
 }
 
 
-void		
+void
 SubscriptionColumn::MouseMoved(BColumnListView *parent, BRow *row, BField *field,
 					               BRect field_rect, BPoint point, uint32 buttons, int32 code){
 
@@ -283,24 +283,24 @@ SubscriptionColumn::MouseMoved(BColumnListView *parent, BRow *row, BField *field
 		BMessage* msg = parent->Window()->CurrentMessage();
 		int32 what;
 		if(msg && msg->FindInt32("_msg_data_",&what)==B_OK) {
-			
-			
-			
-			BRect re;	
+
+
+
+			BRect re;
 			BRow* dest=parent->RowAt(point);
 			parent->GetRowRect(dest,&re);
-			
+
 			/*
 				casi possibili di update vecchio
 				a) !=NULL
 				b) != nuovo
 				c) == nuovo E !contine
 			*/
-			
+
 			if(lastDest && (  ( lastDest != dest ) || ( dest && lastDest == dest && !re.Contains(point) )  ))
 							parent->UpdateRow(lastDest);
-			
-			
+
+
 			if(dest && dest != row && re.Contains(point) && lastDest != dest ){
 					parent->ScrollView()->PushState();
 					parent->ScrollView()->SetHighColor(White);
@@ -309,7 +309,7 @@ SubscriptionColumn::MouseMoved(BColumnListView *parent, BRow *row, BField *field
 					parent->ScrollView()->FillRect(re);
 					parent->ScrollView()->PopState();
 			}
-			
+
 			if(re.Contains(point))
 				lastDest=dest;
 			else

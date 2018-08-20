@@ -15,6 +15,7 @@
 *******************************************************/
 #include <stdio.h>
 #include <AppKit.h>
+#include <Cursor.h>
 #include <InterfaceKit.h>
 #include <StorageKit.h>
 #include <String.h>
@@ -23,8 +24,6 @@
 #include <TranslationUtils.h>
 
 #include "SplitPane.h"
-#include "Cursors.h"
-#include <Cursor.h>
 
 BCursor* h_arrow=NULL;
 BCursor* v_arrow=NULL;
@@ -83,9 +82,9 @@ SplitPane::SplitPane(BRect frame, BView *one, BView *two,uint32 Mode):BView(fram
    mirror->DrawbackgroundColor(false);
       
    if(!h_arrow)
-   	h_arrow = new BCursor(c_h_resize_cursor);
+		h_arrow = new BCursor(B_CURSOR_ID_RESIZE_NORTH_SOUTH);
    if(!v_arrow)
-   	v_arrow = new BCursor(c_v_resize_cursor);
+		v_arrow = new BCursor(B_CURSOR_ID_RESIZE_EAST_WEST);
 }
 
 /*******************************************************

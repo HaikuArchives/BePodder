@@ -41,7 +41,6 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/BPEpisode.cpp \
 	../sources-experimental/BPSettingsWindow.cpp \
 	../sources-experimental/ChannelSettingsWindow.cpp \
-	../sources-experimental/Cursors.cpp \
 	../sources-experimental/DirectoryWindow.cpp \
 	../sources-experimental/DownloadListItem.cpp \
 	../sources-experimental/DownloadListView.cpp \

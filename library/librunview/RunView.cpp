@@ -231,7 +231,7 @@ RunView::RunView (
 	
 
   memset (fLines, 0, sizeof (fLines));
-  fURLCursor = new BCursor (URLCursorData);
+  fURLCursor = new BCursor (B_CURSOR_ID_FOLLOW_LINK);
   
   fTheme->ReadLock();
 

@@ -18,7 +18,7 @@
 #define DROP_GROUP		'drgr'
 
 SubscriptionListView::SubscriptionListView(BRect r):
-BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAME_EVENTS|B_NAVIGABLE,B_FANCY_BORDER,true)
+BColumnListView(r,"SubscriptionListView",B_FOLLOW_LEFT_RIGHT, B_WILL_DRAW|B_FRAME_EVENTS|B_NAVIGABLE,B_FANCY_BORDER,false)
 {
 
 	podcast=new SubscriptionColumn(B_TRANSLATE("Subscriptions"),300,36,600,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);

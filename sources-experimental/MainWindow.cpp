@@ -256,8 +256,8 @@ MainWindow::init(MainController* controller){
 	fDownloadMenu->SetTargetForItems(be_app);
 
 	//--------------------------------------------------------451
-	
-	//fStack = new StackedView(BRect(451,52,840,300),"name",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE);
+
+	BRect bounds = view->Bounds();
 	
 	theStack = new EpisodeListView(BRect(451,52,840,300));
 	
@@ -274,7 +274,7 @@ MainWindow::init(MainController* controller){
 
 	BRect k = Bounds();
 
-	dxsplit =new SplitPane(BRect(451,52,860,477),theStack,multyView,B_FOLLOW_ALL);
+	dxsplit =new SplitPane(BRect(451,52,860, bounds.bottom - 10),theStack,multyView,B_FOLLOW_ALL);
 	dxsplit->SetViewInsetBy(BPoint(0,0));
 	dxsplit->SetAlignment(B_HORIZONTAL);
 	dxsplit->SetViewColor(bgcolor);
@@ -282,7 +282,7 @@ MainWindow::init(MainController* controller){
 	dxsplit->SetMinSizeOne(BPoint(0,84));
 	dxsplit->SetMinSizeTwo(BPoint(0,161));
 		
-	split =new SplitPane(BRect(10,52,860,477),sx_list,dxsplit,B_FOLLOW_ALL);
+	split =new SplitPane(BRect(10,52,860,bounds.bottom - 10),sx_list,dxsplit,B_FOLLOW_ALL);
 	split->SetViewInsetBy(BPoint(0,0));
 	split->SetViewColor(bgcolor);
 	split->SetBarPosition(BPoint(k.Width()/2.0f-170, k.Height()/2.0f));

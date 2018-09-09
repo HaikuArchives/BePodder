@@ -1005,7 +1005,7 @@ void
 MainController::ParseArchive()
 {
 	BPath path;
-	find_directory (B_USER_CACHE_DIRECTORY, &path, true);
+	find_directory (B_USER_SETTINGS_DIRECTORY, &path, true);
 	path.Append("BePodder/archive");
 	create_directory( path.Path(), 755 );
 

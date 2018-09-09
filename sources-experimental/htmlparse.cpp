@@ -211,6 +211,6 @@ int parse_html( char * msg , int size )
 	strncpy(msg, copy,copy_pos);
 	
 
-	delete copy;
+	delete[] copy;
 	return copy_pos;
 }

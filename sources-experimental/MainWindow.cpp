@@ -396,9 +396,7 @@ MainWindow::CreateChannelInfoView(){
 float
 MainWindow::CreateMenuBar(){
 
-	BMenuBar *poddermenubar = new BMenuBar(BRect(0,0,1,1),"Poddermenubar"); //,B_FOLLOW_RIGHT | B_FOLLOW_TOP,B_ITEMS_IN_ROW,true);
-
-	
+	BMenuBar *poddermenubar = new BMenuBar(BRect(0,0,1,1),"Poddermenubar");
 	BMenu  *podderfile = new BMenu(B_TRANSLATE("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About BePodder"),new BMessage(B_ABOUT_REQUESTED),0,0);

@@ -16,7 +16,7 @@
 #include <LayoutBuilder.h>
 #include <ScrollBar.h>
 #include <StorageKit.h>
-
+#include <StringForSize.h>
 #include "ColumnListView.h"
 #include "ColumnTypes.h"
 
@@ -75,12 +75,6 @@
 	#define		EXPORT_OPML		'exop'
 	#define 	PARSE_OPML		'paop'
 	#define     WRITE_OPML		'wopm'
-
-// file size:
-	const int64 	kKB_SIZE				= 1024;
-	const int64 	kMB_SIZE				= 1048576;
-	const int64 	kGB_SIZE				= 1073741824;
-	const int64 	kTB_SIZE				= kGB_SIZE * kKB_SIZE;
 
 // Singletons:
 
@@ -1268,55 +1262,10 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 			bottom << " (" << filetype<< ") " ;
 		
 		
-		off_t* len=0;
-		if( archive->GetData(ITEM_ENCLOSURE_LENGTH,(const void**)&len)>0 && len>0 ){		 
-				off_t		size=*len;
-				char		str[256];
-				if (size < kKB_SIZE)
-				{
-					sprintf(str, "%Ld bytes", size);
-				}
-				else
-				{
-					const char*	suffix;
-					float 		float_value;
-					if (size >= kTB_SIZE)
-					{
-						suffix = "TiB";
-						float_value = (float)size / kTB_SIZE;
-					}
-					else if (size >= kGB_SIZE)
-					{
-						suffix = "GiB";
-						float_value = (float)size / kGB_SIZE;
-					}
-					else if (size >= kMB_SIZE)
-					{
-						suffix = "MiB";
-						float_value = (float)size / kMB_SIZE;
-					}
-					else
-					{
-						suffix = "KiB";
-						float_value = (float)size / kKB_SIZE;
-					}
-					
-					sprintf(str, "%.2f %s", float_value, suffix);
-					// strip off an insignificant zero so we don't get readings
-					// such as 1.00
-					char *period = 0;
-					char *tmp (NULL);
-					for (tmp = str; *tmp; tmp++)
-					{
-						if (*tmp == '.')
-							period = tmp;
-					}
-					if (period && period[1] && period[2] == '0')
-						// move the rest of the string over the insignificant zero
-						for (tmp = &period[2]; *tmp; tmp++)
-							*tmp = tmp[1];
-			}
-			bottom << "  [" << str << "]" ;
+		off_t* len = 0;
+		if (archive->GetData(ITEM_ENCLOSURE_LENGTH,(const void**)&len)>0 && len>0){
+			char sizeString[256];
+			bottom << " [" << string_for_size(*len, sizeString, sizeof(sizeString)) << "]";
 		}
 		fItemText->Append(bottom.String(),C_TEXT,C_ACTION,F_TIMESTAMP);
 		//fItemText->Append(" test.mp3 1234Kb (audio/mp3)  downloaded",C_TEXT,C_ACTION,F_TIMESTAMP);

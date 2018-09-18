@@ -1218,18 +1218,19 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 		fItemText->Append(" ",C_TEXT,C_ACTION,F_TIMESTAMP);
 	
 	fItemText->Append("\n",C_TEXT,C_TEXT,F_TEXT);
-	
-	if(archive->GetDataString(ITEM_TITLE) !="")	
-		fItemText->Append(archive->GetDataString(ITEM_TITLE).String(),C_TEXT,C_TEXT,F_ACTION);
-	
-	if(archive->GetDataString(ITEM_LINK) != ""){
-		fItemText->AppendURL("  [www]",archive->GetDataString(ITEM_LINK) .String(),F_TEXT);
+
+	if(archive->GetDataString(ITEM_TITLE) !="")	{
+		if(archive->GetDataString(ITEM_LINK) != "")
+			fItemText->AppendURL(archive->GetDataString(ITEM_TITLE).String(),archive->GetDataString(ITEM_LINK) .String(),F_ACTION);
+		else
+			fItemText->Append(archive->GetDataString(ITEM_TITLE).String(),C_TEXT,C_TEXT,F_ACTION);
 	}
+
 	fItemText->Append("\n",C_TEXT,C_TEXT,F_TEXT);
 
 	const void*	buffer = NULL;
 	ssize_t m_size = archive->GetData(ITEM_DESCRIPTION,&buffer);
-		
+
 	if( m_size>0){
 		//do what you need to do.
 		char* copybuffer=(char*)malloc(m_size);
@@ -1356,13 +1357,21 @@ MainWindow::ShowChannelDescription(MemoryArchive* archive){
 	
 	fChannelText->Clear();
 	fChannelText->Append("\n",C_TEXT,C_TEXT,F_TEXT);	
-	
+/*
 	if(archive->GetDataString(CHANNEL_TITLE) != "")
 		fChannelText->Append(archive->GetDataString(CHANNEL_TITLE).String(),C_TEXT,C_TEXT,F_ACTION);
 
 	if(archive->GetDataString(CHANNEL_WEBLINK) != ""){
 		fChannelText->AppendURL("  [www]",archive->GetDataString(CHANNEL_WEBLINK) .String(),F_TEXT);
 	}
+*/
+	if(archive->GetDataString(CHANNEL_TITLE) !="")	{
+		if(archive->GetDataString(CHANNEL_WEBLINK) != "")
+			fChannelText->AppendURL(archive->GetDataString(CHANNEL_TITLE).String(),archive->GetDataString(CHANNEL_WEBLINK) .String(),F_ACTION);
+		else
+			fChannelText->Append(archive->GetDataString(CHANNEL_TITLE).String(),C_TEXT,C_TEXT,F_ACTION);
+	}
+
 	fChannelText->Append("\n",C_TEXT,C_TEXT,F_TEXT);	
 
 	const void *	buffer = NULL;

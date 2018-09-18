@@ -1,17 +1,13 @@
 #include "FileStatusColumn.h"
+
 #include <Catalog.h>
+#include <StringForRate.h>
 
 #include "Utils.h"
 #include "stdio.h"
 
 #define kTEXT_MARGIN	8
 #define kSPACE_TEXT		0
-
-
-const int64 	kKB_SIZE				= 1024;
-const int64 	kMB_SIZE				= 1048576;
-const int64 	kGB_SIZE				= 1073741824;
-const int64 	kTB_SIZE				= kGB_SIZE * kKB_SIZE;
 
 		static BBitmap*			fBar1 = NULL; 
 		static BBitmap*			fBar2 = NULL;
@@ -97,75 +93,26 @@ void	FileStatusField::SetFileStatus(FileStatus status)
 void				
 FileStatusField::SetFilePercentage(int per,float speed)
 {
-	if(fPercentage==per) return;
+	if (fPercentage == per)
+		return;
 	
 	fWidth = 0;
 	SwapBitmap();
 	fClippedString.SetTo("");
 	fPercentage=per;
-	
-	if(fStatus == STOPPED ||
-	   fStatus == DOWNLOADING )
-	   {
-	   		BString sp;
-	   		sp << per << "% " ;
-	   	
-	   		if(speed>0 &&  fStatus == DOWNLOADING )
-	   		{
-				
-				float		size=speed;
-				char		str[256];
-				if (size < kKB_SIZE)
-				{
-					sprintf(str, "%.0f b/s", size);
-				}
-				else
-				{
-					const char*	suffix;
-					float 		float_value;
-					if (size >= kTB_SIZE)
-					{
-						suffix = "TB/s";
-						float_value = (float)size / kTB_SIZE;
-					}
-					else if (size >= kGB_SIZE)
-					{
-						suffix = "GB/s";
-						float_value = (float)size / kGB_SIZE;
-					}
-					else if (size >= kMB_SIZE)
-					{
-						suffix = "MB/s";
-						float_value = (float)size / kMB_SIZE;
-					}
-					else
-					{
-						suffix = "k/s";
-						float_value = (float)size / kKB_SIZE;
-					}
-					
-					sprintf(str, "%.2f %s", float_value, suffix);
-					// strip off an insignificant zero so we don't get readings
-					// such as 1.00
-					char *period = 0;
-					char *tmp (NULL);
-					for (tmp = str; *tmp; tmp++)
-					{
-						if (*tmp == '.')
-							period = tmp;
-					}
-					if (period && period[1] && period[2] == '0')
-						// move the rest of the string over the insignificant zero
-						for (tmp = &period[2]; *tmp; tmp++)
-							*tmp = tmp[1];
-		   		
-	   		
-	   			sp << str << " "; //speed; 
-	   		}
-	   		sp << fOriginalStatus;
-	   		fString = sp;
-	   }	
-	   }
+
+	if(fStatus == STOPPED || fStatus == DOWNLOADING) {
+		BString sp;
+		sp << per << "% ";
+
+		if(speed>0 &&  fStatus == DOWNLOADING)
+		{
+			char rateString[32];
+			sp << string_for_rate(speed, rateString, sizeof(rateString)) << " ";
+		}
+		sp << fOriginalStatus;
+		fString = sp;
+	}
 }
 
 void		
@@ -283,9 +230,10 @@ FileStatusColumn::DrawBar(BView* parent,BRect rect,int number,BBitmap* fBar)
 	parent->SetBlendingMode( B_PIXEL_ALPHA, B_ALPHA_OVERLAY);
 	
 	BRect graphRect(rect);
-	graphRect.right = graphRect.left+99;
-	graphRect.top +=2;
-	graphRect.bottom = graphRect.top + 11;
+	graphRect.right = graphRect.left + 99;
+	float offsetY = (graphRect.Height() - 10) / 2;
+	graphRect.top += offsetY;
+	graphRect.bottom -= offsetY;
 	
 	parent->DrawBitmap(fBack,graphRect); //BPoint(rect.right,rect.top));
 	

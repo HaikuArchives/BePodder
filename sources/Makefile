@@ -115,7 +115,7 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS = be columnlistview localestub translation tracker xml2 curl $(STDCPPLIBS) \
+LIBS = be columnlistview localestub translation tracker xml2 curl shared $(STDCPPLIBS) \
 	../library/libfunky/libfunky.a \
 	../library/librunview/librunview.a \
 	../library/libfish/libfish.a
@@ -171,7 +171,7 @@ SYMBOLS :=
 
 #	Includes debug information, which allows the binary to be debugged easily.
 #	If set to "TRUE", debug info will be created.
-DEBUGGER := TRUE
+DEBUGGER := 
 
 #	Specify any additional compiler flags to be used.
 COMPILER_FLAGS = -Wno-sign-compare -Wno-overloaded-virtual \

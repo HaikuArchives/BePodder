@@ -19,12 +19,7 @@
 #define B_TRANSLATION_CONTEXT "IABPDownload"
 
 IABPDownloadRemove::IABPDownloadRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-remove.png"));
-	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
-	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Remove from this list")); 
+	SetLabel(B_TRANSLATE("Remove from this list"));
 }
 			 	 
 BString 
@@ -53,17 +48,12 @@ IABPDownloadRemove::Shortcut(uint32 *modifiers) const {
 
 
 IABPDownloadStop::IABPDownloadStop(MainController* controller, MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("stopped-micro.png"));
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-stop.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-stop-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Stop download")); 
+	SetLabel(B_TRANSLATE("Stop download"));
 }
 			 	 
 BString 
 IABPDownloadStop::GetDescription(){
- 	  return B_TRANSLATE("Stop the item download");
+	return B_TRANSLATE("Stop the item download");
 }
 			 	  
 
@@ -92,17 +82,12 @@ IABPDownloadStop::Shortcut(uint32 *modifiers) const {
 
 
 IABPDownloadDownload::IABPDownloadDownload(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("download-micro.png"));
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-download.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-download-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("(Re)start download")); 
+	SetLabel(B_TRANSLATE("(Re)start download"));
 }
 			 	 
 BString 
 IABPDownloadDownload::GetDescription(){
- 	  return B_TRANSLATE("Download the selected episode");
+	return B_TRANSLATE("Download the selected episode");
 }
 			 	  
 
@@ -130,17 +115,12 @@ IABPDownloadDownload::Shortcut(uint32 *modifiers) const {
 
 
 IABPDownloadPlay::IABPDownloadPlay(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("play-micro.png"));
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-play.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-play-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Play enclosure")); 
+	SetLabel(B_TRANSLATE("Play enclosure"));
 }
 			 	 
 BString 
 IABPDownloadPlay::GetDescription(){
- 	  return B_TRANSLATE("Play the selected episode");
+	return B_TRANSLATE("Play the selected episode");
 }
 			 	  
 
@@ -169,13 +149,7 @@ IABPDownloadPlay::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPDownloadFindItem::IABPDownloadFindItem(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			
-	SetIcon(IAction::SIZE_16,LoadIcon("emblem-jump.png"));
-	//SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
-	//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
-	
 	SetLabel(B_TRANSLATE("Find this item"));
-			 	  
 }
 			 	 
 BString 

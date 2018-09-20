@@ -23,18 +23,12 @@
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPGroupCheck::IABPGroupCheck(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("refresh-micro.png"));
-	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("refresh-channel-file.png"));
-	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("refresh-channel-file-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Check channels of group")); 
-			 	  
+	SetLabel(B_TRANSLATE("Check channels of group"));
 }
 			 	 
 BString 
 IABPGroupCheck::GetDescription(){
- 	  return B_TRANSLATE("Check the podcasts of the selected group for new items");
+	return B_TRANSLATE("Check the podcasts of the selected group for new items");
 }
 			 	  
 
@@ -64,13 +58,12 @@ IABPGroupCheck::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPGroupAdd::IABPGroupAdd(MainController* controller,MainWindow* view):IActionBP(controller,view){
-   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
-		SetLabel(B_TRANSLATE("Add group"));
+	SetLabel(B_TRANSLATE("Add group"));
 }
 			 	 
 BString 
 IABPGroupAdd::GetDescription(){
- 	  return B_TRANSLATE("Add a new group");
+	return B_TRANSLATE("Add a new group");
 }
 			 	  
 
@@ -91,14 +84,12 @@ IABPGroupAdd::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPGroupRename::IABPGroupRename(MainController* controller,MainWindow* view):IActionBP(controller,view){
- 	   		
-   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png")); //fix this icon..
-		SetLabel(B_TRANSLATE("Rename group"));
+	SetLabel(B_TRANSLATE("Rename group"));
 }
 			 	 
 BString 
 IABPGroupRename::GetDescription(){
- 	  return B_TRANSLATE("Rename the selected group");
+	return B_TRANSLATE("Rename the selected group");
 }
 			 	  
 
@@ -126,16 +117,12 @@ IABPGroupRename::Shortcut(uint32 *modifiers) const {
 
 
 IABPGroupRemove::IABPGroupRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("delete-micro.png"));
-	 	   		//SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
-	 	  		//SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
-				SetLabel(B_TRANSLATE("Remove group"));
+	SetLabel(B_TRANSLATE("Remove group"));
 }
 			 	 
 BString 
 IABPGroupRemove::GetDescription(){
- 	  return B_TRANSLATE("Remove a group and delete all the channels");
+	return B_TRANSLATE("Remove a group and delete all the channels");
 }
 			 	  
 
@@ -146,31 +133,31 @@ IABPGroupRemove::Perform(BMessage*){
 	if(!group) return B_ERROR;
 	
 	int32 count = fView->CountSubscriptionOfGroup(group);
-	
+	int32 result = 0;
 	LOCKWINDOW
 	
 	if(count>0) {
 		BString text;
-		text << B_TRANSLATE("alert1_fix.."); // TODO conversion not present
+		text << B_TRANSLATE("You are going to delete a group with..."); // TODO conversion not present
 		text << "\n\n" << count << " " << "channels" << "\n";
 			
-		BPAlert* remove = new BPAlert("Remove a group", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
-		int32 result=remove->Go(); //sync..
+		BPAlert* remove = new BPAlert("Remove a group", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png")); // TODO change image
+		result = remove->Go(); //sync..
 
-		if(result==0){
-			BPAlert* wait = new BPAlert("Remove a group", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
+		if(result == 0) {
+			BPAlert* wait = new BPAlert("Remove a group", B_TRANSLATE("\nRemoving..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png")); // TODO change image
 			wait->Go(NULL); //async..
 			
 			for(int i=0;i<count;i++){
-					SubscriptionListItem* row=fView->GetSubscriptionOfGroup(i,group);
+					SubscriptionListItem* row=fView->GetSubscriptionOfGroup(0, group);
 					if(row)
 						fController->DeleteChannel(row->fRef);
 			}
 			wait->PostMessage(B_QUIT_REQUESTED);
 		}
 	}
-	
-	fController->RemoveGroup(group->GroupName());
+	if (result == 0)
+		fController->RemoveGroup(group->GroupName());
 	
 	UNLOCKWINDOW
 

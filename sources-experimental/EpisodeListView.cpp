@@ -11,7 +11,6 @@
 #include "EpisodeListItem.h"
 #include "FileStatusColumn.h"
 #include "Colors.h"
-#include "ImageButton.h"
 
 class StatusView :  public BView {
 		 public:	

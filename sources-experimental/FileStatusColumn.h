@@ -30,18 +30,14 @@ class FileStatusField : public BField
 				int					GetPercentage(){return fPercentage;}
 				//bool				HasChanged() { return fChanged; }
 				//void				SetChanged(bool val) { fChanged = val;}
-				BBitmap*		Bar(){ return fBar; }				
 	private:
-					
-		void		SwapBitmap();
-						
+
 		float				fWidth;
 		BString				fString;
 		BString				fClippedString;
 		BString				fOriginalStatus;
 		FileStatus			fStatus;
-		int						fPercentage;
-		BBitmap			*fBar;
+		int					fPercentage;
 
 };
 
@@ -61,16 +57,9 @@ class FileStatusColumn : public BTitledColumn
 												 BField* field2);
 		virtual	bool		AcceptsField        (const BField* field) const;
 
-
-		//void		SwapBitmap();
-
-
-		
-
 	private:
-		void		DrawBar(BView* parent,BRect rect,int perc,BBitmap* fBar);
-		uint32				fTruncate;
-		//BBitmap*			fBar;
+		void		DrawBar(BView* parent,BRect rect,int perc);
+		uint32		fTruncate;
 		
 };
 

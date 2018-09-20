@@ -28,7 +28,6 @@
 
 #include "MemoryArchive.h"
 #include "htmlparse.h"
-#include "ImageButton.h"
 #include <Bitmap.h>
 #include "DownloadManager.h"
  
@@ -697,7 +696,6 @@ void MainWindow::MessageReceived(BMessage* msg)
 			GroupItem*	group=dynamic_cast<GroupItem*>(sx_list->CurrentSelection());
 			if(group)
 					SelectGroup(group,msg->FindInt32("buttons"));
-			UpdateToolBar();
 		}	
 		break;
 		
@@ -1054,6 +1052,7 @@ MainWindow::SelectedSubscription(SubscriptionListItem* row, int32 bottons){
 				sx_list->SelectionMessage()->ReplaceInt32("buttons",0);
 				fChannelMenu->Go(p2, true, true, true);
 		}
+		UpdateToolBar();
 }
 
 void	
@@ -1080,6 +1079,7 @@ MainWindow::SelectGroup(GroupItem* grp, int32 bottons){
 				sx_list->SelectionMessage()->ReplaceInt32("buttons",0);
 				fGroupMenu->Go(p2, true, true, true);
 		}
+		UpdateToolBar();
 }
 
 void			

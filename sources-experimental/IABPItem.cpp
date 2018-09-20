@@ -19,18 +19,14 @@
 #define B_TRANSLATION_CONTEXT "IABPItem"
 
 IABPItemRemove::IABPItemRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
-
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-delete.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-delete-down.png"));
-				SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-delete", 16));
-				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-delete", 24));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Remove item")); 
+	SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-delete", 16));
+	SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-delete", 24));
+	SetLabel(B_TRANSLATE("Remove item"));
 }
 			 	 
 BString 
 IABPItemRemove::GetDescription(){
- 	  return B_TRANSLATE("Delete the item and the enclosure");
+	return B_TRANSLATE("Delete the item and the enclosure");
 }
 			 	  
 
@@ -106,14 +102,8 @@ IABPItemRemove::Shortcut(uint32 *modifiers) const {
 
 
 IABPItemStop::IABPItemStop(MainController* controller,MainWindow* view):IActionBP(controller,view){
-
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-stop.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-stop-down.png"));
-
-				SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-stop", 16));
-				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-stop", 24));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Stop download")); 
+	SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-stop", 24));
+	SetLabel(B_TRANSLATE("Stop download"));
 }
 			 	 
 BString 
@@ -148,14 +138,9 @@ IABPItemStop::Shortcut(uint32 *modifiers) const {
 
 
 IABPItemDownload::IABPItemDownload(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-
-				SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-download", 16));
-
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-download.png"));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-download-down.png"));
-				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-download", 24));
-	 	  		SetLabel(B_TRANSLATE("(Re)start download")); 
+//		SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-download", 16));
+		SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-download", 24));
+		SetLabel(B_TRANSLATE("(Re)start download"));
 }
 			 	 
 BString 
@@ -190,14 +175,9 @@ IABPItemDownload::Shortcut(uint32 *modifiers) const {
 
 
 IABPItemPlay::IABPItemPlay(MainController* controller,MainWindow* view):IActionBP(controller,view){
-
-	 	   		SetIcon(IAction::SIZE_48,LoadIcon("emblem-play.png"));
-
-				SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-play", 16));
-				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-play", 24));
-	 	  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("emblem-play-down.png"));
-	 	  		
-	 	  		SetLabel(B_TRANSLATE("Play enclosure")); 
+	SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-play", 16));
+	SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-play", 24));
+	SetLabel(B_TRANSLATE("Play enclosure"));
 }
 			 	 
 BString 
@@ -231,13 +211,7 @@ IABPItemPlay::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPItemWWW::IABPItemWWW(MainController* controller,MainWindow* view):IActionBP(controller,view){
-			 	   		
-   		SetIcon(IAction::SIZE_16,LoadIcon("www-micro.png"));
-   		SetIcon(IAction::SIZE_48,LoadIcon("www-channel-file.png"));
-  		SetIcon(IAction::SIZE_48_PRESSED,LoadIcon("www-channel-file-down.png"));
-  		
-  		SetLabel(B_TRANSLATE("Open webpage")); 
-			 	  
+	SetLabel(B_TRANSLATE("Open webpage"));
 }
 			 	 
 BString 

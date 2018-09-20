@@ -1,6 +1,7 @@
 #include "FileStatusColumn.h"
 
 #include <Catalog.h>
+#include <ControlLook.h>
 #include <StringForRate.h>
 
 #include "Utils.h"
@@ -8,10 +9,6 @@
 
 #define kTEXT_MARGIN	8
 #define kSPACE_TEXT		0
-
-		static BBitmap*			fBar1 = NULL; 
-		static BBitmap*			fBar2 = NULL;
-		static BBitmap*			fBack = NULL;
 
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "FileStatusColumn"
@@ -25,22 +22,17 @@ FileStatusField::FileStatusField(FileStatus status)
 {
 	SetFileStatus(status);
 	SetFilePercentage(0);
-	SwapBitmap();
 }
 
-void	FileStatusField::SetFileStatus(FileStatus status)
+void
+FileStatusField::SetFileStatus(FileStatus status)
 {
+	if(status!=fStatus) {
 
-		
-		if(status!=fStatus)
-		{
-		
 		fWidth = 0;
 		fClippedString.SetTo("");
 		fStatus=status;
-		SwapBitmap();
 		
-						
 		switch(fStatus){
 				case NO_ENCLOSURE:
 					fOriginalStatus.SetTo(" ");		
@@ -95,9 +87,12 @@ FileStatusField::SetFilePercentage(int per,float speed)
 {
 	if (fPercentage == per)
 		return;
-	
+
+	if (per < 0)
+		per = 0;
+
 	fWidth = 0;
-	SwapBitmap();
+
 	fClippedString.SetTo("");
 	fPercentage=per;
 
@@ -115,13 +110,7 @@ FileStatusField::SetFilePercentage(int per,float speed)
 	}
 }
 
-void		
-FileStatusField::SwapBitmap(){
-	
-	if(fBar==fBar1) fBar=fBar2;
-		else fBar=fBar1;
-	
-}
+
 
 //--------------------------------------------------------------------
 
@@ -179,9 +168,7 @@ FileStatusColumn::FileStatusColumn(const char* title, float width, float minWidt
 	:BTitledColumn(title, width, minWidth, maxWidth, align),
 	fTruncate(truncate)
 {
-		if(fBar1  ==NULL) fBar1=LoadIcon("fullbar1.png");
-		if(fBar2==NULL) fBar2=LoadIcon("fullbar2.png");
-		if(fBack==NULL) fBack=LoadIcon("graybar.png");
+
 }
 
 
@@ -211,8 +198,7 @@ void FileStatusColumn::DrawField(BField* _field, BRect rect, BView* parent)
 	}
 	
 	if(basePoint>0){
-	
-		DrawBar(parent,rect,field->GetPercentage(),field->Bar());
+		DrawBar(parent,rect,field->GetPercentage());
 	}	
 	rect.left +=basePoint;
 	DrawString(field->ClippedString(), parent, rect);
@@ -221,30 +207,27 @@ void FileStatusColumn::DrawField(BField* _field, BRect rect, BView* parent)
 
 	
 void
-FileStatusColumn::DrawBar(BView* parent,BRect rect,int number,BBitmap* fBar)
+FileStatusColumn::DrawBar(BView* parent,BRect rect,int number)
 {
 
 	
 	parent->PushState();
-	parent->SetDrawingMode( B_OP_ALPHA );
-	parent->SetBlendingMode( B_PIXEL_ALPHA, B_ALPHA_OVERLAY);
+	//parent->SetDrawingMode( B_OP_ALPHA );
+	//parent->SetBlendingMode( B_PIXEL_ALPHA, B_ALPHA_OVERLAY);
 	
 	BRect graphRect(rect);
-	graphRect.right = graphRect.left + 99;
-	float offsetY = (graphRect.Height() - 10) / 2;
+	graphRect.left += 2;
+	graphRect.right = graphRect.left + 99 + 1;
+	float offsetY = (graphRect.Height() - 12) / 2;
 	graphRect.top += offsetY;
 	graphRect.bottom -= offsetY;
-	
-	parent->DrawBitmap(fBack,graphRect); //BPoint(rect.right,rect.top));
-	
 
-	BRect sourceRect(fBar->Bounds());
-	sourceRect.right =  sourceRect.left + number;
-		
-	BRect destRect(graphRect);
-	destRect.right = destRect.left + number; 
-	parent->DrawBitmap(fBar,sourceRect,destRect); //sourceRect,destRect);
-	
+	number = number > 0 ? number : 1;
+
+	be_control_look->DrawStatusBar(parent, graphRect, graphRect,
+		ui_color(B_LIST_BACKGROUND_COLOR), ui_color(B_STATUS_BAR_COLOR),
+		graphRect.left + number);
+
 	parent->PopState();
 	
 }

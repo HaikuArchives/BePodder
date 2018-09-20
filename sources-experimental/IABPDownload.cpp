@@ -149,7 +149,7 @@ IABPDownloadPlay::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPDownloadFindItem::IABPDownloadFindItem(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	SetLabel(B_TRANSLATE("Find this item"));
+	SetLabel(B_TRANSLATE("Find this episode"));
 }
 			 	 
 BString 

@@ -21,12 +21,12 @@
 IABPItemRemove::IABPItemRemove(MainController* controller,MainWindow* view):IActionBP(controller,view){
 	SetIcon(IAction::SIZE_16,ResourceVectorToBitmap("emblem-delete", 16));
 	SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("emblem-delete", 24));
-	SetLabel(B_TRANSLATE("Remove item"));
+	SetLabel(B_TRANSLATE("Remove episode"));
 }
 			 	 
 BString 
 IABPItemRemove::GetDescription(){
-	return B_TRANSLATE("Delete the item and the enclosure");
+	return B_TRANSLATE("Delete the episode and the enclosure");
 }
 			 	  
 
@@ -48,14 +48,14 @@ IABPItemRemove::Perform(BMessage*){
 
 
 	BString text;
-	text << B_TRANSLATE("\nYou are going to remove the selected item.\n\n"
+	text << B_TRANSLATE("\nYou are going to remove the selected episode.\n\n"
 		"Are you sure?\n(You will lose any enclosed file if there are any.)");
 	if(selection.CountItems() == 1) 
 		text << "\n\n" << firstTitle << "\n";
 	else
 		text << "\n\n" << selection.CountItems() << " " << "episodes\n";
 		
-	BPAlert* remove = new BPAlert("Remove an item", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+	BPAlert* remove = new BPAlert("Remove an episode", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
 	int32 result=remove->Go(); //sync..
 	
 	LOCKWINDOW
@@ -65,7 +65,7 @@ IABPItemRemove::Perform(BMessage*){
 	
 	if(result==0){
 		
-		BPAlert* wait = new BPAlert("Remove a item", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
+		BPAlert* wait = new BPAlert("Remove an episode", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
 		wait->Go(NULL); //async..
 		
 		for(int i=0;i<selection.CountItems();i++){

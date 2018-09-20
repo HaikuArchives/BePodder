@@ -17,7 +17,7 @@
 #define B_TRANSLATION_CONTEXT "DL-Episode-ListView"
 
 DownloadListView::DownloadListView(BRect r):
-BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FANCY_BORDER,true)
+BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAIN_BORDER,true)
 {
 	BColumn *icon = new BBitmapColumn(B_TRANSLATE("Icon"),16,16,16,B_ALIGN_CENTER);
 	BColumn *channel = new BStringColumn(B_TRANSLATE("Subscription"),140,10,500,5,B_ALIGN_LEFT);
@@ -46,19 +46,11 @@ BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_FAN
 	 
 	fCounter = new BStringView(BRect(2,1,98,B_H_SCROLL_BAR_HEIGHT-2),"","");
 	fCounter->SetFontSize(10);
-	fCounter->SetViewColor( ui_color(B_PANEL_BACKGROUND_COLOR) );
+	fCounter->SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR) );
 	
 	sview->AddChild(fCounter);
 	AddStatusView(sview);
-	
-	const rgb_color greyBox = {255,234,130 }; 
-	SetColor(B_COLOR_SELECTION,greyBox);
-	SetColor(B_COLOR_SELECTION_TEXT,Color(B_COLOR_TEXT));
-	
-	const rgb_color white={255,255,255,255};
-    SetColor(B_COLOR_BACKGROUND,white);
-               
-	
+
 	SetSortingEnabled(true);
 	ClearSortColumns();
 	//SetSortColumn(ColumnAt(index),true,true);

@@ -230,13 +230,13 @@ MainWindow::init(MainController* controller){
 	fDownloadMenu = new BPopUpMenu("DownMenu");
 	fDownloadMenu->SetFont(font);
 	
-	const	 int COUNT3 = 5;
+	const	 int COUNT3 = 5 - 1; // remove unimplemented find item action
 	const int downBar[COUNT3] = 
 					{
 						IACTION_DOWNLOAD_PLAY,
 						IACTION_DOWNLOAD_STOP,	
 						IACTION_DOWNLOAD_DOWNLOAD,
-						IACTION_DOWNLOAD_FIND_ITEM,
+//						IACTION_DOWNLOAD_FIND_ITEM,
 						IACTION_DOWNLOAD_REMOVE
 					};
 					

@@ -11,12 +11,12 @@ class EpisodeListView : public BColumnListView  {
 	
 	public:
 			 						EpisodeListView(BRect r);
-			
+
 				void				SelectionChanged();
 				void				AddRow(BRow*, BRow *parent = 0);
 				void				AddRow(BRow*, int32 index, BRow *parent = 0);
 				void				RemoveRow(BRow*);
-
+				void				Clear();
 	private:
 				void		UpdateCount();
 				StatusView*		fStatusView;

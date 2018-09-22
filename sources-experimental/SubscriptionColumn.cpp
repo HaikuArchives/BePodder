@@ -116,7 +116,7 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	rect.left += 45.0; //55.0;
 
 	float width = rect.Width() - (2 * kTEXT_MARGIN);
-
+	parent->SetFont(be_bold_font);
 	if (width != field->Width())
 	{
 		BString		out_string(field->String());
@@ -141,9 +141,10 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	DrawString("", parent, rect);
 	//debug: 	parent->StrokeRect(rect);
 
-
+	parent->SetFont(be_plain_font);
 	// we should show the message "no new items"?
-	if(field->GetNewCount()>0)
+	if(field->GetNewCount()>0 && (field->GetFileStatus() == DOWNLOADED
+		|| field->GetFileStatus() == STOPPED))
 	{
 		BString itemsNumber;
 		static BStringFormat formatItems(B_TRANSLATE("{0, plural,"
@@ -153,8 +154,8 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 		formatItems.Format(itemsNumber, field->GetNewCount());
 		parent->DrawString(itemsNumber.String());
 	}
-
-	DrawStatus(field->GetFileStatus(),parent,field->GetFilePercentage());
+	else
+		DrawStatus(field->GetFileStatus(),parent,field->GetFilePercentage());
 
 	parent->PopState();
 }

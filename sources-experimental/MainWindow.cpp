@@ -439,7 +439,7 @@ MainWindow::CreateMenuBar(){
 	podderview->AddItem(fullscreenitem);
 	fullscreenitem->SetMarked(false);
 	
-	notoolbar= new BMenuItem(B_TRANSLATE("Toolbar"),new BMessage(SHOW_TOOLBAR),'T',0);
+	notoolbar= new BMenuItem(B_TRANSLATE("Toolbar"),new BMessage(SHOW_TOOLBAR),'B',0);
 	podderview->AddItem(notoolbar);
 	notoolbar->SetMarked(true);
 

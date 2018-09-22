@@ -6,6 +6,7 @@
 #include <Catalog.h>
 #include <ControlLook.h>
 #include <ScrollBar.h>
+#include <StringFormat.h>
 #include <Window.h>
 
 #include "EpisodeListItem.h"
@@ -34,8 +35,8 @@ StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_BOTTOM | B_FOLLOW_LEFT,B_W
 	fCounter->GetFont(&font);
 	font_height fh;
 	font.GetHeight(&fh);
-	fCounter->ResizeBy(-10,fh.descent/2);
-	fCounter->MoveBy(10,fh.descent/2);
+	fCounter->ResizeBy(-16,fh.descent/2);
+	fCounter->MoveBy(16,fh.descent/2);
 	fCounter->SetViewColor( B_TRANSPARENT_COLOR );
 	AddChild(fCounter);
 }
@@ -43,7 +44,11 @@ StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_BOTTOM | B_FOLLOW_LEFT,B_W
 void
 StatusView::SetCount(int32 count){
 	BString text;
-	text << count;
+	static BStringFormat format(B_TRANSLATE("{0, plural,"
+		"=0{no episodes}"
+		"=1{1 episode}"
+		"other{# episodes}}"));
+	format.Format(text, count);
 	fCounter->SetText(text.String());
 }
 
@@ -66,7 +71,7 @@ BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAI
 	SetSelectionMode(B_MULTIPLE_SELECTION_LIST);
 	SetSortingEnabled(true);
 	SetSortColumn(date,false,false);
-	AddStatusView(fStatusView=new StatusView(BRect(0, 0, 100,B_H_SCROLL_BAR_HEIGHT-1)));
+	AddStatusView(fStatusView=new StatusView(BRect(0, 0, 120, B_H_SCROLL_BAR_HEIGHT-1)));
 }
 
 void				
@@ -96,15 +101,23 @@ EpisodeListView::AddRow(BRow* row, BRow *parent){
 	ExpandOrCollapse(row, true);
 	UpdateCount();
 }
+
 void
 EpisodeListView::RemoveRow(BRow* row){
 	BColumnListView::RemoveRow(row);
 	UpdateCount();
 }
+
 void				
 EpisodeListView::AddRow(BRow* row, int32 index, BRow *parent){
 	BColumnListView::AddRow(row,index,parent);
 	ExpandOrCollapse(row, true);
+	UpdateCount();
+}
+
+void
+EpisodeListView::Clear(){
+	BColumnListView::Clear();
 	UpdateCount();
 }
 

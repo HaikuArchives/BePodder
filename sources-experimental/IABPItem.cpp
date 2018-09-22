@@ -95,7 +95,7 @@ char
 IABPItemRemove::Shortcut(uint32 *modifiers) const {
 	if(modifiers)
 		*modifiers = B_COMMAND_KEY;
-	return 'R';
+	return 'T';
 }
 
 //-------------------------------------------------------------------------------------------------------------------

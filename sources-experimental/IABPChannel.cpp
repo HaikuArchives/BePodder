@@ -48,8 +48,8 @@ IABPChannelAddRequest::Perform(BMessage*){
 char 
 IABPChannelAddRequest::Shortcut(uint32 *modifiers) const {
 	if(modifiers)
-		*modifiers = B_COMMAND_KEY | B_SHIFT_KEY;
-	return 'A';
+		*modifiers = B_COMMAND_KEY;
+	return 'N';
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -118,8 +118,8 @@ IABPChannelRemove::Perform(BMessage*){
 char 
 IABPChannelRemove::Shortcut(uint32 *modifiers) const {
 	if(modifiers)
-		*modifiers = B_COMMAND_KEY | B_SHIFT_KEY;
-	return 'R';
+		*modifiers = B_COMMAND_KEY;
+	return B_DELETE;
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -150,8 +150,8 @@ IABPChannelCheck::Perform(BMessage*){
 char 
 IABPChannelCheck::Shortcut(uint32 *modifiers) const {
 	if(modifiers)
-		*modifiers = B_COMMAND_KEY | B_SHIFT_KEY;
-	return 'C';
+		*modifiers = B_COMMAND_KEY;
+	return 'R';
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -240,7 +240,7 @@ char
 IABPChannelCheckAll::Shortcut(uint32 *modifiers) const {
 	if(modifiers)
 		*modifiers = B_COMMAND_KEY | B_SHIFT_KEY;
-	return 'N';
+	return 'R';
 }
 
 //-------------------------------------------------------------------------------------------------------------------

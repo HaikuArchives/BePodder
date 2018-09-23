@@ -24,7 +24,7 @@ BBitmap* fGenericSubIcon=NULL;
 SubscriptionListItem::SubscriptionListItem(entry_ref ref):BRow(ALTEZZA_BIG)
 {
 	if(!fGenericSubIcon)
-		fGenericSubIcon= LoadIcon("file-46.png");
+		fGenericSubIcon = ResourceVectorToBitmap("generic-channel", DIMESIONE_ICONA);
 		
 	fWeb.SetTo("");
 

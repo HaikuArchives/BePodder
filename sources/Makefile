@@ -81,6 +81,7 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/SettingsWindow.cpp \
 	../sources-experimental/SplitPane.cpp \
 	../sources-experimental/StackedView.cpp \
+	../sources-experimental/StatusView.cpp \
 	../sources-experimental/StripeView.cpp \
 	../sources-experimental/SubscriptionColumn.cpp \
 	../sources-experimental/SubscriptionListItem.cpp \

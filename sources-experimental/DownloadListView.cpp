@@ -6,6 +6,7 @@
 #include <Box.h>
 #include <Catalog.h>
 #include <ScrollBar.h>
+#include <StringFormat.h>
 #include <Window.h>
 
 
@@ -17,7 +18,7 @@
 #define B_TRANSLATION_CONTEXT "DL-Episode-ListView"
 
 DownloadListView::DownloadListView(BRect r):
-BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAIN_BORDER,true)
+BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_NO_BORDER,true)
 {
 	BColumn *icon = new BBitmapColumn(B_TRANSLATE("Icon"),16,16,16,B_ALIGN_CENTER);
 	BColumn *channel = new BStringColumn(B_TRANSLATE("Subscription"),140,10,500,5,B_ALIGN_LEFT);
@@ -39,17 +40,10 @@ BColumnListView(r,"DownloadListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLA
 	SetSelectionMode(B_SINGLE_SELECTION_LIST);
 	SetSortingEnabled(true);
 	SetSortColumn(date,false,false);
-	
-	BView* sview = new BView(BRect(0,0,100,B_H_SCROLL_BAR_HEIGHT-1),NULL,B_FOLLOW_ALL_SIDES,B_WILL_DRAW);
-	sview->SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR));
 
-	 
-	fCounter = new BStringView(BRect(2,1,98,B_H_SCROLL_BAR_HEIGHT-2),"","");
-	fCounter->SetFontSize(10);
-	fCounter->SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR) );
-	
-	sview->AddChild(fCounter);
-	AddStatusView(sview);
+	BScrollBar* scrollBar
+		= (BScrollBar*)FindView("horizontal_scroll_bar");
+	AddStatusView(fStatusView = new StatusView(scrollBar));
 
 	SetSortingEnabled(true);
 	ClearSortColumns();
@@ -113,8 +107,12 @@ DownloadListView::AddRow(BRow* row, int32 index, BRow *parent){
 void
 DownloadListView::UpdateCount(){
 	BString text;
-	text << CountRows();
-	fCounter->SetText(text.String());
+	static BStringFormat format(B_TRANSLATE("{0, plural,"
+		"=0{no downloads}"
+		"=1{1 download}"
+		"other{# downloads}}"));
+	format.Format(text, CountRows());
+	fStatusView->Update(text, "", "");
 }
 
 				

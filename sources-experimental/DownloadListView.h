@@ -5,6 +5,8 @@
 #include "FileStatusColumn.h"
 #include <StringView.h>
 
+#include "StatusView.h"
+
 #define 	DOWNLOAD_SELECTED			'dwse'
 #define 	DOWNLOAD_INVOKED				'dwin'
 
@@ -20,9 +22,8 @@ class DownloadListView : public BColumnListView
 				void				ResetSelectionMessage();
 
 	private:
-				void		UpdateCount();
-				BStringView*		fCounter;
-	
+				void				UpdateCount();
+				StatusView*			fStatusView;
 				
 };
 

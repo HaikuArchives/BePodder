@@ -12,48 +12,13 @@
 #include "EpisodeListItem.h"
 #include "FileStatusColumn.h"
 #include "Colors.h"
-
-class StatusView :  public BView {
-		 public:	
-							StatusView(BRect r);
-				void		SetCount(int32);
-		private:
-				BStringView*		fCounter;
-};
+#include "StatusView.h"
 
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "DL-Episode-ListView"
 
-
-StatusView::StatusView(BRect r):BView(r,NULL,B_FOLLOW_BOTTOM | B_FOLLOW_LEFT,B_WILL_DRAW){
-	SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR));
-	BRect rect(Bounds());
-	rect.InsetBy(2,2);
-	fCounter = new BStringView(rect,"","");
-	fCounter->SetFontSize(10);
-	BFont	font;
-	fCounter->GetFont(&font);
-	font_height fh;
-	font.GetHeight(&fh);
-	fCounter->ResizeBy(-16,fh.descent/2);
-	fCounter->MoveBy(16,fh.descent/2);
-	fCounter->SetViewColor( B_TRANSPARENT_COLOR );
-	AddChild(fCounter);
-}
-
-void
-StatusView::SetCount(int32 count){
-	BString text;
-	static BStringFormat format(B_TRANSLATE("{0, plural,"
-		"=0{no episodes}"
-		"=1{1 episode}"
-		"other{# episodes}}"));
-	format.Format(text, count);
-	fCounter->SetText(text.String());
-}
-
 EpisodeListView::EpisodeListView(BRect r):
-BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAIN_BORDER,true)
+BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_NO_BORDER,true)
 {
 	BColumn *icon = new BBitmapColumn(B_TRANSLATE("Icon"),16,16,16,B_ALIGN_CENTER);
 	BColumn *title = new BStringColumn(B_TRANSLATE("Title"),140,10,500,B_TRUNCATE_MIDDLE,B_ALIGN_LEFT);
@@ -71,7 +36,9 @@ BColumnListView(r,"EpisodeListView",B_FOLLOW_ALL, B_WILL_DRAW|B_NAVIGABLE,B_PLAI
 	SetSelectionMode(B_MULTIPLE_SELECTION_LIST);
 	SetSortingEnabled(true);
 	SetSortColumn(date,false,false);
-	AddStatusView(fStatusView=new StatusView(BRect(0, 0, 120, B_H_SCROLL_BAR_HEIGHT-1)));
+	BScrollBar* scrollBar
+		= (BScrollBar*)FindView("horizontal_scroll_bar");
+	AddStatusView(fStatusView=new StatusView(scrollBar));
 }
 
 void				
@@ -123,7 +90,13 @@ EpisodeListView::Clear(){
 
 void
 EpisodeListView::UpdateCount(){
-	fStatusView->SetCount(CountRows());
+	BString text;
+	static BStringFormat format(B_TRANSLATE("{0, plural,"
+		"=0{no episodes}"
+		"=1{1 episode}"
+		"other{# episodes}}"));
+	format.Format(text, CountRows());
+	fStatusView->Update(text, "", "");
 }
 
 				

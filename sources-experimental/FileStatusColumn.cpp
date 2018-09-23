@@ -103,9 +103,10 @@ FileStatusField::SetFilePercentage(int per,float speed)
 		if(speed>0 &&  fStatus == DOWNLOADING)
 		{
 			char rateString[32];
-			sp << string_for_rate(speed, rateString, sizeof(rateString)) << " ";
+			sp << "- " << string_for_rate(speed, rateString, sizeof(rateString));
 		}
-		sp << fOriginalStatus;
+		if (fStatus == STOPPED)
+			sp << fOriginalStatus;
 		fString = sp;
 	}
 }
@@ -182,8 +183,8 @@ void FileStatusColumn::DrawField(BField* _field, BRect rect, BView* parent)
 	float			width = rect.Width() - (2 * kTEXT_MARGIN);
 	float 			basePoint = 0;
 	
-	if(field->GetFileStatus() == STOPPED ||
-	   field->GetFileStatus() == DOWNLOADING )
+	if((field->GetFileStatus() == STOPPED && field->GetPercentage() > 0)||
+	   field->GetFileStatus() == DOWNLOADING)
 	   {
 			basePoint = 100 + kSPACE_TEXT;
 	   }

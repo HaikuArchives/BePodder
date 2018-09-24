@@ -1036,6 +1036,7 @@ MainController::ParseArchive()
 	if(fView->Lock()){
 		flags	 = fView->Flags();
 		fView->SetFlags( flags | B_NOT_RESIZABLE);
+		fView->SetSortingSubscriptions(true);
 		fView->Unlock();
 	}
 	
@@ -1071,6 +1072,7 @@ MainController::ParseArchive()
 	
 	if(fView->Lock()){
 		fView->SetFlags( flags );
+		fView->SetSortingSubscriptions(false);
 		fView->Unlock();
 	}
 	
@@ -1155,10 +1157,8 @@ MainController::CreateChannelItem(BEntry* e,BMessage* cache)
 
 
 	if(fView->Lock()){
-		fView->SetSortingSubscriptions(true);
 		fView->AddSubscription(row,group);
 		fModel->fChInfo.AddItem(row->fRef,row);
-		fView->SetSortingSubscriptions(false);
 		fView->Unlock();
 	}
 	

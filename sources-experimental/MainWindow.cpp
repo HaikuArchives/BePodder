@@ -154,7 +154,7 @@ MainWindow::init(MainController* controller){
 	fChannelMenu->AddSeparatorItem();
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_WWW));
 	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
-	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
+//	fChannelMenu->AddItem(action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	fChannelMenu->SetTargetForItems(be_app);
 
 	channels->AddItem(fChannelItems[CHANNEL_ADD_REQUEST] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ADD_REQUEST));
@@ -165,7 +165,7 @@ MainWindow::init(MainController* controller){
 	channels->AddSeparatorItem();
 	channels->AddItem(fChannelItems[CHANNEL_WWW] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_WWW));
 	channels->AddItem(fChannelItems[CHANNEL_ENCLOSURE_FOLDER] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_ENCLOSURE_FOLDER));
-	channels->AddItem(fChannelItems[CHANNEL_SHOW_IMAGE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
+//	channels->AddItem(fChannelItems[CHANNEL_SHOW_IMAGE] = action_manager.CreateMenuItemFromAction(IACTION_CHANNEL_SHOW_IMAGE));
 	channels->SetTargetForItems(be_app);
 
 	fItemMenu = new BPopUpMenu("ItemMenu");
@@ -1334,7 +1334,7 @@ MainWindow::ShowChannelDescription(MemoryArchive* archive){
 		
 		free(copybuffer);
 	}
-	
+	/*
 	size = archive->GetData(CHANNEL_IMAGE_DATA,(const void**)&buffer);
 	
 	if( size>0){
@@ -1344,7 +1344,7 @@ MainWindow::ShowChannelDescription(MemoryArchive* archive){
 		fChannelText->AppendURL(B_TRANSLATE("Show channel image"),action.String(),C_TEXT,F_TEXT);	
 		//free(buffer);
 	}
-	
+	*/
 	fChannelText->Append("\n\n",C_TEXT,C_TEXT,F_TEXT);	
 	fChannelText->AppendURL("feed ",archive->GetDataString(CHANNEL_URL) .String(),C_TEXT,F_EMOTICON); //? Icon ??
 	fChannelText->AppendURL("XML feed link",archive->GetDataString(CHANNEL_URL) .String(),F_TEXT);
@@ -1415,7 +1415,7 @@ MainWindow::MenusBeginning()
 	fChannelItems[CHANNEL_CHECK]->SetEnabled(subscription != NULL);
 	fChannelItems[CHANNEL_WWW]->SetEnabled(subscription != NULL);
 	fChannelItems[CHANNEL_ENCLOSURE_FOLDER]->SetEnabled(subscription != NULL);
-	fChannelItems[CHANNEL_SHOW_IMAGE]->SetEnabled(subscription != NULL);
+//	fChannelItems[CHANNEL_SHOW_IMAGE]->SetEnabled(subscription != NULL);
 
 	EpisodeListItem* episode = GetSelectedEpisode();
 	// Disable all

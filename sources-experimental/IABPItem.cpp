@@ -49,11 +49,11 @@ IABPItemRemove::Perform(BMessage*){
 
 	BString text;
 	if(selection.CountItems() == 1) {
-		text << B_TRANSLATE("\nYou are going to remove the episode\n\n%episodename%\n\n"
+		text << B_TRANSLATE("You are going to remove the episode:\n\n%episodename%\n\n"
 		"You will lose any enclosed file if there are any.\n");
 		text.ReplaceFirst("%episodename%", firstTitle);
 	} else {
-		text << B_TRANSLATE("\nYou are going to remove %numberofepisodes% episodes.\n\n"
+		text << B_TRANSLATE("You are going to remove %numberofepisodes% episodes.\n\n"
 		"You will lose any enclosed file if there are any.\n");
 		BString numberOfEpisodes;
 		numberOfEpisodes << selection.CountItems();

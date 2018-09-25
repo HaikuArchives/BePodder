@@ -77,10 +77,10 @@ IABPChannelRemove::Perform(BMessage*){
 				
 				BString text;
 		
-				text << B_TRANSLATE("\nYou are going to remove the channel:\n\n");	
+				text << B_TRANSLATE("You are going to remove the channel:\n\n");
 				text << row->GetTitle();
-				text << B_TRANSLATE("\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?");
-							
+				text << B_TRANSLATE("\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n");
+
 				BPAlert* remove = new BPAlert("Remove a channel", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Archive"),B_TRANSLATE("Cancel"),B_WIDTH_AS_USUAL,bitmap);
 				int32 result=remove->Go();
 				

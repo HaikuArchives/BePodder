@@ -138,7 +138,7 @@ IABPGroupRemove::Perform(BMessage*){
 	
 	if(count>0) {
 		BString text;
-		text << B_TRANSLATE("You are going to delete the group\n%groupname% with %numberofchannel% channels.\n");
+		text << B_TRANSLATE("You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n");
 		text.ReplaceFirst("%groupname%", group->GroupName());
 		BString countString;
 		countString << count;

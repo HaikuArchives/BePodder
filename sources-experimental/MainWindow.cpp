@@ -14,6 +14,7 @@
 #include <View.h>
 #include <Box.h>
 #include <LayoutBuilder.h>
+#include <PathFinder.h>
 #include <ScrollBar.h>
 #include <StorageKit.h>
 #include <StringForSize.h>
@@ -399,8 +400,10 @@ MainWindow::CreateMenuBar(){
 	BMenu  *podderfile = new BMenu(B_TRANSLATE("File"),B_ITEMS_IN_COLUMN);
 	poddermenubar->AddItem(podderfile);
 	BMenuItem *podderaboutitem = new BMenuItem(B_TRANSLATE("About BePodder"),new BMessage(B_ABOUT_REQUESTED),0,0);
+
 	podderaboutitem->SetTarget(be_app);
 	podderfile->AddItem(podderaboutitem);
+	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Show documentation"), new BMessage(SHOW_HELP),0,0));
 	podderfile->AddSeparatorItem();
 	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Import OPML" B_UTF8_ELLIPSIS) , new BMessage(IMPORT_OPML), 0, 0));
 	podderfile->AddItem(new BMenuItem(B_TRANSLATE("Export OPML" B_UTF8_ELLIPSIS) , new BMessage(EXPORT_OPML), 0, 0));
@@ -460,35 +463,11 @@ MainWindow::CreateMenuBar(){
 	
 	ChannelSize->SetEnabled(true);	
 	*/
-	//--------------------------------------------------------------------------------------------------------------	
-
-	BMenu  *helpfile = new BMenu(B_TRANSLATE("Help"),B_ITEMS_IN_COLUMN);
-	poddermenubar->AddItem(helpfile);
 	
-	
-	BMessage *msg=new BMessage(SHOW_HELP);
-	BMenuItem *helpitem1 = new BMenuItem(B_TRANSLATE("Getting started"),msg,'G',0);
-	helpfile->AddItem(helpitem1);
-	
-	msg=new BMessage(SHOW_HELP);
-	msg->AddString("page","shortcuts");
-	BMenuItem *shortcutitem = new BMenuItem(B_TRANSLATE("Keyboard shortcuts"),msg,'K',0);
-	helpfile->AddItem(shortcutitem);
-	
-	BMessage *webmsg=new BMessage(WEB_PAGE);
-	//full url (introduction.html)
-	BString where(GetAppRelativePath());
-	where << "/tutorial/introduction.html";
-	where.Prepend("file://");
-	
-	webmsg->AddString("url",where.String());
-	helpfile->AddItem( new BMenuItem(B_TRANSLATE("Tutorials"),webmsg,0,0));
-
 	AddChild(poddermenubar);
 	poddermenubar->ResizeToPreferred();
 	
 	return poddermenubar->Bounds().bottom;
-
 }
 
 void
@@ -630,23 +609,13 @@ void MainWindow::MessageReceived(BMessage* msg)
 				fController->OpenURL(url.String());
 		}
 		break;
+
 		case SHOW_HELP:
 		{
-			
-			BPAlert *alert = new BPAlert("BePodder",B_TRANSLATE("Loading help" B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, LoadIcon("enqueued-32.png"));
-			alert->Go(NULL);
-			
-			HelpWindow *help1 = new HelpWindow();
-			help1->Show();
-			
-			BString page;
-			if(msg->FindString("page",&page)==B_OK)
-				help1->SetPage(page);
-			
-			alert->PostMessage(B_QUIT_REQUESTED);
+			_ShowDocumentation();
 		} 
 		break;
-		
+
 		case SET_FULLSCREEN:
 			SetFullscreen(!fullscreenitem->IsMarked());
 		break;
@@ -1458,3 +1427,27 @@ MainWindow::UpdateToolBar()
 	}
 }
 
+
+void
+MainWindow::_ShowDocumentation()
+{
+	BPathFinder pathFinder;
+	BStringList paths;
+	BPath path;
+	BEntry entry;
+
+	status_t error = pathFinder.FindPaths(B_FIND_PATH_DOCUMENTATION_DIRECTORY,
+		"packages/bepodder", paths);
+
+	for (int i = 0; i < paths.CountStrings(); ++i) {
+		if (error == B_OK && path.SetTo(paths.StringAt(i)) == B_OK
+				&& path.Append(B_TRANSLATE_COMMENT("ReadMe.html",
+				"Path to the help file. Only change if a translated file is "
+				"provided.")) == B_OK) {
+			entry = path.Path();
+			entry_ref ref;
+			entry.GetRef(&ref);
+			be_roster->Launch(&ref);
+		}
+	}
+}

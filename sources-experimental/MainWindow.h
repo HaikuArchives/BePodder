@@ -157,6 +157,8 @@ class MainWindow: public BWindow
 				void	RecursiveParseOpml(OPMLTree* branch);
 				
 				void	UpdateToolBar();
+				void	_ShowDocumentation();
+
 				MainController*	fController;
 									
 				BMenuItem*			notoolbar;

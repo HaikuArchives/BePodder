@@ -138,14 +138,17 @@ IABPGroupRemove::Perform(BMessage*){
 	
 	if(count>0) {
 		BString text;
-		text << B_TRANSLATE("You are going to delete a group with..."); // TODO conversion not present
-		text << "\n\n" << count << " " << "channels" << "\n";
-			
-		BPAlert* remove = new BPAlert("Remove a group", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png")); // TODO change image
+		text << B_TRANSLATE("You are going to delete the group\n%groupname% with %numberofchannel% channels.\n");
+		text.ReplaceFirst("%groupname%", group->GroupName());
+		BString countString;
+		countString << count;
+		text.ReplaceFirst("%numberofchannel%", countString);
+
+		BPAlert* remove = new BPAlert("Remove a group", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 		result = remove->Go(); //sync..
 
 		if(result == 0) {
-			BPAlert* wait = new BPAlert("Remove a group", B_TRANSLATE("\nRemoving..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png")); // TODO change image
+			BPAlert* wait = new BPAlert("Remove a group", B_TRANSLATE("\nRemoving..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 			wait->Go(NULL); //async..
 			
 			for(int i=0;i<count;i++){

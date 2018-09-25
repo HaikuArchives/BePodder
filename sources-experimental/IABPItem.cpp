@@ -48,14 +48,18 @@ IABPItemRemove::Perform(BMessage*){
 
 
 	BString text;
-	text << B_TRANSLATE("\nYou are going to remove the selected episode.\n\n"
-		"Are you sure?\n(You will lose any enclosed file if there are any.)");
-	if(selection.CountItems() == 1) 
-		text << "\n\n" << firstTitle << "\n";
-	else
-		text << "\n\n" << selection.CountItems() << " " << "episodes\n";
-		
-	BPAlert* remove = new BPAlert("Remove an episode", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL,LoadIcon("emblem-delete.png"));
+	if(selection.CountItems() == 1) {
+		text << B_TRANSLATE("\nYou are going to remove the episode\n\n%episodename%\n\n"
+		"You will lose any enclosed file if there are any.\n");
+		text.ReplaceFirst("%episodename%", firstTitle);
+	} else {
+		text << B_TRANSLATE("\nYou are going to remove %numberofepisodes% episodes.\n\n"
+		"You will lose any enclosed file if there are any.\n");
+		BString numberOfEpisodes;
+		numberOfEpisodes << selection.CountItems();
+		text.ReplaceFirst("%numberofepisodes%", numberOfEpisodes);
+	}
+	BPAlert* remove = new BPAlert("Remove an episode", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Cancel"),NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 	int32 result=remove->Go(); //sync..
 	
 	LOCKWINDOW
@@ -65,7 +69,7 @@ IABPItemRemove::Perform(BMessage*){
 	
 	if(result==0){
 		
-		BPAlert* wait = new BPAlert("Remove an episode", "\nRemoving..",NULL,NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("delete-32.png"));
+		BPAlert* wait = new BPAlert("Remove an episode", B_TRANSLATE("\nRemoving.."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 		wait->Go(NULL); //async..
 		
 		for(int i=0;i<selection.CountItems();i++){

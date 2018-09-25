@@ -27,7 +27,6 @@
 
 
 IABPChannelAddRequest::IABPChannelAddRequest(MainController* controller, MainWindow* view ):IActionBP(controller,view){
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("emblem-add.png"));
 				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("add-channel-file", 24));
 				SetLabel(B_TRANSLATE("Add channel"));
 }
@@ -55,8 +54,6 @@ IABPChannelAddRequest::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPChannelRemove::IABPChannelRemove(MainController* controller ,MainWindow* view):IActionBP(controller,view){
-			 	   		
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("delete-micro.png"));
 				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("delete-channel-file", 24));
 	 	  		SetLabel(B_TRANSLATE("Remove channel")); 
 			 	  
@@ -125,7 +122,6 @@ IABPChannelRemove::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPChannelCheck::IABPChannelCheck(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("refresh-micro.png"));
 				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("refresh-channel-file", 24));
 				SetLabel(B_TRANSLATE("Check channel"));
 }
@@ -157,7 +153,6 @@ IABPChannelCheck::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPChannelWWW::IABPChannelWWW(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("www-micro.png"));
 				SetIcon(IAction::SIZE_24,ResourceVectorToBitmap("www-channel-file", 24));
 				SetLabel(B_TRANSLATE("Open homepage"));
 }
@@ -189,7 +184,6 @@ IABPChannelWWW::Shortcut(uint32 *modifiers) const {
 
 
 IABPChannelEnclosureFolder::IABPChannelEnclosureFolder(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("folder"));
 	 	  		SetLabel(B_TRANSLATE("Open enclosures folder")); 
 }
 			 	 
@@ -220,7 +214,6 @@ IABPChannelEnclosureFolder::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPChannelCheckAll::IABPChannelCheckAll(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	 	   		SetIcon(IAction::SIZE_16,LoadIcon("refresh-mini-all.png"));
 	 	  		SetLabel(B_TRANSLATE("Check all channels")); 
 }
 			 	 
@@ -246,7 +239,6 @@ IABPChannelCheckAll::Shortcut(uint32 *modifiers) const {
 //-------------------------------------------------------------------------------------------------------------------
 
 IABPChannelShowImage::IABPChannelShowImage(MainController* controller,MainWindow* view):IActionBP(controller,view){
-	SetIcon(IAction::SIZE_16,LoadIcon("image"));
 	SetLabel(B_TRANSLATE("Show channel image")); 
 }
 			 	 

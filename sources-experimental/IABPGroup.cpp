@@ -28,7 +28,7 @@ IABPGroupCheck::IABPGroupCheck(MainController* controller,MainWindow* view):IAct
 			 	 
 BString 
 IABPGroupCheck::GetDescription(){
-	return B_TRANSLATE("Check the podcasts of the selected group for new items");
+	return B_TRANSLATE("Check the podcasts of the selected group for new episodes");
 }
 			 	  
 

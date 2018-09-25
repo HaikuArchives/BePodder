@@ -3,7 +3,6 @@
 #include "BPSettingsWindow.h"
 #include "AddWindow.h"
 #include "DirectoryWindow.h"
-#include "HelpWindow.h"
 #include <Catalog.h>
 #include <MenuBar.h>
 #include <MenuItem.h>

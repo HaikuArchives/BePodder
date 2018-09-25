@@ -14,7 +14,7 @@
 #define B_TRANSLATION_CONTEXT "SettingsWindow"
 
 SettingsWindow::SettingsWindow(BMessage* setting,BHandler* handler,int32 applyMsg) :
-	BWindow(BRect(250,100,750,350),B_TRANSLATE("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,
+	BWindow(BRect(250,100,350,350),B_TRANSLATE("Preferences"), B_FLOATING_WINDOW_LOOK,B_MODAL_APP_WINDOW_FEEL,
 	B_NOT_RESIZABLE| B_NOT_ZOOMABLE|B_ASYNCHRONOUS_CONTROLS|B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	fApplyWhatMsg = applyMsg;

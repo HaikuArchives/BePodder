@@ -53,7 +53,7 @@ IABPDownloadStop::IABPDownloadStop(MainController* controller, MainWindow* view)
 			 	 
 BString 
 IABPDownloadStop::GetDescription(){
-	return B_TRANSLATE("Stop the item download");
+	return B_TRANSLATE("Stop the episode download");
 }
 			 	  
 

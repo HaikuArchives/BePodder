@@ -53,7 +53,6 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/FileStatusColumn.cpp \
 	../sources-experimental/GreenBoxTextRender.cpp \
 	../sources-experimental/GroupItem.cpp \
-	../sources-experimental/HelpWindow.cpp \
 	../sources-experimental/htmlparse.cpp \
 	../sources-experimental/IABPChannel.cpp \
 	../sources-experimental/IABPDownload.cpp \

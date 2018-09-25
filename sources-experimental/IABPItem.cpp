@@ -112,7 +112,7 @@ IABPItemStop::IABPItemStop(MainController* controller,MainWindow* view):IActionB
 			 	 
 BString 
 IABPItemStop::GetDescription(){
- 	  return B_TRANSLATE("Stop the item download");
+	return B_TRANSLATE("Stop the episode download");
 }
 			 	  
 
@@ -149,7 +149,7 @@ IABPItemDownload::IABPItemDownload(MainController* controller,MainWindow* view):
 			 	 
 BString 
 IABPItemDownload::GetDescription(){
- 	  return B_TRANSLATE("Download the selected episode");
+	return B_TRANSLATE("Download the selected episode");
 }
 			 	  
 
@@ -186,7 +186,7 @@ IABPItemPlay::IABPItemPlay(MainController* controller,MainWindow* view):IActionB
 			 	 
 BString 
 IABPItemPlay::GetDescription(){
- 	  return B_TRANSLATE("Play the selected episode");
+	return B_TRANSLATE("Play the selected episode");
 }
 			 	  
 
@@ -220,7 +220,7 @@ IABPItemWWW::IABPItemWWW(MainController* controller,MainWindow* view):IActionBP(
 			 	 
 BString 
 IABPItemWWW::GetDescription(){
- 	  return B_TRANSLATE("Show the news homepage");
+	return B_TRANSLATE("Show the news homepage");
 }
 			 	  
 

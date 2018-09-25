@@ -32,7 +32,7 @@ const coppia autotypes[]= {
 	{".m4v",MEDIAPLAYER,NULL},
 	{".mov",MEDIAPLAYER,NULL},
 	{".mp4",MEDIAPLAYER,NULL},
-	{".swf",NONE,B_TRANSLATE("alert_swf")},
+	{".swf",NONE,B_TRANSLATE("SWF è un formato proprietario per la grafica vettoriale realizzato con il software Flash della Adobe (precedentemente della Macromedia).")},
 	{".wma",MEDIAPLAYER,NULL},
 	{".wmv",MEDIAPLAYER,NULL},
 	{".mp3",MEDIAPLAYER,NULL}

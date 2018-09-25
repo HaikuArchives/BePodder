@@ -33,7 +33,7 @@ IABPChannelAddRequest::IABPChannelAddRequest(MainController* controller, MainWin
 			 	 
 BString 
 IABPChannelAddRequest::GetDescription(){
- 	  return B_TRANSLATE("Add the podcast to the subscriptions list");
+	return B_TRANSLATE("Add the podcast to the subscriptions list");
 }
 			 	  
 
@@ -61,7 +61,7 @@ IABPChannelRemove::IABPChannelRemove(MainController* controller ,MainWindow* vie
 			 	 
 BString 
 IABPChannelRemove::GetDescription(){
- 	  return B_TRANSLATE("Delete the podcast from the subscriptions list");
+	return B_TRANSLATE("Delete the podcast from the subscriptions list");
 }
 			 	  
 
@@ -128,7 +128,7 @@ IABPChannelCheck::IABPChannelCheck(MainController* controller,MainWindow* view):
 			 	 
 BString 
 IABPChannelCheck::GetDescription(){
- 	  return B_TRANSLATE("Check the selected podcast for new items");
+	return B_TRANSLATE("Check the selected podcast for new episodes");
 }
 			 	  
 
@@ -159,7 +159,7 @@ IABPChannelWWW::IABPChannelWWW(MainController* controller,MainWindow* view):IAct
 			 	 
 BString 
 IABPChannelWWW::GetDescription(){
- 	  return B_TRANSLATE("Show the podcast homepage");
+	return B_TRANSLATE("Show the podcast homepage");
 }
 			 	  
 
@@ -189,7 +189,7 @@ IABPChannelEnclosureFolder::IABPChannelEnclosureFolder(MainController* controlle
 			 	 
 BString 
 IABPChannelEnclosureFolder::GetDescription(){
- 	  return B_TRANSLATE("Open enclosures folder");
+	return B_TRANSLATE("Open enclosures folder");
 }
 			 	  
 
@@ -219,7 +219,7 @@ IABPChannelCheckAll::IABPChannelCheckAll(MainController* controller,MainWindow* 
 			 	 
 BString 
 IABPChannelCheckAll::GetDescription(){
- 	  return B_TRANSLATE("Check all the podcasts for new items");
+	return B_TRANSLATE("Check all the podcasts for new episodes");
 }
 			 	  
 
@@ -244,7 +244,7 @@ IABPChannelShowImage::IABPChannelShowImage(MainController* controller,MainWindow
 			 	 
 BString 
 IABPChannelShowImage::GetDescription(){
- 	  return B_TRANSLATE("Show channel image");
+	return B_TRANSLATE("Show channel image");
 }
 			 	  
 

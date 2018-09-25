@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta name="robots" content="all" />
+	<title>BePodder Documentation</title>
+
+<style type="text/css">
+
+body {
+    font-size: 0.9em;
+	font-family: "Noto Sans",Arial,Helvetica,sans-serif;
+	line-height: 1.5;
+	margin: 40px;
+	min-width: 45em;
+	max-width: 70em;
+}
+/* link colors and text decoration */
+
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #dc3c01;
+}
+a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #892601;
+}
+a:hover, a:active {
+	text-decoration: underline;
+	color: #ff4500;
+}
+
+hr {
+	border: dotted thin #e0e0e0;
+}
+h1 {
+	font-size: 1.3em;
+	border-bottom: dotted thin #e0e0e0;
+	margin-bottom: 45px;
+}
+h2 {
+	font-size: 1.2em;
+	border-bottom: dotted thin #e0e0e0;
+	margin-top: 40px;
+}
+h3 {
+	font-size: 1em;
+	border-bottom: none;
+	margin-bottom: 0px;
+}
+tt {
+	background-color: #e2e2e2;
+	font-size: 1.0em;
+	font-family: monospace;
+}
+pre {
+	border-color: #0c3762;
+	border-style: dotted;
+	border-width: thin;
+	margin: 0em;
+	padding: 1.5em;
+	background-color: #f0f0f0;
+}
+pre.terminal {			/* Terminal output*/
+	border-color: #ffb11f;
+	border-style: dotted;
+	border-width: thin;
+	margin: 0em;
+	padding: 1.5em;
+	background-color: #3a3a3a;
+	color: #ffb11f;
+}
+
+.app {				/* GUI application name */
+	font-size: 1.0em;
+	font-family: serif;
+	font-style: italic;
+	color: #5e1c1c;
+}
+.button {			/* Button */
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #c7c7c7;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	padding: 1px 15px 1px 15px;
+	background-color: #e8e8e8;
+	font-size: 0.8em;
+	margin: 0 3px 0 3px;
+}
+.cli {				/* Shell command or file */
+	background-color: #e8e8e8;
+	font-size: 0.9em;
+	font-family: monospace;
+}
+.key {				/* Shortcut (separate with &nbsp; */
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #c7c7c7;
+	padding: 0px 2px 0px 2px;
+	background-color: #e8e8e8;
+	font-family: serif;
+	font-variant: small-caps;
+	font-size: 0.8em;
+}
+.menu {				/* Menu */
+	font-size: 1.0em;
+	font-family: serif;
+	font-style: italic;
+	color: #24225e;
+}
+.path {				/* File path */
+	background-color: #e8e8e8;
+	font-size: 0.9em;
+	font-family: monospace;
+}
+/* Rounded corner boxes */
+/* Common declarations */
+.box-info, .box-stop, .box-warning {
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-style: dotted;
+	border-width: thin;
+	border-color: #dcdcdc;
+	padding: 10px 15px 10px 80px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	margin-left: 40px;
+	margin-right: 40px;
+	min-height: 42px;
+}
+.box-info {
+	background: #e4ffde url(./images/alert_info_32.png) 15px 15px no-repeat;
+}
+.box-warning {
+	background: #fffbc6 url(./images/alert_warning_32.png) 15px 15px no-repeat;
+}
+.box-stop {
+	background: #ffeae6 url(./images/alert_stop_32.png) 15px 15px no-repeat;
+}
+</style>
+
+<script>
+var switchImage = function(image)
+{
+var pathname = image.src
+var leafname= pathname.split('\\').pop().split('/').pop();
+
+	if (leafname == "renamer_search-replace.png") {
+        image.src = "./images/en/renamer_insert-overwrite-1.png";
+        image.alt = "Rename mode 'Insert / overwrite' - inserting";
+    } else if (leafname == "renamer_insert-replace-1.png") {
+        image.src = "./images/en/renamer_insert-replace-2.png";
+        image.alt = "Rename mode 'Insert / overwrite' - overwriting";
+    } else if (leafname == "renamer_insert-overwrite-2.png") {
+        image.src = "./images/en/renamer_remove.png";
+        image.alt = "Rename mode 'Remove'";
+    } else if (leafname == "renamer_remove.png") {
+        image.src = "./images/en/renamer_numbering.png";
+        image.alt = "Rename mode 'Numbering'";
+    } else if (leafname == "renamer_numbering.png") {
+        image.src = "./images/en/renamer_extension.png";
+        image.alt = "Rename mode 'Add file extension'";
+    } else if (leafname == "renamer_extension.png") {
+        image.src = "./images/en/renamer_upper-lower.png";
+        image.alt = "Rename mode 'Uppercase / lowercase'";
+    } else {
+        image.src = "./images/en/renamer_search-replace.png";
+        image.alt = "Rename mode 'Search / replace'";
+    }
+}
+</script>
+
+</head>
+<body>
+<div align="center">
+<img width="64" height="64" src="./images/bepodder_icon_64.png" alt="BePodder icon" />
+<p><span style="font-size: 1.5em; font-weight:bold">BePodder</span><br />
+for <a href="http://www.haiku-os.org">Haiku</a></p>
+<hr />
+<p id="index"><a href="#ui">User Interface</a> ‒ <a href="#usage">Using BePodder</a> ‒ <a href="#preferences">Preferences</a><br />
+<a href="#download">Download</a>  ‒ <a href="#bugs_feedback">Bugreports &amp; Feedback</a>  ‒ <a href="#thanks">Thanks</a><!--  ‒ <a href="#history">History</a>--></p>
+</div>
+<hr />
+<p><br /></p>
+<p>Podcasting is a method for publishing audio and video broadcasts via the Internet; links to free audio and video files are enclosed in RSS and Atom feeds.</p>
+<p>Therefore Podcasting is simply a type of online media delivery; users can subscribe to a podcast using a feed (such as RSS 'Really Simple Syndication' or Atom).</p>
+<p>An aggregator (or podcatcher) like BePodder, is a piece of software that allows you to subscribe  to a RSS feed and periodically check for and download new content; with BePodder you can check for new Podcast items (Episodes) of your subscribed Channels. Any item can contain an enclosure, just like an Email can contain an attachment.</p>
+
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+
+<a id="ui" name="usage">User Interface</a></h2>
+<p>BePodder has an easy to use yet powerful Graphical User Interface. The main window is split into tree panels:</p>
+
+<ol>
+<li>The Subscription list (the panel with the number 1 in the screenshot) with the list of the podcasts that you have subscribed to. When you click on a Channel you can see in the panel 2 the list of the channel's items.</li> 
+<li>The Episodes list with all the items available.</li> 
+<li>The Info panel show: episode info, channel info or Downloads info; you can select an info panel by clicking one of the below three tabs.</li> 
+</ol>
+
+<h3> <a id="user_interface-Menubar" name="user_interface-Menubar">The Menubar</a></h3>
+<p>At the very top of the BePodder main window is the menubar with five menus available: File, Groups, Subscriptions, Episodes, <!-- Lists, --> and View. Some menu commands are followed by a right pointing arrow that indicates a submenu of related commands. As you explore each menu, be sure to take a look at the submenus as well. Click on a menus to show its commands:</p> 
+
+<dl>
+<dt>File</dt>
+<dd>contains commands to close the application and to show information about BePodder</dd>
+<dt>Groups</dt>
+<dd>contains commands that perform actions on the selected group of your subscriptions list.</dd>
+<dt>Subscriptions</dt>
+<dd>contains commands that perform actions on the selected channel of your subscriptions list.</dd>
+<dt>Episodes</dt>
+<dd>contains commands that perform actions on the selected item (episode) of the channel's episode list.</dd>
+
+<!--
+<dt>Lists</dt>
+<dd>contains commands to open BePodder's OPML directories.</dd>
+-->
+<dt>View</dt>
+<dd>contains commands and controls for the BePodder window.</dd>
+</dl>
+
+
+<h3> <a id="user_interface-Toolbar" name="user_interface-Toolbar">The Toolbar</a></h3>
+<p></p>
+<table border="0">
+<tr><td width="50"><img src="images/add_channel.png" /></td><td>Add Button: opens the Add Window to add a feed url (e.g. http://www.newpodcast.com/rss.xml) usually given on the podcast homepage; looks for text or graphic link that says something like 'XML', 'RSS' or 'Podcast Feed' on it.
+</td></tr>
+<tr><td><img src="images/remove_channel.png" /></td><td>Channel Remove Button: opens a window in which you can select how remove the channel: just archive the select channel (keeping all the files and eclosure downloaded so far) or delete the whole channel from your computer.
+</td></tr>
+<tr><td><img src="images/check_channel.png" /></td><td>Check Button: checks the selected channel and updates the list of the available items for that podcast adding the new  items.
+</td></tr>
+<tr><td><img src="images/web_channel.png" /></td><td>Web Button: shows the channel homepage in the browser. To select your favorite browser open BePodder's Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select your favorite browser.
+</td></tr>
+<tr><td><img src="images/play_episode.png" /></td><td>Play Button: with this button you can view or listen the file enclosure of the selected item(episode). To select your favorite player open BePodder's  Preferences, click in the manu-bar Settings>Preferences... and in the Preferences Window under 'File Type' select you favorite player.
+</td></tr>
+<tr><td><img src="images/download_episode.png" /></td><td>Download Button: downloads the file enclosure of the selected item (episode); you can see the download info by clicking on the third button over the info panel.
+</td></tr>
+<tr><td><img src="images/stop_episode.png" /></td><td>Stop Button: stops to download the file enclosure of the selected item (episode); to resume the download double-click the item (episode) or select the item and click the Download Button.
+</td></tr>
+<tr><td><img src="images/remove_episode.png" /></td><td>Remove Button: deletes the selected episode (you will loose the enclosure file).
+</td></tr>
+</table>
+
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="usage" name="usage">Using BePodder</a></h2>
+<p>Getting started with BePodder is easy.</p>
+<p>On the left of the main window you can see the 'Subscription List' with all your feed subscriptions. We have added some subscriptions for you, and you can always add your own in two ways:</p>
+
+<ol>
+<li>click the Add Button, then insert the feed url (example: http://www.newpodcast.com/rss.xml) and click add.</li> 
+ <!--<li>in the menubar select 'Directory' and then 'Podcast list' or another list, choose a podcast and click 'Subscribe'.</li>-->
+</ol> 
+
+
+<p>If you select a Podcast in the subscriptions list and use the check button, BePodder adds the new items to the 'Episodes list' (below on the right); you can check all your podcasts by right-clicking and selecting 'Check All Channels' in the context menu.</p> 
+
+<!--			<p>Look at the screenshot above, there are 3 new items indicated by a black dot in the first column of the 'Episodes list'.</p>  -->
+<p>In the second column there are icons that indicate the state of the item:</p> 
+<p>- the Episode 4 has an icon that indicates an error</p> 
+<p>- the Episode 3 has an icon that indicates that the item's enclosure download request is enquequed</p> 
+<p>- the Episode 2 has an icon that indicates that BePodder is downloading the item's enclosure file</p> 
+<p>- the Episode 1 have an icon that indicates that BePodder have just downloaded the item's enclosure file</p>
+
+
+<h3>Download Podcast's enclosure files</h3>
+
+<p>Select an item in the 'Episodes list' and then double-click on it (or click the Download Button) to start downloading the enclosed file; you can always stop the download by clicking on the Stop Button.</p>
+<p>When you click on the Subscribed Podcasts in the 'Subscriptions List' the software shows you, in the 'List of episodes', all the items available in that Subscription. Select an item and then click play (Play Button) to view or listen to the file.</p>
+<p>You can access the Enclosures Folder by clicking on the folder icon in the Info Pannel or by right-clicking your mouse on an item and select 'Open Enclosures Folder' in the context menu.</p>
+<!--
+<div align="center">
+<table><tr><td align="center">
+<img src="./images/en/start.png" alt="PecoRename and its add-on" /></td></tr><tr><td><hr /></td></tr>
+<tr><td align="center"><i>Four selected files are opened in PecoRename via the Tracker add-on. There, "Main" is inserted at the start of each file name.</i></td></tr>
+<tr><td><hr /></td></tr>
+</table>
+</div>
+-->
+<h2><a id="ui" name="preferences">Preferences</a></h2>
+<p>Preferences can be accessed by clicking in the menu-bar File>Preferences. You can select a category from the left list of the preferences dialog: FileType, Channels, Download and Proxy.</p> 
+<dl>
+  <dt>FileType</dt>
+  <dd>to specify the default browser and player</dd>
+  <dt>Channels</dt>
+  <dd>to specify preferences that control the operation to check channels new items; you can choose to Check all channels on startup or check the channel every desired minutes.</dd>
+  <dt>Download</dt>
+  <dd>to specify the max number of item's files to download at the same time</dd>
+  <dt>Proxy</dt>
+  <dd>to set up a proxy server to work with BePodder; a proxy server acts as a security barrier between your internal network and the Internet, keeping others on the Internet from accessing information on your internal network</dd>
+</dl>
+
+<!--
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="conflict" name="conflict">Conflicting Renames</a></h2>
+
+<div align="center">
+<table><tr><td align="center">
+<img src="./images/en/conflict.png" alt="Conflicting renames" /></td></tr><tr><td><hr /></td></tr>
+<tr><td align="center"><i>Replacing "View" with "Window" would create duplicates of the already existing "Window.cpp" and "Window.h".</i></td></tr>
+<tr><td><hr /></td></tr>
+</table>
+</div>
+
+<p>Conflicts arise if the renaming pattern would result in new file names that would clash with each other. In that case, the proposed new file name in the preview column is displayed in red and you see a count of <i>duplicates</i> in the status area at the bottom left of the file list. </p>
+<p>These conflicting renames won't be performed, of course.</p>
+<p><br /></p>
+<p>There's another possibility of conflict:<br />
+There may already exist files with the same names as the targeted new file names that were not selected to be processed by PecoRename.</p>
+<p>Those won't be shown as red in the preview, because PecoRename will encounter them only during processing after pressing <span class="menu">Rename</span>. Instead, a <span class="menu">Report</span> window will pop up, after all possible renamings are finished:</p>
+
+<div align="center">
+<table><tr><td align="center">
+<img src="./images/en/report.png" alt="Conflicting report" /></td></tr><tr><td><hr /></td></tr>
+<tr><td><i>"MainWindow.cpp" and "MainWindow.h" were already present in the folder: 2 files couldn't be renamed.</i></td></tr>
+<tr><td><hr /></td></tr>
+</table>
+</div>
+
+-->
+
+<!--
+<div align="center">
+<table><tr><td align="center">
+<img src="./images/en/renamer_search-replace.png" alt="Rename mode 'Search / replace'" onclick="switchImage(this)" /></td></tr><tr><td><hr /></td></tr>
+<tr><td align="center"><i>Click on the image to see the next example.</i></td></tr>
+<tr><td><hr /></td></tr>
+</table>
+<noscript><b>Your browser doesn't support JavaScript, or it's disabled.</b><br />
+You won't be able to click on the screenshot to see these examples:<br />
+<a href="./images/en/renamer_insert-overwrite-1.png">Insert</a> ‒ 
+<a href="./images/en/renamer_insert-overwrite-2.png">Overwrite</a> ‒
+<a href="./images/en/renamer_remove.png">Remove</a> ‒ 
+<a href="./images/en/renamer_numbering.png">Numbering</a> ‒ 
+<a href="./images/en/renamer_extension.png">Add&nbsp;file&nbsp;extension</a> ‒ 
+<a href="./images/en/renamer_upper.png">Uppercase/lowercase</a></noscript>
+</div>
+-->
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="download" name="download">Download</a></h2>
+<p>BePodder is directly available through HaikuDepot from the HaikuPorts repository. You can also build it yourself using <a href="https://github.com/haikuports">Haikuporter</a>. The source is hosted at <a href="https://github.com/HaikuArchives/BePodder">GitHub</a>.</p>
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="bugs_feedback" name="bugs_feedback">Bugreports &amp; Feedback</a></h2>
+<p>Please use BePodder's <a href="https://github.com/HaikuArchives/BePodder/issues">issue tracker</a> at GitHub if you experience unusual difficulties.<br />
+If you'd like to contribute translations, please do so by logging into the <a href="https://i18n.kacperkasper.pl">Polyglot</a> site with your GitHub account.</p>
+
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="thanks" name="thanks">Thanks</a></h2>
+<p>BePodder was originally coded for the BeOS by Funky Idea Software and was released under a MIT license in 2014.<br />
+Thanks to everyone contributing code, translations and feedback.</p>
+<!--
+<h2>
+<a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
+<a id="history" name="history">History</a></h2>
+
+<p><b>2.0</b> - <i>2018-03-18:</i></p>
+<ul>
+<li>Checking for and marking renamings that would create duplicates</li>
+<li>Many small improvements to the GUI</li>
+<li>Added status view</li>
+<li>Added context menu to the file list</li>
+<li>Added documentation</li>
+<li>Localization</li>
+<li>Save/restore state of window, columns, last used renamer and parameters</li>
+<li>"Upper/lowercase" renamer: fix UTF8 usage, add "Sentence case" and "Title case"</li>
+<li>"Remove" renamer: now works with all possible parameter settings</li>
+<li>Remove the useless script file panel</li>
+</ul>
+
+<p><b>1.5</b> - <i>2016-03-15:</i></p>
+<ul>
+<li>Use a layout-aware, sortable file list</li>
+<li>Added vector icon</li>
+<li>No more limit on the number of input characters</li>
+</ul>
+
+<p><b>0.9</b> - <i>BeOS era:</i></p>
+<ul>
+<li>Historic release.</li>
+</ul>
+-->
+
+</body>
+</html>

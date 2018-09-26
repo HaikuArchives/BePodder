@@ -276,7 +276,7 @@ PBox::BuildGUI(BMessage viewTemplate, BMessage settings, BView *view) {
 				} else 
 				{
 					BGroupView* groupView = new BGroupView(B_HORIZONTAL);
-					BRect rect(0,0,200,80);
+					BRect rect(0,0,280,80);
 					BRect textRect;
 					if (desc) //andrea: add description only if available.
 					{

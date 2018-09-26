@@ -25,6 +25,7 @@ a:link {
 	text-decoration: none;
 	color: #dc3c01;
 }
+
 a:visited {
 	font-weight: bold;
 	text-decoration: none;
@@ -149,6 +150,17 @@ pre.terminal {			/* Terminal output*/
 .box-stop {
 	background: #ffeae6 url(./images/alert_stop_32.png) 15px 15px no-repeat;
 }
+
+.interactive {
+	font-weight: bold;
+	color: #dc3c01;
+}
+dt {
+	font-size: 1.0em;
+	font-family: serif;
+	font-style: italic;
+	color: #24225e;
+}
 </style>
 
 <script>
@@ -180,6 +192,28 @@ var leafname= pathname.split('\\').pop().split('/').pop();
         image.alt = "Rename mode 'Search / replace'";
     }
 }
+
+var changeImage = function(imageId, newImage)
+{
+        document.getElementById(imageId).src = newImage; 
+}
+
+var highlightComponent = function(component)
+{
+	var imageId = "componentsImg";
+	var newImage;
+	if (component == 0)
+		newImage = "./images/en/BePodder_components.png";
+	else if (component == 1)
+		newImage = "./images/en/BePodder_components_subscriptions_h.png";
+	else if (component == 2)
+		newImage = "./images/en/BePodder_components_episodes_h.png";
+	else if (component == 3)
+		newImage = "./images/en/BePodder_components_infos_h.png";
+	document.getElementById(imageId).src = newImage;
+   	
+}
+
 </script>
 
 </head>
@@ -205,10 +239,17 @@ for <a href="http://www.haiku-os.org">Haiku</a></p>
 <a id="ui" name="usage">User Interface</a></h2>
 <p>BePodder has an easy to use yet powerful Graphical User Interface. The main window is split into tree panels:</p>
 
+
+<div align="center">
+<table><tr><td align="center">
+<img id="componentsImg" src="./images/en/BePodder_components.png" alt="Gui components" onclick="switchImage(this)" /></td></tr>
+</table>
+</div>
+
 <ol>
-<li>The Subscription list (the panel with the number 1 in the screenshot) with the list of the podcasts that you have subscribed to. When you click on a Channel you can see in the panel 2 the list of the channel's items.</li> 
-<li>The Episodes list with all the items available.</li> 
-<li>The Info panel show: episode info, channel info or Downloads info; you can select an info panel by clicking one of the below three tabs.</li> 
+<li>The <span class="interactive" onmouseover = "highlightComponent(1)"  onmouseout = "highlightComponent(0)">Subscription list</span> (the panel with the number 1 in the screenshot) with the list of the podcasts that you have subscribed to. When you click on a Channel you can see in the panel 2 the list of the channel's items.</li> 
+<li>The <span class="interactive" onmouseover = "highlightComponent(2)"  onmouseout = "highlightComponent(0)">Episodes list</span> with all the items available.</li> 
+<li>The <span class="interactive" onmouseover = "highlightComponent(3)"  onmouseout = "highlightComponent(0)">Info panel show</span>: Episode info, Subscription info or Downloads info; you can select an info panel by clicking one of the below three tabs.</li> 
 </ol>
 
 <h3> <a id="user_interface-Menubar" name="user_interface-Menubar">The Menubar</a></h3>

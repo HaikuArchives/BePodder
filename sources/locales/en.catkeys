@@ -1,4 +1,4 @@
-1	English	application/x-vnd.xeD.BePodder	1808227060
+1	English	application/x-vnd.xeD.BePodder	1030792468
 Channel image	BitmapWindow		Channel image
 (Re)start download	IABPItem		(Re)start download
 Delete the podcast from the subscriptions list	IABPChannel		Delete the podcast from the subscriptions list
@@ -8,7 +8,6 @@ You are going to remove the channel:\n\n	IABPChannel		You are going to remove th
 Cancel	IABPGroup		Cancel
 Read episodes (or with error)	ChannelSettingsWindow		Read episodes (or with error)
 Full screen	MainWindow		Full screen
-Select All	RunView		Select All
 connecting	SubscriptionColumn		connecting
 Subscription info	MainWindow		Subscription info
 Remove channel	IABPChannel		Remove channel
@@ -134,6 +133,7 @@ Cancel	AddWindow		Cancel
 Play the selected episode	IABPItem		Play the selected episode
 Who?	ChannelSettingsWindow		Who?
 Cancel	IABPItem		Cancel
+Select all	RunView		Select all
 Check all the podcasts for new episodes	IABPChannel		Check all the podcasts for new episodes
 Password	BPSettingsWindow		Password
 Stop the episode download	IABPDownload		Stop the episode download

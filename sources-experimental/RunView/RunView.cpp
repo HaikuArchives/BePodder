@@ -679,7 +679,7 @@ RunView::BuildPopUp (BPoint point)
   item->SetTarget (this);
   fMyPopUp->AddItem (item);
 
-  item = new BMenuItem(B_TRANSLATE("Select All"), new BMessage (B_SELECT_ALL), 'A');
+  item = new BMenuItem(B_TRANSLATE("Select all"), new BMessage (B_SELECT_ALL), 'A');
   item->SetEnabled (enableselectall);
   item->SetTarget (this);
   fMyPopUp->AddItem (item);

@@ -148,7 +148,7 @@ IABPGroupRemove::Perform(BMessage*){
 		result = remove->Go(); //sync..
 
 		if(result == 0) {
-			BPAlert* wait = new BPAlert("Remove a group", B_TRANSLATE("\nRemoving..."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
+			BPAlert* wait = new BPAlert("Remove a group", B_TRANSLATE("\nRemoving"B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 			wait->Go(NULL); //async..
 			
 			for(int i=0;i<count;i++){

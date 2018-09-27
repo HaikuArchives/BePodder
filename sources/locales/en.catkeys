@@ -1,4 +1,4 @@
-1	English	application/x-vnd.xeD.BePodder	2352029687
+1	English	application/x-vnd.xeD.BePodder	3671335962
 Channel image	BitmapWindow		Channel image
 (Re)start download	IABPItem		(Re)start download
 Delete the podcast from the subscriptions list	IABPChannel		Delete the podcast from the subscriptions list
@@ -12,7 +12,7 @@ connecting	SubscriptionColumn		connecting
 Subscription info	MainWindow		Subscription info
 Remove channel	IABPChannel		Remove channel
 Add subscription	AddWindow		Add subscription
-SWF è un formato proprietario per la grafica vettoriale realizzato con il software Flash della Adobe (precedentemente della Macromedia).	AutoFileTypeMap		SWF è un formato proprietario per la grafica vettoriale realizzato con il software Flash della Adobe (precedentemente della Macromedia).
+\nRemoving…	IABPGroup		\nRemoving…
 not found	SubscriptionColumn		not found
 Check the channel every:	BPSettingsWindow	After 'every:' follows a popup menu to choose a time intervall	Check the channel every:
 Size	DL-Episode-ListView		Size
@@ -24,6 +24,7 @@ Delete the episode and the enclosure	IABPItem		Delete the episode and the enclos
 BePodder	System name		BePodder
 When there are new episodes	ChannelSettingsWindow		When there are new episodes
 error	SubscriptionColumn		error
+SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).	AutoFileTypeMap		SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).
 Download the selected episode	IABPDownload		Download the selected episode
 Open webpage	IABPItem		Open webpage
 Play the selected episode	IABPDownload		Play the selected episode
@@ -43,7 +44,6 @@ Toolbar	MainWindow		Toolbar
 \nParsing archive…	MainWindow		\nParsing archive…
 You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n	IABPGroup		You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n
 Group	MainController		Group
-\nRemoving...	IABPGroup		\nRemoving...
 Max. downloads:	BPSettingsWindow		Max. downloads:
 File	MainWindow		File
 After a check	ChannelSettingsWindow		After a check
@@ -60,11 +60,11 @@ not downloaded	FileStatusColumn		not downloaded
 Add the selected podcast to the Subscription list	DirectoryWindow		Add the selected podcast to the Subscription list
 Add a new group	IABPGroup		Add a new group
 OK	MainController		OK
-enquequed	FileStatusColumn		enquequed
 Episodes older than 3 days	ChannelSettingsWindow		Episodes older than 3 days
 Downloads	MainWindow		Downloads
 {0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{no downloads}=1{1 download}other{# downloads}}
 Check the selected podcast for new episodes	IABPChannel		Check the selected podcast for new episodes
+\nRemoving…	IABPItem		\nRemoving…
 Cancel	IABPChannel		Cancel
 Check all channels	IABPChannel		Check all channels
 stopped	FileStatusColumn		stopped
@@ -72,7 +72,6 @@ connecting	FileStatusColumn		connecting
 Preferences	SettingsWindow		Preferences
 Find this episode	IABPDownload		Find this episode
 Preferences…	MainWindow		Preferences…
-enquequed	SubscriptionColumn		enquequed
 Title	DL-Episode-ListView		Title
 Add group	IABPGroup		Add group
 Show channel image	IABPChannel		Show channel image
@@ -83,7 +82,6 @@ Subscriptions	MainWindow		Subscriptions
 Episodes older than 1 day	ChannelSettingsWindow		Episodes older than 1 day
 Groups	MainWindow		Groups
 1 hour	BPSettingsWindow		1 hour
-You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed file if there are any.\n	IABPItem		You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed file if there are any.\n
 Port	BPSettingsWindow		Port
 Collapse all categories in the directory list	DirectoryWindow		Collapse all categories in the directory list
 Rename the selected group	IABPGroup		Rename the selected group
@@ -94,13 +92,11 @@ error	FileStatusColumn		error
 2 hours	BPSettingsWindow		2 hours
 Browser	BPSettingsWindow		Browser
 Check channel	IABPChannel		Check channel
-\nRemoving..	IABPItem		\nRemoving..
 Show the podcast homepage	IABPChannel		Show the podcast homepage
 Add the podcast to the subscriptions list	IABPChannel		Add the podcast to the subscriptions list
 Proxy	BPSettingsWindow		Proxy
 Stop download	IABPItem		Stop download
 Close!	TheApp		Close!
-You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed file if there are any.\n	IABPItem		You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed file if there are any.\n
 Subscriptions	SubscriptionListView		Subscriptions
 Remove from this list	IABPDownload		Remove from this list
 Downloading	DirectoryWindow		Downloading
@@ -118,6 +114,7 @@ Download	BPSettingsWindow		Download
 \nParsing archive…	TheApp		\nParsing archive…
 System default	ChannelSettingsWindow		System default
 Enclosure: 	MainWindow		Enclosure: 
+You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n
 Check all channels on startup	BPSettingsWindow		Check all channels on startup
 Address	BPSettingsWindow		Address
 Feed URL	AddWindow		Feed URL
@@ -147,11 +144,14 @@ Episodes	MainWindow		Episodes
 Show documentation	MainWindow		Show documentation
 Downloads	BPSettingsWindow		Downloads
 Export OPML…	MainWindow		Export OPML…
+enqueued	FileStatusColumn		enqueued
 Player	BPSettingsWindow		Player
 Filetype	BPSettingsWindow		Filetype
 Stop download	IABPDownload		Stop download
 Delete	IABPGroup		Delete
 Icon	DL-Episode-ListView		Icon
+You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n	IABPItem		You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n
+enqueued	SubscriptionColumn		enqueued
 Remove group	IABPGroup		Remove group
 About BePodder	MainWindow		About BePodder
 Check the podcasts of the selected group for new episodes	IABPGroup		Check the podcasts of the selected group for new episodes

@@ -39,6 +39,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include <Catalog.h>
 #include <Message.h>
 #include <Messenger.h>
 #include <MessageRunner.h>
@@ -60,7 +61,8 @@
 #include "Utilities.h"
 #include "RVAction.h"
 
-#define _T(str) (str)
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "RunView"
 
 struct SoftBreak
 {
@@ -633,21 +635,21 @@ RunView::BuildPopUp (BPoint point)
   BMessage *lookup;
   lookup = new BMessage (M_LOOKUP_WEBSTER);
   lookup->AddString ("string", querystring);
-  item = new BMenuItem(_T("Lookup (Dictionary)"), lookup);
+  item = new BMenuItem(B_TRANSLATE("Lookup (Dictionary)"), lookup);
   item->SetEnabled (enablelookup);
   item->SetTarget(this);
   fMyPopUp->AddItem (item);
 
   lookup = new BMessage (M_LOOKUP_GOOGLE);
   lookup->AddString ("string", querystring);
-  item = new BMenuItem(_T("Lookup (Google)"), lookup);
+  item = new BMenuItem(B_TRANSLATE("Lookup (Google)"), lookup);
   item->SetEnabled (enablelookup);
   item->SetTarget(this);
   fMyPopUp->AddItem (item);
  
   lookup = new BMessage (M_LOOKUP_ACRONYM);
   lookup->AddString ("string", querystring);
-  item = new BMenuItem(_T("Lookup (Acronym Finder)"), lookup);
+  item = new BMenuItem(B_TRANSLATE("Lookup (Acronym Finder)"), lookup);
   item->SetEnabled (enablelookup);
   item->SetTarget(this);
   fMyPopUp->AddItem (item);
@@ -657,14 +659,14 @@ RunView::BuildPopUp (BPoint point)
   if(aurl != ""){
   	BMessage* url = new BMessage ('cour');
   	url->AddString("url",aurl);
-  	item = new BMenuItem(_T("Copy URL"), url);
+  	item = new BMenuItem(B_TRANSLATE("Copy URL"), url);
   	item->SetEnabled (true);
   	item->SetTarget (this);
   	fMyPopUp->AddItem (item);
   	
 	url = new BMessage ('opur');
 	url->AddString("url",aurl);
-	 item = new BMenuItem(_T("Open URL"), url);
+	 item = new BMenuItem(B_TRANSLATE("Open URL"), url);
   	item->SetEnabled (true);
   	item->SetTarget (this);
   	fMyPopUp->AddItem (item);
@@ -672,19 +674,19 @@ RunView::BuildPopUp (BPoint point)
   	fMyPopUp->AddSeparatorItem();
   }
   
-  item = new BMenuItem(_T("Copy"), new BMessage (B_COPY), 'C');
+  item = new BMenuItem(B_TRANSLATE("Copy"), new BMessage (B_COPY), 'C');
   item->SetEnabled (enablecopy);
   item->SetTarget (this);
   fMyPopUp->AddItem (item);
 
-  item = new BMenuItem(_T("Select All"), new BMessage (B_SELECT_ALL), 'A');
+  item = new BMenuItem(B_TRANSLATE("Select All"), new BMessage (B_SELECT_ALL), 'A');
   item->SetEnabled (enableselectall);
   item->SetTarget (this);
   fMyPopUp->AddItem (item);
 
   /*fMyPopUp->AddSeparatorItem();
   
-  item = new BMenuItem(_T("Clear"), new BMessage(M_CLEAR));
+  item = new BMenuItem(B_TRANSLATE("Clear"), new BMessage(M_CLEAR));
   item->SetTarget(this);
   fMyPopUp->AddItem(item);
   */

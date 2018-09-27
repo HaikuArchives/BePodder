@@ -1,7 +1,7 @@
 #ifndef ItemRunView_H_
 #define ItemRunView_H_
 
-#include "runview/RunView.h" 
+#include "RunView.h" 
 #include "BitmapView.h"
 #include <TranslationUtils.h>
 

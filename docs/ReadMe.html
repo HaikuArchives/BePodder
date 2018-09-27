@@ -164,39 +164,6 @@ dt {
 </style>
 
 <script>
-var switchImage = function(image)
-{
-var pathname = image.src
-var leafname= pathname.split('\\').pop().split('/').pop();
-
-	if (leafname == "renamer_search-replace.png") {
-        image.src = "./images/en/renamer_insert-overwrite-1.png";
-        image.alt = "Rename mode 'Insert / overwrite' - inserting";
-    } else if (leafname == "renamer_insert-replace-1.png") {
-        image.src = "./images/en/renamer_insert-replace-2.png";
-        image.alt = "Rename mode 'Insert / overwrite' - overwriting";
-    } else if (leafname == "renamer_insert-overwrite-2.png") {
-        image.src = "./images/en/renamer_remove.png";
-        image.alt = "Rename mode 'Remove'";
-    } else if (leafname == "renamer_remove.png") {
-        image.src = "./images/en/renamer_numbering.png";
-        image.alt = "Rename mode 'Numbering'";
-    } else if (leafname == "renamer_numbering.png") {
-        image.src = "./images/en/renamer_extension.png";
-        image.alt = "Rename mode 'Add file extension'";
-    } else if (leafname == "renamer_extension.png") {
-        image.src = "./images/en/renamer_upper-lower.png";
-        image.alt = "Rename mode 'Uppercase / lowercase'";
-    } else {
-        image.src = "./images/en/renamer_search-replace.png";
-        image.alt = "Rename mode 'Search / replace'";
-    }
-}
-
-var changeImage = function(imageId, newImage)
-{
-        document.getElementById(imageId).src = newImage; 
-}
 
 var highlightComponent = function(component)
 {
@@ -237,12 +204,12 @@ for <a href="http://www.haiku-os.org">Haiku</a></p>
 <a href="#"><img src="./images/up.png" style="border:none;float:right" alt="index" /></a>
 
 <a id="ui" name="usage">User Interface</a></h2>
-<p>BePodder has an easy to use yet powerful Graphical User Interface. The main window is split into tree panels:</p>
+<p>BePodder has an easy to use yet powerful User Interface. The main window is split into tree panels:</p>
 
 
 <div align="center">
 <table><tr><td align="center">
-<img id="componentsImg" src="./images/en/BePodder_components.png" alt="Gui components" onclick="switchImage(this)" /></td></tr>
+<img id="componentsImg" src="./images/en/BePodder_components.png" alt="Gui components" /></td></tr>
 </table>
 </div>
 

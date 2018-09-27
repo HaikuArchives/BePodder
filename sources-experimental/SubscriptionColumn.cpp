@@ -38,9 +38,10 @@ void SubscriptionColumn::DrawField(BField* _field, BRect rect, BView* parent){
 			break;
 		}
 	}
-	else
+	else {
+		parent->SetFont(be_bold_font);
 		BStringColumn::DrawField(_field,rect,parent);
-
+	}
 }
 
 void
@@ -148,9 +149,9 @@ SubscriptionColumn::DrawBigField(SubscriptionField* field, BRect rect, BView* pa
 	{
 		BString itemsNumber;
 		static BStringFormat formatItems(B_TRANSLATE("{0, plural,"
-		"=0{no new items}"
-		"=1{1 new item}"
-		"other{# new items}}" ));
+		"=0{no new episodes}"
+		"=1{1 new episodes}"
+		"other{# new episodes}}" ));
 		formatItems.Format(itemsNumber, field->GetNewCount());
 		parent->DrawString(itemsNumber.String());
 	}

@@ -1,4 +1,4 @@
-1	English	application/x-vnd.xeD.BePodder	3671335962
+1	English	application/x-vnd.xeD.BePodder	1808227060
 Channel image	BitmapWindow		Channel image
 (Re)start download	IABPItem		(Re)start download
 Delete the podcast from the subscriptions list	IABPChannel		Delete the podcast from the subscriptions list
@@ -8,6 +8,7 @@ You are going to remove the channel:\n\n	IABPChannel		You are going to remove th
 Cancel	IABPGroup		Cancel
 Read episodes (or with error)	ChannelSettingsWindow		Read episodes (or with error)
 Full screen	MainWindow		Full screen
+Select All	RunView		Select All
 connecting	SubscriptionColumn		connecting
 Subscription info	MainWindow		Subscription info
 Remove channel	IABPChannel		Remove channel
@@ -47,23 +48,26 @@ Group	MainController		Group
 Max. downloads:	BPSettingsWindow		Max. downloads:
 File	MainWindow		File
 After a check	ChannelSettingsWindow		After a check
-{0, plural,=0{no new items}=1{1 new item}other{# new items}}	SubscriptionColumn		{0, plural,=0{no new items}=1{1 new item}other{# new items}}
 Subscription	DL-Episode-ListView		Subscription
 Subscribe	DirectoryWindow		Subscribe
 Can't resolve host!	DirectoryWindow		Can't resolve host!
 View	MainWindow		View
 Username	BPSettingsWindow		Username
 5 minutes	BPSettingsWindow		5 minutes
+Open URL	RunView		Open URL
 Not found!	DirectoryWindow		Not found!
 not downloaded	FileStatusColumn		not downloaded
 \n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n	IABPChannel		\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n
 Add the selected podcast to the Subscription list	DirectoryWindow		Add the selected podcast to the Subscription list
 Add a new group	IABPGroup		Add a new group
 OK	MainController		OK
+Copy URL	RunView		Copy URL
 Episodes older than 3 days	ChannelSettingsWindow		Episodes older than 3 days
 Downloads	MainWindow		Downloads
 {0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{no downloads}=1{1 download}other{# downloads}}
 Check the selected podcast for new episodes	IABPChannel		Check the selected podcast for new episodes
+Lookup (Acronym Finder)	RunView		Lookup (Acronym Finder)
+Copy	RunView		Copy
 \nRemoving…	IABPItem		\nRemoving…
 Cancel	IABPChannel		Cancel
 Check all channels	IABPChannel		Check all channels
@@ -81,6 +85,7 @@ downloaded	FileStatusColumn		downloaded
 Subscriptions	MainWindow		Subscriptions
 Episodes older than 1 day	ChannelSettingsWindow		Episodes older than 1 day
 Groups	MainWindow		Groups
+Lookup (Google)	RunView		Lookup (Google)
 1 hour	BPSettingsWindow		1 hour
 Port	BPSettingsWindow		Port
 Collapse all categories in the directory list	DirectoryWindow		Collapse all categories in the directory list
@@ -114,6 +119,7 @@ Download	BPSettingsWindow		Download
 \nParsing archive…	TheApp		\nParsing archive…
 System default	ChannelSettingsWindow		System default
 Enclosure: 	MainWindow		Enclosure: 
+{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}	SubscriptionColumn		{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}
 You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n
 Check all channels on startup	BPSettingsWindow		Check all channels on startup
 Address	BPSettingsWindow		Address
@@ -123,6 +129,7 @@ OK	IABPChannel		OK
 Enable proxy	BPSettingsWindow		Enable proxy
 never	ChannelSettingsWindow		never
 can't connect	FileStatusColumn		can't connect
+Lookup (Dictionary)	RunView		Lookup (Dictionary)
 Cancel	AddWindow		Cancel
 Play the selected episode	IABPItem		Play the selected episode
 Who?	ChannelSettingsWindow		Who?

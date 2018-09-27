@@ -89,7 +89,13 @@ SRCS = ../sources-experimental/ActionAsync.cpp \
 	../sources-experimental/TheApp.cpp \
 	../sources-experimental/TitleTextRender.cpp \
 	../sources-experimental/XMLChannelExtractor.cpp \
-	../sources-experimental/XMLItemExtractor.cpp
+	../sources-experimental/XMLItemExtractor.cpp \
+	../sources-experimental/RunView/RunView.cpp \
+	../sources-experimental/RunView/Theme.cpp \
+	../sources-experimental/RunView/URLCrunch.cpp \
+	../sources-experimental/RunView/Utilities.cpp
+
+
 
 #	Specify the resource definition files to use. Full or relative paths can be
 #	used.
@@ -117,7 +123,6 @@ RSRCS =
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
 LIBS = be columnlistview localestub translation tracker xml2 curl shared $(STDCPPLIBS) \
 	../library/libfunky/libfunky.a \
-	../library/librunview/librunview.a \
 	../library/libfish/libfish.a
 
 #	Specify additional paths to directories following the standard libXXX.so
@@ -132,7 +137,7 @@ LIBPATHS =
 #	NOT auto-included here.
 SYSTEM_INCLUDE_PATHS = ../include \
 	../include/curl \
-	../include/runview \
+	../sources-experimental/RunView/include \
 	../include/libfunky \
 	../include/libfish \
 	$(shell findpaths -e B_FIND_PATH_HEADERS_DIRECTORY private/interface) \

@@ -39,7 +39,7 @@
 #include <parsedate.h>
 
 #include "ItemRunView.h"
-#include "runview/Theme.h"
+#include "Theme.h"
 
 #include "RVActionBP.h"
 #include "RVActionBPOpenURL.h"

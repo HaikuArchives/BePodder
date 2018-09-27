@@ -50,11 +50,11 @@ IABPItemRemove::Perform(BMessage*){
 	BString text;
 	if(selection.CountItems() == 1) {
 		text << B_TRANSLATE("You are going to remove the episode:\n\n%episodename%\n\n"
-		"You will lose any enclosed file if there are any.\n");
+		"You will lose any enclosed files if there are any.\n");
 		text.ReplaceFirst("%episodename%", firstTitle);
 	} else {
 		text << B_TRANSLATE("You are going to remove %numberofepisodes% episodes.\n\n"
-		"You will lose any enclosed file if there are any.\n");
+		"You will lose any enclosed files if there are any.\n");
 		BString numberOfEpisodes;
 		numberOfEpisodes << selection.CountItems();
 		text.ReplaceFirst("%numberofepisodes%", numberOfEpisodes);
@@ -69,7 +69,7 @@ IABPItemRemove::Perform(BMessage*){
 	
 	if(result==0){
 		
-		BPAlert* wait = new BPAlert("Remove an episode", B_TRANSLATE("\nRemoving.."),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
+		BPAlert* wait = new BPAlert("Remove an episode", B_TRANSLATE("\nRemoving" B_UTF8_ELLIPSIS),NULL,NULL,NULL,B_WIDTH_AS_USUAL, ResourceVectorToBitmap("emblem-delete", 32));
 		wait->Go(NULL); //async..
 		
 		for(int i=0;i<selection.CountItems();i++){

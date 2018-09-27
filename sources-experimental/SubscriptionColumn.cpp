@@ -174,7 +174,7 @@ SubscriptionColumn::DrawStatus(FileStatus status,BView* parent,int32 perc){
 			parent->DrawString(B_TRANSLATE("not down"));
 		break;
 		case ENQUEQUED:
-			parent->DrawString(B_TRANSLATE("enquequed"));
+			parent->DrawString(B_TRANSLATE("enqueued"));
 		break;
 		case DOWNLOADING:
 			parent->DrawString(B_TRANSLATE("downloading"));

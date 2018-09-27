@@ -62,7 +62,7 @@ FileStatusField::SetFileStatus(FileStatus status)
 			 	 	fOriginalStatus.SetTo(B_TRANSLATE("downloading"));
 			 	break;
 			 	case ENQUEQUED:
-			 		fOriginalStatus.SetTo(B_TRANSLATE("enquequed"));
+					fOriginalStatus.SetTo(B_TRANSLATE("enqueued"));
 			 	break;
 			 	case CONNECTING:
 			 		fOriginalStatus.SetTo(B_TRANSLATE("connecting"));

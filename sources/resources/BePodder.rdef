@@ -4,7 +4,7 @@ resource app_signature "application/x-vnd.xeD.BePodder";
 
 resource app_version {
 	major  = 1,
-	middle = 3,
+	middle = 5,
 	minor  = 0,
 
 	variety = B_APPV_FINAL,

@@ -79,9 +79,9 @@ IABPChannelRemove::Perform(BMessage*){
 		
 				text << B_TRANSLATE("You are going to remove the channel:\n\n");
 				text << row->GetTitle();
-				text << B_TRANSLATE("\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n");
+				text << B_TRANSLATE("\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n");
 
-				BPAlert* remove = new BPAlert("Remove a channel", text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Archive"),B_TRANSLATE("Cancel"),B_WIDTH_AS_USUAL,bitmap);
+				BPAlert* remove = new BPAlert(B_TRANSLATE("Remove a channel"), text.String(),B_TRANSLATE("Delete"),B_TRANSLATE("Archive"),B_TRANSLATE("Cancel"),B_WIDTH_AS_USUAL,bitmap);
 				int32 result=remove->Go();
 				
 				LOCKWINDOW

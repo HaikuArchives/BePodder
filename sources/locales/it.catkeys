@@ -1,4 +1,4 @@
-1	Italian	application/x-vnd.xeD.BePodder	1030792468
+1	Italian	application/x-vnd.xeD.BePodder	2569342938
 Channel image	BitmapWindow		Immagine canale
 (Re)start download	IABPItem		(Ri)avvia download
 Download the selected episode	IABPItem		Scarica l'episodio selezionato
@@ -20,7 +20,7 @@ You are going to remove the channel:\n\n	IABPChannel		Stai per rimuovere il cana
 Remove channel	IABPChannel		Rimuovi il canale
 \nAn error occured while removing!	IABPChannel		\nSi è verificato un errore durante la rimozione
 Open homepage	IABPChannel		Apri l'homepage
-\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n	IABPChannel		\n\nVolete soltanto archiviare questo 
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nVolete soltanto archiviare questo 
 Check the selected podcast for new episodes	IABPChannel		Controlla il podcast selezionato per nuovi episodi
 Cancel	IABPChannel		Cancella
 Check all channels	IABPChannel		Controlla tutti i canali

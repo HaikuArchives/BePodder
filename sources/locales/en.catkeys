@@ -1,4 +1,4 @@
-1	English	application/x-vnd.xeD.BePodder	1030792468
+1	English	application/x-vnd.xeD.BePodder	2569342938
 Channel image	BitmapWindow		Channel image
 (Re)start download	IABPItem		(Re)start download
 Delete the podcast from the subscriptions list	IABPChannel		Delete the podcast from the subscriptions list
@@ -56,7 +56,6 @@ Username	BPSettingsWindow		Username
 Open URL	RunView		Open URL
 Not found!	DirectoryWindow		Not found!
 not downloaded	FileStatusColumn		not downloaded
-\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n	IABPChannel		\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from you computer?\n
 Add the selected podcast to the Subscription list	DirectoryWindow		Add the selected podcast to the Subscription list
 Add a new group	IABPGroup		Add a new group
 OK	MainController		OK
@@ -132,6 +131,7 @@ Lookup (Dictionary)	RunView		Lookup (Dictionary)
 Cancel	AddWindow		Cancel
 Play the selected episode	IABPItem		Play the selected episode
 Who?	ChannelSettingsWindow		Who?
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n
 Cancel	IABPItem		Cancel
 Select all	RunView		Select all
 Check all the podcasts for new episodes	IABPChannel		Check all the podcasts for new episodes

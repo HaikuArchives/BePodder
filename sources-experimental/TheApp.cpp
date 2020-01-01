@@ -7,6 +7,7 @@
 #include "owner.h"
 #include "Logger.h"
 
+#include <AboutWindow.h>
 #include <Application.h>
 #include <Catalog.h>
 #include <Entry.h>
@@ -14,7 +15,6 @@
 #include <Roster.h>
 
 
-#include "BPAlert.h"
 #include "Utils.h"
 #include "RVAction.h"
 
@@ -84,12 +84,23 @@ TheApp::ReadyToRun(){
 void
 TheApp::AboutRequested(){
 	
-	BString text("\nBePodder");
-	text <<"\n\nDevelopers:\n\tAndrea Anzani [xeD]\n\tGiuseppe Gargaro [Beck]\n\nGraphic:\n\tzuMi\n\n\n";
-	text << "Version : " << VERSION_NAME << " " << VERSION_ID << "\n";
-		
-	BPAlert* about = new BPAlert("about", text.String() ,B_TRANSLATE("Close!"),NULL,NULL,B_WIDTH_AS_USUAL,LoadIcon("logo-64.png"));
-	about->Go();
+	BAboutWindow * about = new BAboutWindow(
+		"BePodder", "application/x-vnd.xeD.BePodder");
+
+	const char* kAuthors[] = {
+		"Andrea Anzani (xeD)",
+		"Giuseppe Gargaro (Beck)",
+		"tzuMi",
+		NULL
+	};
+
+	const char* kCopyright = "Andrea Anzani (xeD)";
+
+	about->AddDescription(B_TRANSLATE("An open source media aggregator."));
+	about->AddAuthors(kAuthors);
+	about->AddCopyright(2005, kCopyright, NULL);
+
+	about->Show();
 }
 
 bool

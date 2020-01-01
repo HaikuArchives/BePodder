@@ -84,7 +84,10 @@ extern IActionManagerBP		action_manager;
 
 
 MainWindow::MainWindow()
-: BWindow(BRect(100,100,970,607), B_TRANSLATE_SYSTEM_NAME("BePodder"), B_TITLED_WINDOW, B_ASYNCHRONOUS_CONTROLS),
+	:
+	BWindow(BRect(100,100,970,607), B_TRANSLATE_SYSTEM_NAME("BePodder"),
+		B_TITLED_WINDOW,
+		B_ASYNCHRONOUS_CONTROLS | B_AUTO_UPDATE_SIZE_LIMITS),
 	importFilePanel(NULL),
 	exportFilePanel(NULL)
 {

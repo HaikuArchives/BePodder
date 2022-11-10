@@ -17,7 +17,7 @@ class RVActionGoto : public RVAction
 				//printf("goto : %s\n",param.String());
 			BMessage* msg=new BMessage('goto');
 			msg->AddString("goto",param);
-			BMessenger(hand).SendMessage(msg,hand);
+			return BMessenger(hand).SendMessage(msg,hand);
 		}
 		virtual	BString		GetDescription(){
 			return "Goto";

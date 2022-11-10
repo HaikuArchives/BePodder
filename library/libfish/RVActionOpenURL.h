@@ -16,7 +16,7 @@ class RVActionOpenURL : public RVAction
 		virtual 	status_t		Perform(BString param){
 				BMessage* msg=new BMessage('opur');
 				msg->AddString("url",param);
-				BMessenger(hand).SendMessage(msg,hand);
+				return BMessenger(hand).SendMessage(msg,hand);
 		}
 		
 		virtual	BString		GetDescription(){

@@ -1232,7 +1232,7 @@ MainWindow::ShowItemDescription(MemoryArchive* archive){
 		
 		
 		off_t* len = 0;
-		if (archive->GetData(ITEM_ENCLOSURE_LENGTH,(const void**)&len)>0 && len>0){
+		if (archive->GetData(ITEM_ENCLOSURE_LENGTH,(const void**)&len)>0 && *len > 0) {
 			char sizeString[256];
 			bottom << " [" << string_for_size(*len, sizeString, sizeof(sizeString)) << "]";
 		}

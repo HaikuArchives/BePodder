@@ -1,0 +1,170 @@
+1	Catalan	application/x-vnd.xeD.BePodder	2569342938
+(Re)start download	IABPItem		(Re)inicia la baixada
+\nRemoving…	IABPItem		\nSe suprimeix...
+Cancel	IABPItem		Cancel·la
+Delete	IABPItem		Suprimeix
+Delete the episode and the enclosure	IABPItem		Suprimeix l'episodi i l'arxiu
+Download the selected episode	IABPItem		Baixa l'episodi seleccionat
+Open webpage	IABPItem		Obre'n la pàgina web
+Play enclosure	IABPItem		Reprodueix l'arxiu
+Play the selected episode	IABPItem		Reprodueix l'episodi seleccionat
+Remove episode	IABPItem		Suprimeix l'episodi
+Show the news homepage	IABPItem		Mostra la pàgina principal de notícies
+Stop download	IABPItem		Interromp la baixada
+Stop the episode download	IABPItem		Interromp la baixada de l'episodi
+You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Suprimireu %numberofepisodes% episodis.\n\nEn perdreu els fitxers adjunts si n'hi ha.\n
+You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Suprimireu l'episodi següent:\n\n%episodename%\n\nEn perdreu els fitxers adjunts si n'hi ha.\n
+(Re)start download	IABPDownload		(Re)inicia la baixada
+Download the selected episode	IABPDownload		Baixa l'episodi seleccionat
+Find this episode	IABPDownload		Troba aquest episodi
+Play enclosure	IABPDownload		Reprodueix l'arxiu
+Play the selected episode	IABPDownload		Reprodueix l'episodi seleccionat
+Remove from this list	IABPDownload		Suprimeix d'aquesta llista
+Stop download	IABPDownload		Interromp la baixada
+Stop the episode download	IABPDownload		Interromp la baixada de l'episodi
+{0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{sense baixades}=1{1 baixada}other{# baixades}}
+{0, plural,=0{no episodes}=1{1 episode}other{# episodes}}	DL-Episode-ListView		{0, plural,=0{sense episodis}=1{1 episodi}other{# episodis}}
+Date	DL-Episode-ListView		Data
+Icon	DL-Episode-ListView		Icona
+Size	DL-Episode-ListView		Mida
+Status	DL-Episode-ListView		Estat
+Subscription	DL-Episode-ListView		Subscripció
+Title	DL-Episode-ListView		Títol
+{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}	SubscriptionColumn		{0, plural,=0{cap episodi nou}=1{1 episodi nou}other{# episodis nous}}
+can't connect	SubscriptionColumn		no es pot connectar
+connecting	SubscriptionColumn		es connecta
+downloading	SubscriptionColumn		es baixa
+enqueued	SubscriptionColumn		a la cua
+error	SubscriptionColumn		error
+invalid format	SubscriptionColumn		format no vàlid
+not down	SubscriptionColumn		no baixat
+not found	SubscriptionColumn		no trobat
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nVoleu simplement arxivar aquest canal (i mantenir tots els fitxers i arxius baixats fins ara) o voleu SUPRIMIR tot el canal de l'ordinador?\n
+\nAn error occured while removing!	IABPChannel		\nHi ha hagut un error durant la supressió!
+\nRemoving…	IABPChannel		\nSe suprimeix...
+Add channel	IABPChannel		Afegeix un canal
+Add the podcast to the subscriptions list	IABPChannel		Afegeix el podcast a la llista de subscripcions
+Archive	IABPChannel		Arxiu
+Cancel	IABPChannel		Cancel·la
+Check all channels	IABPChannel		Comprova tots els canals
+Check all the podcasts for new episodes	IABPChannel		Comprova tots els podcasts per si hi ha cap episodi nou.
+Check channel	IABPChannel		Comprova el canal
+Check the selected podcast for new episodes	IABPChannel		Comprova el podcast seleccionat per si hi ha cap episodi nou.
+Delete	IABPChannel		Suprimeix
+Delete the podcast from the subscriptions list	IABPChannel		Suprimeix el podcast de la llista de subscripcions
+OK	IABPChannel		D'acord
+Open enclosures folder	IABPChannel		Obre la carpeta d'arxius
+Open homepage	IABPChannel		Obre'n la pàgina principal
+Remove a channel	IABPChannel		Suprimeix un canal
+Remove channel	IABPChannel		Suprimeix el canal
+Show channel image	IABPChannel		Mostra la imatge del canal
+Show the podcast homepage	IABPChannel		Mostra la pàgina principal del podcast
+You are going to remove the channel:\n\n	IABPChannel		Suprimireu el canal següent:\n\n
+\nParsing archive…	MainWindow		\nS'analitza l'arxiu...
+About BePodder	MainWindow		Quant al BePodder
+Downloads	MainWindow		Baixades
+Enclosure: 	MainWindow		Arxius:
+Episode info	MainWindow		Informació de l'episodi
+Episodes	MainWindow		Episodis
+Export OPML…	MainWindow		Exporta l'OPML…
+File	MainWindow		Fitxer
+Full screen	MainWindow		Pantalla completa
+Groups	MainWindow		Grups
+Import OPML…	MainWindow		Importa l'OPML…
+Preferences…	MainWindow		Preferències…
+Quit	MainWindow		Surt
+ReadMe.html	MainWindow	Path to the help file. Only change if a translated file is provided.	ReadMe.html
+Show documentation	MainWindow		Mostra'n la documentació
+Subscription info	MainWindow		Informació de la subscripció
+Subscriptions	MainWindow		Subscripcions
+Toolbar	MainWindow		Barra d'eines
+View	MainWindow		Vista
+\nParsing archive…	TheApp		\nS'analitza l'arxiu...
+Close!	TheApp		Tanca!
+\nRemoving…	IABPGroup		\nSe suprimeix...
+Add a new group	IABPGroup		Afegeix un grup nou
+Add group	IABPGroup		Afegeix el grup
+Cancel	IABPGroup		Cancel·la
+Check channels of group	IABPGroup		Comprova els canals del grup
+Check the podcasts of the selected group for new episodes	IABPGroup		Comprova els podcasts del grup seleccionat per si hi ha cap episodi nou.
+Delete	IABPGroup		Suprimeix
+Remove a group and delete all the channels	IABPGroup		Suprimeix un grup i elimina tots els canals
+Remove group	IABPGroup		Suprimeix el grup
+Rename group	IABPGroup		Canvia de nom el grup
+Rename the selected group	IABPGroup		Canvia de nom el grup seleccionat
+You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n	IABPGroup		Suprimireu el grup següent:\n\n%groupname%\n\namb %numberofchannel% canals.\n
+1 hour	BPSettingsWindow		1 hora
+15 minutes	BPSettingsWindow		15 minuts
+2 hours	BPSettingsWindow		2 hores
+30 minutes	BPSettingsWindow		30 minuts
+5 minutes	BPSettingsWindow		5 minuts
+Address	BPSettingsWindow		Adreça
+Browser	BPSettingsWindow		Navegador
+Channels	BPSettingsWindow		Canals
+Check all channels on startup	BPSettingsWindow		Comprova tots els canals a l'inici.
+Check the channel every:	BPSettingsWindow	After 'every:' follows a popup menu to choose a time intervall	Comprova el canal cada:
+Download	BPSettingsWindow		Baixa
+Downloads	BPSettingsWindow		Baixades
+Enable proxy	BPSettingsWindow		Habilita el servidor intermediari
+Filetype	BPSettingsWindow		Tipus de fitxer
+Max. downloads:	BPSettingsWindow		Màx. de baixades:
+never	BPSettingsWindow		mai
+Password	BPSettingsWindow		Contrasenya
+Player	BPSettingsWindow		Reproductor
+Port	BPSettingsWindow		Port
+Proxy	BPSettingsWindow		Servidor intermediari
+Username	BPSettingsWindow		Nom d'usuari
+Add	AddWindow		Afegeix
+Add subscription	AddWindow		Afegeix una subscripció
+Cancel	AddWindow		Cancel·la
+Feed URL	AddWindow		URL del canal
+Add the selected podcast to the Subscription list	DirectoryWindow		Afegeix el podcast seleccionat a la llista de subscripcions
+Can't connect!	DirectoryWindow		No es pot connectar!
+Can't resolve host!	DirectoryWindow		No es pot resoldre l'amfitrió!
+Collapse all	DirectoryWindow		Replega-ho tot
+Collapse all categories in the directory list	DirectoryWindow		Replega totes les categories de la llista de directoris
+Downloading	DirectoryWindow		Es baixa
+Http port failed!	DirectoryWindow		Ha fallat el port http!
+Not found!	DirectoryWindow		No s'ha trobat!
+Subscribe	DirectoryWindow		Subscriviu-vos-hi
+After a check	ChannelSettingsWindow		Després d'una comprovació
+All the episodes present	ChannelSettingsWindow		Tots els episodis presents
+Downloaded episodes	ChannelSettingsWindow		Baixa els episodis
+Episodes older than 1 day	ChannelSettingsWindow		Episodis de fa més d'1 dia
+Episodes older than 1 month	ChannelSettingsWindow		Episodis de fa més d'1 mes
+Episodes older than 1 week	ChannelSettingsWindow		Episodis de fa més d'1 setmana
+Episodes older than 3 days	ChannelSettingsWindow		Episodis de fa més de 3 dies
+never	ChannelSettingsWindow		mai
+New episodes	ChannelSettingsWindow		Episodis nous
+Read episodes (or with error)	ChannelSettingsWindow		Llegeix episodis (o amb error)
+Remove	ChannelSettingsWindow		Suprimeix
+System default	ChannelSettingsWindow		Per defecte del sistema
+When there are new episodes	ChannelSettingsWindow		Quan hi hagi episodis nous
+When?	ChannelSettingsWindow		Quan?
+Who?	ChannelSettingsWindow		Qui?
+BePodder	System name		BePodder
+can't connect	FileStatusColumn		no es pot connectar
+connecting	FileStatusColumn		es connecta
+downloaded	FileStatusColumn		baixat
+downloading	FileStatusColumn		es baixa
+enqueued	FileStatusColumn		a la cua
+error	FileStatusColumn		error
+new	FileStatusColumn		nou
+not downloaded	FileStatusColumn		no baixat
+not found	FileStatusColumn		no trobat
+stopped	FileStatusColumn		interromput
+Cancel	SettingsWindow		Cancel·la
+Preferences	SettingsWindow		Preferències
+Save	SettingsWindow		Desa
+Channel image	BitmapWindow		Imatge del canal
+Copy	RunView		Copia
+Copy URL	RunView		Copia'n l'URL
+Lookup (Acronym Finder)	RunView		Cerca (cercador d’acrònims)
+Lookup (Dictionary)	RunView		Cerca (diccionari)
+Lookup (Google)	RunView		Cerca (Google)
+Open URL	RunView		Obre l'URL
+Select all	RunView		Selecciona-ho tot
+Group	MainController		Grup
+OK	MainController		D'acord
+Subscriptions	SubscriptionListView		Subscripcions
+SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).	AutoFileTypeMap		SWF és un format de propietat per a gràfics vectorials fet amb el programari Adobe Flash (abans Macromedia).

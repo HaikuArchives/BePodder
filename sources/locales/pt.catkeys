@@ -1,0 +1,170 @@
+1	Portuguese	application/x-vnd.xeD.BePodder	2569342938
+(Re)start download	IABPItem		(Re)começar descarga
+\nRemoving…	IABPItem		\nA remover…
+Cancel	IABPItem		Cancelar
+Delete	IABPItem		Eliminar
+Delete the episode and the enclosure	IABPItem		Eliminar o episódio e o anexo
+Download the selected episode	IABPItem		Descarregar o episódio selecionado
+Open webpage	IABPItem		Abrir página web
+Play enclosure	IABPItem		Reproduzir anexo
+Play the selected episode	IABPItem		Reproduzir o episódio selecionado
+Remove episode	IABPItem		Remover episódio
+Show the news homepage	IABPItem		Mostrar a página de notícias
+Stop download	IABPItem		Parar descarga
+Stop the episode download	IABPItem		Interromper a descarga do episódio
+You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Você está prestes a remover %numberofepisodes% episódios.\n\nIrá perder quaisquer ficheiros anexos se existirem.\n
+You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Você está prestes a remover o episódio:\n\n%episodename%\n\nIrá perder quaisquer ficheiros anexos se existirem.\n
+(Re)start download	IABPDownload		(Re)começar descarga
+Download the selected episode	IABPDownload		Descarregar o episódio selecionado
+Find this episode	IABPDownload		Encontrar este episódio
+Play enclosure	IABPDownload		Reproduzir anexo
+Play the selected episode	IABPDownload		Reproduzir o episódio selecionado
+Remove from this list	IABPDownload		Remover desta lista
+Stop download	IABPDownload		Parar a descarga
+Stop the episode download	IABPDownload		Parar a descarga do episódio
+{0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{nenhuma descarga}=1{1 descarga}other{# descargas}}
+{0, plural,=0{no episodes}=1{1 episode}other{# episodes}}	DL-Episode-ListView		{0, plural,=0{nenhum episódio}=1{1 episódio}other{# episódios}}
+Date	DL-Episode-ListView		Data
+Icon	DL-Episode-ListView		Ícone
+Size	DL-Episode-ListView		Tamanho
+Status	DL-Episode-ListView		Estado
+Subscription	DL-Episode-ListView		Assinatura
+Title	DL-Episode-ListView		Título
+{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}	SubscriptionColumn		{0, plural,=0{sem episódios novos}=1{1 novo episódio}other{# novos episódios}}
+can't connect	SubscriptionColumn		não foi possível estabelecer ligação
+connecting	SubscriptionColumn		a estabelecer ligação
+downloading	SubscriptionColumn		a descarregar
+enqueued	SubscriptionColumn		em lista
+error	SubscriptionColumn		erro
+invalid format	SubscriptionColumn		formato inválido
+not down	SubscriptionColumn		por descarregar
+not found	SubscriptionColumn		não encontrado
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nGostaria de arquivar este canal (mantendo todos os ficheiros e anexos descarregados até ao momento) ou pretende ELIMINAR todo o canal do seu computador?\n
+\nAn error occured while removing!	IABPChannel		\nOcorreu um erro ao remover!
+\nRemoving…	IABPChannel		\nA remover…
+Add channel	IABPChannel		Adicionar canal
+Add the podcast to the subscriptions list	IABPChannel		Adicionar o podcast à lista de assinaturas
+Archive	IABPChannel		Arquivar
+Cancel	IABPChannel		Cancelar
+Check all channels	IABPChannel		Verificar todos os canais
+Check all the podcasts for new episodes	IABPChannel		Verificar novos episódios em todos os podcasts
+Check channel	IABPChannel		Verificar canal
+Check the selected podcast for new episodes	IABPChannel		Verificar novos episódios no podcast selecionado
+Delete	IABPChannel		Eliminar
+Delete the podcast from the subscriptions list	IABPChannel		Eliminar o podcast da lista de assinaturas
+OK	IABPChannel		OK
+Open enclosures folder	IABPChannel		Abrir pasta de anexos
+Open homepage	IABPChannel		Abrir página web
+Remove a channel	IABPChannel		Remover um canal
+Remove channel	IABPChannel		Remover canal
+Show channel image	IABPChannel		Mostrar imagem do canal
+Show the podcast homepage	IABPChannel		Mostrar a página web do podcast
+You are going to remove the channel:\n\n	IABPChannel		Você está prestes a remover o canal:\n\n
+\nParsing archive…	MainWindow		\nA analisar arquivo…
+About BePodder	MainWindow		Acerca do BePodder
+Downloads	MainWindow		Descargas
+Enclosure: 	MainWindow		Anexo:
+Episode info	MainWindow		Informação do episódio
+Episodes	MainWindow		Episódios
+Export OPML…	MainWindow		Exportar OPML…
+File	MainWindow		Ficheiro
+Full screen	MainWindow		Ecrã completo
+Groups	MainWindow		Grupos
+Import OPML…	MainWindow		Importar OPML…
+Preferences…	MainWindow		Preferências…
+Quit	MainWindow		Sair
+ReadMe.html	MainWindow	Path to the help file. Only change if a translated file is provided.	ReadMe.html
+Show documentation	MainWindow		Mostrar documentação
+Subscription info	MainWindow		Informação sobre a assinatura
+Subscriptions	MainWindow		Assinaturas
+Toolbar	MainWindow		Barra de ferramentas
+View	MainWindow		Visualização
+\nParsing archive…	TheApp		\nA analisar arquivo…
+Close!	TheApp		Fechar!
+\nRemoving…	IABPGroup		\nA remover…
+Add a new group	IABPGroup		Adicionar um novo grupo
+Add group	IABPGroup		Adicionar grupo
+Cancel	IABPGroup		Cancelar
+Check channels of group	IABPGroup		Verificar canais do grupo
+Check the podcasts of the selected group for new episodes	IABPGroup		Verificar novos episódios nos podcasts do grupo selecionado
+Delete	IABPGroup		Eliminar
+Remove a group and delete all the channels	IABPGroup		Remover um grupo e eliminar todos os canais
+Remove group	IABPGroup		Remover grupo
+Rename group	IABPGroup		Mudar nome do grupo
+Rename the selected group	IABPGroup		Mudar o nome do grupo selecionado
+You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n	IABPGroup		Você está prestes a remover o grupo:\n\n%groupname%\n\nCom  %numberofchannel% canais.\n
+1 hour	BPSettingsWindow		1 hora
+15 minutes	BPSettingsWindow		15 minutos
+2 hours	BPSettingsWindow		2 horas
+30 minutes	BPSettingsWindow		30 minutos
+5 minutes	BPSettingsWindow		5 minutos
+Address	BPSettingsWindow		Endereço
+Browser	BPSettingsWindow		Navegador
+Channels	BPSettingsWindow		Canais
+Check all channels on startup	BPSettingsWindow		Verificar todos os canais ao iniciar
+Check the channel every:	BPSettingsWindow	After 'every:' follows a popup menu to choose a time intervall	Verificar o canal a cada:
+Download	BPSettingsWindow		Descarregar
+Downloads	BPSettingsWindow		Descargas
+Enable proxy	BPSettingsWindow		Ativar proxy
+Filetype	BPSettingsWindow		Tipo de ficheiro
+Max. downloads:	BPSettingsWindow		Máx. descargas:
+never	BPSettingsWindow		nunca
+Password	BPSettingsWindow		Palavra-passe
+Player	BPSettingsWindow		Reprodutor
+Port	BPSettingsWindow		Porto
+Proxy	BPSettingsWindow		Proxy
+Username	BPSettingsWindow		Nome de utilizador
+Add	AddWindow		Adicionar
+Add subscription	AddWindow		Adicionar assinatura
+Cancel	AddWindow		Cancelar
+Feed URL	AddWindow		URL do feed
+Add the selected podcast to the Subscription list	DirectoryWindow		Adicionar o podcast selecionado à Lista de Assinaturas
+Can't connect!	DirectoryWindow		Não foi possível ligar!
+Can't resolve host!	DirectoryWindow		Não foi possível encontrar o servidor!
+Collapse all	DirectoryWindow		Comprimir todas
+Collapse all categories in the directory list	DirectoryWindow		Comprimir todas as categorias na lista do diretório
+Downloading	DirectoryWindow		A descarregar
+Http port failed!	DirectoryWindow		Falhou o porto Http!
+Not found!	DirectoryWindow		Não encontrado!
+Subscribe	DirectoryWindow		Assinar
+After a check	ChannelSettingsWindow		Após uma verificação
+All the episodes present	ChannelSettingsWindow		Todos os episódios presentes
+Downloaded episodes	ChannelSettingsWindow		Episódios descarregados
+Episodes older than 1 day	ChannelSettingsWindow		Episódios mais antigos do que 1 dia
+Episodes older than 1 month	ChannelSettingsWindow		Episódios mais antigos do que 1 mês
+Episodes older than 1 week	ChannelSettingsWindow		Episódios mais antigos do que 1 semana
+Episodes older than 3 days	ChannelSettingsWindow		Episódios mais antigos do que 3 dias
+never	ChannelSettingsWindow		nunca
+New episodes	ChannelSettingsWindow		Episódios novos
+Read episodes (or with error)	ChannelSettingsWindow		Episódios lidos (ou com erro)
+Remove	ChannelSettingsWindow		Remover
+System default	ChannelSettingsWindow		Predefinição do sistema
+When there are new episodes	ChannelSettingsWindow		Quando houver novos episódios
+When?	ChannelSettingsWindow		Quando?
+Who?	ChannelSettingsWindow		Quem?
+BePodder	System name		BePodder
+can't connect	FileStatusColumn		não foi possível estabelecer ligação
+connecting	FileStatusColumn		a ligar
+downloaded	FileStatusColumn		descarregado
+downloading	FileStatusColumn		a descarregar
+enqueued	FileStatusColumn		na fila
+error	FileStatusColumn		erro
+new	FileStatusColumn		novo
+not downloaded	FileStatusColumn		não descarregado
+not found	FileStatusColumn		não encontrado
+stopped	FileStatusColumn		parado
+Cancel	SettingsWindow		Cancelar
+Preferences	SettingsWindow		Preferências
+Save	SettingsWindow		Guardar
+Channel image	BitmapWindow		Imagem do canal
+Copy	RunView		Copiar
+Copy URL	RunView		Copiar URL
+Lookup (Acronym Finder)	RunView		Pesquisar (Acronym Finder)
+Lookup (Dictionary)	RunView		Pesquisar (Dictionary)
+Lookup (Google)	RunView		Pesquisar (Google)
+Open URL	RunView		Abrir URL
+Select all	RunView		Selecionar tudo
+Group	MainController		Grupo
+OK	MainController		OK
+Subscriptions	SubscriptionListView		Assinaturas
+SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).	AutoFileTypeMap		SWF é um formato proprietário para gráficos vetoriais realizados com o software Adobe Flash (anteriormente Macromedia).

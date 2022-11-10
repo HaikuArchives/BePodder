@@ -1,0 +1,170 @@
+1	Russian	application/x-vnd.xeD.BePodder	2569342938
+(Re)start download	IABPItem		Начать/возобновить загрузку
+\nRemoving…	IABPItem		\nУдаление…
+Cancel	IABPItem		Отмена
+Delete	IABPItem		Удалить
+Delete the episode and the enclosure	IABPItem		Удалить выпуск и вложение
+Download the selected episode	IABPItem		Загрузить выбранный выпуск
+Open webpage	IABPItem		Открыть страницу
+Play enclosure	IABPItem		Проиграть вложение
+Play the selected episode	IABPItem		Проиграть выбранный выпуск
+Remove episode	IABPItem		Удалить выпуск
+Show the news homepage	IABPItem		Показать страницу новостей
+Stop download	IABPItem		Остановить загрузку
+Stop the episode download	IABPItem		Остановить загрузку выпуска
+You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Вы собираетесь удалить %numberofepisodes% выпусков.\n\nВы потеряете все вложенные файлы, если они имеются.\n
+You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Вы собираетесь удалить выпуск:\n\n%episodename%\n\nВы потеряете все вложенные файлы, если они имеются.\n
+(Re)start download	IABPDownload		Начать/возобновить загрузку
+Download the selected episode	IABPDownload		Загрузить выбранный выпуск
+Find this episode	IABPDownload		Найти этот выпуск
+Play enclosure	IABPDownload		Проиграть вложение
+Play the selected episode	IABPDownload		Проиграть выбранный выпуск
+Remove from this list	IABPDownload		Удалить из этого списка
+Stop download	IABPDownload		Остановить загрузку
+Stop the episode download	IABPDownload		Остановить загрузку эпизода
+{0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{нет загрузок}=1{1 загрузка}other{# загрузок}}
+{0, plural,=0{no episodes}=1{1 episode}other{# episodes}}	DL-Episode-ListView		{0, plural,=0{нет выпусков}=1{1 выпуск}other{# выпусков}}
+Date	DL-Episode-ListView		Дата
+Icon	DL-Episode-ListView		Иконка
+Size	DL-Episode-ListView		Размер
+Status	DL-Episode-ListView		Статус
+Subscription	DL-Episode-ListView		Подписка
+Title	DL-Episode-ListView		Название
+{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}	SubscriptionColumn		{0, plural,=0{нет новых выпусков}=1{1 новый выпуск}other{# новых выпусков}}
+can't connect	SubscriptionColumn		не удаётся установить соединение
+connecting	SubscriptionColumn		устанавливается соединение
+downloading	SubscriptionColumn		загружается
+enqueued	SubscriptionColumn		в очереди
+error	SubscriptionColumn		ошибка
+invalid format	SubscriptionColumn		неверный формат
+not down	SubscriptionColumn		not down
+not found	SubscriptionColumn		не найден
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nВы хотите просто архивировать этот канал (сохранив все загруженные файлы и вложения) или УДАЛИТЬ весь канал с вашего компьютера?\n
+\nAn error occured while removing!	IABPChannel		\nПри удалении произошла ошибка!
+\nRemoving…	IABPChannel		\nУдаляется…
+Add channel	IABPChannel		Добавить канал
+Add the podcast to the subscriptions list	IABPChannel		Добавить подкаст в подписки
+Archive	IABPChannel		Архивировать
+Cancel	IABPChannel		Отмена
+Check all channels	IABPChannel		Проверить все каналы
+Check all the podcasts for new episodes	IABPChannel		Проверить все подкасты на новые эпизоды
+Check channel	IABPChannel		Проверить канал
+Check the selected podcast for new episodes	IABPChannel		Проверить выбранный подкаст на новые эпизоды
+Delete	IABPChannel		Удалить
+Delete the podcast from the subscriptions list	IABPChannel		Удалить подкаст из подписок
+OK	IABPChannel		OK
+Open enclosures folder	IABPChannel		Открыть папку с вложениями
+Open homepage	IABPChannel		Открыть страницу подкаста
+Remove a channel	IABPChannel		Удалить канал
+Remove channel	IABPChannel		Удалить канал
+Show channel image	IABPChannel		Показать обложку канала
+Show the podcast homepage	IABPChannel		Показать страницу подкаста
+You are going to remove the channel:\n\n	IABPChannel		Вы собираетесь удалить канал:\n\n
+\nParsing archive…	MainWindow		\nParsing archive…
+About BePodder	MainWindow		О программе
+Downloads	MainWindow		Загрузки
+Enclosure: 	MainWindow		Вложение:
+Episode info	MainWindow		Информация о выпуске
+Episodes	MainWindow		Эпизоды
+Export OPML…	MainWindow		Экспортировать в OPML…
+File	MainWindow		Файл
+Full screen	MainWindow		Полный экран
+Groups	MainWindow		Группы
+Import OPML…	MainWindow		Импортировать из OPML…
+Preferences…	MainWindow		Настройки…
+Quit	MainWindow		Выйти
+ReadMe.html	MainWindow	Path to the help file. Only change if a translated file is provided.	ReadMe.html
+Show documentation	MainWindow		Показать документацию
+Subscription info	MainWindow		Информация о подписках
+Subscriptions	MainWindow		Подписки
+Toolbar	MainWindow		Панель инструментов
+View	MainWindow		Вид
+\nParsing archive…	TheApp		\nParsing archive…
+Close!	TheApp		Закрыть!
+\nRemoving…	IABPGroup		\nУдаляется…
+Add a new group	IABPGroup		Добавить новую группу
+Add group	IABPGroup		Добавить группу
+Cancel	IABPGroup		Отмена
+Check channels of group	IABPGroup		Проверить каналы группы
+Check the podcasts of the selected group for new episodes	IABPGroup		Проверить подкасты выбранной группы на новые эпизоды
+Delete	IABPGroup		Удалить
+Remove a group and delete all the channels	IABPGroup		Удалить группу со всеми каналами
+Remove group	IABPGroup		Удалить группу
+Rename group	IABPGroup		Переименовать группу
+Rename the selected group	IABPGroup		Переименовать выбранную группу
+You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n	IABPGroup		Вы собираетесь удалить группу:\n\n%groupname%\n\nСодержащую %numberofchannel% каналов.\n
+1 hour	BPSettingsWindow		1 час
+15 minutes	BPSettingsWindow		15 минут
+2 hours	BPSettingsWindow		2 часа
+30 minutes	BPSettingsWindow		30 минут
+5 minutes	BPSettingsWindow		5 минут
+Address	BPSettingsWindow		Адрес
+Browser	BPSettingsWindow		Браузер
+Channels	BPSettingsWindow		Каналы
+Check all channels on startup	BPSettingsWindow		Проверять все каналы при запуске
+Check the channel every:	BPSettingsWindow	After 'every:' follows a popup menu to choose a time intervall	Проверять канал каждые:
+Download	BPSettingsWindow		Загрузка
+Downloads	BPSettingsWindow		Загрузки
+Enable proxy	BPSettingsWindow		Включить прокси
+Filetype	BPSettingsWindow		Типы файлов
+Max. downloads:	BPSettingsWindow		Макс. загрузок:
+never	BPSettingsWindow		никогда
+Password	BPSettingsWindow		Пароль
+Player	BPSettingsWindow		Плеер
+Port	BPSettingsWindow		Порт
+Proxy	BPSettingsWindow		Прокси
+Username	BPSettingsWindow		Имя пользователя
+Add	AddWindow		Добавить
+Add subscription	AddWindow		Добавить подписку
+Cancel	AddWindow		Отмена
+Feed URL	AddWindow		URL канала
+Add the selected podcast to the Subscription list	DirectoryWindow		Добавить выбранный подкаст в Подписки
+Can't connect!	DirectoryWindow		Не удаётся установить соединение!
+Can't resolve host!	DirectoryWindow		Не удалось преобразовать имя хоста!
+Collapse all	DirectoryWindow		Свернуть все
+Collapse all categories in the directory list	DirectoryWindow		Collapse all categories in the directory list
+Downloading	DirectoryWindow		Загружается
+Http port failed!	DirectoryWindow		Http port failed!
+Not found!	DirectoryWindow		Не найден!
+Subscribe	DirectoryWindow		Подписаться
+After a check	ChannelSettingsWindow		После проверки
+All the episodes present	ChannelSettingsWindow		Все имеющиеся выпуски
+Downloaded episodes	ChannelSettingsWindow		Загруженные выпуски
+Episodes older than 1 day	ChannelSettingsWindow		Выпуски старше 1 дня
+Episodes older than 1 month	ChannelSettingsWindow		Выпуски старше 1 месяца
+Episodes older than 1 week	ChannelSettingsWindow		Выпуски старше 1 недели
+Episodes older than 3 days	ChannelSettingsWindow		Выпуски старше 3 дней
+never	ChannelSettingsWindow		никогда
+New episodes	ChannelSettingsWindow		Новые выпуски
+Read episodes (or with error)	ChannelSettingsWindow		Read episodes (or with error)
+Remove	ChannelSettingsWindow		Удалить
+System default	ChannelSettingsWindow		Системные настройки
+When there are new episodes	ChannelSettingsWindow		Когда есть новые выпуски
+When?	ChannelSettingsWindow		Когда?
+Who?	ChannelSettingsWindow		Кто?
+BePodder	System name		BePodder
+can't connect	FileStatusColumn		не удается установить соединение
+connecting	FileStatusColumn		устанавливается соединение
+downloaded	FileStatusColumn		загружен
+downloading	FileStatusColumn		загружается
+enqueued	FileStatusColumn		в очереди
+error	FileStatusColumn		ошибка
+new	FileStatusColumn		новый
+not downloaded	FileStatusColumn		не загружен
+not found	FileStatusColumn		не найден
+stopped	FileStatusColumn		остановлен
+Cancel	SettingsWindow		Отмена
+Preferences	SettingsWindow		Настройки
+Save	SettingsWindow		Сохранить
+Channel image	BitmapWindow		Обложка канала
+Copy	RunView		Копировать
+Copy URL	RunView		Копировать URL
+Lookup (Acronym Finder)	RunView		Искать (в Acronym Finder)
+Lookup (Dictionary)	RunView		Искать (в словаре)
+Lookup (Google)	RunView		Искать (в Google)
+Open URL	RunView		Открыть URL
+Select all	RunView		Выбрать всё
+Group	MainController		Группа
+OK	MainController		OK
+Subscriptions	SubscriptionListView		Подписки
+SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).	AutoFileTypeMap		SWF - проприетарный формат векторной графики, реализованный программным обеспечением Adobe Flash (ранее Macromedia).

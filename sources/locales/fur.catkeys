@@ -1,0 +1,170 @@
+1	Friulian	application/x-vnd.xeD.BePodder	2569342938
+(Re)start download	IABPItem		(Torne)tache discjariament
+\nRemoving…	IABPItem		\nDaûr a gjavâ…
+Cancel	IABPItem		Anule
+Delete	IABPItem		Elimine
+Delete the episode and the enclosure	IABPItem		Elimine l'episodi e la zonte
+Download the selected episode	IABPItem		Discjarie l'episodi selezionât
+Open webpage	IABPItem		Vierç pagjine web
+Play enclosure	IABPItem		Riprodûs zonte
+Play the selected episode	IABPItem		Riprodûs l'episodi selezionât
+Remove episode	IABPItem		Gjave episodi
+Show the news homepage	IABPItem		Mostre la pagjine iniziâl des notiziis
+Stop download	IABPItem		Ferme discjariament
+Stop the episode download	IABPItem		Ferme il discjariament dal episodi
+You are going to remove %numberofepisodes% episodes.\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Tu stâs par gjavâ %numberofepisodes% episodis.\n\nTu pierdarâs cualsisei file zontât se a 'nd è.\n
+You are going to remove the episode:\n\n%episodename%\n\nYou will lose any enclosed files if there are any.\n	IABPItem		Tu stâs par gjavâ l'episodi:\n\n%episodename%\n\nTu pierdarâs cualsisei file zontât se a 'nd è.\n
+(Re)start download	IABPDownload		(Torne)tache il discjariament
+Download the selected episode	IABPDownload		Discjarie l'episodi selezionât
+Find this episode	IABPDownload		Cjate chest episodi
+Play enclosure	IABPDownload		Riprodûs zonte
+Play the selected episode	IABPDownload		Riprodûs l'episodi selezionât
+Remove from this list	IABPDownload		Gjave di cheste liste
+Stop download	IABPDownload		Ferme discjariament
+Stop the episode download	IABPDownload		Ferme il discjariament dal episodi
+{0, plural,=0{no downloads}=1{1 download}other{# downloads}}	DL-Episode-ListView		{0, plural,=0{nissun discjariament}=1{1 discjariament}other{# discjariaments}}
+{0, plural,=0{no episodes}=1{1 episode}other{# episodes}}	DL-Episode-ListView		{0, plural,=0{nissun episodi}=1{1 episodi}other{# episodis}}
+Date	DL-Episode-ListView		Date
+Icon	DL-Episode-ListView		Icone
+Size	DL-Episode-ListView		Dimension
+Status	DL-Episode-ListView		Stât
+Subscription	DL-Episode-ListView		Sotscrizion
+Title	DL-Episode-ListView		Titul
+{0, plural,=0{no new episodes}=1{1 new episodes}other{# new episodes}}	SubscriptionColumn		{0, plural,=0{nissun gnûf episodi}=1{1 gnûf episodi}other{# gnûfs episodis}}
+can't connect	SubscriptionColumn		impussibil conetisi
+connecting	SubscriptionColumn		daûr a conetisi
+downloading	SubscriptionColumn		daûr a discjariâ
+enqueued	SubscriptionColumn		in code
+error	SubscriptionColumn		erôr
+invalid format	SubscriptionColumn		formât no valit
+not down	SubscriptionColumn		no jù
+not found	SubscriptionColumn		no cjatât
+\n\nWould you like just to archive this channel (keeping all the files and enclosures downloaded so far) or do you want to DELETE the whole channel from your computer?\n	IABPChannel		\n\nDesideristu dome archiviâ chest canâl (lassant ducj i file e lis zontis discjariadis fin cumò) o vûstu ELIMINÂ il canâl intîr dal to computer?\n
+\nAn error occured while removing!	IABPChannel		\nSi è verificât un erôr intant che si gjavave!
+\nRemoving…	IABPChannel		\nDaûr a gjavâ…
+Add channel	IABPChannel		Zonte canâl
+Add the podcast to the subscriptions list	IABPChannel		Zonte il podcast ae liste des sotscrizions
+Archive	IABPChannel		Archivie
+Cancel	IABPChannel		Anule
+Check all channels	IABPChannel		Controle ducj i canâi
+Check all the podcasts for new episodes	IABPChannel		Controle ducj i podcast par gnûfs episodis
+Check channel	IABPChannel		Controle canâl
+Check the selected podcast for new episodes	IABPChannel		Controle il podcast selezionât par gnûfs episodis
+Delete	IABPChannel		Elimine
+Delete the podcast from the subscriptions list	IABPChannel		Elimine il podcast de liste des sotscrizions
+OK	IABPChannel		Va ben
+Open enclosures folder	IABPChannel		Vierç cartele des zontis
+Open homepage	IABPChannel		Vierç pagjine iniziâl
+Remove a channel	IABPChannel		Gjave un canâl
+Remove channel	IABPChannel		Gjave canâl
+Show channel image	IABPChannel		Mostre imagjin canâl
+Show the podcast homepage	IABPChannel		Mostre la pagjine iniziâl dal podcast
+You are going to remove the channel:\n\n	IABPChannel		Tu stâs par gjavâ il canâl:\n\n
+\nParsing archive…	MainWindow		\nAnalisi dal archivi…
+About BePodder	MainWindow		Informazions su BePodder
+Downloads	MainWindow		Discjariaments
+Enclosure: 	MainWindow		Zonte:
+Episode info	MainWindow		Informazions episodi
+Episodes	MainWindow		Episodis
+Export OPML…	MainWindow		Espuarte OPML…
+File	MainWindow		File
+Full screen	MainWindow		Plen visôr
+Groups	MainWindow		Grups
+Import OPML…	MainWindow		Impuarte OPML…
+Preferences…	MainWindow		Preferencis…
+Quit	MainWindow		Jes
+ReadMe.html	MainWindow	Path to the help file. Only change if a translated file is provided.	ReadMe.html
+Show documentation	MainWindow		Mostre documentazion
+Subscription info	MainWindow		Informazions sotscrizion
+Subscriptions	MainWindow		Sotscrizions
+Toolbar	MainWindow		Sbare dai struments
+View	MainWindow		Visualize
+\nParsing archive…	TheApp		\nAnalisi dal archivi…
+Close!	TheApp		Siere!
+\nRemoving…	IABPGroup		\nDaûr a gjavâ…
+Add a new group	IABPGroup		Zonte un gnûf grup
+Add group	IABPGroup		Zonte grup
+Cancel	IABPGroup		Anule
+Check channels of group	IABPGroup		Controle i canâi dal grup
+Check the podcasts of the selected group for new episodes	IABPGroup		Controle i podcast dal grup selezionât pe presince di gnûfs episodis
+Delete	IABPGroup		Elimine
+Remove a group and delete all the channels	IABPGroup		Gjave un grup e elimine ducj i canâi
+Remove group	IABPGroup		Gjave grup
+Rename group	IABPGroup		Cambie non al grup
+Rename the selected group	IABPGroup		Cambie non al grup selezionât
+You are going to remove the group:\n\n%groupname%\n\nWith %numberofchannel% channels.\n	IABPGroup		Tu stâs par gjavâ il grup:\n\n%groupname%\n\nCun %numberofchannel% canâi.\n
+1 hour	BPSettingsWindow		1 ore
+15 minutes	BPSettingsWindow		15 minûts
+2 hours	BPSettingsWindow		2 oris
+30 minutes	BPSettingsWindow		30 minûts
+5 minutes	BPSettingsWindow		5 minûts
+Address	BPSettingsWindow		Direzion
+Browser	BPSettingsWindow		Navigadôr
+Channels	BPSettingsWindow		Canâi
+Check all channels on startup	BPSettingsWindow		Controle ducj i canâi al inviament
+Check the channel every:	BPSettingsWindow	After 'every:' follows a popup menu to choose a time intervall	Controle il canâl ogni:
+Download	BPSettingsWindow		Discjarie
+Downloads	BPSettingsWindow		Discjariaments
+Enable proxy	BPSettingsWindow		Abilite proxy
+Filetype	BPSettingsWindow		Gjenar di file
+Max. downloads:	BPSettingsWindow		Max. discjariaments:
+never	BPSettingsWindow		mai
+Password	BPSettingsWindow		Peraule di ordin
+Player	BPSettingsWindow		Riprodutôr
+Port	BPSettingsWindow		Puarte
+Proxy	BPSettingsWindow		Proxy
+Username	BPSettingsWindow		Non utent
+Add	AddWindow		Zonte
+Add subscription	AddWindow		Zonte sotscrizion
+Cancel	AddWindow		Anule
+Feed URL	AddWindow		URL Feed
+Add the selected podcast to the Subscription list	DirectoryWindow		Zonte il podcast selezionât ae liste di Sotscrizion
+Can't connect!	DirectoryWindow		Impussibil conetisi!
+Can't resolve host!	DirectoryWindow		Impussibil risolvi il host!
+Collapse all	DirectoryWindow		Colassâ dut
+Collapse all categories in the directory list	DirectoryWindow		Colassâ dutis lis categoriis inte liste de cartele
+Downloading	DirectoryWindow		Daûr a discjariâ
+Http port failed!	DirectoryWindow		Puarte Http falide!
+Not found!	DirectoryWindow		No cjatât!
+Subscribe	DirectoryWindow		Sotscrîf
+After a check	ChannelSettingsWindow		Dopo un control
+All the episodes present	ChannelSettingsWindow		Ducj i episodis presints
+Downloaded episodes	ChannelSettingsWindow		Episodis discjariâts
+Episodes older than 1 day	ChannelSettingsWindow		Episodis plui vielis di 1 dì
+Episodes older than 1 month	ChannelSettingsWindow		Episodis plui vielis di 1 mês
+Episodes older than 1 week	ChannelSettingsWindow		Episodis plui vielis di 1 setemane
+Episodes older than 3 days	ChannelSettingsWindow		Episodis plui vielis di 3 dîs
+never	ChannelSettingsWindow		mai
+New episodes	ChannelSettingsWindow		Gnûfs episodis
+Read episodes (or with error)	ChannelSettingsWindow		Episodis lets (o cun erôr)
+Remove	ChannelSettingsWindow		Gjave
+System default	ChannelSettingsWindow		Predefinît di sisteme
+When there are new episodes	ChannelSettingsWindow		Cuant che a son gnûfs episodis
+When?	ChannelSettingsWindow		Cuant?
+Who?	ChannelSettingsWindow		Cui?
+BePodder	System name		BePodder
+can't connect	FileStatusColumn		impussibil coneti
+connecting	FileStatusColumn		daûr a conetisi
+downloaded	FileStatusColumn		discjariât
+downloading	FileStatusColumn		daûr a discjariâ
+enqueued	FileStatusColumn		in code
+error	FileStatusColumn		erôr
+new	FileStatusColumn		gnûf
+not downloaded	FileStatusColumn		no discjariât
+not found	FileStatusColumn		no cjatât
+stopped	FileStatusColumn		fermât
+Cancel	SettingsWindow		Anule
+Preferences	SettingsWindow		Preferencis
+Save	SettingsWindow		Salve
+Channel image	BitmapWindow		Imagjin canâl
+Copy	RunView		Copie
+Copy URL	RunView		Copie URL
+Lookup (Acronym Finder)	RunView		Cîr (Ciridôr acronims)
+Lookup (Dictionary)	RunView		Cîr (Dizionari)
+Lookup (Google)	RunView		Cîr (Google)
+Open URL	RunView		Vierç URL
+Select all	RunView		Selezione dut
+Group	MainController		Grup
+OK	MainController		Va ben
+Subscriptions	SubscriptionListView		Sotscrizions
+SWF is a proprietary format for vectorial graphics realized with the software Adobe Flash (formerly Macromedia).	AutoFileTypeMap		SWF al è un formât proprietari pe grafiche vetoriâl realizât cul software Adobe Flash (prime Macromedia).
